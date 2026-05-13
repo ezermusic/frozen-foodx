@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suppliers & Sourcing | Abak Company Limited</title>
+  <meta name="description" content="Learn about Abak Company Limited's global sourcing standards, supplier certifications, cold-chain logistics, and quality assurance processes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0B3C5D;
+      --blue:   #328CC1;
+      --ice:    #D4EAF7;
+      --white:  #FFFFFF;
+      --grey:   #F5F7FA;
+      --dark:   #0d1f2d;
+      --red:    #D7263D;
+      --green:  #2E8B57;
+      --text:   #1a2e3b;
+      --muted:  #5a7a8a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(11,60,93,0.96);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-links a.active { border-bottom: 2px solid var(--blue); padding-bottom: 2px; }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.5rem 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: #2178ab; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding-top: 68px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 60%, #1a5276 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23328CC1' fill-opacity='0.06'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    .page-hero-inner {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 5% 4rem;
+      text-align: center;
+    }
+    .breadcrumb {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb .sep { font-size: 0.65rem; opacity: 0.5; }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: normal; color: var(--blue); }
+    .page-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .hero-divider {
+      width: 100%;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+      margin-top: 3rem;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 5rem 5%; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    /* ── COUNTRIES OF ORIGIN ── */
+    .countries-section { background: var(--grey); }
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+    .country-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.6rem 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: 0 2px 16px rgba(11,60,93,0.07);
+      border: 1px solid rgba(50,140,193,0.12);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .country-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(11,60,93,0.13);
+    }
+    .flag-circle {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--ice);
+      flex-shrink: 0;
+    }
+    .country-info h3 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+    .country-info p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── SUPPLIER STANDARDS ── */
+    .standards-section { background: var(--white); }
+    .standards-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .standards-visual {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 24px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .std-item {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .std-icon {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .std-text { color: rgba(255,255,255,0.9); font-size: 0.88rem; line-height: 1.4; }
+    .std-text strong { color: var(--white); display: block; margin-bottom: 0.15rem; font-size: 0.92rem; }
+    .standards-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .std-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(50,140,193,0.12);
+    }
+    .std-row:last-child { border-bottom: none; }
+    .std-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--ice);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 40px;
+    }
+    .std-row-text h4 { font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .std-row-text p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── COLD-CHAIN LOGISTICS ── */
+    .coldchain-section { background: var(--navy); }
+    .coldchain-section .section-title { color: var(--white); }
+    .coldchain-section .section-label { color: var(--blue); }
+    .coldchain-section .section-subtitle { color: rgba(255,255,255,0.65); }
+    .coldchain-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    .step-card {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .step-card::after {
+      content: '→';
+      position: absolute;
+      right: -0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.2);
+      font-size: 1.4rem;
+    }
+    .step-card:last-child::after { display: none; }
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: rgba(50,140,193,0.25);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .step-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .step-card h3 {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .step-card p { color: rgba(255,255,255,0.55); font-size: 0.82rem; line-height: 1.6; }
+
+    /* ── QUALITY ASSURANCE ── */
+    .quality-section { background: var(--grey); }
+    .quality-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .quality-banner h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+    .quality-banner p { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.7; }
+    .qa-badges { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-end; }
+    .qa-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 0.5rem 1.2rem;
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    .quality-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .qc-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.8rem;
+      border-left: 4px solid var(--blue);
+      box-shadow: 0 2px 12px rgba(11,60,93,0.06);
+    }
+    .qc-card .icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .qc-card h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+    .qc-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-section { background: var(--white); }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .cert-card {
+      border: 2px solid var(--ice);
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .cert-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 4px 18px rgba(50,140,193,0.15);
+    }
+    .cert-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+    .cert-card h3 { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .cert-card p { font-size: 0.75rem; color: var(--muted); }
+
+    /* ── STORAGE STANDARDS ── */
+    .storage-section { background: var(--dark); }
+    .storage-section .section-label { color: var(--blue); }
+    .storage-section .section-title { color: var(--white); }
+    .storage-section .section-subtitle { color: rgba(255,255,255,0.6); }
+    .storage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .storage-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(50,140,193,0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .storage-card:hover {
+      background: rgba(50,140,193,0.08);
+      border-color: rgba(50,140,193,0.4);
+    }
+    .storage-card .temp {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    .storage-card h3 { color: var(--white); font-size: 1rem; margin-bottom: 0.6rem; font-weight: 600; }
+    .storage-card p { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: var(--grey);
+      padding: 4rem 5%;
+      text-align: center;
+    }
+    .cta-strip h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+    }
+    .cta-strip p { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { background: var(--blue); transform: translateY(-2px); }
+    .btn-whatsapp {
+      background: #25D366;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: opacity 0.2s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-whatsapp:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    /* ── CONTACT INFO ── */
+    .contact-bar {
+      background: var(--navy);
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+    }
+    .contact-item a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .contact-item a:hover { color: var(--white); }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: rgba(50,140,193,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.55);
+      padding: 3rem 5% 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    .footer-brand .logo span { color: var(--blue); }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.7; max-width: 240px; }
+    footer h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 1rem; text-transform: uppercase; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    footer ul a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    footer ul a:hover { color: var(--blue); }
+    .footer-contact li { font-size: 0.83rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .footer-contact li span { flex-shrink: 0; }
+    .footer-contact a { color: var(--blue); text-decoration: none; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--blue); }
+
+    /* ── FLOATING WHATSAPP ── */
+    .float-wa {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.4);
+      z-index: 200;
+      animation: pulse-wa 2.5s infinite;
+    }
+    @keyframes pulse-wa {
+      0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 28px rgba(37,211,102,0.7); }
+    }
+
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px; left: 0; right: 0;
+        background: var(--navy);
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .standards-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .quality-banner { grid-template-columns: 1fr; }
+      .qa-badges { align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .step-card::after { display: none; }
+      .coldchain-steps { grid-template-columns: 1fr 1fr; }
+      .contact-bar { gap: 1.5rem; }
+      section { padding: 3.5rem 5%; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .coldchain-steps { grid-template-columns: 1fr; }
+      .countries-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Abak<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+	  <a href="shop.html">Shop</a>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#" class="active">Suppliers</a></li>
+	  <li><a href="partnerships.html">Global Partnership</a></li>
+	  <a href="FAQs.html">FAQs</a>
+      <li><a href="contact.html">Contact</a></li>
+	  <a href="articles.html">Blog</a>
+    </ul>
+    <a class="nav-cta" href="tel:+233 24 729 8551">Order Now</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="#">Home</a>
+        <span class="sep">›</span>
+        <span>Suppliers &amp; Sourcing</span>
+      </div>
+      <h1>Global Sourcing, <em>Uncompromising</em> Quality</h1>
+      <p>From farm to freezer, Abak Company Limited partners with world-class suppliers to bring Ghana the finest frozen foods — verified, certified, and cold-chain secured at every step.</p>
+    </div>
+    <div class="hero-divider"></div>
+  </header>
+
+  <!-- COUNTRIES OF ORIGIN -->
+  <section class="countries-section">
+    <div class="reveal">
+      <span class="section-label">Global Origins</span>
+      <h2 class="section-title">Countries We Source From</h2>
+      <p class="section-subtitle">Our supply network spans multiple continents, ensuring year-round availability of premium products for our customers across Ghana.</p>
+    </div>
+    <div class="countries-grid reveal">
+      <div class="country-card">
+        <div class="flag-circle">🇺🇸</div>
+        <div class="country-info">
+          <h3>United States</h3>
+          <p>Premium poultry (chicken, turkey) with USDA certification standards.</p>
+        </div>
+      </div>
+      <div class="country-card">
+        <div class="flag-circle">🇧🇷</div>
+        <div class="country-info">
+          <h3>Brazil</h3>
+          <p>High-volume poultry and beef — one of the world's largest protein exporters.</p>
+        </div>
+      </div>
+      <div class="country-card">
+        <div class="flag-circle">🇳🇱</div>
+        <div class="country-info">
+          <h3>Netherlands</h3>
+          <p>European-standard seafood and poultry with strict quality control.</p>
+        </div>
+      </div>
+      <div class="country-card">
+        <div class="flag-circle">🇨🇳</div>
+        <div class="country-info">
+          <h3>China</h3>
+          <p>Competitively priced seafood and poultry meeting international food safety standards.</p>
+        </div>
+      </div>
+      <div class="country-card">
+        <div class="flag-circle">🇳🇴</div>
+        <div class="country-info">
+          <h3>Norway</h3>
+          <p>World-renowned Atlantic salmon and seafood from sustainable fisheries.</p>
+        </div>
+      </div>
+      <div class="country-card">
+        <div class="flag-circle">🇮🇳</div>
+        <div class="country-info">
+          <h3>India</h3>
+          <p>Seafood including shrimp and tilapia from certified aquaculture farms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPLIER STANDARDS -->
+  <section class="standards-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="reveal">
+        <span class="section-label">Our Benchmark</span>
+        <h2 class="section-title">Supplier Standards We Uphold</h2>
+        <p class="section-subtitle">Every supplier in our network is evaluated against rigorous standards before any product reaches our warehouse or your business.</p>
+      </div>
+      <div class="standards-layout">
+        <div class="standards-visual reveal">
+          <div class="std-item">
+            <div class="std-icon">🏭</div>
+            <div class="std-text">
+              <strong>Facility Audits</strong>
+              Regular third-party audits of all supplier facilities
+            </div>
+          </div>
+          <div class="std-item">
+            <div class="std-icon">📋</div>
+            <div class="std-text">
+              <strong>Documentation Review</strong>
+              Health certificates, export licenses &amp; compliance docs
+            </div>
+          </div>
+          <div class="std-item">
+            <div class="std-icon">🌡️</div>
+            <div class="std-text">
+              <strong>Temperature Monitoring</strong>
+              Cold-chain maintained from origin to delivery
+            </div>
+          </div>
+          <div class="std-item">
+            <div class="std-icon">🔬</div>
+            <div class="std-text">
+              <strong>Lab Testing</strong>
+              Microbiological and chemical testing of products
+            </div>
+          </div>
+          <div class="std-item">
+            <div class="std-icon">🤝</div>
+            <div class="std-text">
+              <strong>Long-Term Relationships</strong>
+              We work with trusted, repeat-verified partners
+            </div>
+          </div>
+        </div>
+        <div class="standards-list reveal">
+          <div class="std-row">
+            <div class="std-num">01</div>
+            <div class="std-row-text">
+              <h4>Compliance with International Food Safety Standards</h4>
+              <p>All suppliers must comply with HACCP, ISO 22000 or equivalent food safety management systems before onboarding.</p>
+            </div>
+          </div>
+          <div class="std-row">
+            <div class="std-num">02</div>
+            <div class="std-row-text">
+              <h4>Proper Slaughter &amp; Processing Hygiene</h4>
+              <p>Poultry and meat must be processed in certified abattoirs with full veterinary supervision.</p>
+            </div>
+          </div>
+          <div class="std-row">
+            <div class="std-num">03</div>
+            <div class="std-row-text">
+              <h4>Cold-Chain Integrity at Origin</h4>
+              <p>Products must be frozen to correct temperatures within required timeframes post-processing.</p>
+            </div>
+          </div>
+          <div class="std-row">
+            <div class="std-num">04</div>
+            <div class="std-row-text">
+              <h4>Accurate Labelling &amp; Traceability</h4>
+              <p>Full product traceability from farm/catch to packaging, including lot numbers and expiry dates.</p>
+            </div>
+          </div>
+          <div class="std-row">
+            <div class="std-num">05</div>
+            <div class="std-row-text">
+              <h4>Ethical &amp; Sustainable Practices</h4>
+              <p>Preference given to suppliers with responsible environmental practices and fair labour standards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLD-CHAIN LOGISTICS -->
+  <section class="coldchain-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="reveal" style="text-align:center;margin-bottom:1rem;">
+        <span class="section-label">End-to-End Process</span>
+        <h2 class="section-title">Our Cold-Chain Logistics</h2>
+        <p class="section-subtitle" style="margin:0 auto;color:rgba(255,255,255,0.65);">Temperature integrity is non-negotiable. Here's how we protect product quality from supplier to your hands.</p>
+      </div>
+      <div class="coldchain-steps reveal">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">🌍</div>
+          <h3>Supplier Production</h3>
+          <p>Products frozen immediately post-processing at certified facilities overseas.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🚢</div>
+          <h3>Reefer Shipping</h3>
+          <p>Transported in refrigerated containers at constant sub-zero temperatures.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">🛃</div>
+          <h3>Port Clearance</h3>
+          <p>Rapid customs processing with all documentation to minimise exposure time.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon">🏬</div>
+          <h3>Cold Storage</h3>
+          <p>Offloaded directly into our temperature-controlled warehouse facility in Ghana.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">05</div>
+          <div class="step-icon">🚛</div>
+          <h3>Last-Mile Delivery</h3>
+          <p>Delivered to your location in refrigerated vehicles — quality intact, guaranteed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY ASSURANCE -->
+  <section class="quality-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="reveal">
+        <span class="section-label">Quality First</span>
+        <h2 class="section-title">Quality Assurance</h2>
+        <p class="section-subtitle">We don't just import — we inspect, verify, and stand behind every product that carries the Abak name.</p>
+      </div>
+      <div class="quality-banner reveal">
+        <div>
+          <h2>Reliable Global Supply. Trusted Local Delivery.</h2>
+          <p>As a member of the American Chamber of Commerce Ghana, Abak Company Limited operates to the highest international business standards, ensuring every batch we bring in meets both global supplier requirements and Ghana Food &amp; Drugs Authority (FDA) standards.</p>
+        </div>
+        <div class="qa-badges">
+          <div class="qa-badge">✅ AmCham Ghana Member</div>
+          <div class="qa-badge">✅ FDA Compliant</div>
+          <div class="qa-badge">✅ HACCP Aligned</div>
+          <div class="qa-badge">✅ Import Licensed</div>
+        </div>
+      </div>
+      <div class="quality-cards reveal">
+        <div class="qc-card">
+          <div class="icon">🔍</div>
+          <h3>Incoming Inspection</h3>
+          <p>Every shipment undergoes visual and temperature inspection upon arrival before being cleared into our cold storage.</p>
+        </div>
+        <div class="qc-card">
+          <div class="icon">📦</div>
+          <h3>Packaging Integrity</h3>
+          <p>We verify that all packaging is intact, properly labelled, and free from damage or tampering before storage.</p>
+        </div>
+        <div class="qc-card">
+          <div class="icon">📊</div>
+          <h3>Batch Tracking</h3>
+          <p>Every product lot is tracked with origin data, arrival date, and expiry — enabling fast recall capability if ever needed.</p>
+        </div>
+        <div class="qc-card">
+          <div class="icon">🧾</div>
+          <h3>Documentation Verification</h3>
+          <p>Health certificates, phytosanitary records, and supplier compliance documents are verified and archived for every delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="cert-section">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <div class="reveal">
+        <span class="section-label">Standards &amp; Affiliations</span>
+        <h2 class="section-title">Certifications &amp; Memberships</h2>
+        <p class="section-subtitle" style="margin:0 auto;">We are affiliated with international bodies and adhere to globally recognised food safety and trade standards.</p>
+      </div>
+      <div class="cert-grid reveal">
+        <div class="cert-card">
+          <div class="cert-icon">🏛️</div>
+          <h3>AmCham Ghana</h3>
+          <p>American Chamber of Commerce Ghana Member</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🇬🇭</div>
+          <h3>Ghana FDA</h3>
+          <p>Food &amp; Drugs Authority Compliance</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📑</div>
+          <h3>Import Licensed</h3>
+          <p>Authorised importer under Ghana Revenue Authority</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">❄️</div>
+          <h3>Cold Chain</h3>
+          <p>Cold-chain logistics certified operations</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🔒</div>
+          <h3>HACCP Aligned</h3>
+          <p>Hazard Analysis &amp; Critical Control Points</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🌿</div>
+          <h3>Food Safety</h3>
+          <p>International food safety standards compliance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORAGE STANDARDS -->
+  <section class="storage-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="reveal">
+        <span class="section-label">Storage &amp; Preservation</span>
+        <h2 class="section-title">Storage &amp; Preservation Standards</h2>
+        <p class="section-subtitle">Our facility maintains strict temperature zones for different product categories — ensuring optimal preservation from the moment products arrive.</p>
+      </div>
+      <div class="storage-grid reveal">
+        <div class="storage-card">
+          <div class="temp">-18°C</div>
+          <h3>Deep Frozen Storage</h3>
+          <p>Poultry, red meat, and seafood are stored at -18°C or below to prevent bacterial growth and preserve nutritional quality.</p>
+        </div>
+        <div class="storage-card">
+          <div class="temp">-12°C</div>
+          <h3>Standard Frozen Zone</h3>
+          <p>Suitable for products with shorter shelf requirements while still maintaining full frozen integrity and product safety.</p>
+        </div>
+        <div class="storage-card">
+          <div class="temp">0–4°C</div>
+          <h3>Chilled Storage</h3>
+          <p>For thaw-ready or fresh-delivery products awaiting same-day or next-day distribution to clients.</p>
+        </div>
+        <div class="storage-card">
+          <div class="temp">24/7</div>
+          <h3>Continuous Monitoring</h3>
+          <p>Temperature loggers and alarm systems run continuously to ensure no cold-chain breach goes undetected at any hour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="reveal">
+      <h2>Ready to Source with Confidence?</h2>
+      <p>Contact our team to discuss bulk orders, supply partnerships, or sourcing enquiries.</p>
+      <div class="cta-buttons">
+        <a href="tel:+233 24 729 8551" class="btn-primary">📞 Call Us Now</a>
+        <a href="https://wa.me/233247298551" class="btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+        <a href="mailto:info@abakcompany.com" class="btn-primary" style="background:var(--blue);">✉️ Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT BAR -->
+  <div class="contact-bar">
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <span>Phone: <a href="tel:+233247298551">+233 (0) 24 729 8551</a></span>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💬</div>
+      <span>WhatsApp: <a href="https://wa.me/233247298551" target="_blank">+233 (0) 24 729 8551</a></span>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <span>Email: <a href="mailto:info@abakcompany.com">info@abakcompany.com</a></span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Abak<span>.</span></div>
+        <p>Premium frozen foods &amp; cold storage solutions you can trust. Serving households and businesses across Ghana with internationally sourced products.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="product.html#Poultry">Poultry</a></li>
+          <li><a href="product.html#Fish">Fish &amp; Seafood</a></li>
+          <li><a href="product.html#redmeat">Red Meat</a></li>
+          <li><a href="product.html#">Bulk Orders</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span>📍</span>HQ1 Anunsah Clottey street, Kaneshie Market-Accra, Ghana</li>
+          <li><span>📞</span> <a href="tel:+233247298551">+233 (0) 24 927 8551</a></li>
+          <li><span>💬</span> <a href="https://wa.me/233247298551">WhatsApp Us</a></li>
+          <li><span>✉️</span> <a href="mailto:info@abakcompany.com">info@abakcompany.com</a></li>
+          <li><span>🕐</span> Mon–Sat: 8am – 6pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Abak Company Limited. All rights reserved.</span>
+      <span>
+        <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="#">Terms &amp; Conditions</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="float-wa" href="https://wa.me/247298551" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

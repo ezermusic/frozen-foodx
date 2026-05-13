@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy & Terms and Conditions | Abak Company Limited</title>
+  <meta name="description" content="Privacy Policy and Terms & Conditions for Abak Company Limited — Ghana's premium frozen foods importer and cold storage provider." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0B3C5D;
+      --navy-dk:   #071f30;
+      --blue:      #1E6FA5;
+      --blue-lt:   #4A9CC8;
+      --ice:       #D6EAF8;
+      --ice-lt:    #EBF5FB;
+      --white:     #FFFFFF;
+      --parchment: #FDFAF6;
+      --warm:      #F6F1E9;
+      --rule:      #E0D9CF;
+      --rule-dk:   #C8BEb0;
+      --text:      #1C2B36;
+      --muted:     #6B7F8E;
+      --light-txt: #8FA0AC;
+      --green:     #1A6B42;
+      --green-lt:  #E6F4EE;
+      --amber:     #A05C00;
+      --amber-lt:  #FDF3E0;
+      --red:       #8B1A1A;
+      --red-lt:    #FDEAEA;
+      --border:    rgba(28,43,54,0.1);
+      --shadow:    0 2px 16px rgba(28,43,54,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Mulish', sans-serif;
+      color: var(--text);
+      background: var(--parchment);
+      overflow-x: hidden;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 1000;
+      height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--blue-lt));
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 3px; left: 0; right: 0; z-index: 200;
+      background: rgba(253,250,246,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      height: 64px;
+      display: flex; align-items: center;
+      padding: 0 5%;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none;
+    }
+    .nav-logo-ph {
+      width: 38px; height: 38px;
+      border-radius: 6px;
+      border: 1.5px dashed var(--rule-dk);
+      background: var(--warm);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .nav-logo-ph img { width:100%;height:100%;object-fit:contain;display:none; }
+    .nav-logo-ph .nlph-icon { font-size:1rem; opacity:0.25; }
+    .nav-name {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--navy);
+    }
+    .nav-name span { color: var(--blue); }
+    .nav-doc-switcher {
+      display: flex; gap: 0.3rem;
+      background: var(--warm);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 0.25rem;
+    }
+    .doc-switch-btn {
+      font-family: 'Mulish', sans-serif;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3px;
+      padding: 0.45rem 1rem;
+      border: none; background: none; cursor: pointer;
+      color: var(--muted);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .doc-switch-btn.active {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .nav-cta {
+      font-family: 'Mulish', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--white); background: var(--navy);
+      padding: 0.45rem 1.1rem;
+      text-decoration: none; border-radius: 4px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--blue); }
+
+    /* ── PAGE LAYOUT ── */
+    .page-wrap {
+      padding-top: 64px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-left: 5%;
+      padding-right: 5%;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 0;
+      align-items: start;
+    }
+
+    /* ── STICKY SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      padding: 2.5rem 1.5rem 2.5rem 0;
+      border-right: 1px solid var(--rule);
+      min-height: calc(100vh - 80px);
+    }
+    .sidebar-section { margin-bottom: 2rem; }
+    .sidebar-section-label {
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--light-txt);
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .sidebar-links { display: flex; flex-direction: column; gap: 0.1rem; }
+    .sidebar-link {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.45rem 0.7rem;
+      border-radius: 5px;
+      border-left: 2px solid transparent;
+      transition: all 0.18s;
+      line-height: 1.3;
+    }
+    .sidebar-link:hover { color: var(--navy); background: var(--warm); }
+    .sidebar-link.active { color: var(--navy); background: var(--ice-lt); border-left-color: var(--navy); font-weight: 700; }
+    .sidebar-link .sl-icon { font-size: 0.7rem; flex-shrink: 0; opacity: 0.6; }
+
+    .sidebar-divider { height: 1px; background: var(--rule); margin: 1.5rem 0; }
+    .sidebar-contact-block {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin-top: 1rem;
+    }
+    .scb-label {
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 0.7rem;
+    }
+    .scb-item { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-bottom: 0.4rem; }
+    .scb-item a { color: var(--ice); text-decoration: none; font-weight: 600; }
+    .scb-item a:hover { color: white; }
+    .scb-back-top {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.7rem; font-weight: 700;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.4rem;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .scb-back-top:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── MAIN CONTENT ── */
+    .main-content {
+      padding: 3.5rem 0 6rem 3.5rem;
+    }
+
+    /* DOCUMENT HERO */
+    .doc-hero {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--rule);
+    }
+    .doc-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--warm);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .doc-hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .doc-meta-row {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      font-size: 0.78rem; color: var(--muted);
+      margin-top: 1rem;
+    }
+    .doc-meta-item { display: flex; align-items: center; gap: 0.4rem; font-weight: 500; }
+    .doc-meta-item strong { color: var(--text); }
+    .doc-intro {
+      font-size: 0.95rem; line-height: 1.8;
+      color: var(--muted);
+      max-width: 620px;
+      margin-top: 1.2rem;
+      padding: 1.2rem 1.5rem;
+      background: var(--ice-lt);
+      border-left: 3px solid var(--navy);
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* DOCUMENT SECTIONS */
+    .doc-section { margin-bottom: 3.5rem; scroll-margin-top: 90px; }
+    .doc-section-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-num {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--light-txt);
+      background: var(--warm);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      flex-shrink: 0;
+    }
+    .doc-section h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .doc-section p {
+      font-size: 0.9rem; line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .doc-section p:last-child { margin-bottom: 0; }
+    .doc-section ul, .doc-section ol {
+      margin: 0.6rem 0 1rem 1.2rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .doc-section li {
+      font-size: 0.88rem; line-height: 1.75;
+      color: var(--text);
+    }
+    .doc-section li strong { color: var(--navy); }
+    .doc-section h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--navy);
+      margin: 1.5rem 0 0.6rem;
+    }
+    .doc-section a { color: var(--blue); text-decoration: none; }
+    .doc-section a:hover { text-decoration: underline; }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+      font-size: 0.87rem; line-height: 1.75;
+      display: flex; gap: 0.8rem; align-items: flex-start;
+    }
+    .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-green { background: var(--green-lt); border: 1px solid rgba(26,107,66,0.2); color: #1A4A2E; }
+    .callout-amber { background: var(--amber-lt); border: 1px solid rgba(160,92,0,0.2); color: var(--amber); }
+    .callout-blue  { background: var(--ice-lt);   border: 1px solid rgba(30,111,165,0.2); color: #1E4F7A; }
+    .callout-red   { background: var(--red-lt);   border: 1px solid rgba(139,26,26,0.2); color: var(--red); }
+
+    /* ── DOCUMENT SEPARATOR ── */
+    .doc-separator {
+      position: relative;
+      margin: 5rem 0;
+      text-align: center;
+    }
+    .doc-separator::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      height: 1px; background: var(--rule);
+    }
+    .doc-separator-label {
+      position: relative; display: inline-block;
+      background: var(--parchment);
+      padding: 0 1.5rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.75rem; font-style: italic;
+      color: var(--light-txt);
+    }
+
+    /* NEW DOCUMENT HEADER */
+    .new-doc-header {
+      scroll-margin-top: 90px;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--rule);
+    }
+    .new-doc-header h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    /* ── CONTACT BAR ── */
+    .contact-bar {
+      background: var(--navy-dk);
+      padding: 2.5rem 5%;
+    }
+    .contact-bar-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+    }
+    .cb-item { display: flex; gap: 0.8rem; align-items: flex-start; }
+    .cb-icon {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    .cb-label { font-size: 0.58rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 0.2rem; }
+    .cb-value { font-size: 0.82rem; color: var(--white); font-weight: 500; line-height: 1.4; }
+    .cb-value a { color: var(--ice); text-decoration: none; font-weight: 600; }
+    .cb-value a:hover { text-decoration: underline; }
+    .cb-sub { font-size: 0.7rem; color: rgba(255,255,255,0.28); margin-top: 0.1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050d16;
+      padding: 2.5rem 5% 1.5rem;
+    }
+    .footer-row {
+      max-width: 1180px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 2rem; flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .footer-logo-wrap { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.6rem; }
+    .footer-logo-ph {
+      width: 36px; height: 36px;
+      border: 1px dashed rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .footer-logo-ph img { width:100%;height:100%;object-fit:contain;display:none; }
+    .footer-logo-ph .flph-icon { font-size: 0.85rem; opacity: 0.2; }
+    .footer-name {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1rem; font-weight: 700; color: white;
+    }
+    .footer-name span { color: var(--blue-lt); }
+    .footer-brand p { font-size: 0.75rem; color: rgba(255,255,255,0.25); line-height: 1.7; max-width: 220px; }
+    .footer-links { display: flex; gap: 3rem; flex-wrap: wrap; }
+    .footer-col h4 {
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); margin-bottom: 0.8rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .footer-col ul a { color: rgba(255,255,255,0.25); text-decoration: none; font-size: 0.77rem; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--blue-lt); }
+    .footer-bottom {
+      max-width: 1180px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 1rem;
+      display: flex; justify-content: space-between;
+      font-size: 0.72rem; color: rgba(255,255,255,0.18);
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.18); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--blue-lt); }
+
+    /* ── BACK TO TOP ── */
+    #backToTop {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border: none; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: white; font-size: 1rem;
+      box-shadow: 0 4px 16px rgba(11,60,93,0.3);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s;
+      z-index: 300;
+    }
+    #backToTop.visible { opacity: 1; pointer-events: all; }
+    #backToTop:hover { transform: translateY(-3px); background: var(--blue); }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media(max-width:860px){
+      .page-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .main-content { padding: 2.5rem 0 4rem; }
+      .nav-doc-switcher { display: none; }
+    }
+    @media(max-width:560px){
+      .doc-meta-row { gap: 1rem; }
+      .nav-cta { display: none; }
+      .footer-links { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- READING PROGRESS BAR -->
+  <div id="progress-bar"></div>
+
+  <!-- ══ NAV ══ -->
+  <nav>
+    <a class="nav-brand" href="#">
+      <!--
+        ★ LOGO PLACEHOLDER ★
+        Replace with: <img src="images/abak-logo.png" alt="Abak Logo" style="display:block" />
+      -->
+      <div class="nav-logo-ph">
+        <img src="" alt="Abak Logo" id="navLogoImg" />
+        <span class="nlph-icon">🏢</span>
+      </div>
+      <span class="nav-name">Abak<span>.</span> Company Limited</span>
+    </a>
+    <div class="nav-doc-switcher">
+      <button class="doc-switch-btn active" onclick="jumpToDoc('privacy')">Privacy Policy</button>
+      <button class="doc-switch-btn" onclick="jumpToDoc('terms')">Terms &amp; Conditions</button>
+    </div>
+    <a class="nav-cta" href="tel:+233247298551">📞 Call Us</a>
+  </nav>
+
+  <!-- ══ PAGE WRAP ══ -->
+  <div class="page-wrap">
+
+    <!-- ─── STICKY SIDEBAR ─── -->
+    <aside class="sidebar" id="sidebar">
+
+      <!-- PRIVACY POLICY LINKS -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Privacy Policy</div>
+        <div class="sidebar-links">
+          <a class="sidebar-link active" href="#pp-overview"><span class="sl-icon">§</span>Overview</a>
+          <a class="sidebar-link" href="#pp-information"><span class="sl-icon">§</span>Information We Collect</a>
+          <a class="sidebar-link" href="#pp-use"><span class="sl-icon">§</span>How We Use Information</a>
+          <a class="sidebar-link" href="#pp-sharing"><span class="sl-icon">§</span>Information Sharing</a>
+          <a class="sidebar-link" href="#pp-security"><span class="sl-icon">§</span>Data Security</a>
+          <a class="sidebar-link" href="#pp-cookies"><span class="sl-icon">§</span>Cookies</a>
+          <a class="sidebar-link" href="#pp-rights"><span class="sl-icon">§</span>Your Rights</a>
+          <a class="sidebar-link" href="#pp-retention"><span class="sl-icon">§</span>Data Retention</a>
+          <a class="sidebar-link" href="#pp-third-party"><span class="sl-icon">§</span>Third-Party Links</a>
+          <a class="sidebar-link" href="#pp-children"><span class="sl-icon">§</span>Children's Privacy</a>
+          <a class="sidebar-link" href="#pp-changes"><span class="sl-icon">§</span>Policy Changes</a>
+          <a class="sidebar-link" href="#pp-contact"><span class="sl-icon">§</span>Contact</a>
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- TERMS LINKS -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Terms &amp; Conditions</div>
+        <div class="sidebar-links">
+          <a class="sidebar-link" href="#tc-overview"><span class="sl-icon">§</span>Overview</a>
+          <a class="sidebar-link" href="#tc-definitions"><span class="sl-icon">§</span>Definitions</a>
+          <a class="sidebar-link" href="#tc-use"><span class="sl-icon">§</span>Use of Services</a>
+          <a class="sidebar-link" href="#tc-orders"><span class="sl-icon">§</span>Orders &amp; Supply</a>
+          <a class="sidebar-link" href="#tc-payment"><span class="sl-icon">§</span>Payment Terms</a>
+          <a class="sidebar-link" href="#tc-delivery"><span class="sl-icon">§</span>Delivery</a>
+          <a class="sidebar-link" href="#tc-quality"><span class="sl-icon">§</span>Quality &amp; Returns</a>
+          <a class="sidebar-link" href="#tc-liability"><span class="sl-icon">§</span>Liability</a>
+          <a class="sidebar-link" href="#tc-ip"><span class="sl-icon">§</span>Intellectual Property</a>
+          <a class="sidebar-link" href="#tc-governing"><span class="sl-icon">§</span>Governing Law</a>
+          <a class="sidebar-link" href="#tc-changes"><span class="sl-icon">§</span>Changes to Terms</a>
+          <a class="sidebar-link" href="#tc-contact"><span class="sl-icon">§</span>Contact</a>
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-contact-block">
+        <div class="scb-label">Need Help?</div>
+        <div class="scb-item">📞 <a href="tel:+233247298551">+233 24 729 8551</a></div>
+        <div class="scb-item">📞 <a href="tel:+233504967111">+233 50 496 7111</a></div>
+        <div class="scb-item">💬 <a href="https://wa.me/233247298551">WhatsApp Us</a></div>
+        <div class="scb-item" style="margin-top:0.4rem;">📍 HQ1 Anunsah Clottey St,<br/>Kaneshie Market, Accra</div>
+        <div class="scb-item">🗺️ GA-262-1811</div>
+      </div>
+
+      <a class="scb-back-top" href="#top">↑ Back to Top</a>
+    </aside>
+
+    <!-- ─── MAIN CONTENT ─── -->
+    <main class="main-content" id="top">
+
+      <!-- ════════════════════════════════════════
+           PRIVACY POLICY
+      ════════════════════════════════════════ -->
+      <div class="doc-hero reveal" id="privacy">
+        <div class="doc-badge">📋 Legal Document</div>
+        <h1>Privacy Policy</h1>
+        <div class="doc-meta-row">
+          <span class="doc-meta-item">📅 <strong>Effective Date:</strong> 1 January 2026</span>
+          <span class="doc-meta-item">🔄 <strong>Last Updated:</strong> January 2026</span>
+          <span class="doc-meta-item">🏢 <strong>Document:</strong> PP-001</span>
+        </div>
+        <div class="doc-intro">
+          This Privacy Policy explains how <strong>Abak Company Limited</strong> ("Abak," "we," "us," or "our") collects, uses, stores, and protects your personal information when you interact with our business, website, or services. We are committed to safeguarding your privacy and handling your data responsibly.
+        </div>
+      </div>
+
+      <!-- §1 OVERVIEW -->
+      <div class="doc-section reveal" id="pp-overview">
+        <div class="doc-section-header">
+          <span class="section-num">§1</span>
+          <h2>Overview &amp; Our Commitment</h2>
+        </div>
+        <p>Abak Company Limited is a registered Ghanaian business engaged in the importation, distribution, and cold storage of premium frozen food products. Our principal place of business is located at <strong>HQ1 Anunsah Clottey Street, Kaneshie Market, Accra, Ghana</strong> (Digital Address: GA-262-1811).</p>
+        <p>We respect your privacy and are committed to protecting the personal information you share with us. This policy applies to all individuals who:</p>
+        <ul>
+          <li>Contact us by telephone, WhatsApp, email, or in person</li>
+          <li>Purchase or enquire about our products and services</li>
+          <li>Visit our website or social media platforms</li>
+          <li>Enter into any business relationship with Abak Company Limited</li>
+          <li>Apply for cold storage services or supply partnerships</li>
+        </ul>
+        <div class="callout callout-blue">
+          <span class="callout-icon">ℹ️</span>
+          <span>By doing business with us or using our services, you agree to the collection and use of your information as described in this Privacy Policy. If you do not agree, please refrain from providing us with your personal information.</span>
+        </div>
+      </div>
+
+      <!-- §2 INFORMATION WE COLLECT -->
+      <div class="doc-section reveal" id="pp-information">
+        <div class="doc-section-header">
+          <span class="section-num">§2</span>
+          <h2>Information We Collect</h2>
+        </div>
+        <p>We collect only the information necessary to provide our services, process orders, and communicate with you effectively. The categories of information we may collect include:</p>
+
+        <h3>2.1 Information You Provide Directly</h3>
+        <ul>
+          <li><strong>Identity Information:</strong> Your full name and, where applicable, your business name and registration details.</li>
+          <li><strong>Contact Information:</strong> Phone number(s), WhatsApp number, email address, and physical or business address.</li>
+          <li><strong>Order Information:</strong> Product selections, quantities, delivery preferences, and order history.</li>
+          <li><strong>Payment Information:</strong> Payment method details (e.g., Mobile Money number, bank account details for invoice settlement). We do not store full card or banking credentials.</li>
+          <li><strong>Communication Records:</strong> Records of calls, WhatsApp messages, emails, and in-person enquiries made to or from our team.</li>
+          <li><strong>Business Information:</strong> For corporate clients — your company profile, procurement requirements, and relevant trade documentation.</li>
+        </ul>
+
+        <h3>2.2 Information Collected Automatically</h3>
+        <ul>
+          <li><strong>Website Usage Data:</strong> IP address, browser type, pages visited, and time spent on our website (if applicable), collected via cookies or analytics tools.</li>
+          <li><strong>Device Information:</strong> Device type, operating system, and browser used to access our digital platforms.</li>
+        </ul>
+
+        <h3>2.3 Information from Third Parties</h3>
+        <ul>
+          <li>Information received from referrals, trade references, or partner organisations in connection with a business arrangement.</li>
+          <li>Public business information (e.g., company registration data from Ghana's Registrar-General's Department) used to verify business identity for commercial accounts.</li>
+        </ul>
+      </div>
+
+      <!-- §3 HOW WE USE INFORMATION -->
+      <div class="doc-section reveal" id="pp-use">
+        <div class="doc-section-header">
+          <span class="section-num">§3</span>
+          <h2>How We Use Your Information</h2>
+        </div>
+        <p>We use the personal information we collect for the following legitimate business purposes:</p>
+        <ul>
+          <li><strong>Order Processing &amp; Fulfilment:</strong> To receive, confirm, process, and deliver your orders for frozen food products.</li>
+          <li><strong>Customer Service:</strong> To respond to your enquiries, complaints, and requests in a timely and professional manner.</li>
+          <li><strong>Communication:</strong> To send order confirmations, delivery updates, invoices, receipts, and service-related notices via phone, WhatsApp, or email.</li>
+          <li><strong>Account Management:</strong> To manage your account if you are a recurring business client, including tracking order history and payment records.</li>
+          <li><strong>Payment Processing:</strong> To process and reconcile payments for goods and services supplied.</li>
+          <li><strong>Marketing &amp; Promotions:</strong> To send you information about new products, promotions, or services — but only where you have expressed interest or consented to receive such communications. You may opt out at any time.</li>
+          <li><strong>Legal &amp; Regulatory Compliance:</strong> To meet our obligations under Ghanaian law, including customs documentation, FDA compliance, and tax record-keeping.</li>
+          <li><strong>Business Improvement:</strong> To analyse purchasing trends and feedback to improve our products, services, and customer experience.</li>
+          <li><strong>Security:</strong> To protect against fraud, unauthorised access, and other risks to our business and customers.</li>
+        </ul>
+        <div class="callout callout-green">
+          <span class="callout-icon">✅</span>
+          <span>We will never use your information for purposes beyond those listed above without first obtaining your explicit consent.</span>
+        </div>
+      </div>
+
+      <!-- §4 SHARING -->
+      <div class="doc-section reveal" id="pp-sharing">
+        <div class="doc-section-header">
+          <span class="section-num">§4</span>
+          <h2>Information Sharing &amp; Disclosure</h2>
+        </div>
+        <p>Abak Company Limited does <strong>not sell, rent, or trade</strong> your personal information to third parties for their own commercial purposes. We may, however, share your information in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Service Providers:</strong> Trusted third-party service providers engaged to assist in delivery logistics, payment processing, or IT services — bound by confidentiality agreements and authorised only to use your data to perform services on our behalf.</li>
+          <li><strong>Regulatory Authorities:</strong> Government agencies including Ghana Revenue Authority (GRA), Ghana FDA, Ghana Customs, and other regulators where disclosure is required by law.</li>
+          <li><strong>Legal Proceedings:</strong> In connection with any legal claim, dispute resolution, or court order where disclosure is required.</li>
+          <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of business assets, your information may be transferred to the new business entity, subject to equivalent privacy protections.</li>
+          <li><strong>With Your Consent:</strong> For any purpose you have expressly agreed to.</li>
+        </ul>
+        <div class="callout callout-amber">
+          <span class="callout-icon">⚠️</span>
+          <span>We require all third parties who handle your data on our behalf to maintain appropriate security measures and to use the information only for specified, legitimate purposes.</span>
+        </div>
+      </div>
+
+      <!-- §5 DATA SECURITY -->
+      <div class="doc-section reveal" id="pp-security">
+        <div class="doc-section-header">
+          <span class="section-num">§5</span>
+          <h2>Data Security</h2>
+        </div>
+        <p>We take the security of your personal information seriously and have implemented reasonable technical and organisational measures to protect it from unauthorised access, disclosure, alteration, or destruction. Our measures include:</p>
+        <ul>
+          <li>Restricting access to personal data to authorised Abak staff who need it to perform their duties.</li>
+          <li>Secure storage of physical and digital records containing personal information.</li>
+          <li>Regular staff awareness of data handling responsibilities.</li>
+          <li>Using secure, password-protected systems for storing customer and business data.</li>
+        </ul>
+        <p>While we take all reasonable precautions, no method of transmission or storage is 100% secure. In the unlikely event of a data breach that may affect your rights, we will notify affected individuals promptly and take corrective action in accordance with applicable law.</p>
+      </div>
+
+      <!-- §6 COOKIES -->
+      <div class="doc-section reveal" id="pp-cookies">
+        <div class="doc-section-header">
+          <span class="section-num">§6</span>
+          <h2>Cookies &amp; Website Tracking</h2>
+        </div>
+        <p>If you visit our website, we may use cookies or similar technologies to enhance your browsing experience and collect usage data. Cookies are small text files stored on your device that help us:</p>
+        <ul>
+          <li>Remember your preferences and settings.</li>
+          <li>Understand how visitors navigate and use our website.</li>
+          <li>Improve website performance and content.</li>
+        </ul>
+        <p>You may control cookie settings through your browser settings. Disabling cookies may affect some features of our website. We do not use cookies for invasive tracking or profiling purposes.</p>
+      </div>
+
+      <!-- §7 YOUR RIGHTS -->
+      <div class="doc-section reveal" id="pp-rights">
+        <div class="doc-section-header">
+          <span class="section-num">§7</span>
+          <h2>Your Rights</h2>
+        </div>
+        <p>As an individual whose personal data we process, you have the right to:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal information we hold about you.</li>
+          <li><strong>Correction:</strong> Request correction of any inaccurate or incomplete information.</li>
+          <li><strong>Deletion:</strong> Request deletion of your personal data where it is no longer necessary for us to retain it, subject to any legal obligations requiring retention.</li>
+          <li><strong>Restriction:</strong> Request that we restrict processing of your data in certain circumstances.</li>
+          <li><strong>Objection:</strong> Object to the use of your personal data for marketing purposes at any time.</li>
+          <li><strong>Portability:</strong> Request that we provide your personal data in a structured, commonly used format where technically feasible.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us using the details in Section 12 of this Policy. We will respond to your request within a reasonable timeframe.</p>
+        <div class="callout callout-blue">
+          <span class="callout-icon">📞</span>
+          <span>To make a data rights request, contact us at <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a>, or visit our office at HQ1 Anunsah Clottey Street, Kaneshie Market, Accra.</span>
+        </div>
+      </div>
+
+      <!-- §8 DATA RETENTION -->
+      <div class="doc-section reveal" id="pp-retention">
+        <div class="doc-section-header">
+          <span class="section-num">§8</span>
+          <h2>Data Retention</h2>
+        </div>
+        <p>We retain personal information only for as long as necessary to fulfil the purposes for which it was collected, including any legal, accounting, or reporting requirements. Our general retention guidelines are:</p>
+        <ul>
+          <li><strong>Customer Order Records:</strong> Retained for a minimum of 7 years in accordance with Ghanaian tax and accounting regulations.</li>
+          <li><strong>Communication Records:</strong> Retained for up to 2 years from the last interaction, or longer if relevant to an ongoing business relationship.</li>
+          <li><strong>Marketing Contacts:</strong> Retained until you opt out or request deletion, whichever comes first.</li>
+          <li><strong>Regulatory Documents:</strong> Retained for the period required by the applicable Ghanaian law or regulatory authority.</li>
+        </ul>
+        <p>When information is no longer required, we will securely delete or anonymise it in a responsible manner.</p>
+      </div>
+
+      <!-- §9 THIRD-PARTY LINKS -->
+      <div class="doc-section reveal" id="pp-third-party">
+        <div class="doc-section-header">
+          <span class="section-num">§9</span>
+          <h2>Third-Party Links &amp; Services</h2>
+        </div>
+        <p>Our website or communications may contain links to third-party websites or platforms (such as WhatsApp, social media pages, or partner websites). This Privacy Policy does not apply to those external sites. We encourage you to review the privacy policies of any third-party sites you visit, as we have no control over their content or data practices.</p>
+      </div>
+
+      <!-- §10 CHILDREN -->
+      <div class="doc-section reveal" id="pp-children">
+        <div class="doc-section-header">
+          <span class="section-num">§10</span>
+          <h2>Children's Privacy</h2>
+        </div>
+        <p>Our products and services are intended for adults and business clients only. We do not knowingly collect personal information from individuals under the age of 18. If we become aware that we have inadvertently collected information from a minor, we will take prompt steps to delete it. If you believe a minor has provided us with personal information, please contact us immediately.</p>
+      </div>
+
+      <!-- §11 CHANGES -->
+      <div class="doc-section reveal" id="pp-changes">
+        <div class="doc-section-header">
+          <span class="section-num">§11</span>
+          <h2>Changes to This Privacy Policy</h2>
+        </div>
+        <p>We reserve the right to update or amend this Privacy Policy at any time to reflect changes in our business practices, legal requirements, or regulatory obligations. When we make material changes, we will:</p>
+        <ul>
+          <li>Update the "Last Updated" date at the top of this Policy.</li>
+          <li>Where practicable, notify existing clients by telephone, WhatsApp, or email.</li>
+          <li>Post the updated Policy on our website.</li>
+        </ul>
+        <p>We encourage you to review this Policy periodically. Continued use of our services after any changes constitutes your acceptance of the updated Policy.</p>
+      </div>
+
+      <!-- §12 CONTACT -->
+      <div class="doc-section reveal" id="pp-contact">
+        <div class="doc-section-header">
+          <span class="section-num">§12</span>
+          <h2>Contact Us — Privacy Enquiries</h2>
+        </div>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data, please contact us through any of the following:</p>
+        <ul>
+          <li>📞 <strong>Phone:</strong> <a href="tel:+233247298551">+233 24 729 8551</a></li>
+          <li>📞 <strong>Phone:</strong> <a href="tel:+233504967111">+233 50 496 7111</a></li>
+          <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/233247298551">+233 24 729 8551</a></li>
+          <li>📍 <strong>Address:</strong> HQ1 Anunsah Clottey Street, Kaneshie Market-Accra, Ghana</li>
+          <li>🗺️ <strong>Digital Address:</strong> GA-262-1811</li>
+          <li>🕐 <strong>Office Hours:</strong> Monday – Saturday, 8:00am – 5:00pm</li>
+        </ul>
+        <div class="callout callout-green">
+          <span class="callout-icon">✅</span>
+          <span>We are committed to responding to all privacy-related enquiries within <strong>5 working days</strong>.</span>
+        </div>
+      </div>
+
+      <!-- ── DOCUMENT SEPARATOR ── -->
+      <div class="doc-separator">
+        <span class="doc-separator-label">— End of Privacy Policy · Beginning of Terms &amp; Conditions —</span>
+      </div>
+
+
+      <!-- ════════════════════════════════════════
+           TERMS AND CONDITIONS
+      ════════════════════════════════════════ -->
+      <div class="new-doc-header reveal" id="terms">
+        <div class="doc-badge">📑 Legal Document</div>
+        <h1>Terms &amp; Conditions</h1>
+        <div class="doc-meta-row">
+          <span class="doc-meta-item">📅 <strong>Effective Date:</strong> 1 January 2026</span>
+          <span class="doc-meta-item">🔄 <strong>Last Updated:</strong> January 2026</span>
+          <span class="doc-meta-item">🏢 <strong>Document:</strong> TC-001</span>
+        </div>
+        <div class="doc-intro">
+          These Terms and Conditions ("Terms") govern your relationship with <strong>Abak Company Limited</strong> and your use of our products and services, including the purchase of frozen food products, cold storage services, and any associated delivery or supply arrangements. Please read these Terms carefully before engaging with us.
+        </div>
+      </div>
+
+      <!-- TC §1 OVERVIEW -->
+      <div class="doc-section reveal" id="tc-overview">
+        <div class="doc-section-header">
+          <span class="section-num">§1</span>
+          <h2>Overview &amp; Acceptance of Terms</h2>
+        </div>
+        <p><strong>Abak Company Limited</strong> is a company incorporated and operating under the laws of Ghana, with its principal office at HQ1 Anunsah Clottey Street, Kaneshie Market, Accra, Ghana (Digital Address: GA-262-1811). We are engaged in the importation, distribution, and cold storage of premium frozen food products.</p>
+        <p>By placing an order, engaging our services, entering into a supply agreement, or conducting any business transaction with Abak Company Limited, you ("the Client," "Customer," or "you") confirm that you have read, understood, and agreed to be bound by these Terms and Conditions in full.</p>
+        <div class="callout callout-red">
+          <span class="callout-icon">⚠️</span>
+          <span>If you do not agree with any part of these Terms, you should not proceed to use our services or place orders with us. Continued engagement constitutes acceptance of these Terms.</span>
+        </div>
+      </div>
+
+      <!-- TC §2 DEFINITIONS -->
+      <div class="doc-section reveal" id="tc-definitions">
+        <div class="doc-section-header">
+          <span class="section-num">§2</span>
+          <h2>Definitions</h2>
+        </div>
+        <p>In these Terms and Conditions, the following definitions apply:</p>
+        <ul>
+          <li><strong>"Abak" / "we" / "us" / "our"</strong> — Abak Company Limited, its directors, employees, agents, and representatives.</li>
+          <li><strong>"Client" / "Customer" / "you"</strong> — Any individual, business, restaurant, hotel, caterer, retailer, or entity that purchases or engages with our products or services.</li>
+          <li><strong>"Products"</strong> — All frozen food items, including poultry, seafood, red meat, and related food products supplied by Abak.</li>
+          <li><strong>"Services"</strong> — Cold storage, logistics support, supply consultancy, and any ancillary services provided by Abak.</li>
+          <li><strong>"Order"</strong> — A request by you to purchase Products or Services from Abak, whether placed by telephone, WhatsApp, email, or in person.</li>
+          <li><strong>"Contract"</strong> — The agreement formed between you and Abak upon confirmation of an Order or signed supply agreement.</li>
+          <li><strong>"Cold Chain"</strong> — The temperature-controlled supply chain maintained from product origin through to delivery.</li>
+          <li><strong>"Working Day"</strong> — Monday through Saturday, 8:00am to 6:00pm Ghana Standard Time, excluding public holidays.</li>
+        </ul>
+      </div>
+
+      <!-- TC §3 USE OF SERVICES -->
+      <div class="doc-section reveal" id="tc-use">
+        <div class="doc-section-header">
+          <span class="section-num">§3</span>
+          <h2>Use of Our Services</h2>
+        </div>
+        <p>Our Products and Services are intended for lawful commercial and personal use only. By engaging with Abak, you agree that you will:</p>
+        <ul>
+          <li>Provide accurate, complete, and current information when placing Orders or engaging our Services.</li>
+          <li>Use our Products only for their intended purpose — consumption or resale within the food supply chain — and in compliance with all applicable Ghanaian food safety regulations.</li>
+          <li>Not misrepresent your identity, business, or the intended use of Products purchased from us.</li>
+          <li>Comply with all applicable laws and regulations governing the handling, storage, and sale of frozen food products in Ghana.</li>
+          <li>Not use our services in any manner that could damage, disable, or impair our operations or reputation.</li>
+        </ul>
+        <p>We reserve the right to refuse service to any individual or entity at our sole discretion, including where we have reasonable grounds to believe that our Products or Services will be misused or that a client poses unacceptable commercial or reputational risk.</p>
+      </div>
+
+      <!-- TC §4 ORDERS -->
+      <div class="doc-section reveal" id="tc-orders">
+        <div class="doc-section-header">
+          <span class="section-num">§4</span>
+          <h2>Orders &amp; Supply Arrangements</h2>
+        </div>
+        <h3>4.1 Placing an Order</h3>
+        <p>Orders may be placed by telephone, WhatsApp, email, or in person at our Kaneshie Market premises. An Order constitutes an offer to purchase and is not binding on Abak until we confirm acceptance. We reserve the right to decline any Order at our discretion.</p>
+
+        <h3>4.2 Order Confirmation</h3>
+        <p>Upon accepting your Order, we will confirm availability, pricing, and estimated delivery or collection timescale. Any Order confirmation communicated by our team (verbally or in writing) constitutes a binding agreement for supply.</p>
+
+        <h3>4.3 Minimum Orders</h3>
+        <p>Minimum order quantities may apply depending on the product and client type. For business clients, orders are typically fulfilled in carton quantities. We reserve the right to set minimum order thresholds at our discretion and will communicate these clearly when relevant.</p>
+
+        <h3>4.4 Product Availability</h3>
+        <p>All Products are subject to availability. We endeavour to maintain adequate stock levels, but availability may be affected by factors including import logistics, customs clearance timelines, or high demand. We will notify you promptly if a product is unavailable and offer suitable alternatives where possible.</p>
+
+        <h3>4.5 Order Amendments &amp; Cancellations</h3>
+        <p>Orders may be amended or cancelled prior to dispatch, subject to our agreement. Once an Order has been dispatched, cancellation is not permitted. Cancellation requests must be communicated to our team as promptly as possible by calling <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a>.</p>
+
+        <div class="callout callout-amber">
+          <span class="callout-icon">⚠️</span>
+          <span>Orders cancelled after dispatch may incur a handling or restocking charge at Abak's discretion. Perishable goods that have been dispatched cannot be cancelled or returned unless they arrive in a defective condition.</span>
+        </div>
+      </div>
+
+      <!-- TC §5 PAYMENT -->
+      <div class="doc-section reveal" id="tc-payment">
+        <div class="doc-section-header">
+          <span class="section-num">§5</span>
+          <h2>Payment Terms</h2>
+        </div>
+        <h3>5.1 Accepted Payment Methods</h3>
+        <p>We accept the following payment methods:</p>
+        <ul>
+          <li>Mobile Money (MTN MoMo, AirtelTigo Money, Vodafone Cash)</li>
+          <li>Bank Transfer (to Abak Company Limited's designated business account)</li>
+          <li>Cash (for in-person transactions at our premises)</li>
+          <li>Invoice settlement (for approved business accounts with agreed credit terms)</li>
+        </ul>
+
+        <h3>5.2 Payment Due</h3>
+        <p>Unless a formal credit agreement has been established, payment is due in full prior to or upon delivery of Products. We reserve the right to withhold dispatch of any Order until full payment has been received and confirmed.</p>
+
+        <h3>5.3 Credit Terms</h3>
+        <p>Credit terms may be offered to established business clients at our sole discretion, following a satisfactory assessment of the client's payment history and creditworthiness. Agreed credit terms will be documented in a separate written agreement. Abak reserves the right to withdraw credit terms at any time if payment obligations are not met.</p>
+
+        <h3>5.4 Late Payment</h3>
+        <p>Invoices not settled by the agreed due date may attract a late payment fee. Continued non-payment may result in suspension of supply and referral to a collections process. We reserve the right to offset outstanding amounts against future credits or deposits held.</p>
+
+        <h3>5.5 Pricing</h3>
+        <p>All prices are quoted in Ghana Cedis (GHS) unless otherwise stated. Prices are subject to change without prior notice, reflecting fluctuations in international market rates, exchange rates, import duties, and logistics costs. The price confirmed at the time of Order acceptance shall govern that transaction.</p>
+
+        <div class="callout callout-blue">
+          <span class="callout-icon">ℹ️</span>
+          <span>Receipts and invoices are issued for all transactions. For business clients requiring formal procurement documentation or VAT invoices, please advise our team at the time of purchase.</span>
+        </div>
+      </div>
+
+      <!-- TC §6 DELIVERY -->
+      <div class="doc-section reveal" id="tc-delivery">
+        <div class="doc-section-header">
+          <span class="section-num">§6</span>
+          <h2>Delivery &amp; Collection</h2>
+        </div>
+        <h3>6.1 Delivery Service</h3>
+        <p>We offer delivery within Accra and surrounding areas, and to other regions of Ghana for bulk orders. Delivery coverage and timescales will be confirmed at the time of Order. Delivery charges, where applicable, will be communicated prior to Order confirmation.</p>
+
+        <h3>6.2 Cold Chain During Delivery</h3>
+        <p>Abak Company Limited is committed to maintaining the cold chain throughout delivery. All deliveries are transported in refrigerated or insulated vehicles to preserve product integrity at the correct temperature. Our liability for product quality ends at the point of delivery and acceptance by the Client.</p>
+
+        <h3>6.3 Delivery Timescales</h3>
+        <p>Estimated delivery timescales are provided in good faith but are not guaranteed. Delays may occur due to traffic, logistics, weather, or circumstances beyond our control. We will endeavour to notify you of any significant delays.</p>
+
+        <h3>6.4 Acceptance of Delivery</h3>
+        <p>Upon receipt of delivery, the Client (or their authorised representative) is responsible for:</p>
+        <ul>
+          <li>Inspecting the Products for any visible damage, temperature irregularity, or packaging defects prior to signing any delivery documentation.</li>
+          <li>Reporting any issues immediately to our delivery personnel and to our team by calling <a href="tel:+233247298551">+233 24 729 8551</a>.</li>
+          <li>Signing delivery documentation confirms acceptance of the Products in satisfactory condition, unless discrepancies are noted at the time of delivery.</li>
+        </ul>
+
+        <h3>6.5 Click &amp; Collect</h3>
+        <p>Clients may collect Orders in person from our premises at HQ1 Anunsah Clottey Street, Kaneshie Market, Accra (Digital Address: GA-262-1811) during our operating hours (Monday – Saturday, 8:00am – 6:00pm). Please confirm your Order is ready before visiting.</p>
+
+        <div class="callout callout-red">
+          <span class="callout-icon">🚨</span>
+          <span>Do not accept a delivery if you have reasonable grounds to believe the cold chain has been compromised. Contact our team immediately on <a href="tel:+233247298551">+233 24 729 8551</a> before accepting or rejecting the delivery.</span>
+        </div>
+      </div>
+
+      <!-- TC §7 QUALITY & RETURNS -->
+      <div class="doc-section reveal" id="tc-quality">
+        <div class="doc-section-header">
+          <span class="section-num">§7</span>
+          <h2>Product Quality &amp; Returns</h2>
+        </div>
+        <h3>7.1 Quality Assurance</h3>
+        <p>All Products supplied by Abak Company Limited are sourced from internationally certified suppliers and are subject to quality inspection upon arrival at our facility. We comply with Ghana Food &amp; Drugs Authority (FDA) regulations governing imported frozen food products.</p>
+
+        <h3>7.2 Defective or Damaged Products</h3>
+        <p>If you receive a Product that is defective, damaged, or does not meet the quality standards described, you must:</p>
+        <ul>
+          <li>Notify us immediately — and no later than <strong>24 hours</strong> after receipt — by calling <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a>.</li>
+          <li>Retain the Product in its original condition and packaging and do not consume, discard, or further process it before we have reviewed the claim.</li>
+          <li>Provide photographs and a description of the defect where possible to facilitate our investigation.</li>
+        </ul>
+
+        <h3>7.3 Returns &amp; Remedies</h3>
+        <p>Where a valid quality claim is accepted by Abak, we will offer one of the following remedies at our discretion:</p>
+        <ul>
+          <li>Replacement of the affected Product(s) at no additional cost.</li>
+          <li>A credit note applicable to your next Order.</li>
+          <li>A full or partial refund, depending on the nature and extent of the issue.</li>
+        </ul>
+        <p>Returns are not accepted for Products that have been stored improperly after delivery, used beyond their stated expiry date, or for reasons not attributable to a defect in the Product at the time of supply.</p>
+
+        <h3>7.4 Expiry Dates &amp; Storage Responsibility</h3>
+        <p>The Client is responsible for managing and monitoring the shelf life of Products after delivery and for storing Products at the correct temperature. Abak is not liable for quality deterioration resulting from improper storage after delivery.</p>
+      </div>
+
+      <!-- TC §8 LIABILITY -->
+      <div class="doc-section reveal" id="tc-liability">
+        <div class="doc-section-header">
+          <span class="section-num">§8</span>
+          <h2>Limitation of Liability</h2>
+        </div>
+        <p>To the fullest extent permitted by Ghanaian law:</p>
+        <ul>
+          <li>Abak's total liability to you in connection with any single transaction or claim shall not exceed the amount paid by you for the specific Products or Services giving rise to the claim.</li>
+          <li>Abak shall not be liable for any indirect, consequential, incidental, or special loss or damage arising from the supply or failure to supply our Products or Services, including loss of profit, business interruption, or reputational damage.</li>
+          <li>We are not liable for any delay or failure to perform our obligations due to circumstances beyond our reasonable control, including but not limited to customs delays, port disruptions, acts of government, natural disasters, or supply chain disruptions at the country of origin.</li>
+        </ul>
+        <div class="callout callout-amber">
+          <span class="callout-icon">⚠️</span>
+          <span>Nothing in these Terms limits or excludes liability for death or personal injury caused by negligence, fraud, or any matter which cannot be excluded by law.</span>
+        </div>
+      </div>
+
+      <!-- TC §9 INTELLECTUAL PROPERTY -->
+      <div class="doc-section reveal" id="tc-ip">
+        <div class="doc-section-header">
+          <span class="section-num">§9</span>
+          <h2>Intellectual Property</h2>
+        </div>
+        <p>All content on the Abak Company Limited website, marketing materials, branding, logos, product descriptions, and business documentation ("Intellectual Property") is the exclusive property of Abak Company Limited or is used under licence.</p>
+        <p>You may not reproduce, distribute, modify, or use any of our Intellectual Property for commercial purposes without our prior written consent. Any unauthorised use may constitute an infringement of our intellectual property rights and may be subject to legal action.</p>
+        <p>Product names, brands, and trademarks associated with third-party suppliers remain the property of their respective owners.</p>
+      </div>
+
+      <!-- TC §10 GOVERNING LAW -->
+      <div class="doc-section reveal" id="tc-governing">
+        <div class="doc-section-header">
+          <span class="section-num">§10</span>
+          <h2>Governing Law &amp; Dispute Resolution</h2>
+        </div>
+        <p>These Terms and Conditions and any Contract arising from them are governed by and construed in accordance with the <strong>laws of the Republic of Ghana</strong>. Any dispute, claim, or controversy arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the courts of Ghana.</p>
+        <p>We encourage resolution of any disputes through direct communication in the first instance. Should you have a grievance with our Products or Services, please contact us directly:</p>
+        <ul>
+          <li>📞 <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a></li>
+          <li>📍 HQ1 Anunsah Clottey Street, Kaneshie Market-Accra, Ghana</li>
+        </ul>
+        <p>We are committed to resolving genuine complaints in a fair, timely, and professional manner. If a resolution cannot be achieved through direct negotiation, the parties may consider mediation or arbitration before pursuing formal legal proceedings.</p>
+      </div>
+
+      <!-- TC §11 CHANGES TO TERMS -->
+      <div class="doc-section reveal" id="tc-changes">
+        <div class="doc-section-header">
+          <span class="section-num">§11</span>
+          <h2>Changes to These Terms</h2>
+        </div>
+        <p>Abak Company Limited reserves the right to update, amend, or replace these Terms and Conditions at any time. Changes will take effect from the date of publication on our website or, where notified directly to clients, from the date of notification.</p>
+        <p>It is your responsibility to review these Terms periodically. Continued use of our Products and Services after any changes are published constitutes your acceptance of the revised Terms. We will make reasonable efforts to bring significant changes to the attention of existing clients.</p>
+      </div>
+
+      <!-- TC §12 CONTACT -->
+      <div class="doc-section reveal" id="tc-contact">
+        <div class="doc-section-header">
+          <span class="section-num">§12</span>
+          <h2>Contact Us — Terms Enquiries</h2>
+        </div>
+        <p>If you have any questions about these Terms and Conditions, or wish to discuss any aspect of our business relationship, please contact us through any of the following channels:</p>
+        <ul>
+          <li>📞 <strong>Phone 1:</strong> <a href="tel:+233247298551">+233 24 729 8551</a></li>
+          <li>📞 <strong>Phone 2:</strong> <a href="tel:+233504967111">+233 50 496 7111</a></li>
+          <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/233247298551">+233 24 729 8551</a></li>
+          <li>📍 <strong>Address:</strong> HQ1 Anunsah Clottey Street, Kaneshie Market-Accra, Ghana</li>
+          <li>🗺️ <strong>Digital Address:</strong> GA-262-1811</li>
+          <li>🕐 <strong>Office Hours:</strong> Monday – Saturday, 8:00am – 5:00pm</li>
+        </ul>
+
+        <div class="callout callout-green" style="margin-top:2rem;">
+          <span class="callout-icon">✅</span>
+          <div>
+            <strong>Abak Company Limited</strong><br/>
+            HQ1 Anunsah Clottey Street, Kaneshie Market-Accra, Ghana<br/>
+            Digital Address: GA-262-1811<br/>
+            These Terms and Conditions were last reviewed and updated in January 2026.
+          </div>
+        </div>
+      </div>
+
+    </main><!-- /main-content -->
+  </div><!-- /page-wrap -->
+
+  <!-- ══ CONTACT BAR ══ -->
+  <div class="contact-bar">
+    <div class="contact-bar-inner">
+      <div class="cb-item">
+        <div class="cb-icon">📞</div>
+        <div>
+          <div class="cb-label">Phone</div>
+          <div class="cb-value"><a href="tel:+233247298551">+233 24 729 8551</a></div>
+          <div class="cb-sub"><a href="tel:+233504967111" style="color:rgba(255,255,255,0.28);">+233 50 496 7111</a></div>
+        </div>
+      </div>
+      <div class="cb-item">
+        <div class="cb-icon">💬</div>
+        <div>
+          <div class="cb-label">WhatsApp</div>
+          <div class="cb-value"><a href="https://wa.me/233247298551">+233 24 729 8551</a></div>
+          <div class="cb-sub">Mon – Sat, 8am – 5pm</div>
+        </div>
+      </div>
+      <div class="cb-item">
+        <div class="cb-icon">📍</div>
+        <div>
+          <div class="cb-label">Address</div>
+          <div class="cb-value">HQ1 Anunsah Clottey Street</div>
+          <div class="cb-sub">Kaneshie Market-Accra, Ghana</div>
+        </div>
+      </div>
+      <div class="cb-item">
+        <div class="cb-icon">🗺️</div>
+        <div>
+          <div class="cb-label">Digital Address</div>
+          <div class="cb-value">GA-262-1811</div>
+          <div class="cb-sub">Ghana Post GPS</div>
+        </div>
+      </div>
+      <div class="cb-item">
+        <div class="cb-icon">🕐</div>
+        <div>
+          <div class="cb-label">Hours</div>
+          <div class="cb-value">Mon – Sat: 8:00am – 5:00pm</div>
+          <div class="cb-sub">Sunday: Closed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-row">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <!--
+            ★ FOOTER LOGO PLACEHOLDER ★
+            Replace: <img src="images/abak-logo.png" style="display:block" />
+          -->
+          <div class="footer-logo-ph">
+            <img src="" alt="Abak Logo" id="footerLogoImg" />
+            <span class="flph-icon">🏢</span>
+          </div>
+          <div class="footer-name">Abak<span>.</span> Company Limited</div>
+        </div>
+        <p>Premium imported frozen foods &amp; cold storage. Globally sourced, locally trusted. Serving Ghana with excellence.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html#">Home</a></li>
+            <li><a href="products.html#">Products</a></li>
+            <li><a href="services.html#">Services</a></li>
+            <li><a href="faq.html#">FAQ</a></li>
+            <li><a href="contact.html#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+233247298551">+233 24 729 8551</a></li>
+            <li><a href="tel:+233504967111">+233 50 496 7111</a></li>
+            <li><a href="https://wa.me/233247298551">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Abak Company Limited. All rights reserved.</span>
+      <span><a href="#privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="#terms">Terms &amp; Conditions</a></span>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    /* ── PROGRESS BAR ── */
+    window.addEventListener('scroll', () => {
+      const scrollTop  = document.documentElement.scrollTop;
+      const docHeight  = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress   = (scrollTop / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+      document.getElementById('backToTop').classList.toggle('visible', scrollTop > 400);
+    });
+
+    /* ── DOC SWITCHER ── */
+    function jumpToDoc(doc) {
+      const target = document.getElementById(doc);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('.doc-switch-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    /* ── SIDEBAR ACTIVE LINK ── */
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const sections = document.querySelectorAll('.doc-section, .doc-hero, .new-doc-header');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          sidebarLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => sectionObserver.observe(s));
+
+    /* ── SCROLL REVEAL ── */
+    const reveals = document.querySelectorAll('.reveal');
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          revObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.07 });
+    reveals.forEach(el => revObs.observe(el));
+
+    /*
+      ★ TO INSERT YOUR LOGO ★
+      Set the src and show the image for all logo placeholders:
+
+      document.getElementById('navLogoImg').src = 'images/abak-logo.png';
+      document.getElementById('navLogoImg').style.display = 'block';
+
+      document.getElementById('footerLogoImg').src = 'images/abak-logo.png';
+      document.getElementById('footerLogoImg').style.display = 'block';
+    */
+  </script>
+</body>
+</html>

@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Properly Store Frozen Chicken at Home | Abak Company Limited</title>
+  <meta name="description" content="Learn the right way to store frozen chicken at home — temperature, packaging, defrosting tips and common mistakes to avoid, from Abak Company Limited." />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ════════════════════════════════════════
+       DESIGN: Cool-toned editorial — ice blue
+       and deep navy with crisp cream warmth.
+       Wide reading column, generous type scale,
+       chapter-number pull-quotes, sticky
+       progress bar, and floating tip cards.
+    ════════════════════════════════════════ */
+
+    :root {
+      --navy:   #0B3C5D;
+      --blue:   #328CC1;
+      --ice:    #C8EAFB;
+      --dark:   #050f1c;
+      --cream:  #FDFCF8;
+      --warm:   #F5F2EC;
+      --green:  #2E8B57;
+      --red:    #D7263D;
+      --amber:  #C9973A;
+      --ink:    #0e1a14;
+      --muted:  #637585;
+      --border: rgba(11,60,93,0.1);
+      --r:      6px;
+      --sh:     0 8px 48px rgba(11,60,93,0.09);
+      --col:    680px; /* max reading column */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Karla', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { color: var(--blue); }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; display: block; }
+
+    /* ── Progress bar ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 2000;
+      height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      transition: width 0.1s linear;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(5,15,28,0.97);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      height: 62px; display: flex; align-items: center;
+    }
+    .nav-inner {
+      width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Bodoni Moda', serif; font-size: 1.4rem; font-weight: 900;
+      color: #fff; display: flex; align-items: center; gap: 10px;
+    }
+    .logo-mark {
+      width: 36px; height: 36px; border-radius: 7px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      border: 1.5px dashed rgba(255,255,255,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.55rem; font-weight: 700; color: rgba(255,255,255,0.65);
+      text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0;
+      /* LOGO PLACEHOLDER — replace div with:
+         <img src="images/abak-logo.png" alt="Abak" class="logo-img" height="36"> */
+    }
+    .logo-img { height: 36px; border-radius: 7px; object-fit: contain; }
+    .nav-back {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.55); font-size: 0.84rem; font-weight: 500;
+      padding: 7px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12);
+      transition: all 0.2s; text-decoration: none;
+    }
+    .nav-back:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .nav-share {
+      display: flex; align-items: center; gap: 8px;
+      color: #fff; font-size: 0.84rem; font-weight: 600;
+      background: #25D366; padding: 8px 18px; border-radius: 4px;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .nav-share:hover { background: #1dba57; color: #fff; }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero {
+      background: var(--dark);
+      padding: 110px 0 0;
+      position: relative; overflow: hidden;
+    }
+    /* Frost pattern */
+    .article-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 60%, rgba(50,140,193,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 20% 20%, rgba(200,234,251,0.06) 0%, transparent 50%);
+    }
+    /* Large watermark */
+    .hero-wm {
+      position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+      font-family: 'Bodoni Moda', serif; font-size: 22rem; font-weight: 900;
+      color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none;
+      user-select: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 0 24px 72px; }
+    .article-meta-top {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .art-category {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; background: var(--blue);
+      color: #fff; padding: 5px 12px;
+    }
+    .art-read-time, .art-date {
+      font-size: 0.78rem; color: rgba(255,255,255,0.42); letter-spacing: 0.5px;
+    }
+    .art-date-sep { color: rgba(255,255,255,0.2); }
+    .article-hero h1 {
+      font-family: 'Bodoni Moda', serif; font-weight: 900;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: #fff; line-height: 1.1; margin-bottom: 22px;
+      animation: fadeUp 0.8s 0.12s ease both;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--ice); }
+    .article-hero .lede {
+      font-size: 1.12rem; color: rgba(255,255,255,0.68);
+      line-height: 1.82; max-width: 620px; margin-bottom: 36px;
+      animation: fadeUp 0.8s 0.24s ease both;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 14px;
+      padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1);
+      animation: fadeUp 0.8s 0.36s ease both;
+    }
+    .byline-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(50,140,193,0.4), rgba(46,139,87,0.3));
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .byline-name { font-weight: 700; color: #fff; font-size: 0.92rem; }
+    .byline-role { font-size: 0.78rem; color: rgba(255,255,255,0.42); margin-top: 2px; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero feature image placeholder */
+    .hero-feature-img {
+      width: 100%; height: 420px;
+      background: linear-gradient(145deg, #0d3558, #1a6090);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      position: relative; overflow: hidden;
+    }
+    .hero-feature-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(50,140,193,0.25), transparent 70%);
+    }
+    .hfi-emoji { font-size: 7rem; position: relative; z-index: 1; animation: floatBob 4s ease-in-out infinite; }
+    @keyframes floatBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+    .hfi-label {
+      position: relative; z-index: 1;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.3); text-align: center;
+    }
+    /* Replace with: <img src="images/blog/frozen-chicken-storage.jpg" alt="Frozen chicken storage" style="width:100%;height:420px;object-fit:cover;"> */
+
+    /* ── ARTICLE BODY WRAPPER ── */
+    .article-wrapper {
+      display: grid;
+      grid-template-columns: 1fr min(var(--col), 100%) 1fr;
+      padding: 72px 0 100px;
+    }
+    .article-wrapper > * { grid-column: 2; }
+
+    /* Full-bleed elements */
+    .full-bleed {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+    /* Wide elements */
+    .wide-bleed {
+      grid-column: 1 / -1;
+      max-width: 900px;
+      margin-left: auto; margin-right: auto;
+      width: 100%; padding: 0 24px;
+    }
+
+    /* ── Typography ── */
+    .article-body { padding: 0 24px; }
+    .article-body p {
+      font-size: 1.05rem; line-height: 1.88;
+      color: #2a3a2e; margin-bottom: 22px;
+    }
+    .article-body h2 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.9rem; font-weight: 700;
+      color: var(--navy); line-height: 1.2;
+      margin: 52px 0 18px; display: flex; align-items: center; gap: 16px;
+    }
+    .article-body h2 .ch-num {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+      color: var(--blue); background: var(--ice);
+      padding: 4px 10px; font-family: 'Karla', sans-serif;
+      text-transform: uppercase; flex-shrink: 0;
+    }
+    .article-body h3 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.3rem; font-weight: 700;
+      color: var(--navy); margin: 32px 0 12px;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 22px 0; padding-left: 0;
+    }
+    .article-body ul li, .article-body ol li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 1rem; color: #2a3a2e; line-height: 1.78;
+      margin-bottom: 10px; list-style: none;
+    }
+    .article-body ul li::before {
+      content: '—'; color: var(--blue); font-weight: 700;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .article-body ol { counter-reset: ol-counter; }
+    .article-body ol li { counter-increment: ol-counter; }
+    .article-body ol li::before {
+      content: counter(ol-counter);
+      min-width: 28px; height: 28px; border-radius: 50%;
+      background: var(--navy); color: #fff;
+      font-size: 0.75rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .article-body strong { color: var(--navy); font-weight: 700; }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      grid-column: 1 / -1;
+      background: var(--navy);
+      padding: 52px 48px;
+      margin: 40px 0;
+      position: relative; overflow: hidden;
+    }
+    .pull-quote::before {
+      content: '\201C';
+      font-family: 'Bodoni Moda', serif; font-size: 16rem; font-weight: 900;
+      color: rgba(255,255,255,0.04); line-height: 0.8;
+      position: absolute; top: 20px; left: 30px; pointer-events: none;
+    }
+    .pull-quote blockquote {
+      font-family: 'Bodoni Moda', serif; font-style: italic;
+      font-size: clamp(1.4rem, 3vw, 2rem); color: #fff;
+      line-height: 1.5; max-width: 720px; margin: 0 auto;
+      text-align: center; position: relative; z-index: 1;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 18px;
+      font-family: 'Karla', sans-serif; font-style: normal;
+      font-size: 0.8rem; color: var(--ice); letter-spacing: 1.5px;
+      text-transform: uppercase; font-weight: 600; text-align: center;
+    }
+
+    /* ── Tip box ── */
+    .tip-box {
+      background: var(--ice); border-left: 4px solid var(--blue);
+      padding: 22px 24px; margin: 28px 0;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .tip-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+    .tip-box p { font-size: 0.95rem; color: var(--navy); line-height: 1.72; margin: 0; }
+    .tip-box strong { color: var(--navy); }
+    .tip-box.warn { background: #fff4e0; border-left-color: var(--amber); }
+    .tip-box.warn p { color: #5a3a00; }
+    .tip-box.danger { background: #fff0f0; border-left-color: var(--red); }
+    .tip-box.danger p { color: #5a0000; }
+    .tip-box.green { background: #e8f5e9; border-left-color: var(--green); }
+    .tip-box.green p { color: #1a4d2e; }
+
+    /* ── Data table ── */
+    .data-table-wrap { overflow-x: auto; margin: 28px 0; }
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .data-table thead th {
+      background: var(--navy); color: #fff;
+      padding: 14px 18px; text-align: left;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .data-table tbody tr { border-bottom: 1px solid var(--border); }
+    .data-table tbody tr:nth-child(even) { background: var(--warm); }
+    .data-table tbody td { padding: 14px 18px; color: #2a3a2e; line-height: 1.5; }
+    .data-table tbody td strong { color: var(--navy); }
+    .tag-good { background: #e8f5e9; color: #1a4d2e; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; border-radius: 2px; }
+    .tag-bad  { background: #fff0f0; color: #5a0000; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; border-radius: 2px; }
+
+    /* ── Step cards (wide bleed) ── */
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; padding: 0 24px;
+    }
+    .step-card {
+      background: #fff; border: 1px solid var(--border);
+      padding: 28px 24px; position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .step-card:hover { transform: translateY(-4px); box-shadow: var(--sh); }
+    .step-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--blue);
+    }
+    .step-num {
+      font-family: 'Bodoni Moda', serif; font-size: 3.5rem; font-weight: 900;
+      color: rgba(50,140,193,0.12); line-height: 1; margin-bottom: 12px;
+    }
+    .step-card h4 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.1rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 10px;
+    }
+    .step-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── Temperature gauge visual ── */
+    .temp-gauge {
+      background: #fff; border: 1px solid var(--border);
+      padding: 32px 36px; margin: 28px 0;
+      display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .gauge-visual {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      flex-shrink: 0;
+    }
+    .gauge-bar {
+      width: 32px; height: 160px;
+      border-radius: 16px;
+      background: linear-gradient(to bottom, #e8f5e9 0%, #a8dcf0 35%, #328CC1 60%, #0B3C5D 80%, #050f1c 100%);
+      border: 2px solid var(--border);
+      position: relative;
+    }
+    .gauge-marker {
+      position: absolute; right: -52px;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+    }
+    .gauge-marker::before { content: '←'; color: var(--muted); }
+    .gm-top { top: 6px; color: var(--muted); }
+    .gm-mid { top: 38%; color: var(--blue); }
+    .gm-bot { bottom: 6px; color: var(--red); }
+    .gauge-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+    .gauge-text h4 { font-family: 'Bodoni Moda', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .gauge-text p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+    .gauge-big-temp {
+      font-family: 'Bodoni Moda', serif; font-size: 4rem; font-weight: 900;
+      color: var(--navy); line-height: 1; margin: 12px 0 4px;
+    }
+    .gauge-big-temp span { font-size: 2rem; color: var(--blue); }
+
+    /* ── Checklist ── */
+    .checklist { margin: 12px 0 24px; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid var(--border);
+      font-size: 0.97rem; color: #2a3a2e; line-height: 1.6;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--green); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .check-icon.x { background: var(--red); }
+
+    /* ── Author CTA card ── */
+    .author-cta {
+      background: var(--navy); padding: 36px 40px;
+      display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+      margin-top: 60px;
+    }
+    .author-cta-text h4 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.3rem; font-weight: 700;
+      color: #fff; margin-bottom: 8px;
+    }
+    .author-cta-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 480px; }
+    .author-cta-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 22px; font-family: 'Karla', sans-serif;
+      font-size: 0.85rem; font-weight: 700; cursor: pointer;
+      transition: all 0.22s; border: none; border-radius: 2px;
+      text-decoration: none;
+    }
+    .btn-wa    { background: #25D366; color: #fff; }
+    .btn-wa:hover   { background: #1dba57; color: #fff; }
+    .btn-ice   { background: var(--ice); color: var(--navy); }
+    .btn-ice:hover  { background: #fff; color: var(--navy); }
+
+    /* ── Related articles ── */
+    .related { background: var(--warm); padding: 80px 0; border-top: 1px solid var(--border); }
+    .related .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    .related h2 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.6rem; font-weight: 900;
+      color: var(--navy); margin-bottom: 36px;
+    }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .rel-card {
+      background: #fff; border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
+    }
+    .rel-card:hover { transform: translateY(-4px); box-shadow: var(--sh); }
+    .rel-thumb {
+      height: 160px; display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; position: relative; overflow: hidden;
+    }
+    .rel-body { padding: 18px 18px 22px; }
+    .rel-cat { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .rel-body h4 { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 8px; }
+    .rel-body p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .rel-link { font-size: 0.76rem; font-weight: 700; color: var(--blue); margin-top: 12px; display: block; }
+
+    /* ── Footer ── */
+    .article-footer {
+      background: var(--dark); color: rgba(255,255,255,0.5);
+      padding: 48px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .article-footer .logo { justify-content: center; margin-bottom: 14px; }
+    .article-footer p { font-size: 0.84rem; color: rgba(255,255,255,0.38); line-height: 1.7; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.38); transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .float-wa {
+      position: fixed; bottom: 26px; right: 26px; z-index: 999;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: #25D366; box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; transition: transform 0.3s; text-decoration: none;
+    }
+    .float-wa:hover { transform: scale(1.1); }
+    .float-wa-pulse {
+      position: absolute; inset: -6px; border-radius: 50%;
+      background: rgba(37,211,102,0.25);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse { 0%{transform:scale(1);opacity:0.7} 100%{transform:scale(1.6);opacity:0} }
+
+    /* ── Scroll reveal ── */
+    .rev { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease,transform 0.6s ease; }
+    .rev.in { opacity:1; transform:none; }
+
+    /* ── Responsive ── */
+    @media(max-width:768px){
+      .article-wrapper { grid-template-columns: 1fr; }
+      .pull-quote { padding: 36px 24px; }
+      .pull-quote blockquote { font-size: 1.3rem; }
+      .temp-gauge { flex-direction: column; }
+      .gauge-marker { position: static; margin-left: 8px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .author-cta { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" aria-label="Article navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark" title="Insert logo here" aria-hidden="true">Logo</div>
+        Abak
+      </a>
+      <a href="blog.html" class="nav-back">← Back to Blog</a>
+      <a href="https://wa.me/233247298551" class="nav-share" target="_blank" rel="noopener">💬 Order Chicken</a>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <header class="article-hero" aria-labelledby="article-heading">
+    <div class="hero-wm" aria-hidden="true">❄</div>
+    <div class="hero-content">
+      <div class="article-meta-top">
+        <span class="art-category">Storage Tips</span>
+        <span class="art-read-time">🕐 5 min read</span>
+        <span class="art-date-sep">·</span>
+        <span class="art-date">1 May 2025</span>
+      </div>
+      <h1 id="article-heading">
+        How to Properly Store Frozen Chicken at Home to Keep It <em>Safe &amp; Tasty</em>
+      </h1>
+      <p class="lede">Done right, frozen chicken is just as nutritious, just as flavourful, and just as safe as "fresh" — but only if you store it correctly. Most households unknowingly make mistakes that cost them quality, safety, and money. Here's everything you need to know.</p>
+      <div class="hero-byline">
+        <div class="byline-avatar" aria-hidden="true">❄️</div>
+        <div>
+          <div class="byline-name">Abak Food Safety Team</div>
+          <div class="byline-role">Abak Company Limited · Accra, Ghana</div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero feature image -->
+    <div class="hero-feature-img" role="img" aria-label="Frozen chicken storage — featured image placeholder. Replace with: &lt;img src='images/blog/frozen-chicken-storage.jpg' alt='Properly stored frozen chicken' style='width:100%;height:420px;object-fit:cover'&gt;">
+      <div class="hfi-emoji" aria-hidden="true">🍗</div>
+      <div class="hfi-label">Featured image placeholder — replace with actual photo<br>Recommended size: 1200 × 420px</div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="article-wrapper" id="article-body">
+    <div class="article-body">
+
+      <p>Walk into any Ghanaian household and you will almost certainly find frozen chicken somewhere in the kitchen. It is the most popular protein on the continent — and for good reason. It is affordable, versatile, and available year-round. But here is the truth most people do not know: <strong>the quality of your frozen chicken has everything to do with how you store it</strong>, not just where it comes from.</p>
+
+      <p>At Abak Company Limited, we have spent years ensuring that every piece of chicken we supply arrives in perfect condition. But what happens after it leaves our cold storage and lands in your kitchen? That is entirely up to you. This guide gives you the knowledge to protect your investment, keep your family safe, and enjoy the best possible flavour every time.</p>
+
+      <!-- ── SECTION 1 ── -->
+      <h2><span class="ch-num">01</span>Why Temperature Is Everything</h2>
+
+      <p>The single most important factor in frozen food storage is temperature. Bacteria that cause foodborne illness do not survive or multiply at proper freezing temperatures — but the moment temperatures rise above the safe zone, the risk climbs rapidly.</p>
+
+    </div><!-- /article-body padding -->
+
+    <!-- Temperature gauge — wide bleed -->
+    <div class="wide-bleed rev">
+      <div class="temp-gauge">
+        <div class="gauge-visual">
+          <div class="gauge-label">Temperature Scale</div>
+          <div class="gauge-bar">
+            <div class="gauge-marker gm-top">Fridge zone (0–4°C) — short-term only</div>
+            <div class="gauge-marker gm-mid">✓ Safe frozen storage</div>
+            <div class="gauge-marker gm-bot">⚠ Bacteria multiply rapidly</div>
+          </div>
+          <div class="gauge-label">Danger Zone ↑</div>
+        </div>
+        <div class="gauge-text">
+          <h4>The Golden Rule of Frozen Chicken Storage</h4>
+          <div class="gauge-big-temp">−18°C<span> or below</span></div>
+          <p>Ghana's tropical climate means your freezer is working harder than freezers in cooler climates. Ensure your freezer is set to at least <strong>−18°C (0°F)</strong> — this is the international food safety standard for frozen storage and the temperature at which bacteria effectively stop multiplying.</p>
+          <p style="margin-top:12px; font-size:0.88rem; color:var(--muted);">💡 If your freezer does not have a temperature display, invest in a simple freezer thermometer — they cost very little and can prevent a lot of food waste and illness.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <div class="tip-box warn rev">
+        <span class="tip-icon">⚠️</span>
+        <p><strong>Watch out for "warm cycles":</strong> Every time you open your freezer door, warm air enters and the temperature temporarily rises. Avoid leaving the freezer open for extended periods, and never place hot or warm food directly into the freezer — let it cool to room temperature first.</p>
+      </div>
+
+      <!-- ── SECTION 2 ── -->
+      <h2><span class="ch-num">02</span>Packaging: The Difference Between Freezer Burn and Perfect Chicken</h2>
+
+      <p>Many people assume that as long as chicken is frozen, it is fine — regardless of how it is wrapped. This is one of the most costly assumptions in home food storage. <strong>Freezer burn</strong> — those grey, dry, leathery patches that appear on poorly wrapped chicken — is not caused by the cold, but by exposure to air inside the freezer.</p>
+
+      <h3>Original Packaging vs. Re-Packaging</h3>
+      <p>Abak chicken arrives in food-grade sealed packaging designed for frozen storage. If you intend to use the entire pack within a few days of purchase, the original packaging is sufficient. However, if you plan to store it for longer, or if you have opened the pack, re-packaging is strongly recommended.</p>
+
+    </div>
+
+    <!-- Steps grid — wide bleed -->
+    <div class="wide-bleed rev">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Use Freezer-Grade Bags</h4>
+          <p>Regular thin plastic bags are not sufficient. Use heavy-duty, zip-lock freezer bags designed specifically for frozen storage — they are thicker and form a much tighter seal against air.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Remove All Air</h4>
+          <p>Press out as much air as possible before sealing the bag. If you have a vacuum sealer, even better — vacuum-sealed chicken can last significantly longer without quality loss.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Double-Wrap for Long Storage</h4>
+          <p>For storage beyond 3 months, place the zip-lock bag inside a layer of aluminium foil or a second freezer bag. This extra barrier dramatically reduces freezer burn risk.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4>Portion Before Freezing</h4>
+          <p>Divide chicken into meal-sized portions before freezing. This way you only thaw what you need — avoiding repeated freeze-thaw cycles which degrade both quality and safety.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">05</div>
+          <h4>Label Everything</h4>
+          <p>Write the date of freezing clearly on each pack. Frozen chicken can look identical after 3 weeks or 6 months — you cannot tell the difference by sight, so dates are essential.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">06</div>
+          <h4>Flat-Freeze for Space</h4>
+          <p>Lay portioned bags flat to freeze. Once solid, they stack neatly like books, making your freezer far more organised and efficient — and portions thaw faster when flat.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <!-- ── SECTION 3 ── -->
+      <h2><span class="ch-num">03</span>How Long Can You Actually Keep Frozen Chicken?</h2>
+
+      <p>One of the most common questions we receive is: <em>"How long does frozen chicken last?"</em> The honest answer is that it depends on the type of chicken product and how well it is stored. The table below gives you a reliable guide based on international food safety standards.</p>
+
+    </div>
+
+    <!-- Data table — wide bleed -->
+    <div class="wide-bleed rev">
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Chicken Product</th>
+              <th>Recommended Max. Freezer Time</th>
+              <th>Quality After This Period</th>
+              <th>Safety</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Whole chicken (raw)</strong></td>
+              <td>Up to 12 months</td>
+              <td>Good quality if well-packaged</td>
+              <td><span class="tag-good">Safe</span></td>
+            </tr>
+            <tr>
+              <td><strong>Chicken pieces / cuts (raw)</strong></td>
+              <td>Up to 9 months</td>
+              <td>Good quality; some texture change possible</td>
+              <td><span class="tag-good">Safe</span></td>
+            </tr>
+            <tr>
+              <td><strong>Chicken mince (raw)</strong></td>
+              <td>3–4 months</td>
+              <td>Quality degrades faster; use sooner</td>
+              <td><span class="tag-good">Safe if stored properly</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cooked chicken (leftovers)</strong></td>
+              <td>2–3 months</td>
+              <td>Texture and flavour may change noticeably</td>
+              <td><span class="tag-good">Safe</span></td>
+            </tr>
+            <tr>
+              <td><strong>Thawed chicken (uncooked)</strong></td>
+              <td>Do not refreeze without cooking first</td>
+              <td>Significant quality loss; potential bacterial growth</td>
+              <td><span class="tag-bad">Risk if refrozen raw</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <div class="tip-box green rev">
+        <span class="tip-icon">✅</span>
+        <p><strong>Important note:</strong> "Safe" in the table above assumes storage at a consistent −18°C or below, in proper packaging. After the recommended period, the chicken may still be technically safe to eat, but quality — flavour, texture, moisture — will have noticeably declined. For the best eating experience, use chicken within the recommended window.</p>
+      </div>
+
+    </div>
+
+    <!-- Pull quote -->
+    <div class="pull-quote rev">
+      <blockquote>
+        "The freezer is not a time machine. Frozen food stops deteriorating — it does not reverse deterioration. Start with great quality, like Abak chicken, and store it correctly from day one."
+        <cite>— Abak Food Safety Team</cite>
+      </blockquote>
+    </div>
+
+    <div class="article-body">
+
+      <!-- ── SECTION 4 ── -->
+      <h2><span class="ch-num">04</span>The Right Way to Defrost Frozen Chicken</h2>
+
+      <p>How you thaw your chicken is just as important as how you store it. The defrosting stage is where many home cooks unknowingly create food safety risks — particularly by defrosting at room temperature on the counter.</p>
+
+      <h3>Safe Defrosting Methods</h3>
+
+      <ul class="checklist">
+        <li><span class="check-icon">✓</span><div><strong>In the refrigerator (best method):</strong> Transfer frozen chicken from the freezer to the fridge the night before you plan to cook it. It will thaw slowly and safely at fridge temperature (0–4°C). Whole chickens may need 24 hours; pieces typically take 12–24 hours.</div></li>
+        <li><span class="check-icon">✓</span><div><strong>In cold running water:</strong> Place the sealed chicken pack in a bowl under cold running water. Pieces will thaw in 1–2 hours. Do not use warm or hot water — this raises the surface temperature into the danger zone while the centre is still frozen.</div></li>
+        <li><span class="check-icon">✓</span><div><strong>In the microwave (if cooking immediately):</strong> Use the defrost setting and cook the chicken immediately afterwards — never refreeze or leave chicken that has been microwave-defrosted.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>On the kitchen counter (never do this):</strong> The outer layers reach dangerous temperatures (above 5°C) while the centre is still frozen. Bacteria multiply rapidly in the warm outer sections. This is a significant food safety risk, especially in Ghana's hot climate.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>In warm or hot water (avoid):</strong> Same problem as counter-defrosting — the outside warms too quickly and enters the bacterial danger zone before the inside has thawed.</div></li>
+      </ul>
+
+      <div class="tip-box danger rev">
+        <span class="tip-icon">🚨</span>
+        <p><strong>Ghana's climate matters here:</strong> In Accra's heat, room temperature can easily reach 30–35°C. At these temperatures, bacteria can double in number every 20 minutes on the surface of a thawing chicken. What might be a manageable risk in a cooler climate becomes a serious hazard in Ghana's heat. Always defrost in the fridge or under cold water.</p>
+      </div>
+
+      <!-- ── SECTION 5 ── -->
+      <h2><span class="ch-num">05</span>Common Mistakes &amp; How to Avoid Them</h2>
+
+      <p>Even experienced home cooks make these mistakes regularly. Go through this checklist honestly — you may find one or two surprises.</p>
+
+      <ul class="checklist">
+        <li><span class="check-icon x">✗</span><div><strong>Not checking the freezer temperature regularly.</strong> Most home freezers in Ghana run warmer than people think, especially older models. Check yours with a thermometer — it should read −18°C or colder.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Overloading the freezer.</strong> When a freezer is too full, air cannot circulate properly and temperatures become uneven. Some areas of the freezer may not maintain the correct temperature.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Refreezing thawed raw chicken.</strong> Once raw chicken has been fully thawed, it must be cooked before being refrozen. Refreezing thawed raw chicken significantly degrades quality and can create food safety risks if it was not stored properly during thawing.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Ignoring the "use by" date on the pack.</strong> Even frozen chicken has a best-before date. This date assumes the product has been stored correctly at −18°C continuously from packaging to your freezer.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Storing raw chicken next to cooked foods.</strong> Even in a frozen state, always keep raw chicken away from cooked or ready-to-eat items in the freezer to prevent any cross-contamination risk during thawing.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Losing track of what's in the freezer.</strong> A simple list on your freezer door of what's inside and when it was stored can save you from mystery chicken that has been there for 18 months.</div></li>
+      </ul>
+
+      <!-- ── SECTION 6 ── -->
+      <h2><span class="ch-num">06</span>Quick-Reference Summary</h2>
+
+      <div class="tip-box green rev">
+        <span class="tip-icon">📋</span>
+        <div>
+          <p><strong>The Abak Frozen Chicken Storage Checklist:</strong></p>
+          <p style="margin-top:10px;">✓ Freezer at −18°C or below at all times<br>
+          ✓ Airtight, freezer-grade packaging on all chicken<br>
+          ✓ Portions labelled with date of freezing<br>
+          ✓ Use whole chicken within 12 months, cuts within 9 months<br>
+          ✓ Defrost in the fridge or cold water — never on the counter<br>
+          ✓ Cook thawed chicken within 24 hours of complete thawing<br>
+          ✓ Never refreeze raw thawed chicken without cooking first<br>
+          ✓ Keep raw chicken separate from cooked/ready-to-eat foods</p>
+        </div>
+      </div>
+
+      <!-- Author CTA -->
+      <div class="author-cta rev">
+        <div class="author-cta-text">
+          <h4>Ready to Stock Up with Premium Abak Chicken?</h4>
+          <p>Now that you know exactly how to store it, make sure you're starting with the best quality available. Abak Company Limited supplies premium frozen chicken — whole birds, drumsticks, breast fillets, and more — delivered cold to your home or business across Accra.</p>
+          <div class="author-cta-btns">
+            <a href="https://wa.me/233247298551" class="btn btn-wa" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+            <a href="products.html" class="btn btn-ice">🛒 View All Products</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /article-body -->
+  </main>
+
+  <!-- Related Articles -->
+  <section class="related" aria-labelledby="related-heading">
+    <div class="container">
+      <h2 id="related-heading">You Might Also Like</h2>
+      <div class="related-grid">
+        <article class="rel-card" tabindex="0">
+          <div class="rel-thumb" style="background:linear-gradient(145deg,#fde8e0,#f5b8a0);" aria-label="Related article image placeholder">🐡</div>
+          <div class="rel-body">
+            <div class="rel-cat">Recipe</div>
+            <h4>5 Easy Tilapia Recipes Perfect for the Ghanaian Home Kitchen</h4>
+            <p>Quick, flavourful recipes using Abak's premium frozen tilapia — from grilled tilapia to palm nut soup.</p>
+            <a href="blog.html" class="rel-link">Read Article →</a>
+          </div>
+        </article>
+        <article class="rel-card" tabindex="0">
+          <div class="rel-thumb" style="background:linear-gradient(145deg,#ddeeff,#9ec8f0);" aria-label="Related article image placeholder">🧊</div>
+          <div class="rel-body">
+            <div class="rel-cat">Storage Tips</div>
+            <h4>The Right Way to Defrost Frozen Meat: Avoid These Costly Mistakes</h4>
+            <p>Defrosting incorrectly is one of the most common kitchen mistakes. Here's how to do it safely every time.</p>
+            <a href="blog.html" class="rel-link">Read Article →</a>
+          </div>
+        </article>
+        <article class="rel-card" tabindex="0">
+          <div class="rel-thumb" style="background:linear-gradient(145deg,#d8edf8,#8fc8e8);" aria-label="Related article image placeholder">🌡️</div>
+          <div class="rel-body">
+            <div class="rel-cat">Cold Chain</div>
+            <h4>Cold Chain 101: What Every Restaurant Owner in Ghana Needs to Know</h4>
+            <p>A plain-language guide to cold-chain management for caterers, restaurant owners, and retailers.</p>
+            <a href="blog.html" class="rel-link">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="article-footer">
+    <div class="container" style="max-width:1160px;margin:0 auto;padding:0 24px;">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">Logo</div>
+        Abak
+      </div>
+      <p>© 2025 Abak Company Limited · HQ1 Anunsah Clottey Street, Kaneshie Market-Accra, Ghana · GA-262-1811</p>
+      <p style="margin-top:6px;">📞 +233 24 729 8551 · +233 50 496 7111 · <a href="https://wa.me/233247298551" style="color:rgba(255,255,255,0.5);">WhatsApp</a></p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/233247298551" class="float-wa" target="_blank" rel="noopener" aria-label="Order via WhatsApp">
+    <div class="float-wa-pulse" aria-hidden="true"></div>
+    💬
+  </a>
+
+  <script>
+    /* Reading progress bar */
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const scrollHeight = doc.scrollHeight - doc.clientHeight;
+      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      document.getElementById('progress-bar').style.width = pct + '%';
+    });
+
+    /* Scroll reveal */
+    const revEls = document.querySelectorAll('.rev');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    revEls.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Properly Store Frozen Chicken at Home | Abak Company Limited</title>
+  <meta name="description" content="Learn the right way to store frozen chicken at home — temperature, packaging, defrosting tips and common mistakes to avoid, from Abak Company Limited." />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ════════════════════════════════════════
+       DESIGN: Cool-toned editorial — ice blue
+       and deep navy with crisp cream warmth.
+       Wide reading column, generous type scale,
+       chapter-number pull-quotes, sticky
+       progress bar, and floating tip cards.
+    ════════════════════════════════════════ */
+
+    :root {
+      --navy:   #0B3C5D;
+      --blue:   #328CC1;
+      --ice:    #C8EAFB;
+      --dark:   #050f1c;
+      --cream:  #FDFCF8;
+      --warm:   #F5F2EC;
+      --green:  #2E8B57;
+      --red:    #D7263D;
+      --amber:  #C9973A;
+      --ink:    #0e1a14;
+      --muted:  #637585;
+      --border: rgba(11,60,93,0.1);
+      --r:      6px;
+      --sh:     0 8px 48px rgba(11,60,93,0.09);
+      --col:    680px; /* max reading column */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Karla', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { color: var(--blue); }
+    a:hover { color: var(--navy); }
+    img { max-width: 100%; display: block; }
+
+    /* ── Progress bar ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 2000;
+      height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      transition: width 0.1s linear;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(5,15,28,0.97);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      height: 62px; display: flex; align-items: center;
+    }
+    .nav-inner {
+      width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Bodoni Moda', serif; font-size: 1.4rem; font-weight: 900;
+      color: #fff; display: flex; align-items: center; gap: 10px;
+    }
+    .logo-mark {
+      width: 36px; height: 36px; border-radius: 7px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      border: 1.5px dashed rgba(255,255,255,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.55rem; font-weight: 700; color: rgba(255,255,255,0.65);
+      text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0;
+      /* LOGO PLACEHOLDER — replace div with:
+         <img src="images/abak-logo.png" alt="Abak" class="logo-img" height="36"> */
+    }
+    .logo-img { height: 36px; border-radius: 7px; object-fit: contain; }
+    .nav-back {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.55); font-size: 0.84rem; font-weight: 500;
+      padding: 7px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12);
+      transition: all 0.2s; text-decoration: none;
+    }
+    .nav-back:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .nav-share {
+      display: flex; align-items: center; gap: 8px;
+      color: #fff; font-size: 0.84rem; font-weight: 600;
+      background: #25D366; padding: 8px 18px; border-radius: 4px;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .nav-share:hover { background: #1dba57; color: #fff; }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero {
+      background: var(--dark);
+      padding: 110px 0 0;
+      position: relative; overflow: hidden;
+    }
+    /* Frost pattern */
+    .article-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 60%, rgba(50,140,193,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 20% 20%, rgba(200,234,251,0.06) 0%, transparent 50%);
+    }
+    /* Large watermark */
+    .hero-wm {
+      position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+      font-family: 'Bodoni Moda', serif; font-size: 22rem; font-weight: 900;
+      color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none;
+      user-select: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 0 24px 72px; }
+    .article-meta-top {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .art-category {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; background: var(--blue);
+      color: #fff; padding: 5px 12px;
+    }
+    .art-read-time, .art-date {
+      font-size: 0.78rem; color: rgba(255,255,255,0.42); letter-spacing: 0.5px;
+    }
+    .art-date-sep { color: rgba(255,255,255,0.2); }
+    .article-hero h1 {
+      font-family: 'Bodoni Moda', serif; font-weight: 900;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: #fff; line-height: 1.1; margin-bottom: 22px;
+      animation: fadeUp 0.8s 0.12s ease both;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--ice); }
+    .article-hero .lede {
+      font-size: 1.12rem; color: rgba(255,255,255,0.68);
+      line-height: 1.82; max-width: 620px; margin-bottom: 36px;
+      animation: fadeUp 0.8s 0.24s ease both;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 14px;
+      padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1);
+      animation: fadeUp 0.8s 0.36s ease both;
+    }
+    .byline-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(50,140,193,0.4), rgba(46,139,87,0.3));
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .byline-name { font-weight: 700; color: #fff; font-size: 0.92rem; }
+    .byline-role { font-size: 0.78rem; color: rgba(255,255,255,0.42); margin-top: 2px; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero feature image placeholder */
+    .hero-feature-img {
+      width: 100%; height: 420px;
+      background: linear-gradient(145deg, #0d3558, #1a6090);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      position: relative; overflow: hidden;
+    }
+    .hero-feature-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(50,140,193,0.25), transparent 70%);
+    }
+    .hfi-emoji { font-size: 7rem; position: relative; z-index: 1; animation: floatBob 4s ease-in-out infinite; }
+    @keyframes floatBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+    .hfi-label {
+      position: relative; z-index: 1;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.3); text-align: center;
+    }
+    /* Replace with: <img src="images/blog/frozen-chicken-storage.jpg" alt="Frozen chicken storage" style="width:100%;height:420px;object-fit:cover;"> */
+
+    /* ── ARTICLE BODY WRAPPER ── */
+    .article-wrapper {
+      display: grid;
+      grid-template-columns: 1fr min(var(--col), 100%) 1fr;
+      padding: 72px 0 100px;
+    }
+    .article-wrapper > * { grid-column: 2; }
+
+    /* Full-bleed elements */
+    .full-bleed {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+    /* Wide elements */
+    .wide-bleed {
+      grid-column: 1 / -1;
+      max-width: 900px;
+      margin-left: auto; margin-right: auto;
+      width: 100%; padding: 0 24px;
+    }
+
+    /* ── Typography ── */
+    .article-body { padding: 0 24px; }
+    .article-body p {
+      font-size: 1.05rem; line-height: 1.88;
+      color: #2a3a2e; margin-bottom: 22px;
+    }
+    .article-body h2 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.9rem; font-weight: 700;
+      color: var(--navy); line-height: 1.2;
+      margin: 52px 0 18px; display: flex; align-items: center; gap: 16px;
+    }
+    .article-body h2 .ch-num {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+      color: var(--blue); background: var(--ice);
+      padding: 4px 10px; font-family: 'Karla', sans-serif;
+      text-transform: uppercase; flex-shrink: 0;
+    }
+    .article-body h3 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.3rem; font-weight: 700;
+      color: var(--navy); margin: 32px 0 12px;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 22px 0; padding-left: 0;
+    }
+    .article-body ul li, .article-body ol li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 1rem; color: #2a3a2e; line-height: 1.78;
+      margin-bottom: 10px; list-style: none;
+    }
+    .article-body ul li::before {
+      content: '—'; color: var(--blue); font-weight: 700;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .article-body ol { counter-reset: ol-counter; }
+    .article-body ol li { counter-increment: ol-counter; }
+    .article-body ol li::before {
+      content: counter(ol-counter);
+      min-width: 28px; height: 28px; border-radius: 50%;
+      background: var(--navy); color: #fff;
+      font-size: 0.75rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .article-body strong { color: var(--navy); font-weight: 700; }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      grid-column: 1 / -1;
+      background: var(--navy);
+      padding: 52px 48px;
+      margin: 40px 0;
+      position: relative; overflow: hidden;
+    }
+    .pull-quote::before {
+      content: '\201C';
+      font-family: 'Bodoni Moda', serif; font-size: 16rem; font-weight: 900;
+      color: rgba(255,255,255,0.04); line-height: 0.8;
+      position: absolute; top: 20px; left: 30px; pointer-events: none;
+    }
+    .pull-quote blockquote {
+      font-family: 'Bodoni Moda', serif; font-style: italic;
+      font-size: clamp(1.4rem, 3vw, 2rem); color: #fff;
+      line-height: 1.5; max-width: 720px; margin: 0 auto;
+      text-align: center; position: relative; z-index: 1;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 18px;
+      font-family: 'Karla', sans-serif; font-style: normal;
+      font-size: 0.8rem; color: var(--ice); letter-spacing: 1.5px;
+      text-transform: uppercase; font-weight: 600; text-align: center;
+    }
+
+    /* ── Tip box ── */
+    .tip-box {
+      background: var(--ice); border-left: 4px solid var(--blue);
+      padding: 22px 24px; margin: 28px 0;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .tip-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+    .tip-box p { font-size: 0.95rem; color: var(--navy); line-height: 1.72; margin: 0; }
+    .tip-box strong { color: var(--navy); }
+    .tip-box.warn { background: #fff4e0; border-left-color: var(--amber); }
+    .tip-box.warn p { color: #5a3a00; }
+    .tip-box.danger { background: #fff0f0; border-left-color: var(--red); }
+    .tip-box.danger p { color: #5a0000; }
+    .tip-box.green { background: #e8f5e9; border-left-color: var(--green); }
+    .tip-box.green p { color: #1a4d2e; }
+
+    /* ── Data table ── */
+    .data-table-wrap { overflow-x: auto; margin: 28px 0; }
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .data-table thead th {
+      background: var(--navy); color: #fff;
+      padding: 14px 18px; text-align: left;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .data-table tbody tr { border-bottom: 1px solid var(--border); }
+    .data-table tbody tr:nth-child(even) { background: var(--warm); }
+    .data-table tbody td { padding: 14px 18px; color: #2a3a2e; line-height: 1.5; }
+    .data-table tbody td strong { color: var(--navy); }
+    .tag-good { background: #e8f5e9; color: #1a4d2e; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; border-radius: 2px; }
+    .tag-bad  { background: #fff0f0; color: #5a0000; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; border-radius: 2px; }
+
+    /* ── Step cards (wide bleed) ── */
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; padding: 0 24px;
+    }
+    .step-card {
+      background: #fff; border: 1px solid var(--border);
+      padding: 28px 24px; position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .step-card:hover { transform: translateY(-4px); box-shadow: var(--sh); }
+    .step-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--blue);
+    }
+    .step-num {
+      font-family: 'Bodoni Moda', serif; font-size: 3.5rem; font-weight: 900;
+      color: rgba(50,140,193,0.12); line-height: 1; margin-bottom: 12px;
+    }
+    .step-card h4 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.1rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 10px;
+    }
+    .step-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── Temperature gauge visual ── */
+    .temp-gauge {
+      background: #fff; border: 1px solid var(--border);
+      padding: 32px 36px; margin: 28px 0;
+      display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .gauge-visual {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      flex-shrink: 0;
+    }
+    .gauge-bar {
+      width: 32px; height: 160px;
+      border-radius: 16px;
+      background: linear-gradient(to bottom, #e8f5e9 0%, #a8dcf0 35%, #328CC1 60%, #0B3C5D 80%, #050f1c 100%);
+      border: 2px solid var(--border);
+      position: relative;
+    }
+    .gauge-marker {
+      position: absolute; right: -52px;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+    }
+    .gauge-marker::before { content: '←'; color: var(--muted); }
+    .gm-top { top: 6px; color: var(--muted); }
+    .gm-mid { top: 38%; color: var(--blue); }
+    .gm-bot { bottom: 6px; color: var(--red); }
+    .gauge-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+    .gauge-text h4 { font-family: 'Bodoni Moda', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .gauge-text p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+    .gauge-big-temp {
+      font-family: 'Bodoni Moda', serif; font-size: 4rem; font-weight: 900;
+      color: var(--navy); line-height: 1; margin: 12px 0 4px;
+    }
+    .gauge-big-temp span { font-size: 2rem; color: var(--blue); }
+
+    /* ── Checklist ── */
+    .checklist { margin: 12px 0 24px; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid var(--border);
+      font-size: 0.97rem; color: #2a3a2e; line-height: 1.6;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--green); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .check-icon.x { background: var(--red); }
+
+    /* ── Author CTA card ── */
+    .author-cta {
+      background: var(--navy); padding: 36px 40px;
+      display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+      margin-top: 60px;
+    }
+    .author-cta-text h4 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.3rem; font-weight: 700;
+      color: #fff; margin-bottom: 8px;
+    }
+    .author-cta-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 480px; }
+    .author-cta-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 22px; font-family: 'Karla', sans-serif;
+      font-size: 0.85rem; font-weight: 700; cursor: pointer;
+      transition: all 0.22s; border: none; border-radius: 2px;
+      text-decoration: none;
+    }
+    .btn-wa    { background: #25D366; color: #fff; }
+    .btn-wa:hover   { background: #1dba57; color: #fff; }
+    .btn-ice   { background: var(--ice); color: var(--navy); }
+    .btn-ice:hover  { background: #fff; color: var(--navy); }
+
+    /* ── Related articles ── */
+    .related { background: var(--warm); padding: 80px 0; border-top: 1px solid var(--border); }
+    .related .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    .related h2 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.6rem; font-weight: 900;
+      color: var(--navy); margin-bottom: 36px;
+    }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .rel-card {
+      background: #fff; border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
+    }
+    .rel-card:hover { transform: translateY(-4px); box-shadow: var(--sh); }
+    .rel-thumb {
+      height: 160px; display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; position: relative; overflow: hidden;
+    }
+    .rel-body { padding: 18px 18px 22px; }
+    .rel-cat { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .rel-body h4 { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 8px; }
+    .rel-body p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .rel-link { font-size: 0.76rem; font-weight: 700; color: var(--blue); margin-top: 12px; display: block; }
+
+    /* ── Footer ── */
+    .article-footer {
+      background: var(--dark); color: rgba(255,255,255,0.5);
+      padding: 48px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .article-footer .logo { justify-content: center; margin-bottom: 14px; }
+    .article-footer p { font-size: 0.84rem; color: rgba(255,255,255,0.38); line-height: 1.7; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.38); transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .float-wa {
+      position: fixed; bottom: 26px; right: 26px; z-index: 999;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: #25D366; box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; transition: transform 0.3s; text-decoration: none;
+    }
+    .float-wa:hover { transform: scale(1.1); }
+    .float-wa-pulse {
+      position: absolute; inset: -6px; border-radius: 50%;
+      background: rgba(37,211,102,0.25);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse { 0%{transform:scale(1);opacity:0.7} 100%{transform:scale(1.6);opacity:0} }
+
+    /* ── Scroll reveal ── */
+    .rev { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease,transform 0.6s ease; }
+    .rev.in { opacity:1; transform:none; }
+
+    /* ── Responsive ── */
+    @media(max-width:768px){
+      .article-wrapper { grid-template-columns: 1fr; }
+      .pull-quote { padding: 36px 24px; }
+      .pull-quote blockquote { font-size: 1.3rem; }
+      .temp-gauge { flex-direction: column; }
+      .gauge-marker { position: static; margin-left: 8px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .author-cta { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" aria-label="Article navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark" title="Insert logo here" aria-hidden="true">Logo</div>
+        Abak
+      </a>
+      <a href="blog.html" class="nav-back">← Back to Blog</a>
+      <a href="https://wa.me/233247298551" class="nav-share" target="_blank" rel="noopener">💬 Order Chicken</a>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <header class="article-hero" aria-labelledby="article-heading">
+    <div class="hero-wm" aria-hidden="true">❄</div>
+    <div class="hero-content">
+      <div class="article-meta-top">
+        <span class="art-category">Storage Tips</span>
+        <span class="art-read-time">🕐 5 min read</span>
+        <span class="art-date-sep">·</span>
+        <span class="art-date">1 May 2025</span>
+      </div>
+      <h1 id="article-heading">
+        How to Properly Store Frozen Chicken at Home to Keep It <em>Safe &amp; Tasty</em>
+      </h1>
+      <p class="lede">Done right, frozen chicken is just as nutritious, just as flavourful, and just as safe as "fresh" — but only if you store it correctly. Most households unknowingly make mistakes that cost them quality, safety, and money. Here's everything you need to know.</p>
+      <div class="hero-byline">
+        <div class="byline-avatar" aria-hidden="true">❄️</div>
+        <div>
+          <div class="byline-name">Abak Food Safety Team</div>
+          <div class="byline-role">Abak Company Limited · Accra, Ghana</div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero feature image -->
+    <div class="hero-feature-img" role="img" aria-label="Frozen chicken storage — featured image placeholder. Replace with: &lt;img src='images/blog/frozen-chicken-storage.jpg' alt='Properly stored frozen chicken' style='width:100%;height:420px;object-fit:cover'&gt;">
+      <div class="hfi-emoji" aria-hidden="true">🍗</div>
+      <div class="hfi-label">Featured image placeholder — replace with actual photo<br>Recommended size: 1200 × 420px</div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="article-wrapper" id="article-body">
+    <div class="article-body">
+
+      <p>Walk into any Ghanaian household and you will almost certainly find frozen chicken somewhere in the kitchen. It is the most popular protein on the continent — and for good reason. It is affordable, versatile, and available year-round. But here is the truth most people do not know: <strong>the quality of your frozen chicken has everything to do with how you store it</strong>, not just where it comes from.</p>
+
+      <p>At Abak Company Limited, we have spent years ensuring that every piece of chicken we supply arrives in perfect condition. But what happens after it leaves our cold storage and lands in your kitchen? That is entirely up to you. This guide gives you the knowledge to protect your investment, keep your family safe, and enjoy the best possible flavour every time.</p>
+
+      <!-- ── SECTION 1 ── -->
+      <h2><span class="ch-num">01</span>Why Temperature Is Everything</h2>
+
+      <p>The single most important factor in frozen food storage is temperature. Bacteria that cause foodborne illness do not survive or multiply at proper freezing temperatures — but the moment temperatures rise above the safe zone, the risk climbs rapidly.</p>
+
+    </div><!-- /article-body padding -->
+
+    <!-- Temperature gauge — wide bleed -->
+    <div class="wide-bleed rev">
+      <div class="temp-gauge">
+        <div class="gauge-visual">
+          <div class="gauge-label">Temperature Scale</div>
+          <div class="gauge-bar">
+            <div class="gauge-marker gm-top">Fridge zone (0–4°C) — short-term only</div>
+            <div class="gauge-marker gm-mid">✓ Safe frozen storage</div>
+            <div class="gauge-marker gm-bot">⚠ Bacteria multiply rapidly</div>
+          </div>
+          <div class="gauge-label">Danger Zone ↑</div>
+        </div>
+        <div class="gauge-text">
+          <h4>The Golden Rule of Frozen Chicken Storage</h4>
+          <div class="gauge-big-temp">−18°C<span> or below</span></div>
+          <p>Ghana's tropical climate means your freezer is working harder than freezers in cooler climates. Ensure your freezer is set to at least <strong>−18°C (0°F)</strong> — this is the international food safety standard for frozen storage and the temperature at which bacteria effectively stop multiplying.</p>
+          <p style="margin-top:12px; font-size:0.88rem; color:var(--muted);">💡 If your freezer does not have a temperature display, invest in a simple freezer thermometer — they cost very little and can prevent a lot of food waste and illness.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <div class="tip-box warn rev">
+        <span class="tip-icon">⚠️</span>
+        <p><strong>Watch out for "warm cycles":</strong> Every time you open your freezer door, warm air enters and the temperature temporarily rises. Avoid leaving the freezer open for extended periods, and never place hot or warm food directly into the freezer — let it cool to room temperature first.</p>
+      </div>
+
+      <!-- ── SECTION 2 ── -->
+      <h2><span class="ch-num">02</span>Packaging: The Difference Between Freezer Burn and Perfect Chicken</h2>
+
+      <p>Many people assume that as long as chicken is frozen, it is fine — regardless of how it is wrapped. This is one of the most costly assumptions in home food storage. <strong>Freezer burn</strong> — those grey, dry, leathery patches that appear on poorly wrapped chicken — is not caused by the cold, but by exposure to air inside the freezer.</p>
+
+      <h3>Original Packaging vs. Re-Packaging</h3>
+      <p>Abak chicken arrives in food-grade sealed packaging designed for frozen storage. If you intend to use the entire pack within a few days of purchase, the original packaging is sufficient. However, if you plan to store it for longer, or if you have opened the pack, re-packaging is strongly recommended.</p>
+
+    </div>
+
+    <!-- Steps grid — wide bleed -->
+    <div class="wide-bleed rev">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Use Freezer-Grade Bags</h4>
+          <p>Regular thin plastic bags are not sufficient. Use heavy-duty, zip-lock freezer bags designed specifically for frozen storage — they are thicker and form a much tighter seal against air.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Remove All Air</h4>
+          <p>Press out as much air as possible before sealing the bag. If you have a vacuum sealer, even better — vacuum-sealed chicken can last significantly longer without quality loss.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Double-Wrap for Long Storage</h4>
+          <p>For storage beyond 3 months, place the zip-lock bag inside a layer of aluminium foil or a second freezer bag. This extra barrier dramatically reduces freezer burn risk.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4>Portion Before Freezing</h4>
+          <p>Divide chicken into meal-sized portions before freezing. This way you only thaw what you need — avoiding repeated freeze-thaw cycles which degrade both quality and safety.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">05</div>
+          <h4>Label Everything</h4>
+          <p>Write the date of freezing clearly on each pack. Frozen chicken can look identical after 3 weeks or 6 months — you cannot tell the difference by sight, so dates are essential.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">06</div>
+          <h4>Flat-Freeze for Space</h4>
+          <p>Lay portioned bags flat to freeze. Once solid, they stack neatly like books, making your freezer far more organised and efficient — and portions thaw faster when flat.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <!-- ── SECTION 3 ── -->
+      <h2><span class="ch-num">03</span>How Long Can You Actually Keep Frozen Chicken?</h2>
+
+      <p>One of the most common questions we receive is: <em>"How long does frozen chicken last?"</em> The honest answer is that it depends on the type of chicken product and how well it is stored. The table below gives you a reliable guide based on international food safety standards.</p>
+
+    </div>
+
+    <!-- Data table — wide bleed -->
+    <div class="wide-bleed rev">
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Chicken Product</th>
+              <th>Recommended Max. Freezer Time</th>
+              <th>Quality After This Period</th>
+              <th>Safety</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Whole chicken (raw)</strong></td>
+              <td>Up to 12 months</td>
+              <td>Good quality if well-packaged</td>
+              <td><span class="tag-good">Safe</span></td>
+            </tr>
+            <tr>
+              <td><strong>Chicken pieces / cuts (raw)</strong></td>
+              <td>Up to 9 months</td>
+              <td>Good quality; some texture change possible</td>
+              <td><span class="tag-good">Safe</span></td>
+            </tr>
+            <tr>
+              <td><strong>Chicken mince (raw)</strong></td>
+              <td>3–4 months</td>
+              <td>Quality degrades faster; use sooner</td>
+              <td><span class="tag-good">Safe if stored properly</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cooked chicken (leftovers)</strong></td>
+              <td>2–3 months</td>
+              <td>Texture and flavour may change noticeably</td>
+              <td><span class="tag-good">Safe</span></td>
+            </tr>
+            <tr>
+              <td><strong>Thawed chicken (uncooked)</strong></td>
+              <td>Do not refreeze without cooking first</td>
+              <td>Significant quality loss; potential bacterial growth</td>
+              <td><span class="tag-bad">Risk if refrozen raw</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <div class="tip-box green rev">
+        <span class="tip-icon">✅</span>
+        <p><strong>Important note:</strong> "Safe" in the table above assumes storage at a consistent −18°C or below, in proper packaging. After the recommended period, the chicken may still be technically safe to eat, but quality — flavour, texture, moisture — will have noticeably declined. For the best eating experience, use chicken within the recommended window.</p>
+      </div>
+
+    </div>
+
+    <!-- Pull quote -->
+    <div class="pull-quote rev">
+      <blockquote>
+        "The freezer is not a time machine. Frozen food stops deteriorating — it does not reverse deterioration. Start with great quality, like Abak chicken, and store it correctly from day one."
+        <cite>— Abak Food Safety Team</cite>
+      </blockquote>
+    </div>
+
+    <div class="article-body">
+
+      <!-- ── SECTION 4 ── -->
+      <h2><span class="ch-num">04</span>The Right Way to Defrost Frozen Chicken</h2>
+
+      <p>How you thaw your chicken is just as important as how you store it. The defrosting stage is where many home cooks unknowingly create food safety risks — particularly by defrosting at room temperature on the counter.</p>
+
+      <h3>Safe Defrosting Methods</h3>
+
+      <ul class="checklist">
+        <li><span class="check-icon">✓</span><div><strong>In the refrigerator (best method):</strong> Transfer frozen chicken from the freezer to the fridge the night before you plan to cook it. It will thaw slowly and safely at fridge temperature (0–4°C). Whole chickens may need 24 hours; pieces typically take 12–24 hours.</div></li>
+        <li><span class="check-icon">✓</span><div><strong>In cold running water:</strong> Place the sealed chicken pack in a bowl under cold running water. Pieces will thaw in 1–2 hours. Do not use warm or hot water — this raises the surface temperature into the danger zone while the centre is still frozen.</div></li>
+        <li><span class="check-icon">✓</span><div><strong>In the microwave (if cooking immediately):</strong> Use the defrost setting and cook the chicken immediately afterwards — never refreeze or leave chicken that has been microwave-defrosted.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>On the kitchen counter (never do this):</strong> The outer layers reach dangerous temperatures (above 5°C) while the centre is still frozen. Bacteria multiply rapidly in the warm outer sections. This is a significant food safety risk, especially in Ghana's hot climate.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>In warm or hot water (avoid):</strong> Same problem as counter-defrosting — the outside warms too quickly and enters the bacterial danger zone before the inside has thawed.</div></li>
+      </ul>
+
+      <div class="tip-box danger rev">
+        <span class="tip-icon">🚨</span>
+        <p><strong>Ghana's climate matters here:</strong> In Accra's heat, room temperature can easily reach 30–35°C. At these temperatures, bacteria can double in number every 20 minutes on the surface of a thawing chicken. What might be a manageable risk in a cooler climate becomes a serious hazard in Ghana's heat. Always defrost in the fridge or under cold water.</p>
+      </div>
+
+      <!-- ── SECTION 5 ── -->
+      <h2><span class="ch-num">05</span>Common Mistakes &amp; How to Avoid Them</h2>
+
+      <p>Even experienced home cooks make these mistakes regularly. Go through this checklist honestly — you may find one or two surprises.</p>
+
+      <ul class="checklist">
+        <li><span class="check-icon x">✗</span><div><strong>Not checking the freezer temperature regularly.</strong> Most home freezers in Ghana run warmer than people think, especially older models. Check yours with a thermometer — it should read −18°C or colder.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Overloading the freezer.</strong> When a freezer is too full, air cannot circulate properly and temperatures become uneven. Some areas of the freezer may not maintain the correct temperature.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Refreezing thawed raw chicken.</strong> Once raw chicken has been fully thawed, it must be cooked before being refrozen. Refreezing thawed raw chicken significantly degrades quality and can create food safety risks if it was not stored properly during thawing.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Ignoring the "use by" date on the pack.</strong> Even frozen chicken has a best-before date. This date assumes the product has been stored correctly at −18°C continuously from packaging to your freezer.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Storing raw chicken next to cooked foods.</strong> Even in a frozen state, always keep raw chicken away from cooked or ready-to-eat items in the freezer to prevent any cross-contamination risk during thawing.</div></li>
+        <li><span class="check-icon x">✗</span><div><strong>Losing track of what's in the freezer.</strong> A simple list on your freezer door of what's inside and when it was stored can save you from mystery chicken that has been there for 18 months.</div></li>
+      </ul>
+
+      <!-- ── SECTION 6 ── -->
+      <h2><span class="ch-num">06</span>Quick-Reference Summary</h2>
+
+      <div class="tip-box green rev">
+        <span class="tip-icon">📋</span>
+        <div>
+          <p><strong>The Abak Frozen Chicken Storage Checklist:</strong></p>
+          <p style="margin-top:10px;">✓ Freezer at −18°C or below at all times<br>
+          ✓ Airtight, freezer-grade packaging on all chicken<br>
+          ✓ Portions labelled with date of freezing<br>
+          ✓ Use whole chicken within 12 months, cuts within 9 months<br>
+          ✓ Defrost in the fridge or cold water — never on the counter<br>
+          ✓ Cook thawed chicken within 24 hours of complete thawing<br>
+          ✓ Never refreeze raw thawed chicken without cooking first<br>
+          ✓ Keep raw chicken separate from cooked/ready-to-eat foods</p>
+        </div>
+      </div>
+
+      <!-- Author CTA -->
+      <div class="author-cta rev">
+        <div class="author-cta-text">
+          <h4>Ready to Stock Up with Premium Abak Chicken?</h4>
+          <p>Now that you know exactly how to store it, make sure you're starting with the best quality available. Abak Company Limited supplies premium frozen chicken — whole birds, drumsticks, breast fillets, and more — delivered cold to your home or business across Accra.</p>
+          <div class="author-cta-btns">
+            <a href="https://wa.me/233247298551" class="btn btn-wa" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+            <a href="products.html" class="btn btn-ice">🛒 View All Products</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /article-body -->
+  </main>
+
+  <!-- Related Articles -->
+  <section class="related" aria-labelledby="related-heading">
+    <div class="container">
+      <h2 id="related-heading">You Might Also Like</h2>
+      <div class="related-grid">
+        <article class="rel-card" tabindex="0">
+          <div class="rel-thumb" style="background:linear-gradient(145deg,#fde8e0,#f5b8a0);" aria-label="Related article image placeholder">🐡</div>
+          <div class="rel-body">
+            <div class="rel-cat">Recipe</div>
+            <h4>5 Easy Tilapia Recipes Perfect for the Ghanaian Home Kitchen</h4>
+            <p>Quick, flavourful recipes using Abak's premium frozen tilapia — from grilled tilapia to palm nut soup.</p>
+            <a href="blog.html" class="rel-link">Read Article →</a>
+          </div>
+        </article>
+        <article class="rel-card" tabindex="0">
+          <div class="rel-thumb" style="background:linear-gradient(145deg,#ddeeff,#9ec8f0);" aria-label="Related article image placeholder">🧊</div>
+          <div class="rel-body">
+            <div class="rel-cat">Storage Tips</div>
+            <h4>The Right Way to Defrost Frozen Meat: Avoid These Costly Mistakes</h4>
+            <p>Defrosting incorrectly is one of the most common kitchen mistakes. Here's how to do it safely every time.</p>
+            <a href="blog.html" class="rel-link">Read Article →</a>
+          </div>
+        </article>
+        <article class="rel-card" tabindex="0">
+          <div class="rel-thumb" style="background:linear-gradient(145deg,#d8edf8,#8fc8e8);" aria-label="Related article image placeholder">🌡️</div>
+          <div class="rel-body">
+            <div class="rel-cat">Cold Chain</div>
+            <h4>Cold Chain 101: What Every Restaurant Owner in Ghana Needs to Know</h4>
+            <p>A plain-language guide to cold-chain management for caterers, restaurant owners, and retailers.</p>
+            <a href="blog.html" class="rel-link">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="article-footer">
+    <div class="container" style="max-width:1160px;margin:0 auto;padding:0 24px;">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">Logo</div>
+        Abak
+      </div>
+      <p>© 2025 Abak Company Limited · HQ1 Anunsah Clottey Street, Kaneshie Market-Accra, Ghana · GA-262-1811</p>
+      <p style="margin-top:6px;">📞 +233 24 729 8551 · +233 50 496 7111 · <a href="https://wa.me/233247298551" style="color:rgba(255,255,255,0.5);">WhatsApp</a></p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/233247298551" class="float-wa" target="_blank" rel="noopener" aria-label="Order via WhatsApp">
+    <div class="float-wa-pulse" aria-hidden="true"></div>
+    💬
+  </a>
+
+  <script>
+    /* Reading progress bar */
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const scrollHeight = doc.scrollHeight - doc.clientHeight;
+      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      document.getElementById('progress-bar').style.width = pct + '%';
+    });
+
+    /* Scroll reveal */
+    const revEls = document.querySelectorAll('.rev');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    revEls.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Abak Company Limited – Frozen Foods & Cold Storage Ghana</title>
+  <meta name="description" content="Abak Company Limited offers wholesale supply, bulk delivery, cold storage, distribution and custom orders for businesses across Ghana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0B3C5D;
+      --navy-deep:   #071f30;
+      --blue:        #328CC1;
+      --blue-light:  #64c8f5;
+      --white:       #FFFFFF;
+      --grey-bg:     #F5F7FA;
+      --grey-mid:    #e8eef3;
+      --red:         #D7263D;
+      --green:       #2E8B57;
+      --green-light: #3aad6d;
+      --text:        #192e3b;
+      --muted:       #587080;
+      --border:      #d4e4ef;
+      --card-shadow: 0 2px 20px rgba(11,60,93,0.09);
+      --lift-shadow: 0 12px 40px rgba(11,60,93,0.17);
+      --ease:        cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text);
+      background: var(--grey-bg);
+    }
+
+    /* ══════════════════════════════
+       HEADER
+    ══════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--navy-deep);
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800; font-size: 1.4rem;
+      color: var(--white); text-decoration: none; letter-spacing: -0.5px;
+    }
+    .logo sup { color: var(--blue-light); font-size: 0.7em; vertical-align: super; }
+    nav { display: flex; gap: 0.25rem; align-items: center; }
+    nav a {
+      color: rgba(255,255,255,0.65); font-size: 0.88rem; font-weight: 500;
+      text-decoration: none; padding: 0.4rem 0.85rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+    nav a.active { color: var(--blue-light); font-weight: 600; }
+    .nav-cta {
+      background: var(--blue); color: var(--white) !important;
+      padding: 0.45rem 1.2rem !important; border-radius: 6px; font-weight: 600 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: #1c7aad !important; transform: translateY(-1px); background: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* ══════════════════════════════
+       PAGE HERO
+    ══════════════════════════════ */
+    .hero {
+      background: var(--navy-deep);
+      position: relative; overflow: hidden;
+      padding: 5.5rem 5vw 5rem;
+    }
+    /* diagonal stripe overlay */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 40px,
+        rgba(50,140,193,0.04) 40px,
+        rgba(50,140,193,0.04) 41px
+      );
+    }
+    /* glowing orb */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(50,140,193,0.18) 0%, transparent 70%);
+      top: -150px; right: -100px; pointer-events: none;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 680px;
+    }
+    .breadcrumb {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4);
+      display: flex; gap: 0.5rem; margin-bottom: 1.25rem; align-items: center;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.75); }
+    .breadcrumb span { color: rgba(255,255,255,0.2); }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(50,140,193,0.15); border: 1px solid rgba(100,200,245,0.25);
+      color: var(--blue-light); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 0.9rem; border-radius: 50px; margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+      font-weight: 900; color: var(--white); line-height: 1.1;
+      margin-bottom: 1.1rem; letter-spacing: -1.5px;
+    }
+    .hero h1 em { color: var(--blue-light); font-style: italic; }
+    .hero p {
+      color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.7; max-width: 520px;
+    }
+    /* stat row */
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 2.5rem; flex-wrap: wrap;
+    }
+    .stat-item { }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 800; color: var(--white);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--blue-light); }
+    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; font-weight: 400; }
+
+    /* ══════════════════════════════
+       SERVICES SECTION
+    ══════════════════════════════ */
+    .services-section {
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 5vw;
+    }
+
+    .section-label {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 28px; height: 2px; background: var(--blue);
+    }
+    .section-label span {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--blue);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800;
+      color: var(--navy); line-height: 1.2; margin-bottom: 0.65rem;
+      letter-spacing: -0.5px;
+    }
+    .section-sub {
+      color: var(--muted); font-size: 1rem; line-height: 1.6; max-width: 540px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Primary Services Grid ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    /* featured wide card */
+    .services-grid .service-card:first-child {
+      grid-column: span 2;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      display: flex; flex-direction: column;
+      opacity: 0; transform: translateY(24px);
+      animation: riseUp 0.55s var(--ease) forwards;
+    }
+    .service-card:nth-child(1) { animation-delay: 0.05s; }
+    .service-card:nth-child(2) { animation-delay: 0.12s; }
+    .service-card:nth-child(3) { animation-delay: 0.18s; }
+    .service-card:nth-child(4) { animation-delay: 0.24s; }
+    .service-card:nth-child(5) { animation-delay: 0.30s; }
+
+    @keyframes riseUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--lift-shadow);
+    }
+
+    /* coloured top bar */
+    .card-bar {
+      height: 4px;
+    }
+    .bar-blue   { background: linear-gradient(90deg, var(--navy), var(--blue)); }
+    .bar-green  { background: linear-gradient(90deg, var(--green), var(--green-light)); }
+    .bar-red    { background: linear-gradient(90deg, var(--red), #f56c7f); }
+    .bar-teal   { background: linear-gradient(90deg, #0e7c7b, #19b4b3); }
+    .bar-amber  { background: linear-gradient(90deg, #c07d00, #f5a623); }
+
+    .card-inner { padding: 2rem 2rem 1.75rem; flex: 1; display: flex; flex-direction: column; }
+
+    .service-icon-wrap {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 1.25rem; flex-shrink: 0;
+    }
+    .ic-blue   { background: #e8f3fa; }
+    .ic-green  { background: #e6f5ec; }
+    .ic-red    { background: #fdeaed; }
+    .ic-teal   { background: #e0f5f5; }
+    .ic-amber  { background: #fef6e4; }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 800; color: var(--navy);
+      margin-bottom: 0.6rem; letter-spacing: -0.3px;
+    }
+    .service-card p {
+      font-size: 0.9rem; color: var(--muted); line-height: 1.65; flex: 1;
+    }
+
+    /* feature pills */
+    .feature-list {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem;
+    }
+    .feat {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em;
+      padding: 0.28rem 0.7rem; border-radius: 50px;
+      border: 1px solid;
+    }
+    .feat-blue  { color: var(--navy);  border-color: #c0d9ea; background: #f0f7fc; }
+    .feat-green { color: #1e6b40; border-color: #b2d8c4; background: #eef7f2; }
+    .feat-red   { color: #9e1a2b; border-color: #f0b3bc; background: #fdf0f2; }
+    .feat-teal  { color: #0a5756; border-color: #a8dada; background: #eaf8f8; }
+    .feat-amber { color: #7a4f00; border-color: #f5d891; background: #fffae9; }
+
+    /* CTA link inside card */
+    .card-cta {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 700;
+      text-decoration: none; margin-top: 1.5rem;
+      transition: gap 0.2s;
+    }
+    .card-cta:hover { gap: 0.65rem; }
+    .cta-blue   { color: var(--blue); }
+    .cta-green  { color: var(--green); }
+    .cta-red    { color: var(--red); }
+    .cta-teal   { color: #0e7c7b; }
+    .cta-amber  { color: #c07d00; }
+
+    /* second row: 3 equal */
+    .services-row2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* ══════════════════════════════
+       HOW IT WORKS
+    ══════════════════════════════ */
+    .how-section {
+      background: var(--navy-deep);
+      padding: 5rem 5vw;
+    }
+    .how-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .how-section .section-label::before { background: var(--blue-light); }
+    .how-section .section-label span { color: var(--blue-light); }
+    .how-section .section-title { color: var(--white); }
+    .how-section .section-sub { color: rgba(255,255,255,0.55); max-width: 480px; margin-bottom: 3rem; }
+
+    .steps-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    /* connecting line */
+    .steps-track::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: calc(12.5% + 14px); right: calc(12.5% + 14px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue) 0%, rgba(50,140,193,0.2) 100%);
+      z-index: 0;
+    }
+
+    .step {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 0 1rem; position: relative; z-index: 1;
+    }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--blue); color: var(--white);
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem; flex-shrink: 0;
+      box-shadow: 0 0 0 6px rgba(50,140,193,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .step:hover .step-num {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 10px rgba(50,140,193,0.2);
+    }
+    .step h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .step p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
+
+    /* ══════════════════════════════
+       CTA BANNER
+    ══════════════════════════════ */
+    .cta-banner {
+      max-width: 1200px; margin: 5rem auto;
+      padding: 0 5vw;
+    }
+    .cta-inner {
+      background: linear-gradient(130deg, var(--navy) 0%, #1a5c8a 60%, #1d7dba 100%);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+      position: relative; overflow: hidden;
+    }
+    .cta-inner::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(100,200,245,0.1); pointer-events: none;
+    }
+    .cta-inner::after {
+      content: '';
+      position: absolute; bottom: -60px; right: 30%;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(100,200,245,0.06); pointer-events: none;
+    }
+    .cta-text { position: relative; z-index: 1; }
+    .cta-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800;
+      color: var(--white); margin-bottom: 0.6rem; letter-spacing: -0.5px;
+    }
+    .cta-text p { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.6; max-width: 480px; }
+    .cta-buttons {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; flex-shrink: 0; position: relative; z-index: 1;
+    }
+    .btn-white {
+      padding: 0.8rem 1.75rem; background: var(--white); color: var(--navy);
+      border: none; border-radius: 8px; font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem; font-weight: 700; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .btn-ghost {
+      padding: 0.8rem 1.75rem; background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.35); border-radius: 8px;
+      font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* ══════════════════════════════
+       WHY ABAK STRIP
+    ══════════════════════════════ */
+    .why-section {
+      background: var(--white);
+      padding: 4rem 5vw;
+    }
+    .why-inner { max-width: 1200px; margin: 0 auto; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .why-card {
+      background: var(--grey-bg); border-radius: 16px;
+      padding: 1.75rem 1.5rem; text-align: center;
+      border: 1px solid var(--grey-mid);
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .why-card:hover {
+      transform: translateY(-4px); box-shadow: var(--card-shadow);
+      background: var(--white);
+    }
+    .why-card .icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .why-card h4 {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 0.35rem;
+    }
+    .why-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    footer {
+      background: var(--navy-deep); color: rgba(255,255,255,0.55);
+      padding: 3.5rem 5vw 1.5rem;
+    }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand .logo { display: block; margin-bottom: 0.75rem; }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 {
+      font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul a {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-col p { font-size: 0.82rem; margin-bottom: 0.45rem; }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.25rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-bottom p { font-size: 0.78rem; }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ══════════════════════════════
+       FLOATING WHATSAPP
+    ══════════════════════════════ */
+    .wa-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: waPulse 2.5s infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); animation: none; box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    .wa-float svg { width: 26px; height: 26px; fill: var(--white); }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+      50%      { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+    }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid .service-card:first-child { grid-column: span 2; }
+      .services-row2 { grid-template-columns: 1fr 1fr; }
+      .steps-track { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .steps-track::before { display: none; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .services-grid .service-card:first-child { grid-column: span 1; }
+      .services-row2 { grid-template-columns: 1fr; }
+      .steps-track { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .cta-inner { padding: 2rem 1.5rem; }
+      .cta-buttons { width: 100%; }
+      .btn-white, .btn-ghost { flex: 1; text-align: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header>
+  <a href="index.html" class="logo">Abak<sup>®</sup></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+	<a href="shop.html">Shop</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="sourcing.html">Sourcing</a>
+	<li><a href="partnerships.html">Global Partnership</a></li>
+	<a href="FAQs.html">FAQs</a>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Services</span>
+    </nav>
+    <div class="hero-pill">⚙ What We Offer</div>
+    <h1>End-to-End<br><em>Frozen Food</em> Solutions</h1>
+    <p>From wholesale supply and cold storage to custom orders and last-mile delivery — Abak Company Limited is your complete frozen foods partner in Ghana.</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5<span>+</span></div>
+        <div class="stat-label">Core Services</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24<span>/7</span></div>
+        <div class="stat-label">Cold Storage Availability</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">B2B<span>.</span></div>
+        <div class="stat-label">Bulk & Wholesale Supply</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ SERVICES ══════════ -->
+<section class="services-section">
+
+  <div class="section-label"><span>Our Services</span></div>
+  <h2 class="section-title">Built for Businesses That Need Reliability</h2>
+  <p class="section-sub">Whether you run a restaurant, hotel, catering operation, or distribution business — we have a service tailored to your needs.</p>
+
+  <!-- Row 1: Featured + 1 -->
+  <div class="services-grid">
+
+    <!-- FEATURED: Wholesale Supply -->
+    <article class="service-card">
+      <div class="card-bar bar-blue"></div>
+      <div class="card-inner">
+        <div class="service-icon-wrap ic-blue">🏪</div>
+        <h3>Wholesale Supply</h3>
+        <p>We are a trusted wholesale supplier of premium frozen foods across Ghana. Sourced from certified international producers, our products are available in consistent volumes to support your business operations — whether you're a supermarket, distributor, trader, or processing company. Benefit from competitive wholesale pricing and dedicated account management.</p>
+        <div class="feature-list">
+          <span class="feat feat-blue">Competitive Pricing</span>
+          <span class="feat feat-blue">Certified Products</span>
+          <span class="feat feat-blue">Consistent Stock</span>
+          <span class="feat feat-blue">Account Management</span>
+          <span class="feat feat-blue">Poultry · Fish · Red Meat</span>
+        </div>
+        <a href="contact.html" class="card-cta cta-blue">Enquire About Wholesale →</a>
+      </div>
+    </article>
+
+    <!-- Bulk Delivery -->
+    <article class="service-card">
+      <div class="card-bar bar-green"></div>
+      <div class="card-inner">
+        <div class="service-icon-wrap ic-green">🚚</div>
+        <h3>Bulk Delivery</h3>
+        <p>Reliable, temperature-controlled delivery of frozen goods directly to your location across Ghana. We handle logistics so you can focus on your business, ensuring your orders arrive on time and in perfect condition.</p>
+        <div class="feature-list">
+          <span class="feat feat-green">Temperature-Controlled</span>
+          <span class="feat feat-green">Nationwide Coverage</span>
+          <span class="feat feat-green">Scheduled Runs</span>
+        </div>
+        <a href="contact.html" class="card-cta cta-green">Request Delivery Quote →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Row 2: Three equal -->
+  <div class="services-row2" style="margin-top: 1.5rem;">
+
+    <!-- Cold Storage -->
+    <article class="service-card">
+      <div class="card-bar bar-teal"></div>
+      <div class="card-inner">
+        <div class="service-icon-wrap ic-teal">❄️</div>
+        <h3>Cold Storage</h3>
+        <p>Our certified cold storage facilities maintain optimal temperatures to preserve the freshness, quality, and safety of your frozen products. Ideal for businesses that require short-term or long-term storage solutions as part of their supply chain.</p>
+        <div class="feature-list">
+          <span class="feat feat-teal">Certified Facilities</span>
+          <span class="feat feat-teal">Optimal Temperature</span>
+          <span class="feat feat-teal">Short &amp; Long-term</span>
+        </div>
+        <a href="contact.html" class="card-cta cta-teal">Enquire About Storage →</a>
+      </div>
+    </article>
+
+    <!-- Distribution -->
+    <article class="service-card">
+      <div class="card-bar bar-red"></div>
+      <div class="card-inner">
+        <div class="service-icon-wrap ic-red">🗺️</div>
+        <h3>Distribution</h3>
+        <p>We operate a structured distribution network designed to supply wholesalers, retailers, supermarkets, and food businesses efficiently. Our distribution model ensures that products reach your shelves or kitchen at the right time, every time.</p>
+        <div class="feature-list">
+          <span class="feat feat-red">Retail &amp; Wholesale</span>
+          <span class="feat feat-red">Structured Routes</span>
+          <span class="feat feat-red">Reliable Timelines</span>
+        </div>
+        <a href="contact.html" class="card-cta cta-red">Partner With Us →</a>
+      </div>
+    </article>
+
+    <!-- Custom Orders -->
+    <article class="service-card">
+      <div class="card-bar bar-amber"></div>
+      <div class="card-inner">
+        <div class="service-icon-wrap ic-amber">📋</div>
+        <h3>Custom Orders</h3>
+        <p>Need a specific cut, packaging size, product mix, or volume not listed in our catalogue? We work directly with clients to fulfil custom orders — whether for special events, restaurant menus, institutional catering, or export requirements.</p>
+        <div class="feature-list">
+          <span class="feat feat-amber">Custom Cuts &amp; Sizes</span>
+          <span class="feat feat-amber">Event Orders</span>
+          <span class="feat feat-amber">Institutional Supply</span>
+        </div>
+        <a href="contact.html" class="card-cta cta-amber">Discuss Your Order →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-label"><span>Our Process</span></div>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Getting started with Abak is simple. Here's how we work with our clients from first enquiry to successful delivery.</p>
+
+    <div class="steps-track">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Get in Touch</h4>
+        <p>Reach us via WhatsApp, phone, email, or the contact form. Tell us what you need.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Receive a Quote</h4>
+        <p>We send you a competitive price quote tailored to your volume and product requirements.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Confirm Your Order</h4>
+        <p>Agree on packaging, quantities and delivery schedule. We handle all the logistics.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Delivery &amp; Support</h4>
+        <p>Your order is delivered cold, on time, with dedicated after-sales support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ WHY ABAK ══════════ -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="section-label"><span>Why Choose Us</span></div>
+    <h2 class="section-title">Why Businesses Trust Abak</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="icon">🌍</span>
+        <h4>Globally Sourced</h4>
+        <p>We source from certified international suppliers, ensuring consistent quality.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">❄️</span>
+        <h4>Cold-Chain Integrity</h4>
+        <p>Products are kept at optimal temperatures from source to your door.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">💰</span>
+        <h4>Competitive Pricing</h4>
+        <p>Volume-based pricing and wholesale rates that protect your margins.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">🤝</span>
+        <h4>Dedicated Support</h4>
+        <p>Responsive customer service and a team that understands your business needs.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">🏆</span>
+        <h4>Industry Credibility</h4>
+        <p>Member of the American Chamber of Commerce Ghana and trusted across the sector.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">📦</span>
+        <h4>Flexible Solutions</h4>
+        <p>From small orders to large-scale bulk supply — we scale to your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ CTA BANNER ══════════ -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready to Work With Us?</h2>
+      <p>Contact our team today for a quote, product inquiry, or to discuss a long-term supply partnership. We're here to support your business every step of the way.</p>
+    </div>
+    <div class="cta-buttons">
+      <button class="btn-white" onclick="window.location.href='contact.html'">Get a Quote</button>
+      <button class="btn-ghost" onclick="orderWhatsApp()">💬 WhatsApp Us</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Abak<sup>®</sup></a>
+      <p>Abak Company Limited — Premium frozen foods and cold storage solutions for businesses and households across Ghana.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="services.html#wholesale">Wholesale Supply</a></li>
+        <li><a href="services.html#delivery">Bulk Delivery</a></li>
+        <li><a href="services.html#storage">Cold Storage</a></li>
+        <li><a href="services.html#distribution">Distribution</a></li>
+        <li><a href="services.html#custom">Custom Orders</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <p>📍 HQ1 Anunsah Clottey street, Kaneshie Market-Accra, Ghana</p>
+      <p>📞 +233 24 729 8551</p>
+	  <p>+233 24 729 8551</p>
+      <p>💬 WhatsApp Orders Available</p>
+      <p>✉ info@abakcompany.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Abak Company Limited. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════ FLOATING WHATSAPP ══════════ -->
+<button class="wa-float" onclick="orderWhatsApp()" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</button>
+
+
+<script>
+  function orderWhatsApp() {
+    const phone = '233247298551'; // Replace with actual number
+    const msg = encodeURIComponent("Hello Abak Company Limited, I'd like to enquire about your services. Please send me more information.");
+    window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+  }
+
+  function toggleMenu() {
+    // Connect to your mobile nav drawer
+    alert('Mobile navigation: connect to your nav drawer here.');
+  }
+
+  // Scroll-triggered reveal for cards
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.animationPlayState = 'running';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.service-card, .why-card, .step').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  }
+</script>
+</body>
+</html>

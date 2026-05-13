@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Insights | Abak Company Limited – Frozen Foods Ghana</title>
+  <meta name="description" content="Expert tips, industry insights, recipes, and news from Abak Company Limited – Ghana's leading frozen foods and cold storage provider." />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ════════════════════════════════════════
+       DESIGN DIRECTION: Editorial Magazine
+       — Bodoni serif headlines, Karla body
+       — Ink-black & warm cream with punchy
+         cold-blue and coral accents
+       — Asymmetric masonry grid, large type,
+         strong typographic hierarchy
+    ════════════════════════════════════════ */
+
+    :root {
+      --ink:     #0e1a14;
+      --navy:    #0B3C5D;
+      --blue:    #328CC1;
+      --ice:     #a8dcf0;
+      --cream:   #F7F4EE;
+      --warm:    #FFFDF8;
+      --coral:   #E8583A;
+      --green:   #2E8B57;
+      --gold:    #C9973A;
+      --white:   #FFFFFF;
+      --muted:   #6B7F72;
+      --border:  rgba(14,26,20,0.1);
+      --r:       4px;
+      --sh:      0 8px 48px rgba(14,26,20,0.08);
+      --sh-lg:   0 24px 72px rgba(14,26,20,0.14);
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Karla', sans-serif;
+      background: var(--warm);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Utility ── */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    .container--wide { max-width: 1440px; }
+
+    .kicker {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--blue); display: inline-block; margin-bottom: 12px;
+    }
+    .kicker.coral  { color: var(--coral); }
+    .kicker.gold   { color: var(--gold); }
+    .kicker.green  { color: var(--green); }
+    .kicker.white  { color: rgba(255,255,255,0.55); }
+
+    h2.hed {
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 900; line-height: 1.08;
+      color: var(--ink); margin-bottom: 18px;
+    }
+    h2.hed em { font-style: italic; color: var(--blue); }
+    h2.hed.inv { color: #fff; }
+    h2.hed.inv em { color: var(--ice); }
+
+    .deck {
+      font-size: 1rem; color: var(--muted);
+      line-height: 1.82; max-width: 560px;
+    }
+    .deck.wide { max-width: 680px; }
+    .deck.center { margin: 0 auto; text-align: center; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: 2px;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.5px; cursor: pointer;
+      transition: all 0.22s; border: none;
+    }
+    .btn-ink      { background: var(--ink);   color: #fff; }
+    .btn-ink:hover     { background: #1e3028; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(14,26,20,0.3); }
+    .btn-blue     { background: var(--blue);  color: #fff; }
+    .btn-blue:hover    { background: var(--navy); transform: translateY(-1px); }
+    .btn-coral    { background: var(--coral); color: #fff; }
+    .btn-coral:hover   { background: #c94528; transform: translateY(-1px); }
+    .btn-wa       { background: #25D366; color: #fff; }
+    .btn-wa:hover      { background: #1dba57; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
+    .btn-outline  { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+    .btn-outline:hover { border-color: var(--ink); }
+    .btn-outline-w { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
+    .btn-outline-w:hover { background: rgba(255,255,255,0.08); }
+    .btn-sm { padding: 8px 16px; font-size: 0.78rem; }
+
+    /* ════════════════════════════════════════
+       NAVBAR
+    ════════════════════════════════════════ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(14,26,20,0.97);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between; height: 66px;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex; align-items: center; gap: 13px;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.5rem; font-weight: 900; color: #fff;
+    }
+    /*
+    ╔════════════════════════════════════════════════════╗
+    ║  NAVBAR LOGO IMAGE PLACEHOLDER                     ║
+    ║                                                    ║
+    ║  Replace the div.logo-img-wrap with:               ║
+    ║                                                    ║
+    ║  <img                                              ║
+    ║    src="images/abak-logo.png"                      ║
+    ║    alt="Abak Company Limited"                      ║
+    ║    class="logo-img"                                ║
+    ║    height="40"                                     ║
+    ║  />                                                ║
+    ║                                                    ║
+    ║  • Recommended: 40px height                        ║
+    ║  • Format: PNG (transparent) or SVG                ║
+    ║  • Use a white/light version for dark navbar       ║
+    ╚════════════════════════════════════════════════════╝
+    */
+    .logo-img-wrap {
+      width: 42px; height: 42px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      border: 1.5px dashed rgba(255,255,255,0.38);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer;
+      transition: border-color 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .logo-img-wrap:hover { border-color: rgba(255,255,255,0.8); }
+    .logo-img-wrap::after {
+      content: 'Logo';
+      font-family: 'Karla', sans-serif;
+      font-size: 0.5rem; font-weight: 700; letter-spacing: 1px;
+      color: rgba(255,255,255,0.65); text-transform: uppercase;
+    }
+    .logo-img { height: 42px; width: 42px; object-fit: contain; border-radius: 8px; }
+
+    .nav-links { display: flex; gap: 0; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65); font-size: 0.85rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 4px; transition: all 0.2s; letter-spacing: 0.2px;
+    }
+    .nav-links a:hover  { color: #fff; background: rgba(255,255,255,0.07); }
+    .nav-links a.active { color: var(--ice); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-right .btn { padding: 9px 18px; font-size: 0.82rem; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: #fff; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px,4.5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px,-4.5px); }
+
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 2px;
+      position: fixed; top: 66px; left: 0; right: 0;
+      background: #0a1510; padding: 16px 28px 28px;
+      z-index: 999; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: rgba(255,255,255,0.78); font-size: 1rem; font-weight: 500;
+      padding: 13px 14px; border-radius: 4px; transition: background 0.2s;
+    }
+    .mobile-nav a:hover { background: rgba(255,255,255,0.06); color: #fff; }
+    .mobile-nav .btn { width: 100%; justify-content: center; margin-top: 10px; border-radius: 2px; }
+
+    /* ════════════════════════════════════════
+       PAGE HERO — bold editorial masthead
+    ════════════════════════════════════════ */
+    .page-hero {
+      background: var(--ink);
+      padding: 140px 0 0;
+      position: relative; overflow: hidden;
+    }
+    /* Halftone dot pattern overlay */
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    /* Warm glow */
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 35% 50%, rgba(50,140,193,0.12) 0%, transparent 70%);
+    }
+    .hero-inner { position: relative; z-index: 2; padding-bottom: 0; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; color: rgba(255,255,255,0.32);
+      margin-bottom: 36px; letter-spacing: 0.5px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.32); transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+    .breadcrumb .cur { color: var(--ice); }
+
+    /* Masthead — magazine style */
+    .masthead {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .masthead-left {
+      padding: 56px 64px 64px 0;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .masthead-issue {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+    }
+    .issue-badge {
+      background: var(--coral); color: #fff;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; padding: 6px 14px; border-radius: 2px;
+    }
+    .issue-label { font-size: 0.78rem; color: rgba(255,255,255,0.35); letter-spacing: 1px; }
+
+    .masthead-h1 {
+      font-family: 'Bodoni Moda', serif; font-weight: 900;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      color: #fff; line-height: 0.98; margin-bottom: 24px;
+      letter-spacing: -1px;
+      animation: fadeUp 0.9s ease both;
+    }
+    .masthead-h1 em { font-style: italic; color: var(--ice); display: block; }
+
+    .masthead-deck {
+      font-size: 1rem; color: rgba(255,255,255,0.6);
+      line-height: 1.82; max-width: 440px; margin-bottom: 36px;
+      animation: fadeUp 0.9s 0.18s ease both;
+    }
+    .masthead-actions {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      animation: fadeUp 0.9s 0.32s ease both;
+    }
+
+    /* Masthead right — featured article preview */
+    .masthead-right {
+      padding: 56px 0 0 64px;
+      animation: fadeUp 0.9s 0.2s ease both;
+    }
+    .featured-preview-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--coral);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .featured-preview-label::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1);
+    }
+    .featured-card-hero {
+      background: linear-gradient(145deg, #1a3a2a, #0d4e7a);
+      border-radius: 0; position: relative; overflow: hidden;
+      cursor: pointer; transition: transform 0.3s;
+    }
+    .featured-card-hero:hover { transform: translateY(-4px); }
+    .featured-card-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(50,140,193,0.3), transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(46,139,87,0.2), transparent 60%);
+    }
+    .featured-thumb {
+      height: 240px; display: flex; align-items: center;
+      justify-content: center; font-size: 5rem;
+      position: relative; z-index: 1;
+    }
+    .featured-thumb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(10,21,16,0.8) 100%);
+      z-index: 2;
+    }
+    .featured-card-body {
+      padding: 24px 28px 32px; position: relative; z-index: 3;
+    }
+    .featured-card-body .kicker { margin-bottom: 8px; }
+    .featured-card-body h3 {
+      font-family: 'Bodoni Moda', serif; font-weight: 700;
+      font-size: 1.4rem; color: #fff; line-height: 1.25; margin-bottom: 10px;
+    }
+    .featured-card-body p { font-size: 0.88rem; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 18px; }
+    .article-meta {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 0.74rem; color: rgba(255,255,255,0.4); flex-wrap: wrap;
+    }
+    .article-meta .sep { opacity: 0.3; }
+
+    /* Ticker strip below hero */
+    .ticker-strip {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 0;
+      overflow: hidden; white-space: nowrap;
+      position: relative; z-index: 2;
+    }
+    .ticker-inner {
+      display: inline-flex; gap: 0;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 0 40px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
+      color: rgba(255,255,255,0.38); text-transform: uppercase;
+    }
+    .ticker-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--coral); flex-shrink: 0; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ════════════════════════════════════════
+       FILTER / CATEGORIES BAR
+    ════════════════════════════════════════ */
+    .filter-bar {
+      position: sticky; top: 66px; z-index: 100;
+      background: var(--warm);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(14,26,20,0.05);
+    }
+    .filter-bar-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 14px 0;
+    }
+    .filter-pills {
+      display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1;
+    }
+    .filter-pills::-webkit-scrollbar { display: none; }
+    .fpill {
+      display: flex; align-items: center; gap: 6px;
+      padding: 7px 16px; border-radius: 2px; white-space: nowrap;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.4px;
+      cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+      border: 1.5px solid var(--border); color: var(--muted); background: transparent;
+    }
+    .fpill:hover  { border-color: var(--ink); color: var(--ink); }
+    .fpill.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .fpill .fp-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .fp-all  { background: var(--ink); }
+    .fp-tips { background: var(--blue); }
+    .fp-rec  { background: var(--coral); }
+    .fp-news { background: var(--gold); }
+    .fp-how  { background: var(--green); }
+    .fp-ind  { background: #7b72e9; }
+
+    /* Search in filter bar */
+    .filter-search {
+      position: relative; flex-shrink: 0; width: 220px;
+    }
+    .filter-search input {
+      width: 100%; background: transparent;
+      border: 1.5px solid var(--border); border-radius: 2px;
+      padding: 8px 36px 8px 14px;
+      font-family: 'Karla', sans-serif; font-size: 0.82rem; color: var(--ink);
+      outline: none; transition: border-color 0.2s;
+    }
+    .filter-search input::placeholder { color: var(--muted); }
+    .filter-search input:focus { border-color: var(--blue); }
+    .filter-search .fs-icon {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      font-size: 0.9rem; opacity: 0.4; pointer-events: none;
+    }
+
+    /* ════════════════════════════════════════
+       BLOG GRID — asymmetric editorial layout
+    ════════════════════════════════════════ */
+    .blog-section { padding: 72px 0 100px; background: var(--warm); }
+
+    /* Main masonry-style grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    /* Article card base */
+    .art-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer; position: relative; overflow: hidden;
+    }
+    .art-card:hover { transform: translateY(-5px); box-shadow: var(--sh-lg); }
+
+    /* Grid column spans */
+    .span-8 { grid-column: span 8; }
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-4c { grid-column: span 4; }
+    .span-12 { grid-column: span 12; }
+
+    /* Card image area */
+    .card-thumb {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; position: relative; overflow: hidden; flex-shrink: 0;
+    }
+    .card-thumb .thumb-emoji {
+      display: block; transition: transform 0.4s ease;
+    }
+    .art-card:hover .thumb-emoji { transform: scale(1.12); }
+    .thumb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(14,26,20,0.55) 100%);
+    }
+    /* Image placeholder inside card */
+    /*
+    ╔════════════════════════════════════════════════════╗
+    ║  BLOG POST IMAGE PLACEHOLDER                       ║
+    ║                                                    ║
+    ║  Each .card-thumb div represents a blog post       ║
+    ║  featured image. Replace the emoji with:           ║
+    ║                                                    ║
+    ║  <img                                              ║
+    ║    src="images/blog/post-slug.jpg"                 ║
+    ║    alt="Post title description"                    ║
+    ║    class="thumb-img"                               ║
+    ║  />                                                ║
+    ║                                                    ║
+    ║  Recommended sizes:                                ║
+    ║  • Large (span-8): 800×400px                       ║
+    ║  • Medium (span-6): 600×360px                      ║
+    ║  • Small (span-4): 400×300px                       ║
+    ║  • Horizontal card: 280×full height                ║
+    ║  Format: JPG or WebP for photos                    ║
+    ╚════════════════════════════════════════════════════╝
+    */
+    .thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Background colours per category */
+    .bg-tips    { background: linear-gradient(145deg, #ddeeff, #9ec8f0); }
+    .bg-recipe  { background: linear-gradient(145deg, #fde8e0, #f5b8a0); }
+    .bg-news    { background: linear-gradient(145deg, #fef3da, #f8d98a); }
+    .bg-howto   { background: linear-gradient(145deg, #d8f2e4, #93d4ab); }
+    .bg-ind     { background: linear-gradient(145deg, #ede9f8, #c4b5ea); }
+    .bg-quality { background: linear-gradient(145deg, #d8edf8, #8fc8e8); }
+    .bg-storage { background: linear-gradient(145deg, #e2f5f0, #8dd4c2); }
+    .bg-bulk    { background: linear-gradient(145deg, #fde8eb, #f5a5b0); }
+
+    /* Category label on card */
+    .card-cat {
+      position: absolute; top: 14px; left: 14px; z-index: 3;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; padding: 5px 12px; color: #fff;
+    }
+    .cat-tips    { background: var(--blue); }
+    .cat-recipe  { background: var(--coral); }
+    .cat-news    { background: var(--gold); }
+    .cat-howto   { background: var(--green); }
+    .cat-ind     { background: #5a4fcf; }
+    .cat-quality { background: var(--navy); }
+    .cat-storage { background: #2a8a7a; }
+    .cat-bulk    { background: var(--coral); }
+
+    /* Read time badge */
+    .card-read-time {
+      position: absolute; top: 14px; right: 14px; z-index: 3;
+      background: rgba(255,255,255,0.9);
+      font-size: 0.68rem; font-weight: 700; color: var(--ink);
+      padding: 4px 10px;
+    }
+
+    /* Card body */
+    .card-body { padding: 24px 24px 28px; flex: 1; display: flex; flex-direction: column; }
+    .card-body h3 {
+      font-family: 'Bodoni Moda', serif; font-weight: 700;
+      font-size: 1.15rem; color: var(--ink); line-height: 1.3;
+      margin-bottom: 10px; flex: 1;
+    }
+    .card-body h3.large { font-size: 1.5rem; }
+    .card-body p {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding-top: 16px; border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+    .card-author {
+      display: flex; align-items: center; gap: 9px;
+    }
+    .author-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    .card-author-name { font-size: 0.78rem; font-weight: 600; color: var(--ink); }
+    .card-date { font-size: 0.72rem; color: var(--muted); }
+    .card-read-link {
+      font-size: 0.75rem; font-weight: 700; color: var(--blue);
+      display: flex; align-items: center; gap: 5px;
+      border-bottom: 1px solid transparent; transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .art-card:hover .card-read-link { border-bottom-color: var(--blue); gap: 8px; }
+
+    /* Horizontal card variant */
+    .art-card.horizontal { flex-direction: row; }
+    .art-card.horizontal .card-thumb { width: 280px; flex-shrink: 0; }
+    .art-card.horizontal .card-body { padding: 28px 28px 28px 28px; }
+
+    /* Large hero card (span-8) */
+    .art-card.large .card-thumb { height: 320px; }
+    .art-card.medium .card-thumb { height: 240px; }
+    .art-card.small .card-thumb  { height: 190px; }
+    .art-card.tiny .card-thumb   { height: 160px; }
+
+    /* ── Pagination ── */
+    .pagination {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; padding-top: 48px;
+    }
+    .page-btn {
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1.5px solid var(--border); background: transparent;
+      font-family: 'Karla', sans-serif; font-size: 0.85rem; font-weight: 600;
+      color: var(--muted); cursor: pointer; transition: all 0.2s;
+    }
+    .page-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .page-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .page-btn.arrow { font-size: 1.1rem; }
+
+    /* ════════════════════════════════════════
+       FEATURED TOPICS — horizontal strip
+    ════════════════════════════════════════ */
+    .topics-strip {
+      padding: 80px 0;
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .topics-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px; margin-bottom: 48px;
+    }
+    .topics-scroll {
+      display: flex; gap: 16px; overflow-x: auto; scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+    .topics-scroll::-webkit-scrollbar { display: none; }
+    .topic-card {
+      flex-shrink: 0; width: 200px;
+      background: var(--white); border: 1px solid var(--border);
+      padding: 24px 20px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
+    }
+    .topic-card:hover { transform: translateY(-5px); box-shadow: var(--sh); }
+    .topic-icon {
+      font-size: 2rem; margin-bottom: 12px;
+      width: 58px; height: 58px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .topic-card h4 {
+      font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .topic-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .topic-count {
+      margin-top: 14px; font-size: 0.7rem; font-weight: 700;
+      color: var(--muted); letter-spacing: 1px;
+    }
+
+    /* ════════════════════════════════════════
+       NEWSLETTER SIGNUP — full-bleed
+    ════════════════════════════════════════ */
+    .newsletter {
+      padding: 90px 0;
+      background: var(--ink);
+      position: relative; overflow: hidden;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .newsletter::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(50,140,193,0.15), transparent 70%);
+    }
+    .newsletter-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .newsletter-text .kicker { margin-bottom: 10px; }
+    .newsletter-text h2 {
+      font-family: 'Bodoni Moda', serif; font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3rem); color: #fff;
+      line-height: 1.1; margin-bottom: 18px;
+    }
+    .newsletter-text h2 em { font-style: italic; color: var(--ice); }
+    .newsletter-text p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; }
+
+    .newsletter-perks { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+    .newsletter-perk {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.88rem; color: rgba(255,255,255,0.78);
+    }
+    .perk-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(50,140,193,0.2); border: 1px solid rgba(50,140,193,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--ice); flex-shrink: 0;
+    }
+
+    /* Signup form */
+    .newsletter-form-wrap {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 40px 36px; backdrop-filter: blur(10px);
+    }
+    .newsletter-form-wrap h3 {
+      font-family: 'Bodoni Moda', serif; font-size: 1.3rem; font-weight: 700;
+      color: #fff; margin-bottom: 24px;
+    }
+    .nf-group { margin-bottom: 16px; }
+    .nf-group label {
+      display: block; font-size: 0.68rem; font-weight: 700;
+      color: rgba(255,255,255,0.4); text-transform: uppercase;
+      letter-spacing: 1.5px; margin-bottom: 7px;
+    }
+    .nf-group input, .nf-group select {
+      width: 100%; background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      padding: 13px 16px;
+      font-family: 'Karla', sans-serif; font-size: 0.92rem; color: #fff;
+      outline: none; transition: border-color 0.2s;
+    }
+    .nf-group input::placeholder { color: rgba(255,255,255,0.3); }
+    .nf-group input:focus, .nf-group select:focus { border-color: var(--blue); }
+    .nf-group select option { background: var(--ink); }
+    .nf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .nf-submit {
+      width: 100%; padding: 15px; font-size: 0.92rem; letter-spacing: 0.5px;
+      border-radius: 2px; margin-top: 6px; background: var(--coral); color: #fff;
+      font-family: 'Karla', sans-serif; font-weight: 700; cursor: pointer;
+      border: none; transition: all 0.22s;
+    }
+    .nf-submit:hover { background: #c94528; transform: translateY(-1px); }
+    .nf-note {
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+      text-align: center; margin-top: 12px; line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════
+       CONTACT STRIP
+    ════════════════════════════════════════ */
+    .contact-strip {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+    .contact-strip-inner {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: center;
+    }
+    .contact-strip h2 {
+      font-family: 'Bodoni Moda', serif; font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 900; color: var(--ink); line-height: 1.15; margin-bottom: 14px;
+    }
+    .contact-strip h2 em { font-style: italic; color: var(--blue); }
+    .contact-strip p { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 28px; }
+    .contact-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .contact-grid { display: flex; flex-direction: column; gap: 14px; }
+    .ci {
+      display: flex; align-items: flex-start; gap: 15px;
+      background: var(--white); border: 1px solid var(--border);
+      padding: 17px 20px; transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .ci:hover { box-shadow: var(--sh); transform: translateX(4px); }
+    .ci-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #ddeeff, #9ec8f0);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .ci-label { font-size: 0.65rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 3px; }
+    .ci-value { font-size: 0.91rem; color: var(--ink); font-weight: 600; line-height: 1.5; }
+    .ci-value a { color: var(--ink); transition: color 0.2s; }
+    .ci-value a:hover { color: var(--blue); }
+    /* GPS badge */
+    .gps-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(201,151,58,0.1); border: 1px solid rgba(201,151,58,0.25);
+      padding: 5px 12px; font-size: 0.72rem; font-weight: 700;
+      color: #8a6820; margin-top: 6px;
+    }
+
+    /* ════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════ */
+    footer {
+      background: var(--ink); color: rgba(255,255,255,0.55);
+      padding: 64px 0 0;
+      border-top: 2px solid rgba(255,255,255,0.05);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-col h4 {
+      font-size: 0.63rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 18px;
+    }
+    /* Footer brand / logo column */
+    .footer-brand {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+    }
+    /*
+    ╔════════════════════════════════════════════════════╗
+    ║  FOOTER LOGO PLACEHOLDER                           ║
+    ║                                                    ║
+    ║  Replace .footer-logo-wrap with:                   ║
+    ║                                                    ║
+    ║  <img                                              ║
+    ║    src="images/abak-logo-white.png"               ║
+    ║    alt="Abak Company Limited"                      ║
+    ║    class="footer-logo-img"                         ║
+    ║    height="36"                                     ║
+    ║  />                                                ║
+    ║                                                    ║
+    ║  • Use white/light version for dark footer         ║
+    ║  • Recommended height: 32–40px                     ║
+    ╚════════════════════════════════════════════════════╝
+    */
+    .footer-logo-wrap {
+      width: 38px; height: 38px; border-radius: 6px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      border: 1px dashed rgba(255,255,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.48rem; font-weight: 700; letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.6); text-transform: uppercase;
+    }
+    .footer-logo-img { height: 36px; object-fit: contain; border-radius: 6px; }
+    .footer-wordmark {
+      font-family: 'Bodoni Moda', serif; font-size: 1.4rem; font-weight: 900; color: #fff;
+    }
+    .footer-col p { font-size: 0.84rem; color: rgba(255,255,255,0.45); line-height: 1.72; }
+    .f-links { display: flex; flex-direction: column; gap: 9px; }
+    .f-links a { font-size: 0.84rem; color: rgba(255,255,255,0.48); transition: color 0.2s; }
+    .f-links a:hover { color: var(--ice); }
+    .f-ci { display: flex; gap: 10px; align-items: flex-start; font-size: 0.82rem; color: rgba(255,255,255,0.48); margin-bottom: 10px; }
+    .f-ci a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .f-ci a:hover { color: var(--ice); }
+    .soc-row { display: flex; gap: 8px; margin-top: 18px; }
+    .soc-btn {
+      width: 34px; height: 34px; border-radius: 2px;
+      background: rgba(255,255,255,0.06); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; color: rgba(255,255,255,0.5); transition: all 0.2s;
+    }
+    .soc-btn:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+      font-size: 0.77rem; color: rgba(255,255,255,0.26);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.26); transition: color 0.2s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+    .footer-bottom-links { display: flex; gap: 18px; }
+
+    /* ════════════════════════════════════════
+       FLOATING WHATSAPP
+    ════════════════════════════════════════ */
+    .float-wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.45rem; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .float-wa:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.65); }
+    .float-wa-pulse {
+      position: absolute; inset: -6px; border-radius: 50%;
+      background: rgba(37,211,102,0.25);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* ════════════════════════════════════════
+       SCROLL REVEAL
+    ════════════════════════════════════════ */
+    .rev { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .rev.in { opacity: 1; transform: none; }
+    .rev-l { opacity: 0; transform: translateX(-24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .rev-l.in { opacity: 1; transform: none; }
+    .rev-r { opacity: 0; transform: translateX(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .rev-r.in { opacity: 1; transform: none; }
+
+    /* ════════════════════════════════════════
+       NO RESULTS
+    ════════════════════════════════════════ */
+    .no-results {
+      grid-column: span 12; text-align: center; padding: 60px 24px;
+      display: none;
+    }
+    .no-results h3 { font-family: 'Bodoni Moda', serif; font-size: 1.5rem; color: var(--ink); margin-bottom: 10px; }
+    .no-results p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .span-8  { grid-column: span 12; }
+      .span-4  { grid-column: span 6; }
+      .span-6  { grid-column: span 6; }
+      .span-4c { grid-column: span 6; }
+      .art-card.horizontal { flex-direction: column; }
+      .art-card.horizontal .card-thumb { width: 100%; height: 220px; }
+    }
+    @media (max-width: 960px) {
+      .nav-links, .nav-right { display: none; }
+      .hamburger { display: flex; }
+      .masthead { grid-template-columns: 1fr; }
+      .masthead-right { display: none; }
+      .masthead-left { padding: 48px 0 56px; border-right: none; }
+      .newsletter-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-strip-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .span-4 { grid-column: span 12; }
+      .span-6 { grid-column: span 12; }
+      .span-4c { grid-column: span 12; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .filter-bar-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .filter-search { width: 100%; }
+      .nf-row { grid-template-columns: 1fr; }
+      .float-wa { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════ NAVBAR ══════════════════ -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <a href="index.html" class="logo" aria-label="Abak Company Limited – Home">
+        <!--
+          ═══════════════════════════════════════════════════
+          NAVBAR LOGO IMAGE PLACEHOLDER
+          ───────────────────────────────────────────────────
+          To insert your logo, REPLACE the div below with:
+
+          <img
+            src="images/abak-logo.png"
+            alt="Abak Company Limited"
+            class="logo-img"
+            height="42"
+          />
+
+          • Size   : 42px height (square or horizontal)
+          • Format : PNG (transparent bg) or SVG
+          • Colour : White/light version for dark navbar
+          ═══════════════════════════════════════════════════
+        -->
+        <div class="logo-img-wrap" title="Insert company logo here" aria-hidden="true"></div>
+        <span>Abak</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="faq.html">FAQ</a>
+        <a href="articles.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://wa.me/233247298551" class="btn btn-wa" target="_blank" rel="noopener">📱 Order Now</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="faq.html">FAQ</a>
+    <a href="articles.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://wa.me/233247298551" class="btn btn-wa" target="_blank" rel="noopener">💬 Order via WhatsApp</a>
+  </div>
+
+  <!-- ══════════════════ PAGE HERO / MASTHEAD ══════════════════ -->
+  <section class="page-hero" aria-labelledby="blog-heading">
+    <div class="container">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>›</span>
+          <span class="cur">Blog &amp; Insights</span>
+        </nav>
+
+        <div class="masthead">
+          <!-- Left — Masthead text -->
+          <div class="masthead-left">
+            <div class="masthead-issue">
+              <span class="issue-badge">New Posts</span>
+              <span class="issue-label">Food · Business · Cold Chain · Recipes</span>
+            </div>
+            <h1 class="masthead-h1" id="blog-heading">
+              Abak<br><em>Insights</em>
+            </h1>
+            <p class="masthead-deck">Tips, recipes, industry news, and cold-chain knowledge from Ghana's leading frozen foods company. Everything you need to get the most from premium frozen proteins.</p>
+            <div class="masthead-actions">
+              <a href="blogs/frozen-vs-fresh.html" class="btn btn-coral">📖 Read Featured Post</a>
+              <a href="#articles" class="btn btn-outline-w">🗞️ All Articles</a>
+              <a href="#newsletter" class="btn btn-outline-w">📧 Subscribe</a>
+            </div>
+          </div>
+
+          <!-- Right — Featured article preview -->
+          <div class="masthead-right">
+            <div class="featured-preview-label">Featured Article</div>
+            <a href="blogs/frozen-vs-fresh.html" class="featured-card-hero" role="article" tabindex="0" aria-label="Read featured article: 5 Reasons Ghana's Best Restaurants Choose Frozen Over Fresh" style="display:block;">
+              <div class="featured-thumb" aria-hidden="true">
+                <!--
+                  FEATURED HERO IMAGE PLACEHOLDER
+                  Replace with: <img src="images/blog/featured.jpg" alt="Description" class="thumb-img" />
+                  Recommended size: 600×240px
+                -->
+                🍽️
+                <div class="featured-thumb-overlay"></div>
+              </div>
+              <div class="featured-card-body">
+                <span class="kicker coral">Industry Insights</span>
+                <h3>5 Reasons Ghana's Best Restaurants Choose Frozen Over Fresh</h3>
+                <p>Quality-conscious chefs are increasingly turning to premium frozen proteins — and the science backs them up completely.</p>
+                <div class="article-meta">
+                  <span>By Abak Editorial Team</span>
+                  <span class="sep">·</span>
+                  <span>15 May 2025</span>
+                  <span class="sep">·</span>
+                  <span>6 min read</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker strip -->
+    <div class="ticker-strip" aria-hidden="true">
+      <div class="ticker-inner">
+        <a href="blogs/frozen-vs-fresh.html" class="ticker-item" style="color:inherit;"><span class="ticker-dot"></span>How to store frozen chicken safely at home</a>
+        <a href="blogs/tilapia-recipes.html" class="ticker-item" style="color:inherit;"><span class="ticker-dot"></span>5 easy tilapia recipes for Ghanaian kitchens</a>
+        <span class="ticker-item"><span class="ticker-dot"></span>Cold chain 101: What every restaurant owner should know</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Why Abak sources from international certified suppliers</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Bulk ordering guide for caterers and event planners</span>
+        <a href="blogs/frozen-vs-fresh.html" class="ticker-item" style="color:inherit;"><span class="ticker-dot"></span>The difference between fresh-frozen and old-thawed meat</a>
+        <!-- Duplicate for seamless loop -->
+        <a href="blogs/frozen-vs-fresh.html" class="ticker-item" style="color:inherit;"><span class="ticker-dot"></span>How to store frozen chicken safely at home</a>
+        <a href="blogs/tilapia-recipes.html" class="ticker-item" style="color:inherit;"><span class="ticker-dot"></span>5 easy tilapia recipes for Ghanaian kitchens</a>
+        <span class="ticker-item"><span class="ticker-dot"></span>Cold chain 101: What every restaurant owner should know</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Why Abak sources from international certified suppliers</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Bulk ordering guide for caterers and event planners</span>
+        <a href="blogs/frozen-vs-fresh.html" class="ticker-item" style="color:inherit;"><span class="ticker-dot"></span>The difference between fresh-frozen and old-thawed meat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FILTER BAR ══════════════════ -->
+  <div class="filter-bar" id="filter-bar" role="navigation" aria-label="Blog category filter">
+    <div class="container">
+      <div class="filter-bar-inner">
+        <div class="filter-pills" role="group" aria-label="Filter by category">
+          <button class="fpill active" data-cat="all"><span class="fp-dot fp-all"></span>All Posts</button>
+          <button class="fpill" data-cat="tips"><span class="fp-dot fp-tips"></span>Storage Tips</button>
+          <button class="fpill" data-cat="recipe"><span class="fp-dot fp-rec"></span>Recipes</button>
+          <button class="fpill" data-cat="news"><span class="fp-dot fp-news"></span>News</button>
+          <button class="fpill" data-cat="howto"><span class="fp-dot fp-how"></span>How-To Guides</button>
+          <button class="fpill" data-cat="industry"><span class="fp-dot fp-ind"></span>Industry</button>
+        </div>
+        <div class="filter-search">
+          <input type="search" id="blogSearch" placeholder="Search articles…" aria-label="Search blog articles" autocomplete="off" />
+          <span class="fs-icon" aria-hidden="true">🔍</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ BLOG ARTICLES ══════════════════ -->
+  <section class="blog-section" id="articles" aria-label="Blog articles">
+    <div class="container">
+      <div class="blog-grid" id="blogGrid">
+
+        <!-- ── ROW 1: Large + Medium ── -->
+
+        <!-- 1. LARGE — Industry -->
+        <article class="art-card large span-8 rev" data-category="industry" tabindex="0" onclick="location.href='blogs/frozen-vs-fresh.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-ind" aria-label="Blog post image placeholder — replace with actual photo">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/frozen-vs-fresh.jpg" alt="Frozen vs fresh proteins" class="thumb-img" />
+              Recommended size: 800×320px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🏭</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-ind">Industry</span>
+            <span class="card-read-time">6 min</span>
+          </div>
+          <div class="card-body">
+            <h3 class="large">5 Reasons Ghana's Best Restaurants Choose Frozen Over Fresh Proteins</h3>
+            <p>The misconception that "fresh is always better" is costing restaurants money and consistency. We explore the science and business case behind premium frozen proteins — and why top chefs are making the switch.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot bg-ind" style="background:#ede9f8;">🧑‍💼</div>
+                <div>
+                  <div class="card-author-name">Abak Editorial Team</div>
+                  <div class="card-date">15 May 2025</div>
+                </div>
+              </div>
+              <a href="blog-frozen-vs-fresh.html" class="card-read-link">Read Article →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Medium — Recipe -->
+        <article class="art-card medium span-4 rev" data-category="recipe" tabindex="0" onclick="location.href='blogs/blog-tilapia-recipes.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-recipe" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/tilapia-recipe.jpg" alt="Tilapia recipe" class="thumb-img" />
+              Recommended size: 400×240px
+            -->
+            <span class="thumb-emoji" aria-hidden="true"><img src="images/tilapia.jpg" alt="Tilapia"></span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-recipe">Recipe</span>
+            <span class="card-read-time">4 min</span>
+          </div>
+          <div class="card-body">
+            <h3>5 Easy Tilapia Recipes Perfect for the Ghanaian Home Kitchen</h3>
+            <p>From grilled tilapia with shito to palm nut soup — quick, flavourful recipes using Abak's premium frozen tilapia.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#fde8e0;">👩‍🍳</div>
+                <div>
+                  <div class="card-author-name">Chef Akosua</div>
+                  <div class="card-date">8 May 2025</div>
+                </div>
+              </div>
+              <a href="blog-tilapia-recipes.html" class="card-read-link">Read →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── ROW 2: Three equal columns ── -->
+
+        <!-- 3. Tips -->
+        <article class="art-card small span-4c rev" data-category="tips" tabindex="0"onclick="location.href='blogs/how-to-properly-store-frozen-chicken.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-tips" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/storage-tips.jpg" alt="Frozen food storage tips" class="thumb-img" />
+              Recommended size: 400×190px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">❄️</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-tips">Storage Tips</span>
+            <span class="card-read-time">3 min</span>
+          </div>
+          <div class="card-body">
+            <h3>How to Properly Store Frozen Chicken at Home to Keep It Safe &amp; Tasty</h3>
+            <p>Simple rules that make a big difference — temperature, packaging, and defrosting the right way.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#ddeeff;">❄️</div>
+                <div>
+                  <div class="card-author-name">Abak Team</div>
+                  <div class="card-date">1 May 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. How-To -->
+        <article class="art-card small span-4c rev" data-category="howto" tabindex="0"onclick="location.href='blogs/guide-to-ordering-from-abak.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-howto" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/bulk-ordering.jpg" alt="Bulk ordering guide" class="thumb-img" />
+              Recommended size: 400×190px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">📦</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-howto">How-To</span>
+            <span class="card-read-time">5 min</span>
+          </div>
+          <div class="card-body">
+            <h3>A Caterer's Complete Guide to Ordering Frozen Foods in Bulk from Abak</h3>
+            <p>Everything you need to know — quantities, timing, pricing, and how to avoid common ordering mistakes for events.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#d8f2e4;">📋</div>
+                <div>
+                  <div class="card-author-name">Sales Team</div>
+                  <div class="card-date">24 Apr 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. News -->
+        <article class="art-card small span-4c rev" data-category="news" tabindex="0"onclick="location.href='blogs/abak-reaffirms-amcham-ghana-membership.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-news" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/amcham-news.jpg" alt="AmCham Ghana membership" class="thumb-img" />
+              Recommended size: 400×190px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🏆</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-news">News</span>
+            <span class="card-read-time">2 min</span>
+          </div>
+          <div class="card-body">
+            <h3>Abak Reaffirms AmCham Ghana Membership — A Mark of International Standards</h3>
+            <p>Our continued membership reflects our commitment to ethical trade, international business standards, and quality assurance.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#fef3da;">📢</div>
+                <div>
+                  <div class="card-author-name">Abak Team</div>
+                  <div class="card-date">18 Apr 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── ROW 3: Horizontal full-width card ── -->
+
+        <!-- 6. HORIZONTAL — Cold Chain -->
+        <article class="art-card horizontal span-12 rev" data-category="industry" tabindex="0"onclick="location.href='blogs/cold-chain-101.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-quality" style="height:auto; min-height:200px;" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/cold-chain.jpg" alt="Cold chain explained" class="thumb-img" />
+              Recommended size: 280×full height
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🌡️</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-quality">Cold Chain</span>
+            <span class="card-read-time">7 min</span>
+          </div>
+          <div class="card-body">
+            <h3 class="large">Cold Chain 101: What Every Restaurant Owner &amp; Caterer in Ghana Needs to Know</h3>
+            <p>Understanding the cold chain isn't just for food scientists. Every restaurateur, caterer, and bulk buyer benefits from knowing how temperature control affects food safety, quality, and your bottom line. We break it down in plain terms.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#d8edf8;">🔬</div>
+                <div>
+                  <div class="card-author-name">Abak Quality Team</div>
+                  <div class="card-date">10 Apr 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read Full Article →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── ROW 4: Two halves ── -->
+
+        <!-- 7. Recipe -->
+        <article class="art-card medium span-6 rev" data-category="recipe" tabindex="0"onclick="location.href='blogs/cooking-with-premium-salmon.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-recipe" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/salmon-recipe.jpg" alt="Salmon recipes" class="thumb-img" />
+              Recommended size: 600×240px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🍣</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-recipe">Recipe</span>
+            <span class="card-read-time">5 min</span>
+          </div>
+          <div class="card-body">
+            <h3>Cooking with Premium Salmon: 3 Elegant Dishes That Impress Every Time</h3>
+            <p>From pan-seared fillets to a Ghanaian-spiced salmon stew — creative ideas for making the most of Abak's Atlantic salmon portions.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#fde8e0;">👩‍🍳</div>
+                <div>
+                  <div class="card-author-name">Chef Akosua</div>
+                  <div class="card-date">3 Apr 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Tips -->
+        <article class="art-card medium span-6 rev" data-category="tips" tabindex="0"onclick="location.href='blogs/the-right-way-to-defrost-frozen-meat.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-tips" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/defrost-tips.jpg" alt="Safe defrosting tips" class="thumb-img" />
+              Recommended size: 600×240px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🧊</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-tips">Storage Tips</span>
+            <span class="card-read-time">4 min</span>
+          </div>
+          <div class="card-body">
+            <h3>The Right Way to Defrost Frozen Meat: Avoid These Common (and Costly) Mistakes</h3>
+            <p>Defrosting frozen meat incorrectly is one of the most common food safety mistakes at home and in commercial kitchens. Here's how to do it properly every time.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#ddeeff;">🛡️</div>
+                <div>
+                  <div class="card-author-name">Abak Safety Team</div>
+                  <div class="card-date">27 Mar 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── ROW 5: Three smaller cards ── -->
+
+        <!-- 9. How-To -->
+        <article class="art-card tiny span-4c rev" data-category="howto" tabindex="0"onclick="location.href='blogs/does-your-business-need-cold-storage.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-storage" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/cold-storage-biz.jpg" alt="Cold storage for businesses" class="thumb-img" />
+              Recommended size: 400×160px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🏗️</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-storage" style="background:#2a8a7a;">Cold Storage</span>
+            <span class="card-read-time">5 min</span>
+          </div>
+          <div class="card-body">
+            <h3>Does Your Business Need Cold Storage? Here's How to Tell</h3>
+            <p>A practical checklist for caterers, retailers, and importers considering third-party cold storage solutions.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#e2f5f0;">🏭</div>
+                <div>
+                  <div class="card-author-name">Abak Team</div>
+                  <div class="card-date">20 Mar 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Industry -->
+        <article class="art-card tiny span-4c rev" data-category="industry" tabindex="0"onclick="location.href='blogs/ghana-frozen-food-market-trends-2026.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-ind" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/food-import.jpg" alt="Ghana food import industry" class="thumb-img" />
+              Recommended size: 400×160px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🌍</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-ind">Industry</span>
+            <span class="card-read-time">6 min</span>
+          </div>
+          <div class="card-body">
+            <h3>Ghana's Frozen Food Market: Trends Every Business Owner Should Watch in 2026</h3>
+            <p>Market growth, demand shifts, and what the data says about frozen protein consumption in West Africa.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#ede9f8;">📊</div>
+                <div>
+                  <div class="card-author-name">Abak Editorial</div>
+                  <div class="card-date">12 Mar 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Recipe -->
+        <article class="art-card tiny span-4c rev" data-category="recipe" tabindex="0"onclick="location.href='blogs/the-ultimate-goat-meat-light-soup.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-recipe" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/goat-stew.jpg" alt="Goat meat stew recipe" class="thumb-img" />
+              Recommended size: 400×160px
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🐐</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-recipe">Recipe</span>
+            <span class="card-read-time">4 min</span>
+          </div>
+          <div class="card-body">
+            <h3>The Ultimate Goat Meat Light Soup: A Ghanaian Classic, Perfected</h3>
+            <p>Rich, aromatic, and deeply satisfying — our guide to cooking goat meat light soup using premium frozen cuts.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#fde8e0;">🍲</div>
+                <div>
+                  <div class="card-author-name">Chef Akosua</div>
+                  <div class="card-date">5 Mar 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. News — Wide -->
+        <article class="art-card horizontal span-12 rev" data-category="news" tabindex="0"onclick="location.href='blogs/abak-expands-product-line.html'" style="cursor:pointer;">
+          <div class="card-thumb bg-news" style="height:auto; min-height:180px;" aria-label="Blog post image placeholder">
+            <!--
+              IMAGE PLACEHOLDER: Replace with
+              <img src="images/blog/new-products.jpg" alt="New product announcement" class="thumb-img" />
+              Recommended size: 280×full height
+            -->
+            <span class="thumb-emoji" aria-hidden="true">🎉</span>
+            <div class="thumb-overlay"></div>
+            <span class="card-cat cat-news">Company News</span>
+            <span class="card-read-time">2 min</span>
+          </div>
+          <div class="card-body">
+            <h3>Abak Expands Its Product Line — New Cuts, New Sizes, Same Premium Quality</h3>
+            <p>We're excited to announce the addition of new product sizes and cuts to our poultry, fish, and red meat range — making it easier than ever for households and businesses to order exactly what they need. Available now across all order channels.</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <div class="author-dot" style="background:#fef3da;">📣</div>
+                <div>
+                  <div class="card-author-name">Abak Management</div>
+                  <div class="card-date">25 Feb 2025</div>
+                </div>
+              </div>
+              <span class="card-read-link">Read Announcement →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- No-results message (hidden by default) -->
+        <div class="no-results" id="noResults">
+          <h3>No articles found</h3>
+          <p>Try a different category or search term.</p>
+        </div>
+
+      </div><!-- /blog-grid -->
+
+      <!-- Pagination -->
+      <div class="pagination rev" role="navigation" aria-label="Blog pagination">
+        <button class="page-btn arrow" aria-label="Previous page">‹</button>
+        <button class="page-btn active" aria-current="page">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <span style="padding:0 6px; color:var(--muted);">…</span>
+        <button class="page-btn">8</button>
+        <button class="page-btn arrow" aria-label="Next page">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FEATURED TOPICS ══════════════════ -->
+  <section class="topics-strip rev" aria-labelledby="topics-heading">
+    <div class="container">
+      <div class="topics-header">
+        <div>
+          <span class="kicker">Browse by Topic</span>
+          <h2 class="hed" id="topics-heading">Explore Our <em>Content</em></h2>
+        </div>
+        <a href="#articles" class="btn btn-outline">View All Posts</a>
+      </div>
+      <div class="topics-scroll" role="list" aria-label="Blog topic categories">
+        <div class="topic-card" role="listitem" tabindex="0" onclick="location.href='#articles'" style="cursor:pointer;">
+          <div class="topic-icon" style="background:#e3f2fd;" aria-hidden="true">❄️</div>
+          <h4>Storage Tips</h4>
+          <p>Keep your frozen foods safe, fresh, and flavourful.</p>
+          <div class="topic-count">4 Articles</div>
+        </div>
+        <a href="blog-tilapia-recipes.html" class="topic-card" role="listitem" tabindex="0" style="display:block;text-decoration:none;color:inherit;">
+          <div class="topic-icon" style="background:#fde8e0;" aria-hidden="true">🍽️</div>
+          <h4>Recipes</h4>
+          <p>Delicious ideas for your Abak frozen proteins.</p>
+          <div class="topic-count">6 Articles</div>
+        </a>
+        <div class="topic-card" role="listitem" tabindex="0" onclick="location.href='#articles'" style="cursor:pointer;">
+          <div class="topic-icon" style="background:#fef3da;" aria-hidden="true">📢</div>
+          <h4>Company News</h4>
+          <p>Updates, announcements, and milestones from Abak.</p>
+          <div class="topic-count">5 Articles</div>
+        </div>
+        <div class="topic-card" role="listitem" tabindex="0" onclick="location.href='#articles'" style="cursor:pointer;">
+          <div class="topic-icon" style="background:#d8f2e4;" aria-hidden="true">📋</div>
+          <h4>How-To Guides</h4>
+          <p>Step-by-step guides for buyers, caterers &amp; retailers.</p>
+          <div class="topic-count">5 Articles</div>
+        </div>
+        <a href="blog-frozen-vs-fresh.html" class="topic-card" role="listitem" tabindex="0" style="display:block;text-decoration:none;color:inherit;">
+          <div class="topic-icon" style="background:#ede9f8;" aria-hidden="true">📊</div>
+          <h4>Industry Insights</h4>
+          <p>Ghana's frozen food market, trends &amp; data.</p>
+          <div class="topic-count">4 Articles</div>
+        </a>
+        <div class="topic-card" role="listitem" tabindex="0" onclick="location.href='#articles'" style="cursor:pointer;">
+          <div class="topic-icon" style="background:#d8edf8;" aria-hidden="true">🔬</div>
+          <h4>Cold Chain &amp; Quality</h4>
+          <p>Deep dives into food safety and cold-chain best practices.</p>
+          <div class="topic-count">4 Articles</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ NEWSLETTER ══════════════════ -->
+  <section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text rev-l">
+          <span class="kicker white">Stay Informed</span>
+          <h2 id="newsletter-heading">Get Abak <em>Insights</em><br>in Your Inbox</h2>
+          <p>Join hundreds of restaurant owners, caterers, and food enthusiasts who get our latest recipes, storage tips, industry news, and exclusive offers — delivered free to their inbox.</p>
+          <div class="newsletter-perks">
+            <div class="newsletter-perk"><span class="perk-check">✓</span>New articles every week</div>
+            <div class="newsletter-perk"><span class="perk-check">✓</span>Exclusive subscriber-only offers</div>
+            <div class="newsletter-perk"><span class="perk-check">✓</span>Seasonal recipes and product highlights</div>
+            <div class="newsletter-perk"><span class="perk-check">✓</span>Industry news and cold-chain updates</div>
+            <div class="newsletter-perk"><span class="perk-check">✓</span>No spam — unsubscribe anytime</div>
+          </div>
+        </div>
+
+        <div class="newsletter-form-wrap rev-r">
+          <h3>📧 Subscribe to Abak Insights</h3>
+          <form action="#" method="POST" novalidate>
+            <div class="nf-row">
+              <div class="nf-group">
+                <label for="nl-fname">First Name</label>
+                <input type="text" id="nl-fname" name="fname" placeholder="Your first name" required />
+              </div>
+              <div class="nf-group">
+                <label for="nl-lname">Last Name</label>
+                <input type="text" id="nl-lname" name="lname" placeholder="Your last name" />
+              </div>
+            </div>
+            <div class="nf-group">
+              <label for="nl-email">Email Address</label>
+              <input type="email" id="nl-email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="nf-group">
+              <label for="nl-type">I Am a…</label>
+              <select id="nl-type" name="type">
+                <option value="" disabled selected>Select your profile</option>
+                <option>Household Customer</option>
+                <option>Restaurant / Hotel Owner</option>
+                <option>Caterer / Event Planner</option>
+                <option>Retailer / Wholesaler</option>
+                <option>Food Enthusiast</option>
+              </select>
+            </div>
+            <div class="nf-group">
+              <label for="nl-interests">Topics I'm Interested In</label>
+              <select id="nl-interests" name="interests">
+                <option value="" disabled selected>Select preferred content</option>
+                <option>All Topics</option>
+                <option>Recipes Only</option>
+                <option>Storage Tips &amp; Food Safety</option>
+                <option>Industry News &amp; Insights</option>
+                <option>Exclusive Offers &amp; Promotions</option>
+              </select>
+            </div>
+            <button type="submit" class="nf-submit">Subscribe to Abak Insights 📬</button>
+            <p class="nf-note">We respect your privacy. Your details will never be shared with third parties.<br>Unsubscribe anytime with one click.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CONTACT STRIP ══════════════════ -->
+  <section class="contact-strip" aria-labelledby="contact-strip-heading">
+    <div class="container">
+      <div class="contact-strip-inner">
+        <div class="rev-l">
+          <span class="kicker">Order or Enquire</span>
+          <h2 id="contact-strip-heading">Ready to <em>Order</em><br>From Abak?</h2>
+          <p>Enjoyed our content? Put it into practice — order premium frozen foods from Abak today and experience the quality our clients love. Fast WhatsApp ordering, competitive pricing, and reliable cold-chain delivery across Ghana.</p>
+          <div class="contact-btns">
+            <a href="https://wa.me/233247298551" class="btn btn-wa" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+            <a href="products.html" class="btn btn-ink">🛒 View Products</a>
+            <a href="contact.html" class="btn btn-outline">📋 Contact Us</a>
+          </div>
+        </div>
+        <div class="contact-grid rev-r">
+          <div class="ci">
+            <div class="ci-icon" aria-hidden="true">📍</div>
+            <div>
+              <div class="ci-label">Head Office</div>
+              <div class="ci-value">HQ1 Anunsah Clottey Street,<br>Kaneshie Market-Accra, Ghana</div>
+            </div>
+          </div>
+          <div class="ci" style="border-left:3px solid var(--gold);">
+            <div class="ci-icon" style="background:linear-gradient(135deg,#fef3da,#f8d98a);" aria-hidden="true">📮</div>
+            <div>
+              <div class="ci-label">Ghana Post GPS</div>
+              <div class="ci-value">
+                GA-262-1811
+                <div class="gps-badge" aria-label="Ghana Post GPS Digital Address">📡 Digital Address: <strong>GA-262-1811</strong></div>
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon" aria-hidden="true">📞</div>
+            <div>
+              <div class="ci-label">Phone Numbers</div>
+              <div class="ci-value">
+                <a href="tel:+233247298551">+233 24 729 8551</a><br>
+                <a href="tel:+233504967111">+233 50 496 7111</a>
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon" aria-hidden="true">💬</div>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-value">
+                <a href="https://wa.me/233247298551" target="_blank" rel="noopener">+233 24 729 8551</a><br>
+                <a href="https://wa.me/233504967111" target="_blank" rel="noopener">+233 50 496 7111</a>
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon" aria-hidden="true">🕐</div>
+            <div>
+              <div class="ci-label">Working Hours</div>
+              <div class="ci-value">Monday – Saturday: 8:00 AM – 6:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand column -->
+        <div class="footer-col">
+          <!--
+            ═══════════════════════════════════════════════
+            FOOTER LOGO PLACEHOLDER
+            ───────────────────────────────────────────────
+            Replace .footer-logo-wrap with:
+
+            <img
+              src="images/abak-logo-white.png"
+              alt="Abak Company Limited"
+              class="footer-logo-img"
+              height="36"
+            />
+
+            • Use white/light logo for dark footer
+            • Recommended height: 32–40px
+            ═══════════════════════════════════════════════
+          -->
+          <div class="footer-brand">
+            <div class="footer-logo-wrap" title="Footer logo placeholder" aria-hidden="true">Logo</div>
+            <span class="footer-wordmark">Abak</span>
+          </div>
+          <p>Ghana's trusted source for premium frozen foods and cold storage solutions. Quality, reliability, and service — always delivered.</p>
+          <div class="soc-row">
+            <button class="soc-btn" aria-label="Facebook">📘</button>
+            <button class="soc-btn" aria-label="Instagram">📸</button>
+            <button class="soc-btn" aria-label="Twitter / X">🐦</button>
+            <button class="soc-btn" aria-label="LinkedIn">💼</button>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav class="f-links" aria-label="Footer quick links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+			<a href="shop.html">Shop</a>
+            <a href="services.html">Services</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+			<a href="articles.html">Blog</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Blog Topics</h4>
+          <nav class="f-links" aria-label="Footer blog topic links">
+            <a href="#articles">Storage Tips</a>
+            <a href="#articles">Recipes</a>
+            <a href="#articles">Company News</a>
+            <a href="#articles">How-To Guides</a>
+            <a href="#articles">Industry Insights</a>
+            <a href="#articles">Cold Chain &amp; Quality</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="f-ci"><span>📍</span><span>HQ1 Anunsah Clottey Street,<br>Kaneshie Market-Accra, Ghana</span></div>
+          <div class="f-ci"><span>📮</span><span>GA-262-1811 <span style="color:#b8923a;font-size:0.72rem;font-weight:700;"> GPS</span></span></div>
+          <div class="f-ci"><span>📞</span><a href="tel:+233247298551">+233 24 729 8551</a></div>
+          <div class="f-ci"><span>📞</span><a href="tel:+233504967111">+233 50 496 7111</a></div>
+          <div class="f-ci"><span>💬</span><a href="https://wa.me/233247298551" target="_blank" rel="noopener">WhatsApp: +233 24 729 8551</a></div>
+          <div class="f-ci"><span>🕐</span><span>Mon – Sat: 8am – 6pm</span></div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Abak Company Limited. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="privacy.html#privacy">Privacy Policy</a>
+          <a href="privacy.html#terms">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════ FLOATING WHATSAPP ══════════════════ -->
+  <a href="https://wa.me/233247298551" class="float-wa" target="_blank" rel="noopener" aria-label="Order via WhatsApp — +233 24 729 8551">
+    <div class="float-wa-pulse" aria-hidden="true"></div>
+    💬
+  </a>
+
+  <!-- ══════════════════ JAVASCRIPT ══════════════════ -->
+  <script>
+    /* ── Keyboard accessibility for clickable article cards ── */
+    document.querySelectorAll('.art-card[onclick], .art-card[data-href]').forEach(card => {
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const href = card.dataset.href || card.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+          if (href) location.href = href;
+        }
+      });
+    });
+
+    /* ── Hamburger ── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+
+    /* ── Category filter pills ── */
+    const pills   = document.querySelectorAll('.fpill');
+    const cards   = document.querySelectorAll('.art-card[data-category]');
+    const noRes   = document.getElementById('noResults');
+
+    function applyFilters() {
+      const activeCat = document.querySelector('.fpill.active')?.dataset.cat || 'all';
+      const searchQ   = document.getElementById('blogSearch').value.toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(card => {
+        const catMatch  = activeCat === 'all' || card.dataset.category === activeCat;
+        const textMatch = !searchQ || card.textContent.toLowerCase().includes(searchQ);
+        const show = catMatch && textMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noRes.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    document.getElementById('blogSearch').addEventListener('input', applyFilters);
+
+    /* ── Pagination buttons (UI only — no real routing) ── */
+    document.querySelectorAll('.page-btn:not(.arrow)').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    /* ── Scroll reveal ── */
+    const revEls = document.querySelectorAll('.rev, .rev-l, .rev-r');
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    revEls.forEach(el => revObs.observe(el));
+
+    /* ── Stagger blog cards ── */
+    const blogCards = document.querySelectorAll('.art-card');
+    blogCards.forEach((card, i) => {
+      card.style.transitionDelay = (i * 0.05) + 's';
+    });
+  </script>
+</body>
+</html>

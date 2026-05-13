@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Abak Company Limited – Premium Frozen Foods & Cold Storage, Ghana</title>
+  <meta name="description" content="Learn about Abak Company Limited – Ghana's trusted frozen foods and cold storage company. Our history, mission, vision, values, and global cold-chain capability." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Variables ─────────────────────────────────────── */
+    :root {
+      --navy:    #0B3C5D;
+      --blue:    #328CC1;
+      --white:   #FFFFFF;
+      --grey:    #F5F7FA;
+      --red:     #D7263D;
+      --green:   #2E8B57;
+      --dark:    #071a28;
+      --text:    #1a2e3d;
+      --muted:   #5a7a8e;
+      --border:  rgba(11,60,93,0.1);
+      --radius:  16px;
+      --shadow:  0 8px 40px rgba(11,60,93,0.1);
+    }
+
+    /* ─── Reset ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── Utilities ─────────────────────────────────────── */
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+    h2.display {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    h2.display em { font-style: italic; color: var(--blue); }
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 580px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 50px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+    }
+    .btn-primary   { background: var(--blue);  color: #fff; }
+    .btn-primary:hover   { background: var(--navy); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(50,140,193,0.35); }
+    .btn-outline   { background: transparent; color: var(--navy); border: 2px solid var(--border); }
+    .btn-outline:hover   { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+    .btn-whatsapp  { background: #25D366; color: #fff; }
+    .btn-whatsapp:hover  { background: #1dba57; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+    .btn-hero-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
+    .btn-hero-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+    /* ─── NAVBAR ────────────────────────────────────────── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(7,26,40,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: #fff;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75); font-size: 0.88rem; font-weight: 500;
+      padding: 8px 13px; border-radius: 8px; transition: all 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.09); }
+    .nav-links a.active { color: #7ecff5; }
+    .nav-action { display: flex; gap: 10px; }
+    .nav-action .btn { padding: 9px 20px; font-size: 0.86rem; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 4px;
+      position: fixed; top: 68px; left: 0; right: 0;
+      background: var(--dark); padding: 16px 24px 24px;
+      z-index: 999; border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: rgba(255,255,255,0.8); font-size: 1rem; font-weight: 500;
+      padding: 12px 14px; border-radius: 10px; transition: background 0.2s;
+    }
+    .mobile-nav a:hover { background: rgba(255,255,255,0.09); color: #fff; }
+    .mobile-nav .btn { width: 100%; justify-content: center; margin-top: 8px; }
+
+    /* ─── PAGE HERO ─────────────────────────────────────── */
+    .page-hero {
+      position: relative;
+      padding: 160px 0 100px;
+      overflow: hidden;
+      background: var(--dark);
+    }
+    /* Diagonal split background */
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        linear-gradient(148deg, #071a28 0%, #0B3C5D 55%, #0d5478 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+      z-index: 0;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 75% 30%, rgba(50,140,193,0.2) 0%, transparent 50%),
+        radial-gradient(circle at 15% 70%, rgba(46,139,87,0.1) 0%, transparent 45%);
+      z-index: 1;
+    }
+    /* Large decorative text */
+    .hero-deco {
+      position: absolute;
+      right: -40px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(8rem, 18vw, 18rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 2;
+      user-select: none;
+    }
+    .page-hero-content {
+      position: relative; z-index: 3;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; color: rgba(255,255,255,0.45);
+      margin-bottom: 28px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb span { color: #7ecff5; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      animation: fadeUp 0.9s ease both;
+    }
+    .page-hero h1 em { font-style: italic; color: #7ecff5; }
+    .page-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 580px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      animation: fadeUp 0.9s 0.2s ease both;
+    }
+    .hero-cta-row {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      animation: fadeUp 0.9s 0.35s ease both;
+    }
+    /* Stat ribbon */
+    .hero-ribbon {
+      display: flex; gap: 0;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 64px;
+      animation: fadeUp 0.9s 0.5s ease both;
+    }
+    .ribbon-item {
+      flex: 1;
+      padding: 22px 28px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .ribbon-item:last-child { border-right: none; }
+    .ribbon-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 700; color: #fff; line-height: 1;
+    }
+    .ribbon-label {
+      font-size: 0.75rem; color: rgba(255,255,255,0.45);
+      text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── COMPANY HISTORY ───────────────────────────────── */
+    .history {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .history-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .history-visual {
+      position: relative;
+    }
+    /* Stacked card effect */
+    .history-card-stack {
+      position: relative;
+      height: 460px;
+    }
+    .hcard {
+      position: absolute;
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+    }
+    .hcard-back {
+      inset: 20px 0 0 20px;
+      background: linear-gradient(135deg, #e3f2fd, #b8ddf7);
+      opacity: 0.6;
+      transform: rotate(4deg);
+    }
+    .hcard-mid {
+      inset: 10px 10px 10px 0;
+      background: linear-gradient(135deg, #e8f5e9, #a8d8bc);
+      opacity: 0.7;
+      transform: rotate(-2deg);
+    }
+    .hcard-front {
+      inset: 0 20px 20px 0;
+      background: linear-gradient(135deg, var(--navy), #1a6090);
+      color: #fff;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 24px 60px rgba(11,60,93,0.3);
+    }
+    .hcard-front-text {
+      text-align: center; color: rgba(255,255,255,0.9);
+    }
+    .hcard-front-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .hcard-front-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.6; padding: 0 20px; }
+    /* Floating badge */
+    .hcard-badge {
+      position: absolute;
+      bottom: 30px; left: -30px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 14px;
+      padding: 14px 20px;
+      box-shadow: 0 12px 32px rgba(46,139,87,0.35);
+      z-index: 10;
+    }
+    .hcard-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 700; line-height: 1;
+    }
+    .hcard-badge-text { font-size: 0.75rem; opacity: 0.85; margin-top: 2px; }
+    /* Member badge */
+    .hcard-member {
+      position: absolute;
+      top: 20px; right: -10px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow);
+      z-index: 10;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .hcard-member-icon { font-size: 1.6rem; }
+    .hcard-member-text { font-size: 0.7rem; color: var(--muted); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+    .history-text { }
+    .history-text .lead { margin-bottom: 28px; }
+    .history-highlight {
+      background: var(--grey);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .history-highlight p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic; color: var(--navy); line-height: 1.6;
+    }
+
+    /* ─── MISSION VISION VALUES ─────────────────────────── */
+    .mvv {
+      padding: 100px 0;
+      background: var(--grey);
+    }
+    .mvv-header { text-align: center; margin-bottom: 60px; }
+    .mvv-header .lead { margin: 0 auto; text-align: center; }
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .mvv-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .mvv-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .mvv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .mvv-card.mission::before { background: var(--blue); }
+    .mvv-card.vision::before  { background: var(--green); }
+    .mvv-card.values::before  { background: var(--red); }
+    .mvv-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+    }
+    .mvv-card.mission .mvv-icon { background: #e3f2fd; }
+    .mvv-card.vision  .mvv-icon { background: #e8f5e9; }
+    .mvv-card.values  .mvv-icon { background: #fce4ec; }
+    .mvv-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .mvv-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+    /* Core values list */
+    .values-list { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .values-list li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.92rem; color: var(--text);
+      list-style: none;
+    }
+    .values-list li::before {
+      content: '✦';
+      color: var(--red);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── COLD CHAIN CAPABILITY ─────────────────────────── */
+    .coldchain {
+      padding: 100px 0;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .coldchain::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 90% 10%, rgba(50,140,193,0.25) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(46,139,87,0.15) 0%, transparent 45%);
+    }
+    .coldchain .eyebrow { color: #7ecff5; }
+    .coldchain-header {
+      text-align: center; margin-bottom: 64px; position: relative; z-index: 1;
+    }
+    .coldchain-header h2.display { color: #fff; }
+    .coldchain-header h2.display em { color: #7ecff5; }
+    .coldchain-header .lead { color: rgba(255,255,255,0.65); margin: 0 auto; text-align: center; }
+
+    .coldchain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative; z-index: 1;
+    }
+    .cc-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .cc-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
+    .cc-icon {
+      font-size: 2rem; margin-bottom: 18px;
+      display: flex; align-items: center; justify-content: center;
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+    }
+    .cc-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 700; color: #fff;
+      margin-bottom: 10px;
+    }
+    .cc-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    /* Process steps strip */
+    .cc-process {
+      display: flex;
+      align-items: center;
+      margin-top: 56px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative; z-index: 1;
+    }
+    .cc-step {
+      flex: 1;
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .cc-step::after {
+      content: '→';
+      position: absolute;
+      right: -8px; top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.25);
+      font-size: 1.2rem;
+      z-index: 2;
+    }
+    .cc-step:last-child::after { display: none; }
+    .cc-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700;
+      color: rgba(50,140,193,0.5);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .cc-step-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+    /* ─── MEMBERSHIP & ASSOCIATIONS ─────────────────────── */
+    .membership {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .membership-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .membership-text .lead { margin-bottom: 36px; }
+    .membership-card {
+      background: var(--grey);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .membership-card:hover { transform: translateX(6px); box-shadow: var(--shadow); }
+    .membership-card-icon {
+      width: 60px; height: 60px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--navy), #1a6090);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+      color: #fff;
+    }
+    .membership-card-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;
+    }
+    .membership-card-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+    .membership-visual {
+      position: relative;
+    }
+    .mem-visual-block {
+      background: linear-gradient(135deg, var(--navy), #1a6090);
+      border-radius: 24px;
+      padding: 48px 40px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mem-visual-block::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(50,140,193,0.3), transparent 60%);
+    }
+    .mem-visual-inner { position: relative; z-index: 1; }
+    .mem-visual-icon { font-size: 4rem; margin-bottom: 22px; }
+    .mem-visual-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 700; margin-bottom: 14px; line-height: 1.2;
+    }
+    .mem-visual-block p { font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+    .mem-visual-tags {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;
+    }
+    .mem-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50px;
+      padding: 7px 16px;
+      font-size: 0.8rem; color: rgba(255,255,255,0.8);
+    }
+
+    /* ─── COMPANY LOCATION ──────────────────────────────── */
+    .location {
+      padding: 100px 0;
+      background: var(--grey);
+    }
+    .location-header { margin-bottom: 52px; }
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .location-details { display: flex; flex-direction: column; gap: 20px; }
+    .location-detail-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      display: flex; gap: 18px; align-items: flex-start;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+    .location-detail-item:hover { box-shadow: var(--shadow); }
+    .loc-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, #e3f2fd, #b8ddf7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .loc-text h5 { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .loc-text p { font-size: 0.95rem; color: var(--text); font-weight: 500; }
+    /* Map placeholder */
+    .map-placeholder {
+      border-radius: 20px;
+      background: linear-gradient(135deg, #dde8f5, #b8cfe8);
+      min-height: 380px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 14px;
+      text-align: center;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    .map-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(11,60,93,0.04) 40px, rgba(11,60,93,0.04) 41px),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(11,60,93,0.04) 40px, rgba(11,60,93,0.04) 41px);
+    }
+    .map-pin { font-size: 3.5rem; position: relative; z-index: 1; animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .map-label {
+      position: relative; z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--navy);
+    }
+    .map-sub { position: relative; z-index: 1; font-size: 0.85rem; color: var(--muted); }
+
+    /* ─── CTA STRIP ─────────────────────────────────────── */
+    .cta-strip {
+      padding: 72px 0;
+      background: var(--dark);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(50,140,193,0.2), transparent 70%);
+    }
+    .cta-strip-inner { position: relative; z-index: 1; }
+    .cta-strip h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: #fff;
+      margin-bottom: 14px;
+    }
+    .cta-strip p { color: rgba(255,255,255,0.6); font-size: 1rem; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.65);
+      padding: 64px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-col h4 {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 18px;
+    }
+    .footer-col .logo { font-size: 1.3rem; margin-bottom: 14px; }
+    .footer-col p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .f-links { display: flex; flex-direction: column; gap: 9px; }
+    .f-links a { font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .f-links a:hover { color: var(--blue); }
+    .f-contact { display: flex; flex-direction: column; gap: 11px; }
+    .f-contact-item { display: flex; gap: 12px; align-items: flex-start; font-size: 0.86rem; }
+    .social-row { display: flex; gap: 9px; margin-top: 18px; }
+    .social-btn {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: rgba(255,255,255,0.07); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; color: rgba(255,255,255,0.6);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .social-btn:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+      font-size: 0.8rem; color: rgba(255,255,255,0.3);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.3); transition: color 0.2s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+    .footer-bottom-links { display: flex; gap: 18px; }
+
+    /* ─── FLOATING WHATSAPP ─────────────────────────────── */
+    .float-wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .float-wa:hover { transform: scale(1.12); box-shadow: 0 10px 32px rgba(37,211,102,0.6); }
+    .float-wa-pulse {
+      position: absolute; inset: -6px; border-radius: 50%;
+      background: rgba(37,211,102,0.3);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* ─── SCROLL REVEAL ─────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0; transform: translateX(-32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0; transform: translateX(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .nav-links, .nav-action { display: none; }
+      .hamburger { display: flex; }
+      .history-inner, .membership-inner, .location-inner { grid-template-columns: 1fr; }
+      .mvv-grid, .coldchain-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .history-card-stack { height: 320px; }
+      .cc-process { flex-direction: column; }
+      .cc-step::after { content: '↓'; right: auto; bottom: -8px; top: auto; transform: none; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-ribbon { flex-direction: column; }
+      .ribbon-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .ribbon-item:last-child { border-bottom: none; }
+      .float-wa { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><img src="images/abak-logo-4.png" alt="Abak Logo"></span> Abak
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="products.html">Products</a></li>
+		<a href="shop.html">Shop</a>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="sourcing.html">Sourcing</a></li>
+		<li><a href="partnerships.html">Global Partnership</a></li>
+        <li><a href="articles.html">Blog</a></li>
+		<a href="FAQs.html">FAQs</a>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-action">
+        <a href="https://wa.me/233247298551" class="btn btn-whatsapp" target="_blank" rel="noopener">📱 Order Now</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav" role="navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+	<a href="shop.html">Shop</a>
+    <a href="services.html">Services</a>
+    <a href="sourcing.html">Sourcing</a>
+	<li><a href="partnerships.html">Global Partnership</a></li>
+    <a href="articles.html">Blog</a>
+	<a href="FAQs.html">FAQs</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://wa.me/233247298551" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 Order via WhatsApp</a>
+  </div>
+
+  <!-- ══════════════ PAGE HERO ══════════════ -->
+  <section class="page-hero" aria-labelledby="about-hero-heading">
+    <div class="hero-deco" aria-hidden="true">Abak</div>
+    <div class="container page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>About Us</span>
+      </nav>
+      <h1 id="about-hero-heading">
+        Built on Trust.<br>
+        <em>Driven by Quality.</em>
+      </h1>
+      <p>Abak Company Limited is Ghana's premier frozen foods and cold storage provider — a company deeply committed to delivering premium products, reliable supply chains, and internationally recognised standards to businesses and households across the country.</p>
+      <div class="hero-cta-row">
+        <a href="products.html" class="btn btn-primary">🛒 Our Products</a>
+        <a href="contact.html" class="btn btn-hero-outline">📞 Get In Touch</a>
+      </div>
+      <div class="hero-ribbon">
+        <div class="ribbon-item">
+          <div class="ribbon-num">10+</div>
+          <div class="ribbon-label">Years in Business</div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-num">500+</div>
+          <div class="ribbon-label">Satisfied Clients</div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-num">20+</div>
+          <div class="ribbon-label">Product Lines</div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-num">100%</div>
+          <div class="ribbon-label">Cold-Chain Assured</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ COMPANY HISTORY ══════════════ -->
+  <section class="history" aria-labelledby="history-heading">
+    <div class="container">
+      <div class="history-inner">
+        <div class="history-visual reveal-left">
+          <div class="history-card-stack">
+            <div class="hcard hcard-back"></div>
+            <div class="hcard hcard-mid"></div>
+            <div class="hcard hcard-front" role="img" aria-label="Abak company visual">
+              <div style="font-size:4rem"><img src="images/coldstorage.webp" alt="Cold Sorage"></div>
+              <div class="hcard-front-text">
+                <h3>Abak Company Limited</h3>
+                <p>Premium Frozen Foods &amp; Cold Storage Solutions in Ghana</p>
+              </div>
+            </div>
+            <!-- Floating badges -->
+            <div class="hcard-badge" aria-label="10 plus years in business">
+              <div class="hcard-badge-num">10+</div>
+              <div class="hcard-badge-text">Years in</div>
+			  <div class="hcard-badge-text">Business</div>
+            </div>
+            <div class="hcard-member">
+              <div class="hcard-member-icon">🏛️</div>
+              <div class="hcard-member-text"><strong>AmCham<br>Member</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="history-text reveal-right">
+          <span class="eyebrow">Our Story</span>
+          <h2 class="display">A Legacy of <em>Freshness</em> &amp; Reliability</h2>
+          <p class="lead">Abak Company Limited is a proudly family-owned business established in 2016, built on a strong foundation of trust, quality, and commitment to excellence. Since our incorporation, we have grown steadily to become a reliable supplier in the frozen food industry.</p>
+          <div class="history-highlight">
+            <p>We specialize in the importation and distribution of high-quality frozen products, including beef, poultry, pork, and a variety of fish. Our sourcing process is carefully managed to ensure that all products meet strict quality and safety standards, giving our customers confidence in every purchase.</p>
+          </div>
+          <p class="lead">At Abak Company Limited, we understand the importance of consistency, freshness, and affordability. Whether serving wholesalers, retailers, or food service providers, we are dedicated to delivering products that meet the needs of our diverse clientele.
+As a family-run business, we place great value on long-term relationships, integrity, and customer satisfaction. Our goal is not just to supply frozen foods, but to be a trusted partner in your business and household needs.</p>
+          <p class="lead" style="margin-top:18px;">Today, Abak serves restaurants, hotels, caterers, retailers, and households across Ghana — delivering not just products, but trust, consistency, and excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ MISSION / VISION / VALUES ══════════════ -->
+  <section class="mvv reveal" aria-labelledby="mvv-heading">
+    <div class="container">
+      <div class="mvv-header">
+        <span class="eyebrow">What We Stand For</span>
+        <h2 class="display" id="mvv-heading">Our Mission, Vision <em>&amp; Values</em></h2>
+        <p class="lead">The principles that guide every decision, every delivery, and every relationship we build.</p>
+      </div>
+      <div class="mvv-grid">
+        <!-- Mission -->
+        <div class="mvv-card mission">
+          <div class="mvv-icon" aria-hidden="true">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To deliver premium, nutritious and safe frozen food products through innovation, sustainability and excellence while serving families, restaurants, Hotels and food businesses across Ghana, Africa and beyond  with integrity and unmatched customer care.</p>
+        </div>
+        <!-- Vision -->
+        <div class="mvv-card vision">
+          <div class="mvv-icon" aria-hidden="true">🌍</div>
+          <h3>Our Vision</h3>
+          <p>To become African's leading and most trusted frozen food brand by pioneering quality, sustainability and innovation from Ghana to the continent and beyond.</p>
+        </div>
+        <!-- Values -->
+        <div class="mvv-card values">
+          <div class="mvv-icon" aria-hidden="true">💎</div>
+          <h3>Core Values</h3>
+          <ul class="values-list">
+            <li>Integrity &amp; Transparency</li>
+            <li>Quality Without Compromise</li>
+            <li>Reliable &amp; Consistent Supply</li>
+            <li>Customer-First Always</li>
+            <li>Innovation &amp; Continuous Improvement</li>
+            <li>International Standards, Local Heart</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ COLD-CHAIN CAPABILITY ══════════════ -->
+  <section class="coldchain" aria-labelledby="coldchain-heading">
+    <div class="container">
+      <div class="coldchain-header">
+        <span class="eyebrow">Our Infrastructure</span>
+        <h2 class="display" id="coldchain-heading">Cold-Chain <em>Capability</em></h2>
+        <p class="lead">From international sourcing to your door — our end-to-end cold chain ensures every product remains fresh, safe, and of the highest quality.</p>
+      </div>
+      <div class="coldchain-grid">
+        <div class="cc-card reveal">
+          <div class="cc-icon" aria-hidden="true">🏭</div>
+          <h4>Modern Cold Storage Facilities</h4>
+          <p>State-of-the-art temperature-controlled storage infrastructure designed to maintain product integrity at every stage of the supply chain.</p>
+        </div>
+        <div class="cc-card reveal">
+          <div class="cc-icon" aria-hidden="true">🌡️</div>
+          <h4>Temperature Monitoring</h4>
+          <p>Continuous real-time temperature monitoring across all storage units and delivery vehicles ensures uncompromised cold-chain compliance.</p>
+        </div>
+        <div class="cc-card reveal">
+          <div class="cc-icon" aria-hidden="true">🚛</div>
+          <h4>Refrigerated Distribution</h4>
+          <p>Our refrigerated fleet delivers products directly to your business or location, maintaining the cold chain from warehouse to doorstep.</p>
+        </div>
+        <div class="cc-card reveal">
+          <div class="cc-icon" aria-hidden="true">🛡️</div>
+          <h4>Food Safety Standards</h4>
+          <p>All products are handled in accordance with international food safety regulations — ensuring hygiene, traceability, and quality at every step.</p>
+        </div>
+        <div class="cc-card reveal">
+          <div class="cc-icon" aria-hidden="true">🌐</div>
+          <h4>Global Sourcing Network</h4>
+          <p>We source from certified international suppliers and maintain strong relationships with producers across multiple continents to ensure reliable supply.</p>
+        </div>
+        <div class="cc-card reveal">
+          <div class="cc-icon" aria-hidden="true">📦</div>
+          <h4>Storage &amp; Preservation Standards</h4>
+          <p>Strict product rotation, packaging standards, and preservation protocols ensure maximum shelf life and product quality for all clients.</p>
+        </div>
+      </div>
+      <!-- Process strip -->
+      <div class="cc-process reveal" role="list" aria-label="Cold chain process steps">
+        <div class="cc-step" role="listitem">
+          <div class="cc-step-num">01</div>
+          <div class="cc-step-label">Global Sourcing</div>
+        </div>
+        <div class="cc-step" role="listitem">
+          <div class="cc-step-num">02</div>
+          <div class="cc-step-label">Quality Inspection</div>
+        </div>
+        <div class="cc-step" role="listitem">
+          <div class="cc-step-num">03</div>
+          <div class="cc-step-label">Cold Storage</div>
+        </div>
+        <div class="cc-step" role="listitem">
+          <div class="cc-step-num">04</div>
+          <div class="cc-step-label">Order Processing</div>
+        </div>
+        <div class="cc-step" role="listitem">
+          <div class="cc-step-num">05</div>
+          <div class="cc-step-label">Delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ MEMBERSHIP & ASSOCIATIONS ══════════════ -->
+  <section class="membership" aria-labelledby="membership-heading">
+    <div class="container">
+      <div class="membership-inner">
+        <div class="membership-text reveal-left">
+          <span class="eyebrow">Memberships &amp; Associations</span>
+          <h2 class="display" id="membership-heading">Internationally <em>Connected</em></h2>
+          <p class="lead">Our affiliations with respected international and local business associations reflect our commitment to global standards, ethical trade, and professional excellence.</p>
+          <div class="membership-card">
+            <div class="membership-card-icon" aria-hidden="true"><img src="images/amchamgh.png" alt="AmChamGh"></div>
+            <div class="membership-card-body">
+              <h4>American Chamber of Commerce Ghana (AmCham)</h4>
+              <p>Abak Company Limited is a proud member of the American Chamber of Commerce Ghana — a mark of international business credibility, ethical standards, and commitment to global trade best practices. Membership connects us to a network of world-class businesses and opens doors to valuable trade partnerships.</p>
+            </div>
+          </div>
+          <div class="membership-card">
+            <div class="membership-card-icon" aria-hidden="true">🏪</div>
+            <div class="membership-card-body">
+              <h4>Ghana Food &amp; Beverage Industry</h4>
+              <p>Active participants in Ghana's growing food and beverage sector — contributing to industry standards, food safety advocacy, and the advancement of the cold storage supply chain ecosystem.</p>
+            </div>
+          </div>
+          <div class="membership-card">
+            <div class="membership-card-icon" aria-hidden="true">🤝</div>
+            <div class="membership-card-body">
+              <h4>Business &amp; Trade Networks</h4>
+              <p>We actively participate in local and international trade fairs, food exhibitions, and business networking events — staying connected to global trends and supplier developments.</p>
+            </div>
+          </div>
+        </div>
+        <div class="membership-visual reveal-right">
+          <div class="mem-visual-block">
+            <div class="mem-visual-inner">
+              <div class="mem-visual-icon" aria-hidden="true">🏆</div>
+              <h3>Globally Connected, Locally Committed</h3>
+              <p>Our international memberships and trade connections ensure Abak remains at the forefront of the frozen foods industry — delivering world-class standards to Ghanaian businesses and consumers.</p>
+              <div class="mem-visual-tags">
+                <span class="mem-tag">🇺🇸 AmCham Ghana</span>
+                <span class="mem-tag">🌍 Global Sourcing</span>
+                <span class="mem-tag">🏛️ Trade Networks</span>
+                <span class="mem-tag">🐟 Food Industry</span>
+                <span class="mem-tag">❄️ Cold Chain</span>
+                <span class="mem-tag">📜 Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ COMPANY LOCATION ══════════════ -->
+  <section class="location reveal" aria-labelledby="location-heading">
+    <div class="container">
+      <div class="location-header">
+        <span class="eyebrow">Find Us</span>
+        <h2 class="display" id="location-heading">Our <em>Location</em></h2>
+        <p class="lead">Conveniently located in Accra, Ghana — ready to serve businesses and households across the country.</p>
+      </div>
+      <div class="location-inner">
+        <div class="location-details">
+          <div class="location-detail-item">
+            <div class="loc-icon" aria-hidden="true">📍</div>
+            <div class="loc-text">
+              <h5>Address</h5>
+              <p>Abak Company Limited, HQ1 Anunsah Clottey street, Kaneshie Market-Accra, Ghana</p>
+            </div>
+          </div>
+          <div class="location-detail-item">
+            <div class="loc-icon" aria-hidden="true">📞</div>
+            <div class="loc-text">
+              <h5>Phone</h5>
+              <p>+233 24 729 8551 / +233 50 496 7111</p>
+            </div>
+          </div>
+          <div class="location-detail-item">
+            <div class="loc-icon" aria-hidden="true">💬</div>
+            <div class="loc-text">
+              <h5>WhatsApp</h5>
+              <p>+233 24 729 8551</p>
+            </div>
+          </div>
+          <div class="location-detail-item">
+            <div class="loc-icon" aria-hidden="true">✉️</div>
+            <div class="loc-text">
+              <h5>Email</h5>
+              <p>info@abakcompany.com</p>
+            </div>
+          </div>
+          <div class="location-detail-item">
+            <div class="loc-icon" aria-hidden="true">🕐</div>
+            <div class="loc-text">
+              <h5>Working Hours</h5>
+              <p>Monday – Saturday: 8:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:8px; align-self:flex-start;">📋 Contact Us</a>
+        </div>
+        <!-- Map placeholder (replace with Google Maps embed) -->
+        <div class="map-placeholder" role="img" aria-label="Map showing Abak Company Limited location in Accra, Ghana">
+          <div class="map-pin" aria-hidden="true">📍</div>
+          <div class="map-label">Abak Company Limited</div>
+          <div class="map-sub">HQ1 Anunsah Clottey street, Kaneshie Market-Accra, Ghana</div>
+          <!-- 
+            DEVELOPER NOTE:
+            Replace this block with a Google Maps iframe embed:
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7607!2d-0.2300!3d5.5558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzMnMjAuOSJOIDDCsDEzJzQ4LjAiVw!5e0!3m2!1sen!2sgh!4v1700000000000"
+              width="100%" height="380" style="border:0;"
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CTA STRIP ══════════════ -->
+  <section class="cta-strip" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <h2 id="cta-heading">Ready to Work With Us?</h2>
+        <p>Whether you're a restaurant, hotel, caterer, retailer, or household — Abak has the products, capacity, and service you need.</p>
+        <div class="cta-row">
+          <a href="products.html" class="btn btn-primary">🛒 View Products</a>
+          <a href="https://wa.me/233247298551" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 Order via WhatsApp</a>
+          <a href="contact.html" class="btn btn-hero-outline">📋 Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo"><span class="logo-mark"><img src="images/abak-logo.png" alt="Abak Logo"></span> Abak</a>
+          <p>Ghana's trusted source for premium frozen foods and cold storage solutions. Delivering quality and reliability.</p>
+          <div class="social-row">
+            <button class="social-btn" aria-label="Facebook">📘</button>
+            <button class="social-btn" aria-label="Instagram">📸</button>
+            <button class="social-btn" aria-label="Twitter">🐦</button>
+            <button class="social-btn" aria-label="LinkedIn">💼</button>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav class="f-links" aria-label="Footer quick links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="sourcing.html">Sourcing</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <nav class="f-links" aria-label="Footer product links">
+            <a href="products.html#poultry">Poultry</a>
+            <a href="products.html#fish">Fish &amp; Seafood</a>
+            <a href="products.html#meat">Red Meat</a>
+            <a href="products.html#bulk">Bulk Orders</a>
+            <a href="services.html#storage">Cold Storage</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="f-contact">
+            <div class="f-contact-item"><span>📍</span><span>HQ1 Anunsah Clottey street, Kaneshie Market-Accra, Ghana</span></div>
+            <div class="f-contact-item"><span>📞</span><span>+233 24 729 8551 / +233 50 496 7111</span></div>
+            <div class="f-contact-item"><span>💬</span><span>WhatsApp: +233 24 729 8551</span></div>
+            <div class="f-contact-item"><span>✉️</span><span>info@abakcompany.com</span></div>
+            <div class="f-contact-item"><span>🕐</span><span>Mon – Sat: 8am – 5pm</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Abak Company Limited. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="privacy.html#privacy">Privacy Policy</a>
+          <a href="privacy.html#terms">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════ FLOATING WHATSAPP ══════════════ -->
+  <a href="https://wa.me/233247298551" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <div class="float-wa-pulse" aria-hidden="true"></div>
+    💬
+  </a>
+
+  <!-- ══════════════ JAVASCRIPT ══════════════ -->
+  <script>
+    /* — Hamburger — */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    /* — Scroll reveal — */
+    const allReveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    allReveals.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

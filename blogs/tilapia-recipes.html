@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Easy Tilapia Recipes for the Ghanaian Home Kitchen | Abak Company Limited</title>
+  <meta name="description" content="Five delicious, easy-to-make tilapia recipes perfect for Ghanaian home kitchens — from spicy pepper sauce to crispy fried tilapia. Brought to you by Abak Company Limited." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --warm-white:  #fefcf8;
+      --cream:       #f8f3eb;
+      --paper:       #f2ead8;
+      --border:      #e0d4be;
+      --text:        #2a2018;
+      --muted:       #7a6a55;
+      --orange:      #d96b1a;
+      --orange-lt:   #f0944a;
+      --green:       #2e7a45;
+      --green-lt:    #4aaa63;
+      --navy:        #1a3a52;
+      --teal:        #1a7a7a;
+      --red-spice:   #c8341e;
+      --gold:        #c89420;
+      --gold-lt:     #f5c94a;
+      --ink:         #12100c;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--text);
+    }
+
+    /* ══ HEADER ══ */
+    .site-header {
+      background: var(--ink);
+      padding: 0 5vw; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .site-logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem; color: var(--warm-white); text-decoration: none; letter-spacing: 0.01em;
+    }
+    .site-logo em { color: var(--gold-lt); font-style: italic; }
+    .header-nav { display: flex; gap: 0.15rem; }
+    .header-nav a {
+      font-size: 0.83rem; font-weight: 500; color: rgba(255,255,255,0.52);
+      text-decoration: none; padding: 0.4rem 0.8rem; border-radius: 5px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .header-nav a:hover { color: var(--warm-white); background: rgba(255,255,255,0.07); }
+    .header-nav a.cta { background: var(--orange); color: var(--warm-white); }
+    .header-nav a.cta:hover { background: #c05e12; }
+
+    /* ══ HERO ══ */
+    .hero {
+      background: var(--cream);
+      border-bottom: 3px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+
+    /* Decorative food pattern */
+    .hero::before {
+      content: '🐟 🌶 🫙 🧅 🧄 🐟 🌶 🫙';
+      position: absolute; top: 1rem; right: 2vw;
+      font-size: 1.6rem; opacity: 0.06; letter-spacing: 0.5rem;
+      pointer-events: none; white-space: nowrap;
+      font-style: normal;
+    }
+
+    .hero-inner {
+      max-width: 860px; margin: 0 auto;
+      padding: 4.5rem 5vw 4rem;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 3rem; align-items: center;
+    }
+
+    .breadcrumb {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb span { color: var(--border); }
+
+    .recipe-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--green); color: var(--warm-white);
+      padding: 0.28rem 0.85rem; border-radius: 50px; margin-bottom: 1.4rem;
+    }
+
+    .hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 400; color: var(--ink); line-height: 1.1; letter-spacing: -0.3px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 em { color: var(--orange); }
+    .hero h1 strong { font-weight: 400; color: var(--green); font-style: italic; }
+
+    .hero-sub {
+      font-size: 1rem; color: var(--muted); line-height: 1.68; max-width: 500px; margin-bottom: 2rem;
+    }
+
+    /* Meta strip */
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center;
+    }
+    .hm-item {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--muted);
+    }
+    .hm-item strong { color: var(--ink); font-weight: 700; }
+
+    /* Fish illustration panel */
+    .hero-visual {
+      width: 180px; flex-shrink: 0;
+      background: var(--paper);
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    }
+    .hero-visual .fish-big { font-size: 4rem; }
+    .hero-visual p {
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem; color: var(--muted); line-height: 1.3;
+    }
+    .hero-visual .recipe-count {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.8rem; color: var(--orange); line-height: 1; font-weight: 400;
+    }
+    .hero-visual .recipe-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ══ LAYOUT ══ */
+    .article-layout {
+      max-width: 1060px; margin: 0 auto;
+      padding: 4rem 5vw 5rem;
+      display: grid; grid-template-columns: 1fr 280px;
+      gap: 4rem; align-items: start;
+    }
+
+    /* ── INTRO ── */
+    .article-intro {
+      font-size: 1.08rem; line-height: 1.75; color: var(--muted);
+      padding: 1.5rem; background: var(--cream);
+      border-radius: 12px; border-left: 4px solid var(--orange);
+      margin-bottom: 3rem;
+    }
+
+    /* ══ RECIPE CARDS ══ */
+    .recipe-card {
+      background: var(--warm-white);
+      border-radius: 20px; overflow: hidden;
+      border: 1.5px solid var(--border);
+      margin-bottom: 3rem;
+      box-shadow: 0 2px 16px rgba(30,20,10,0.07);
+      opacity: 0; transform: translateY(20px);
+      animation: floatUp 0.5s ease forwards;
+    }
+    .recipe-card:nth-of-type(1) { animation-delay: 0.08s; }
+    .recipe-card:nth-of-type(2) { animation-delay: 0.16s; }
+    .recipe-card:nth-of-type(3) { animation-delay: 0.24s; }
+    .recipe-card:nth-of-type(4) { animation-delay: 0.32s; }
+    .recipe-card:nth-of-type(5) { animation-delay: 0.40s; }
+    @keyframes floatUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Recipe banner */
+    .recipe-banner {
+      padding: 2rem 2rem 1.5rem;
+      display: flex; align-items: center; gap: 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .recipe-banner::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.0), rgba(255,255,255,0.35));
+      pointer-events: none;
+    }
+
+    .recipe-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 5rem; font-weight: 400; line-height: 1;
+      color: rgba(255,255,255,0.25); flex-shrink: 0;
+      position: relative; z-index: 1;
+    }
+
+    .recipe-banner-text { position: relative; z-index: 1; }
+    .recipe-label-tag {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15);
+      padding: 0.2rem 0.6rem; border-radius: 50px; display: inline-block; margin-bottom: 0.4rem;
+    }
+    .recipe-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 400;
+      color: var(--warm-white); line-height: 1.2; letter-spacing: -0.2px;
+    }
+
+    /* Colour variations per recipe */
+    .rb-1 { background: linear-gradient(135deg, #d96b1a, #b85510); }
+    .rb-2 { background: linear-gradient(135deg, #1a7a7a, #125858); }
+    .rb-3 { background: linear-gradient(135deg, #2e7a45, #1e5530); }
+    .rb-4 { background: linear-gradient(135deg, #c8341e, #a02010); }
+    .rb-5 { background: linear-gradient(135deg, #c89420, #a07010); }
+
+    /* Quick stats */
+    .recipe-stats {
+      display: flex; gap: 0; border-top: 1.5px solid var(--border);
+    }
+    .rstat {
+      flex: 1; padding: 0.85rem 0.5rem; text-align: center;
+      border-right: 1px solid var(--border); background: var(--cream);
+    }
+    .rstat:last-child { border-right: none; }
+    .rstat-icon { font-size: 1rem; display: block; margin-bottom: 0.2rem; }
+    .rstat-val { font-size: 0.82rem; font-weight: 800; color: var(--ink); display: block; }
+    .rstat-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+    /* Recipe body */
+    .recipe-body { padding: 2rem; }
+
+    .recipe-body > p {
+      font-size: 0.97rem; line-height: 1.72; color: #3a3028; margin-bottom: 1rem;
+    }
+
+    /* Two-column ingredients + steps */
+    .recipe-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 2rem; margin-top: 1.5rem;
+    }
+
+    .recipe-section-title {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 0.85rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .recipe-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* Ingredients */
+    .ingredients-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+    .ingredients-list li {
+      font-size: 0.87rem; color: var(--text); line-height: 1.45;
+      display: flex; align-items: baseline; gap: 0.5rem; padding-bottom: 0.45rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    .ingredients-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .ingredients-list li::before {
+      content: '·'; color: var(--orange); font-size: 1.2rem; flex-shrink: 0; margin-top: -2px;
+    }
+    .ing-qty { font-weight: 800; color: var(--orange); white-space: nowrap; min-width: 40px; }
+
+    /* Steps */
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .steps-list li {
+      display: flex; gap: 0.9rem; font-size: 0.9rem; color: var(--text); line-height: 1.6;
+    }
+    .step-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--ink); color: var(--warm-white);
+      font-size: 0.72rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* Tip box */
+    .recipe-tip {
+      margin-top: 1.5rem; padding: 1.1rem 1.3rem;
+      background: var(--paper); border-radius: 10px;
+      border-left: 3px solid var(--gold);
+      display: flex; align-items: flex-start; gap: 0.65rem;
+    }
+    .recipe-tip .tip-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .recipe-tip p {
+      font-size: 0.86rem !important; color: #5a4a30 !important;
+      margin-bottom: 0 !important; line-height: 1.6 !important; font-style: italic;
+    }
+    .recipe-tip strong { color: var(--ink); font-style: normal; font-weight: 700; }
+
+    /* Handwritten note */
+    .handwritten-note {
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem; color: var(--orange);
+      margin-top: 1rem; transform: rotate(-0.5deg); display: inline-block;
+    }
+
+    /* Section dividers */
+    .fish-divider {
+      text-align: center; margin: 2rem 0;
+      font-size: 1.5rem; opacity: 0.3; letter-spacing: 1rem;
+    }
+
+    /* ── ARTICLE FOOTER ── */
+    .article-footer {
+      background: var(--cream); border-radius: 16px;
+      padding: 2.5rem; border: 1.5px solid var(--border);
+      margin-top: 1rem;
+    }
+    .article-footer h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem; color: var(--ink); margin-bottom: 0.65rem;
+    }
+    .article-footer p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.25rem; }
+    .footer-cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn-orange {
+      padding: 0.72rem 1.5rem; background: var(--orange); color: var(--warm-white);
+      border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-orange:hover { background: #c05e12; transform: translateY(-2px); }
+    .btn-outline-ink {
+      padding: 0.72rem 1.5rem; background: transparent; color: var(--ink);
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 700;
+      cursor: pointer; text-decoration: none; display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline-ink:hover { border-color: var(--ink); background: var(--paper); }
+
+    .article-tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 2rem; padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .art-tag {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 0.28rem 0.75rem; border-radius: 4px;
+      background: var(--paper); border: 1px solid var(--border); color: var(--muted);
+      text-decoration: none; transition: background 0.2s, color 0.2s;
+    }
+    .art-tag:hover { background: var(--ink); color: var(--warm-white); border-color: var(--ink); }
+
+    /* ── SIDEBAR ── */
+    .article-sidebar { position: sticky; top: 80px; }
+
+    .sidebar-widget {
+      background: var(--warm-white); border-radius: 14px;
+      border: 1.5px solid var(--border); margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+    .widget-head {
+      padding: 0.85rem 1.2rem; background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+    }
+    .widget-body { padding: 1.1rem 1.2rem; }
+
+    /* Jump-to-recipe list */
+    .jump-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .jump-list a {
+      display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0;
+      font-size: 0.82rem; font-weight: 600; color: var(--muted); text-decoration: none;
+      border-bottom: 1px solid var(--paper); transition: color 0.2s;
+    }
+    .jump-list li:last-child a { border-bottom: none; }
+    .jump-list a:hover { color: var(--orange); }
+    .jump-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .jd-1 { background: #d96b1a; }
+    .jd-2 { background: #1a7a7a; }
+    .jd-3 { background: #2e7a45; }
+    .jd-4 { background: #c8341e; }
+    .jd-5 { background: #c89420; }
+
+    /* Nutrition tip widget */
+    .nutrition-widget { background: var(--paper); }
+    .nutrition-widget .widget-body p {
+      font-size: 0.83rem; color: var(--muted); line-height: 1.58; margin-bottom: 0.65rem;
+    }
+    .nutrition-widget .widget-body p:last-child { margin-bottom: 0; }
+    .nut-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.5rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+    .nut-row:last-child { border-bottom: none; }
+    .nut-name { font-weight: 600; color: var(--text); }
+    .nut-val  { font-weight: 800; color: var(--green); }
+
+    /* Order widget */
+    .order-widget {
+      background: linear-gradient(160deg, #1a3a52, #2e7a45);
+      border-radius: 14px; padding: 1.5rem; margin-bottom: 1.25rem;
+    }
+    .order-widget h4 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.15rem; color: var(--warm-white); margin-bottom: 0.45rem;
+    }
+    .order-widget p {
+      font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin-bottom: 1.1rem;
+    }
+    .ow-link {
+      display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.85rem;
+      border-radius: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700;
+      margin-bottom: 0.5rem; transition: background 0.2s;
+    }
+    .ow-wa { background: #25d366; color: var(--warm-white); }
+    .ow-wa:hover { background: #1eb355; }
+    .ow-ph { background: rgba(255,255,255,0.1); color: var(--warm-white); border: 1px solid rgba(255,255,255,0.15); }
+    .ow-ph:hover { background: rgba(255,255,255,0.18); }
+    .ow-address {
+      font-size: 0.7rem; color: rgba(255,255,255,0.36); line-height: 1.6; margin-top: 0.75rem;
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      background: var(--ink); color: rgba(255,255,255,0.45);
+      padding: 3rem 5vw 1.5rem;
+      border-top: 3px solid var(--orange);
+    }
+    .footer-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--warm-white); }
+    .footer-copy {
+      max-width: 1060px; margin: 1.25rem auto 0;
+      padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.75rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-copy a { color: rgba(255,255,255,0.38); text-decoration: none; }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 820px) {
+      .article-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .article-sidebar { position: static; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .recipe-grid { grid-template-columns: 1fr; }
+      .header-nav { display: none; }
+    }
+    @media (max-width: 500px) {
+      .recipe-banner { flex-direction: column; gap: 0.5rem; }
+      .recipe-num { font-size: 3rem; }
+      .recipe-stats { flex-wrap: wrap; }
+      .rstat { min-width: 50%; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ SITE HEADER ══ -->
+<header class="site-header">
+  <a href="index.html" class="site-logo">Abak<em>.</em></a>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="shop.html">Shop</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="cta">Contact Us</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>›</span>
+        <a href="blog.html">Blog</a><span>›</span>
+        <span>Tilapia Recipes</span>
+      </div>
+      <div class="recipe-tag">🍳 Recipes &amp; Cooking</div>
+      <h1>5 Easy <em>Tilapia</em> Recipes<br>Perfect for the<br><strong>Ghanaian Home Kitchen</strong></h1>
+      <p class="hero-sub">Tilapia is one of Ghana's most loved fish — mild, meaty, and wonderfully versatile. Here are five easy recipes that bring out the very best of this everyday favourite, using quality frozen tilapia from your freezer.</p>
+      <div class="hero-meta">
+        <div class="hm-item">👩‍🍳 <strong>By Abak Company Limited</strong></div>
+        <div class="hm-item">⏱ <strong>8 min read</strong></div>
+        <div class="hm-item">🍽 <strong>5 Recipes</strong></div>
+        <div class="hm-item">🔥 <strong>Easy – Medium</strong></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="fish-big">🐟</span>
+      <div class="recipe-count">5</div>
+      <div class="recipe-label">Recipes</div>
+      <p>for the<br>Ghanaian kitchen</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ARTICLE ══ -->
+<div class="article-layout">
+
+  <main>
+
+    <p class="article-intro">
+      Whether you're frying it crispy on a Friday evening, slow-cooking it in a bold tomato pepper sauce, or grilling it over charcoal on a Sunday afternoon — tilapia is the fish that fits every Ghanaian occasion. These five recipes are easy enough for weeknight cooking, impressive enough for guests, and designed around the quality frozen tilapia available from Abak Company Limited.
+    </p>
+
+    <!-- ══════ RECIPE 1 ══════ -->
+    <div class="recipe-card" id="recipe-1">
+      <div class="recipe-banner rb-1">
+        <div class="recipe-num">01</div>
+        <div class="recipe-banner-text">
+          <span class="recipe-label-tag">Friday Night Classic</span>
+          <div class="recipe-title">Crispy Fried Tilapia with Shito &amp; Fried Plantain</div>
+        </div>
+      </div>
+      <div class="recipe-stats">
+        <div class="rstat"><span class="rstat-icon">⏱</span><span class="rstat-val">15 min</span><span class="rstat-label">Prep</span></div>
+        <div class="rstat"><span class="rstat-icon">🔥</span><span class="rstat-val">20 min</span><span class="rstat-label">Cook</span></div>
+        <div class="rstat"><span class="rstat-icon">👥</span><span class="rstat-val">4</span><span class="rstat-label">Serves</span></div>
+        <div class="rstat"><span class="rstat-icon">📊</span><span class="rstat-val">Easy</span><span class="rstat-label">Level</span></div>
+      </div>
+      <div class="recipe-body">
+        <p>There is perhaps no more quintessentially Ghanaian combination than crispy fried tilapia, shito, and fried ripe plantain. It is the Friday evening meal of choice across Accra — from roadside spots to family kitchens — and for good reason. The key to getting this right is a well-seasoned, properly dried fish and hot enough oil to seal in moisture while creating that signature golden crust.</p>
+
+        <div class="recipe-grid">
+          <div>
+            <div class="recipe-section-title">Ingredients</div>
+            <ul class="ingredients-list">
+              <li><span class="ing-qty">4</span> whole tilapia, cleaned &amp; scored</li>
+              <li><span class="ing-qty">2 tsp</span> salt</li>
+              <li><span class="ing-qty">1 tsp</span> black pepper</li>
+              <li><span class="ing-qty">1 tsp</span> white pepper</li>
+              <li><span class="ing-qty">1 tsp</span> garlic powder</li>
+              <li><span class="ing-qty">1 tsp</span> ginger powder</li>
+              <li><span class="ing-qty">½ tsp</span> chilli flakes</li>
+              <li><span class="ing-qty">2 tbsp</span> lemon juice</li>
+              <li><span class="ing-qty">Oil</span> for deep frying</li>
+              <li><span class="ing-qty">2 ripe</span> plantains, sliced</li>
+              <li><span class="ing-qty">Shito</span> to serve</li>
+            </ul>
+          </div>
+          <div>
+            <div class="recipe-section-title">Method</div>
+            <ol class="steps-list">
+              <li><span class="step-num">1</span>Thaw tilapia fully, pat completely dry with kitchen paper — this is crucial for crispiness. Score the flesh on both sides with deep diagonal cuts.</li>
+              <li><span class="step-num">2</span>Mix all dry spices together. Rub lemon juice all over the fish, then pack the spice mixture generously into the cuts and all over the skin. Leave to marinate for at least 30 minutes.</li>
+              <li><span class="step-num">3</span>Heat oil in a deep pan to 180°C — test with a wooden spoon (small bubbles should form immediately). Oil must be hot enough or the fish will absorb it and be greasy.</li>
+              <li><span class="step-num">4</span>Gently lower tilapia into the oil. Do not move it for the first 3 minutes — this lets the skin crisp and form a seal. Fry for 6–8 minutes per side until deep golden brown.</li>
+              <li><span class="step-num">5</span>Fry plantain slices in the same oil until golden, about 2–3 minutes per side. Drain both on paper towels. Serve immediately with shito.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="recipe-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>Pro tip:</strong> For extra crispy skin, dust the fish lightly with cornflour before frying. And always use a whole fish rather than fillets for this recipe — the bones add incredible flavour and the skin crisps far better than with fillets.</p>
+        </div>
+        <span class="handwritten-note">Perfect with an ice-cold drink! 🍺</span>
+      </div>
+    </div>
+
+    <div class="fish-divider">🐟 · · · 🐟 · · · 🐟</div>
+
+    <!-- ══════ RECIPE 2 ══════ -->
+    <div class="recipe-card" id="recipe-2">
+      <div class="recipe-banner rb-2">
+        <div class="recipe-num">02</div>
+        <div class="recipe-banner-text">
+          <span class="recipe-label-tag">Sunday Special</span>
+          <div class="recipe-title">Tilapia in Rich Tomato &amp; Pepper Sauce (Fante Fante Style)</div>
+        </div>
+      </div>
+      <div class="recipe-stats">
+        <div class="rstat"><span class="rstat-icon">⏱</span><span class="rstat-val">20 min</span><span class="rstat-label">Prep</span></div>
+        <div class="rstat"><span class="rstat-icon">🔥</span><span class="rstat-val">35 min</span><span class="rstat-label">Cook</span></div>
+        <div class="rstat"><span class="rstat-icon">👥</span><span class="rstat-val">4–6</span><span class="rstat-label">Serves</span></div>
+        <div class="rstat"><span class="rstat-icon">📊</span><span class="rstat-val">Medium</span><span class="rstat-label">Level</span></div>
+      </div>
+      <div class="recipe-body">
+        <p>Inspired by the coastal traditions of Ghana's Central Region, this rich, deeply flavoured tomato and pepper sauce is the soul of Ghanaian fish cooking. The fish is first lightly fried to add a layer of flavour, then gently simmered in the sauce so it absorbs every note of the spices. Serve over boiled rice, with kenkey, or alongside fresh agbeli kaklo.</p>
+
+        <div class="recipe-grid">
+          <div>
+            <div class="recipe-section-title">Ingredients</div>
+            <ul class="ingredients-list">
+              <li><span class="ing-qty">4</span> tilapia, cleaned &amp; scored</li>
+              <li><span class="ing-qty">4</span> large ripe tomatoes</li>
+              <li><span class="ing-qty">3</span> red bell peppers</li>
+              <li><span class="ing-qty">4</span> hot chilli peppers (adjust to taste)</li>
+              <li><span class="ing-qty">1</span> large onion</li>
+              <li><span class="ing-qty">4 cloves</span> garlic</li>
+              <li><span class="ing-qty">1 inch</span> fresh ginger</li>
+              <li><span class="ing-qty">3 tbsp</span> vegetable oil</li>
+              <li><span class="ing-qty">1 tsp</span> ground crayfish</li>
+              <li><span class="ing-qty">Salt &amp;</span> seasoning to taste</li>
+              <li><span class="ing-qty">Fresh</span> basil or scent leaves</li>
+            </ul>
+          </div>
+          <div>
+            <div class="recipe-section-title">Method</div>
+            <ol class="steps-list">
+              <li><span class="step-num">1</span>Season tilapia with salt, pepper and a little garlic. Shallow-fry for 3–4 minutes per side until lightly golden. Set aside — don't fully cook through yet.</li>
+              <li><span class="step-num">2</span>Blend tomatoes, bell pepper, chilli, half the onion, garlic, and ginger to a smooth paste. Do not add water.</li>
+              <li><span class="step-num">3</span>In a wide pan, sauté the remaining onion (sliced) in oil over medium heat until soft and golden, about 5 minutes.</li>
+              <li><span class="step-num">4</span>Pour in the blended pepper-tomato paste. Stir well and fry on high heat, stirring frequently, until the raw smell is gone and the sauce has reduced and darkened — about 15 minutes. This step is crucial and cannot be rushed.</li>
+              <li><span class="step-num">5</span>Add ground crayfish and seasoning. Carefully nestle the fried tilapia into the sauce. Reduce heat to low, cover, and simmer for 10–12 minutes. Garnish with fresh scent leaves and serve.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="recipe-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>The secret:</strong> Frying the tomato paste (called "stewing" the pepper) until the oil separates and floats to the top is what separates a good pepper sauce from a great one. Don't skip this step — it's where all the depth of flavour comes from.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fish-divider">🐟 · · · 🐟 · · · 🐟</div>
+
+    <!-- ══════ RECIPE 3 ══════ -->
+    <div class="recipe-card" id="recipe-3">
+      <div class="recipe-banner rb-3">
+        <div class="recipe-num">03</div>
+        <div class="recipe-banner-text">
+          <span class="recipe-label-tag">Healthy &amp; Light</span>
+          <div class="recipe-title">Oven-Baked Lemon Herb Tilapia with Garlic Butter</div>
+        </div>
+      </div>
+      <div class="recipe-stats">
+        <div class="rstat"><span class="rstat-icon">⏱</span><span class="rstat-val">10 min</span><span class="rstat-label">Prep</span></div>
+        <div class="rstat"><span class="rstat-icon">🔥</span><span class="rstat-val">20 min</span><span class="rstat-label">Bake</span></div>
+        <div class="rstat"><span class="rstat-icon">👥</span><span class="rstat-val">4</span><span class="rstat-label">Serves</span></div>
+        <div class="rstat"><span class="rstat-icon">📊</span><span class="rstat-val">Easy</span><span class="rstat-label">Level</span></div>
+      </div>
+      <div class="recipe-body">
+        <p>For those watching their oil intake, or simply wanting a cleaner, lighter way to enjoy tilapia, this oven-baked version is a revelation. The garlic butter melts into the fish as it bakes, while lemon and fresh herbs cut through the richness. It's the kind of recipe that feels sophisticated but takes almost no effort — perfect for a quick weeknight dinner that doesn't compromise on flavour.</p>
+
+        <div class="recipe-grid">
+          <div>
+            <div class="recipe-section-title">Ingredients</div>
+            <ul class="ingredients-list">
+              <li><span class="ing-qty">4</span> tilapia fillets or whole fish</li>
+              <li><span class="ing-qty">3 tbsp</span> softened butter</li>
+              <li><span class="ing-qty">4 cloves</span> garlic, minced finely</li>
+              <li><span class="ing-qty">2</span> lemons (juice + zest)</li>
+              <li><span class="ing-qty">2 tbsp</span> fresh parsley, chopped</li>
+              <li><span class="ing-qty">1 tsp</span> fresh thyme leaves</li>
+              <li><span class="ing-qty">1 tsp</span> smoked paprika</li>
+              <li><span class="ing-qty">Salt &amp;</span> freshly ground pepper</li>
+              <li><span class="ing-qty">Lemon</span> slices to garnish</li>
+            </ul>
+          </div>
+          <div>
+            <div class="recipe-section-title">Method</div>
+            <ol class="steps-list">
+              <li><span class="step-num">1</span>Preheat oven to 200°C (180°C fan). Line a baking tray with foil or greaseproof paper.</li>
+              <li><span class="step-num">2</span>In a small bowl, mix together butter, minced garlic, lemon zest, half the parsley, thyme, and paprika until well combined.</li>
+              <li><span class="step-num">3</span>Pat tilapia dry and place on the prepared tray. Season generously with salt and pepper. Squeeze half the lemon juice over the fish.</li>
+              <li><span class="step-num">4</span>Spread the garlic herb butter generously over and into each piece of fish. Arrange lemon slices on top.</li>
+              <li><span class="step-num">5</span>Bake for 18–22 minutes (depending on thickness) until the fish flakes easily when pressed and the butter is bubbling. Finish with remaining lemon juice and fresh parsley. Serve immediately.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="recipe-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>Great with:</strong> Steamed basmati rice, boiled yam, roasted vegetables, or plain jollof. For a restaurant-quality presentation, add a final drizzle of olive oil and a pinch of chilli flakes just before serving.</p>
+        </div>
+        <span class="handwritten-note">Light, fresh, and so easy! ✨</span>
+      </div>
+    </div>
+
+    <div class="fish-divider">🐟 · · · 🐟 · · · 🐟</div>
+
+    <!-- ══════ RECIPE 4 ══════ -->
+    <div class="recipe-card" id="recipe-4">
+      <div class="recipe-banner rb-4">
+        <div class="recipe-num">04</div>
+        <div class="recipe-banner-text">
+          <span class="recipe-label-tag">Bold &amp; Spicy</span>
+          <div class="recipe-title">Grilled Peppered Tilapia (Outdoor &amp; Oven Method)</div>
+        </div>
+      </div>
+      <div class="recipe-stats">
+        <div class="rstat"><span class="rstat-icon">⏱</span><span class="rstat-val">20 min + marinate</span><span class="rstat-label">Prep</span></div>
+        <div class="rstat"><span class="rstat-icon">🔥</span><span class="rstat-val">25 min</span><span class="rstat-label">Grill</span></div>
+        <div class="rstat"><span class="rstat-icon">👥</span><span class="rstat-val">4</span><span class="rstat-label">Serves</span></div>
+        <div class="rstat"><span class="rstat-icon">📊</span><span class="rstat-val">Medium</span><span class="rstat-label">Level</span></div>
+      </div>
+      <div class="recipe-body">
+        <p>Nothing beats the smell of tilapia grilling over hot coals on a weekend evening in Accra. This recipe captures that experience perfectly — a deeply spiced, charred exterior with moist, flavourful flesh inside. The marinade is the star: a complex, layered blend of fresh peppers, aromatics, and spices that turns a simple fish into something truly memorable. If you don't have a charcoal grill, the oven-grill method described below produces an almost identical result.</p>
+
+        <div class="recipe-grid">
+          <div>
+            <div class="recipe-section-title">Ingredients</div>
+            <ul class="ingredients-list">
+              <li><span class="ing-qty">4</span> whole tilapia, cleaned &amp; scored</li>
+              <li><span class="ing-qty">3</span> scotch bonnet peppers</li>
+              <li><span class="ing-qty">1</span> habanero pepper</li>
+              <li><span class="ing-qty">4 cloves</span> garlic</li>
+              <li><span class="ing-qty">1 inch</span> ginger root</li>
+              <li><span class="ing-qty">1 tsp</span> suya spice mix</li>
+              <li><span class="ing-qty">1 tsp</span> smoked paprika</li>
+              <li><span class="ing-qty">1 tsp</span> ground cumin</li>
+              <li><span class="ing-qty">3 tbsp</span> groundnut oil</li>
+              <li><span class="ing-qty">2 tbsp</span> soy sauce</li>
+              <li><span class="ing-qty">Juice</span> of 1 lime</li>
+              <li><span class="ing-qty">Salt</span> to taste</li>
+            </ul>
+          </div>
+          <div>
+            <div class="recipe-section-title">Method</div>
+            <ol class="steps-list">
+              <li><span class="step-num">1</span>Blend scotch bonnets, habanero, garlic, and ginger to a rough paste (not completely smooth — a little texture is good).</li>
+              <li><span class="step-num">2</span>Combine paste with suya spice, paprika, cumin, oil, soy sauce, and lime juice. Taste and adjust salt.</li>
+              <li><span class="step-num">3</span>Pat tilapia dry, score deeply. Push marinade into the cuts and all over the fish — inside the cavity too. Marinate for at least 1 hour, ideally overnight in the fridge.</li>
+              <li><span class="step-num">4</span><strong>Charcoal grill:</strong> Grill over medium-hot coals for 8–10 minutes per side, basting with remaining marinade. <strong>Oven method:</strong> Preheat grill to maximum. Place fish on an oiled rack over a tray. Grill for 8–10 mins per side, watching closely.</li>
+              <li><span class="step-num">5</span>Rest for 3 minutes before serving. Finish with sliced red onion, lime wedges, and chopped fresh coriander.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="recipe-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>The overnight marinade:</strong> If you do nothing else, do this — marinating overnight is what separates good grilled tilapia from extraordinary grilled tilapia. The acid in the lime and the soy sauce begin to work into the flesh, and the spices penetrate all the way to the bone.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fish-divider">🐟 · · · 🐟 · · · 🐟</div>
+
+    <!-- ══════ RECIPE 5 ══════ -->
+    <div class="recipe-card" id="recipe-5">
+      <div class="recipe-banner rb-5">
+        <div class="recipe-num">05</div>
+        <div class="recipe-banner-text">
+          <span class="recipe-label-tag">Comfort Food</span>
+          <div class="recipe-title">Tilapia Light Soup with Yam (Nkrakra)</div>
+        </div>
+      </div>
+      <div class="recipe-stats">
+        <div class="rstat"><span class="rstat-icon">⏱</span><span class="rstat-val">15 min</span><span class="rstat-label">Prep</span></div>
+        <div class="rstat"><span class="rstat-icon">🔥</span><span class="rstat-val">45 min</span><span class="rstat-label">Cook</span></div>
+        <div class="rstat"><span class="rstat-icon">👥</span><span class="rstat-val">4–6</span><span class="rstat-label">Serves</span></div>
+        <div class="rstat"><span class="rstat-icon">📊</span><span class="rstat-val">Medium</span><span class="rstat-label">Level</span></div>
+      </div>
+      <div class="recipe-body">
+        <p>Nkrakra — Ghana's beloved light soup — is perhaps the most comforting dish in the Ghanaian culinary repertoire. Clear, fragrant, deeply savoury, and generously spiced, it is the meal that says home like no other. While chicken and goat are common bases, tilapia light soup has a delicate sweetness that is entirely its own. Served with boiled yam, fufu, or plain rice, this is the recipe for rainy days, family gatherings, and whenever the soul needs feeding.</p>
+
+        <div class="recipe-grid">
+          <div>
+            <div class="recipe-section-title">Ingredients</div>
+            <ul class="ingredients-list">
+              <li><span class="ing-qty">4</span> whole tilapia, cut into pieces</li>
+              <li><span class="ing-qty">6 cups</span> water</li>
+              <li><span class="ing-qty">4</span> medium tomatoes</li>
+              <li><span class="ing-qty">4</span> hot chilli peppers</li>
+              <li><span class="ing-qty">1</span> medium onion</li>
+              <li><span class="ing-qty">4 cloves</span> garlic</li>
+              <li><span class="ing-qty">1 inch</span> ginger</li>
+              <li><span class="ing-qty">1 tsp</span> ground crayfish</li>
+              <li><span class="ing-qty">2 sprigs</span> fresh basil / fenugreek leaves</li>
+              <li><span class="ing-qty">Salt &amp;</span> seasoning cube to taste</li>
+              <li><span class="ing-qty">600g</span> yam, boiled separately</li>
+            </ul>
+          </div>
+          <div>
+            <div class="recipe-section-title">Method</div>
+            <ol class="steps-list">
+              <li><span class="step-num">1</span>Season tilapia pieces with salt and a little pepper. Set aside while you prepare the soup base.</li>
+              <li><span class="step-num">2</span>Blend tomatoes, chilli, half the onion, garlic, and ginger with ½ cup of water until smooth.</li>
+              <li><span class="step-num">3</span>Bring 6 cups of water to a boil in a large pot. Add the remaining onion (whole), blended tomato-pepper base, and a seasoning cube. Boil for 10 minutes.</li>
+              <li><span class="step-num">4</span>Add ground crayfish and the seasoned tilapia pieces. Reduce to a gentle simmer — do not boil vigorously or the fish will break apart. Simmer for 20–25 minutes.</li>
+              <li><span class="step-num">5</span>Add fresh basil or fenugreek leaves in the last 5 minutes of cooking. Taste and adjust salt and pepper. The soup should be light, fragrant, and deeply flavoured. Serve hot with boiled yam.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="recipe-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>The key to clear soup:</strong> Never boil the soup aggressively once the fish is added — a vigorous boil clouds the broth and breaks the fish. A gentle simmer keeps the soup clear, fragrant, and the fish pieces intact. Patience here makes all the difference.</p>
+        </div>
+        <span class="handwritten-note">This one tastes like home 🏠❤️</span>
+      </div>
+    </div>
+
+    <!-- Article footer -->
+    <div class="article-footer">
+      <h3>Where to Get Quality Tilapia in Accra</h3>
+      <p>All five recipes above come to life with properly frozen, quality tilapia. Abak Company Limited supplies premium frozen tilapia — available in 500g retail packs through to bulk cartons — with cold delivery across Greater Accra and beyond. Order via WhatsApp in minutes.</p>
+      <div class="footer-cta-row">
+        <a href="https://wa.me/233247298551?text=Hello%20Abak%2C%20I%20would%20like%20to%20order%20Tilapia%20please." target="_blank" rel="noopener" class="btn-orange">💬 Order Tilapia on WhatsApp</a>
+        <a href="products.html#fish" class="btn-outline-ink">View All Fish Products</a>
+      </div>
+      <div class="article-tags">
+        <a href="#" class="art-tag">Tilapia Recipes Ghana</a>
+        <a href="#" class="art-tag">Ghanaian Cooking</a>
+        <a href="#" class="art-tag">Frozen Tilapia</a>
+        <a href="#" class="art-tag">Easy Fish Recipes</a>
+        <a href="#" class="art-tag">Light Soup</a>
+        <a href="#" class="art-tag">Fried Fish</a>
+        <a href="#" class="art-tag">Grilled Tilapia</a>
+        <a href="#" class="art-tag">Abak Recipes</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="article-sidebar">
+
+    <!-- Jump to recipe -->
+    <div class="sidebar-widget">
+      <div class="widget-head">Jump to Recipe</div>
+      <div class="widget-body" style="padding:0.25rem 0.75rem;">
+        <ul class="jump-list">
+          <li><a href="#recipe-1"><span class="jump-dot jd-1"></span>Crispy Fried Tilapia + Shito</a></li>
+          <li><a href="#recipe-2"><span class="jump-dot jd-2"></span>Tilapia in Tomato Pepper Sauce</a></li>
+          <li><a href="#recipe-3"><span class="jump-dot jd-3"></span>Oven-Baked Lemon Herb Tilapia</a></li>
+          <li><a href="#recipe-4"><span class="jump-dot jd-4"></span>Grilled Peppered Tilapia</a></li>
+          <li><a href="#recipe-5"><span class="jump-dot jd-5"></span>Tilapia Light Soup (Nkrakra)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Nutritional info -->
+    <div class="sidebar-widget nutrition-widget">
+      <div class="widget-head">Why Tilapia?</div>
+      <div class="widget-body">
+        <p>Tilapia is one of the most nutritionally complete and affordable fish proteins available — low in fat, high in protein, and packed with essential nutrients.</p>
+        <div class="nut-row"><span class="nut-name">Protein</span><span class="nut-val">26g per 100g</span></div>
+        <div class="nut-row"><span class="nut-name">Calories</span><span class="nut-val">~128 kcal</span></div>
+        <div class="nut-row"><span class="nut-name">Fat</span><span class="nut-val">Low (&lt;3g)</span></div>
+        <div class="nut-row"><span class="nut-name">Omega-3</span><span class="nut-val">Present</span></div>
+        <div class="nut-row"><span class="nut-name">Vitamin B12</span><span class="nut-val">High</span></div>
+      </div>
+    </div>
+
+    <!-- Order widget -->
+    <div class="order-widget">
+      <h4>Order Fresh-Frozen Tilapia</h4>
+      <p>Premium frozen tilapia, delivered cold across Accra. Available from 500g to bulk cartons.</p>
+      <a href="https://wa.me/233247298551?text=Hello%20Abak%2C%20I%20would%20like%20to%20order%20Tilapia." target="_blank" rel="noopener" class="ow-link ow-wa">💬 +233 24 729 8551</a>
+      <a href="tel:+233504967111" class="ow-link ow-ph">📞 +233 50 496 7111</a>
+      <div class="ow-address">📍 HQ1 Anunsah Clottey Street<br>Kaneshie Market, Accra · GA-262-1811</div>
+    </div>
+
+    <!-- Related articles -->
+    <div class="sidebar-widget">
+      <div class="widget-head">Related Reading</div>
+      <div class="widget-body" style="padding:0.5rem 0.75rem;">
+        <a href="blog-frozen-vs-fresh.html" style="display:flex;gap:0.65rem;padding:0.65rem 0;border-bottom:1px solid var(--paper);text-decoration:none;align-items:flex-start;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#e0ecf5;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🏪</div>
+          <div>
+            <div style="font-size:0.8rem;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:0.15rem;">5 Reasons Restaurants Choose Frozen Over Fresh</div>
+            <div style="font-size:0.68rem;color:var(--muted);font-weight:600;">Industry Insights</div>
+          </div>
+        </a>
+        <a href="products.html" style="display:flex;gap:0.65rem;padding:0.65rem 0;text-decoration:none;align-items:flex-start;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#e0f5ff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🐟</div>
+          <div>
+            <div style="font-size:0.8rem;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:0.15rem;">Browse Our Full Fish &amp; Seafood Range</div>
+            <div style="font-size:0.68rem;color:var(--muted);font-weight:600;">Products</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="site-logo">Abak<em>.</em></a>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="shop.html">Shop</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="footer-copy">
+    <span>© 2025 Abak Company Limited. HQ1 Anunsah Clottey Street, Kaneshie Market, Accra · GA-262-1811</span>
+    <span>
+      <a href="tel:+233247298551">+233 24 729 8551</a> &nbsp;|&nbsp;
+      <a href="tel:+233504967111">+233 50 496 7111</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

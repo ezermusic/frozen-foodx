@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Abak Company Limited</title>
+  <meta name="description" content="Frequently asked questions about Abak Company Limited's frozen foods, cold storage, ordering process, delivery, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0B3C5D;
+      --navy-dk:   #071f30;
+      --navy-lt:   #1a5276;
+      --blue:      #2E86C1;
+      --blue-lt:   #5dade2;
+      --ice:       #D6EAF8;
+      --ice-lt:    #EBF5FB;
+      --white:     #FFFFFF;
+      --off-white: #F8FAFB;
+      --sand:      #FBF8F4;
+      --grey:      #EEF2F5;
+      --slate:     #E1E8EE;
+      --text:      #1C2D3A;
+      --muted:     #627D8E;
+      --border:    rgba(11,60,93,0.09);
+      --teal:      #117A65;
+      --teal-lt:   #E8F6F3;
+      --amber:     #D68910;
+      --amber-lt:  #FEF9E7;
+      --red:       #C0392B;
+      --red-lt:    #FDEDEC;
+      --shadow-sm: 0 2px 12px rgba(11,60,93,0.07);
+      --shadow-md: 0 6px 28px rgba(11,60,93,0.11);
+      --shadow-lg: 0 16px 48px rgba(11,60,93,0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lora', serif;
+      color: var(--text);
+      background: var(--sand);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(7,31,48,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── LOGO AREA ── */
+    .nav-logo-wrap {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none;
+    }
+    .logo-img-placeholder {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px dashed rgba(255,255,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .logo-img-placeholder:hover {
+      border-color: var(--blue-lt);
+      background: rgba(46,134,193,0.12);
+    }
+    .logo-img-placeholder img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: none; /* shown via JS once src is set */
+    }
+    .logo-placeholder-icon {
+      font-size: 1.1rem;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+    .logo-placeholder-tip {
+      position: absolute;
+      bottom: -28px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.7);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.6rem;
+      white-space: nowrap;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .logo-img-placeholder:hover .logo-placeholder-tip { opacity: 1; }
+
+    .nav-brand-text {
+      display: flex; flex-direction: column;
+    }
+    .nav-brand-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+    .nav-brand-name span { color: var(--blue-lt); }
+    .nav-brand-sub {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      line-height: 1;
+    }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: 'Syne', sans-serif;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--blue-lt); }
+    .nav-phone {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      background: var(--blue);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-phone:hover { background: var(--blue-lt); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* ── HERO BANNER ── */
+    .faq-hero {
+      padding-top: 72px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Diagonal stripe pattern */
+    .faq-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(46,134,193,0.04) 40px,
+        rgba(46,134,193,0.04) 80px
+      );
+    }
+    /* Glow blob */
+    .faq-hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(46,134,193,0.14) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      pointer-events: none;
+    }
+    .faq-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4.5rem 5% 5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--blue-lt); }
+    .hero-eyebrow {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--blue-lt);
+      margin-bottom: 0.9rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 2px; background: var(--blue-lt);
+    }
+    .faq-hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .faq-hero h1 em {
+      font-style: normal;
+      color: var(--blue-lt);
+      position: relative;
+    }
+    .faq-hero-sub {
+      font-family: 'Lora', serif;
+      font-size: 1rem; line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    .hero-search-wrap {
+      display: flex; gap: 0;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px;
+      overflow: hidden;
+      max-width: 460px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .hero-search-wrap:focus-within {
+      border-color: var(--blue-lt);
+      box-shadow: 0 0 0 3px rgba(93,173,226,0.15);
+    }
+    .hero-search-wrap input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      padding: 0.85rem 1.2rem;
+      font-family: 'Lora', serif;
+      font-size: 0.88rem;
+      color: var(--white);
+    }
+    .hero-search-wrap input::placeholder { color: rgba(255,255,255,0.35); }
+    .hero-search-wrap button {
+      background: var(--blue);
+      border: none;
+      color: white;
+      padding: 0 1.4rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 0 50px 50px 0;
+      transition: background 0.2s;
+    }
+    .hero-search-wrap button:hover { background: var(--blue-lt); }
+    /* Hero stats box */
+    .hero-stats-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      min-width: 180px;
+    }
+    .hs-item { text-align: center; }
+    .hs-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem; font-weight: 800;
+      color: var(--blue-lt);
+      line-height: 1;
+    }
+    .hs-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.25rem;
+    }
+    /* Wave divider */
+    .hero-wave {
+      display: block; width: 100%; height: 64px;
+      background: var(--sand);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    /* ── CATEGORY TABS ── */
+    .cat-tabs-section { padding: 3rem 5% 0; }
+    .cat-tabs-inner { max-width: 1100px; margin: 0 auto; }
+    .cat-tabs {
+      display: flex; gap: 0.7rem; flex-wrap: wrap;
+    }
+    .cat-tab {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem; font-weight: 700;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--slate);
+      background: var(--white);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex; align-items: center; gap: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+    .cat-tab:hover { border-color: var(--blue); color: var(--navy); }
+    .cat-tab.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+    .cat-tab .tab-count {
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      padding: 0.1rem 0.45rem;
+      font-size: 0.65rem;
+    }
+    .cat-tab:not(.active) .tab-count {
+      background: var(--grey);
+      color: var(--muted);
+    }
+
+    /* ── MAIN FAQ LAYOUT ── */
+    .faq-main { padding: 3rem 5% 5rem; }
+    .faq-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── FAQ SECTIONS ── */
+    .faq-sections { display: flex; flex-direction: column; gap: 3rem; }
+    .faq-category-block { display: flex; flex-direction: column; gap: 0; }
+    .faq-category-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .faq-cat-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .icon-products  { background: var(--ice-lt); }
+    .icon-orders    { background: var(--teal-lt); }
+    .icon-delivery  { background: var(--amber-lt); }
+    .icon-storage   { background: #EDE7F6; }
+    .icon-quality   { background: var(--red-lt); }
+    .icon-payment   { background: #E8F5E9; }
+    .icon-business  { background: var(--ice-lt); }
+    .faq-category-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem; font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 0.2px;
+    }
+    .faq-cat-count {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      color: var(--muted);
+      background: var(--grey);
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── ACCORDION ── */
+    .accordion { display: flex; flex-direction: column; gap: 0; }
+    .acc-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .acc-item:first-child { border-radius: 14px 14px 0 0; }
+    .acc-item:last-child  { border-radius: 0 0 14px 14px; }
+    .acc-item:only-child  { border-radius: 14px; }
+    .acc-item + .acc-item { border-top: none; }
+    .acc-item.open {
+      box-shadow: var(--shadow-sm);
+      z-index: 1;
+      position: relative;
+    }
+    .acc-item.open .acc-trigger { background: var(--off-white); }
+
+    .acc-trigger {
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.4rem;
+      cursor: pointer;
+      background: var(--white);
+      border: none;
+      text-align: left;
+      transition: background 0.18s;
+    }
+    .acc-trigger:hover { background: var(--off-white); }
+    .acc-q {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.92rem; font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+      flex: 1;
+    }
+    .acc-chevron {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--grey);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--muted);
+      transition: transform 0.3s, background 0.2s;
+    }
+    .acc-item.open .acc-chevron {
+      transform: rotate(180deg);
+      background: var(--navy);
+      color: var(--white);
+    }
+    .acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1);
+    }
+    .acc-item.open .acc-body { max-height: 600px; }
+    .acc-content {
+      padding: 0 1.4rem 1.4rem;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .acc-content strong { color: var(--navy); }
+    .acc-content a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .acc-content a:hover { text-decoration: underline; }
+    .acc-content ul {
+      margin: 0.5rem 0 0 1rem;
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .acc-content ul li { font-size: 0.88rem; }
+    /* Tag inside answer */
+    .acc-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 50px;
+      margin-bottom: 0.7rem;
+    }
+    .tag-tip      { background: var(--teal-lt); color: var(--teal); }
+    .tag-note     { background: var(--amber-lt); color: var(--amber); }
+    .tag-important{ background: var(--red-lt); color: var(--red); }
+
+    /* ── NO RESULTS ── */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+    .no-results.visible { display: block; }
+    .no-results p { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem; }
+    .no-results span { font-size:0.88rem; color:var(--muted); }
+
+    /* ── SIDEBAR ── */
+    .faq-sidebar {
+      display: flex; flex-direction: column; gap: 1.5rem;
+      position: sticky; top: 90px;
+    }
+    .sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-card-head {
+      background: var(--navy);
+      padding: 1.2rem 1.4rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .sidebar-card-head h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem; font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.3px;
+    }
+    .sidebar-card-head .sh-icon { font-size: 1rem; }
+    .sidebar-card-body { padding: 1.4rem; }
+
+    /* Contact card */
+    .contact-rows { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-row {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+    }
+    .cr-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--ice-lt);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; flex-shrink: 0;
+    }
+    .cr-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.63rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 0.2rem;
+    }
+    .cr-value { font-size: 0.85rem; color: var(--navy); font-weight: 500; line-height: 1.4; }
+    .cr-value a { color: var(--blue); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+    .cr-value a:hover { text-decoration: underline; }
+    .cr-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+
+    /* Logo card */
+    .logo-card-placeholder {
+      width: 100%;
+      min-height: 120px;
+      border: 2px dashed var(--slate);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--off-white);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .logo-card-placeholder:hover {
+      border-color: var(--blue);
+      background: var(--ice-lt);
+    }
+    .logo-card-placeholder img {
+      max-width: 100%; max-height: 100px;
+      object-fit: contain;
+      display: none;
+    }
+    .logo-card-ph-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;
+      color: var(--muted); text-align: center;
+    }
+    .logo-card-ph-icon { font-size: 1.8rem; opacity: 0.35; }
+    .logo-card-ph-hint { font-size: 0.65rem; color: var(--muted); opacity: 0.7; }
+
+    /* Quick links */
+    .quick-links { display: flex; flex-direction: column; gap: 0.4rem; }
+    .ql-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.65rem 0.8rem;
+      border-radius: 8px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s;
+      cursor: pointer;
+      border: none; background: none; width: 100%; text-align: left;
+    }
+    .ql-item:hover { background: var(--off-white); color: var(--blue); }
+    .ql-arrow { font-size: 0.7rem; color: var(--muted); }
+
+    /* Hours card */
+    .hours-rows { display: flex; flex-direction: column; gap: 0.5rem; }
+    .hours-row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.82rem; padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 0.8rem; }
+    .hours-time { color: var(--muted); font-size: 0.78rem; }
+    .hours-closed { color: var(--red); font-weight: 700; font-family: 'Syne', sans-serif; }
+    .open-now {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Syne', sans-serif; font-size: 0.65rem; font-weight: 700;
+      color: var(--teal);
+      background: var(--teal-lt);
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      margin-top: 0.7rem;
+    }
+    .open-now::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink { 0%,100%{ opacity:1 } 50%{ opacity:0.3 } }
+
+    /* WhatsApp CTA card */
+    .wa-cta-card {
+      background: linear-gradient(135deg, #128C7E, #25D366);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+    }
+    .wa-cta-card .wa-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .wa-cta-card h3 {
+      font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 800;
+      color: var(--white); margin-bottom: 0.3rem;
+    }
+    .wa-cta-card p { font-size: 0.78rem; color: rgba(255,255,255,0.8); margin-bottom: 1rem; line-height: 1.5; }
+    .wa-btn {
+      display: inline-block;
+      background: var(--white);
+      color: #128C7E;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem; font-weight: 800;
+      padding: 0.65rem 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .wa-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    /* ── STILL HAVE QUESTIONS BANNER ── */
+    .still-questions {
+      background: var(--navy);
+      padding: 4rem 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    .sq-blob {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(93,173,226,0.12) 0%, transparent 70%);
+    }
+    .sq-blob.b1 { width: 500px; height: 500px; top: -200px; right: -100px; }
+    .sq-blob.b2 { width: 300px; height: 300px; bottom: -150px; left: 5%; }
+    .sq-inner {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .sq-inner h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 800;
+      color: var(--white); margin-bottom: 0.6rem;
+    }
+    .sq-inner p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 480px; }
+    .sq-buttons { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
+    .btn-sq-primary {
+      background: var(--white);
+      color: var(--navy);
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem; font-weight: 800;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .btn-sq-primary:hover { background: var(--ice); transform: translateY(-2px); }
+    .btn-sq-wa {
+      background: #25D366;
+      color: var(--white);
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem; font-weight: 800;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .btn-sq-wa:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    /* ── CONTACT DETAIL STRIP ── */
+    .detail-strip {
+      background: #071f30;
+      padding: 2.5rem 5%;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .detail-strip-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .ds-item { display: flex; gap: 0.8rem; align-items: flex-start; }
+    .ds-icon {
+      width: 40px; height: 40px;
+      background: rgba(46,134,193,0.12);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .ds-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); margin-bottom: 0.2rem;
+    }
+    .ds-value { font-size: 0.84rem; color: var(--white); font-weight: 500; line-height: 1.4; }
+    .ds-value a { color: var(--blue-lt); text-decoration: none; font-weight: 700; }
+    .ds-value a:hover { text-decoration: underline; }
+    .ds-sub { font-size: 0.73rem; color: rgba(255,255,255,0.3); margin-top: 0.15rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #040d16;
+      color: rgba(255,255,255,0.28);
+      padding: 3rem 5% 1.5rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Footer logo placeholder */
+    .footer-logo-wrap { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.8rem; }
+    .footer-logo-img-placeholder {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px dashed rgba(255,255,255,0.18);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .footer-logo-img-placeholder img { width:100%;height:100%;object-fit:contain;display:none; }
+    .footer-logo-img-placeholder .ph-icon { font-size:0.9rem; opacity:0.3; }
+    .footer-brand-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--white);
+    }
+    .footer-brand-name span { color: var(--blue-lt); }
+    .footer-brand p { font-size: 0.8rem; line-height: 1.7; max-width: 220px; }
+    footer h4 {
+      font-family: 'Syne', sans-serif;
+      color: rgba(255,255,255,0.45); font-size: 0.68rem; font-weight: 800;
+      letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    footer ul a { color: rgba(255,255,255,0.28); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    footer ul a:hover { color: var(--blue-lt); }
+    .footer-contact-list li { display: flex; align-items: flex-start; gap: 0.45rem; font-size: 0.8rem; margin-bottom: 0.55rem; line-height: 1.45; }
+    .footer-contact-list a { color: var(--blue-lt); text-decoration: none; }
+    .footer-contact-list a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 1.2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.74rem; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.18); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--blue-lt); }
+
+    /* ── FLOATING WHATSAPP ── */
+    .float-wa {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      z-index: 300;
+      animation: pulse-wa 2.5s infinite;
+    }
+    @keyframes pulse-wa {
+      0%,100%{ box-shadow: 0 4px 20px rgba(37,211,102,0.35); }
+      50%    { box-shadow: 0 4px 34px rgba(37,211,102,0.65); }
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── HIGHLIGHT for search ── */
+    mark { background: #fff176; color: var(--navy); border-radius: 3px; padding: 0 2px; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .faq-hero-inner { grid-template-columns: 1fr; }
+      .hero-stats-box { flex-direction: row; min-width: auto; }
+      .faq-layout { grid-template-columns: 1fr; }
+      .faq-sidebar { position: static; }
+      .sq-inner { grid-template-columns: 1fr; }
+      .sq-buttons { align-items: flex-start; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: rgba(7,31,48,0.98);
+        padding: 1.5rem 5%; gap: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,0.07);
+      }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-stats-box { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+      .cat-tabs { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav>
+    <a class="nav-logo-wrap" href="index.html">
+      <!-- ★ LOGO IMAGE PLACEHOLDER — Replace src="" with your logo file path ★ -->
+      <div class="logo-img-placeholder" id="navLogoPlaceholder" title="Click to preview logo">
+        <img src="" alt="Abak Company Logo" id="navLogoImg" />
+        <span class="logo-placeholder-icon">🏢</span>
+        <span class="logo-placeholder-tip">Insert logo here</span>
+      </div>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Abak<span>.</span></span>
+        <span class="nav-brand-sub">Company Limited</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#" class="active">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+	  <a href="articles.html">Blog</a>
+	  <a href="shop.html">Shop</a>
+    </ul>
+    <a class="nav-phone" href="tel:+233247298551">📞 +233 24 729 8551</a>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- ══ HERO BANNER ══ -->
+  <header class="faq-hero">
+    <div class="faq-hero-inner">
+      <div>
+        <div class="breadcrumb">
+          <a href="#">Home</a>&nbsp;›&nbsp;<span>FAQ</span>
+        </div>
+        <div class="hero-eyebrow">Frequently Asked Questions</div>
+        <h1>Got Questions?<br/><em>We've Got Answers.</em></h1>
+        <p class="faq-hero-sub">Everything you need to know about our frozen foods, cold storage services, ordering, delivery, and more — answered clearly and quickly.</p>
+        <div class="hero-search-wrap">
+          <input type="text" id="faqSearchInput" placeholder="Search a question e.g. 'delivery', 'payment'…" autocomplete="off" />
+          <button type="button" aria-label="Search">🔍</button>
+        </div>
+      </div>
+      <div class="hero-stats-box">
+        <div class="hs-item">
+          <div class="hs-num">35+</div>
+          <div class="hs-label">Questions Answered</div>
+        </div>
+        <div class="hs-item">
+          <div class="hs-num">7</div>
+          <div class="hs-label">Topic Categories</div>
+        </div>
+        <div class="hs-item">
+          <div class="hs-num">24h</div>
+          <div class="hs-label">Response Time</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave"></div>
+  </header>
+
+  <!-- ══ CATEGORY TABS ══ -->
+  <div class="cat-tabs-section">
+    <div class="cat-tabs-inner">
+      <div class="cat-tabs" id="catTabs">
+        <button class="cat-tab active" data-cat="all">🗂️ All Questions <span class="tab-count">35</span></button>
+        <button class="cat-tab" data-cat="products">❄️ Products <span class="tab-count">6</span></button>
+        <button class="cat-tab" data-cat="orders">🛒 Ordering <span class="tab-count">5</span></button>
+        <button class="cat-tab" data-cat="delivery">🚛 Delivery <span class="tab-count">5</span></button>
+        <button class="cat-tab" data-cat="storage">🏬 Cold Storage <span class="tab-count">5</span></button>
+        <button class="cat-tab" data-cat="quality">✅ Quality <span class="tab-count">5</span></button>
+        <button class="cat-tab" data-cat="payment">💳 Payment <span class="tab-count">4</span></button>
+        <button class="cat-tab" data-cat="business">🤝 Business <span class="tab-count">5</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MAIN FAQ LAYOUT ══ -->
+  <main class="faq-main">
+    <div class="faq-layout">
+
+      <!-- ─── FAQ ACCORDION SECTIONS ─── -->
+      <div class="faq-sections" id="faqSections">
+
+        <!-- NO RESULTS -->
+        <div class="no-results" id="noResults">
+          <p>😕 No results found</p>
+          <span>Try a different keyword, or <a href="tel:+233247298551" style="color:var(--blue);">call us directly</a> for help.</span>
+        </div>
+
+        <!-- ① PRODUCTS -->
+        <div class="faq-category-block reveal" data-cat="products">
+          <div class="faq-category-header">
+            <div class="faq-cat-icon icon-products">❄️</div>
+            <h2>Products</h2>
+            <span class="faq-cat-count">6 Questions</span>
+          </div>
+          <div class="accordion">
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">What types of frozen foods does Abak Company Limited sell?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                We sell a wide range of premium imported frozen foods, organised into three main categories:
+                <ul>
+                  <li><strong>Poultry:</strong> Whole chicken, chicken parts (wings, thighs, drumsticks, breasts), turkey, and other poultry products.</li>
+                  <li><strong>Fish &amp; Seafood:</strong> Atlantic salmon, mackerel, tilapia, herring, sardines, tuna, squid, shrimp/prawns, and other seafood.</li>
+                  <li><strong>Red Meat:</strong> Beef cuts, lamb, pork, and mixed meat options for restaurants and households.</li>
+                </ul>
+                All products are internationally sourced and held to the highest quality standards.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Where are your products sourced from?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-tip">🌍 Global Sourcing</span><br/>
+                Our products are sourced from leading exporting countries including the <strong>United States</strong> (premium poultry), <strong>Brazil</strong> (high-volume meat and chicken), <strong>Netherlands</strong> (seafood), <strong>China</strong> (seafood and poultry), <strong>Norway</strong> (Atlantic salmon and seafood), and <strong>India</strong> (shrimp and tilapia). Each supplier is verified for compliance with international food safety standards before we import.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Are your products halal-certified?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Many of our poultry and meat products are sourced from <strong>halal-certified suppliers</strong>. Halal certification is indicated on product packaging. If you require halal-certified products specifically, please let our sales team know when placing your order and we will confirm availability. Call us on <a href="tel:+233247298551">+233 24 729 8551</a> for details.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Do you sell to individuals or only businesses?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                We serve <strong>both individuals and businesses</strong>. Our primary clientele includes restaurants, hotels, caterers, and retailers who purchase in bulk — but we also sell to households who wish to purchase frozen foods in reasonable quantities. Contact us to discuss your needs and we will advise on the best options for you.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">What is the shelf life of your frozen products?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-note">📅 Shelf Life</span><br/>
+                Shelf life varies by product type and is printed on each product's packaging. As a general guide:
+                <ul>
+                  <li><strong>Poultry:</strong> 12–18 months when stored at -18°C or below</li>
+                  <li><strong>Seafood:</strong> 12–24 months depending on the species</li>
+                  <li><strong>Red Meat:</strong> 12–18 months when properly frozen</li>
+                </ul>
+                We always ensure products have sufficient remaining shelf life when dispatched.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Do you offer product samples before bulk purchase?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Yes, for <strong>qualified business clients</strong> considering large orders, we may be able to arrange product samples. Please speak to our sales team directly to discuss this. Contact us at <a href="tel:+233504967111">+233 50 496 7111</a> or via WhatsApp to make a request.
+              </div></div>
+            </div>
+
+          </div>
+        </div><!-- /products -->
+
+        <!-- ② ORDERING -->
+        <div class="faq-category-block reveal" data-cat="orders">
+          <div class="faq-category-header">
+            <div class="faq-cat-icon icon-orders">🛒</div>
+            <h2>Ordering</h2>
+            <span class="faq-cat-count">5 Questions</span>
+          </div>
+          <div class="accordion">
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">How do I place an order with Abak Company Limited?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                You can place an order by:
+                <ul>
+                  <li>📞 Calling us on <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a></li>
+                  <li>💬 Messaging us on WhatsApp: <a href="https://wa.me/233504967111">+233 50 496 7111</a></li>
+                  <li>📍 Visiting us in person at HQ1 Anunsah Clottey Street, Kaneshie Market, Accra</li>
+                </ul>
+                Our team will confirm product availability, pricing, and arrange your delivery or pickup.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Is there a minimum order quantity?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Minimum order quantities may apply depending on the product and whether you are a business or individual customer. For <strong>business clients</strong> (restaurants, hotels, caterers, retailers), we typically deal in carton quantities. For households, smaller quantities may be available. Please call <a href="tel:+233247298551">+233 24 729 8551</a> to discuss your specific needs.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Can I place a bulk or wholesale order?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-tip">💼 Wholesale Available</span><br/>
+                Absolutely. Bulk and wholesale orders are our specialty. We supply restaurants, hotels, supermarkets, caterers, and food businesses across Ghana with large volume orders. Contact our sales team to get a quotation and discuss terms. Wholesale pricing may be available depending on volume.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">How long does it take to process my order?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Standard orders are typically processed <strong>same day or next working day</strong>, subject to product availability and your location. For large or custom bulk orders, lead times may vary. We will always confirm the expected timeline when you place your order. Call us early in the day for same-day service where possible.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Can I change or cancel an order after placing it?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-note">⚠️ Note</span><br/>
+                Order changes or cancellations may be possible if you contact us <strong>promptly before the order is dispatched</strong>. Once an order is in transit, changes may not be possible. Please call <a href="tel:+233247298551">+233 24 729 8551</a> as soon as possible if you need to make amendments.
+              </div></div>
+            </div>
+
+          </div>
+        </div><!-- /orders -->
+
+        <!-- ③ DELIVERY -->
+        <div class="faq-category-block reveal" data-cat="delivery">
+          <div class="faq-category-header">
+            <div class="faq-cat-icon icon-delivery">🚛</div>
+            <h2>Delivery</h2>
+            <span class="faq-cat-count">5 Questions</span>
+          </div>
+          <div class="accordion">
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Do you offer delivery? Which areas do you cover?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Yes, we offer delivery services. We primarily cover <strong>Accra and surrounding areas</strong>, including Tema, Cantonments, East Legon, Osu, Spintex, Labadi, and other Greater Accra communities. We also deliver to clients in other regions of Ghana for bulk orders. Please speak to our team to confirm delivery availability to your location.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Is your delivery cold-chain maintained? How do you keep products frozen?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-tip">❄️ Cold Chain</span><br/>
+                Yes. We are committed to maintaining the cold chain from our warehouse to your premises. All deliveries are transported in <strong>refrigerated or insulated vehicles</strong> to ensure products remain at the correct temperature during transit. We never compromise on cold-chain integrity.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">How much does delivery cost?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Delivery charges depend on your location and the size of your order. Some bulk orders may qualify for <strong>free delivery</strong> within certain areas. Please contact us directly on <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a> for a delivery quote specific to your order and location.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Can I collect my order directly from your warehouse?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Yes! You are welcome to collect your order in person from our premises. We are located at:
+                <ul>
+                  <li><strong>Address:</strong> HQ1 Anunsah Clottey Street, Kaneshie Market, Accra, Ghana</li>
+                  <li><strong>Digital Address:</strong> GA-262-1811</li>
+                  <li><strong>Hours:</strong> Monday – Saturday, 8:00am – 6:00pm</li>
+                </ul>
+                Please call ahead on <a href="tel:+233247298551">+233 24 729 8551</a> to confirm your order is ready before visiting.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">What happens if my delivery arrives at the wrong temperature?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-important">🚨 Important</span><br/>
+                We take cold-chain integrity very seriously. If you believe a delivery has arrived with compromised temperature or product quality, please <strong>do not accept the order</strong> and <strong>contact us immediately</strong> on <a href="tel:+233247298551">+233 24 729 8551</a>. We will investigate and work to resolve the issue promptly. Our team is committed to delivering products in perfect condition every time.
+              </div></div>
+            </div>
+
+          </div>
+        </div><!-- /delivery -->
+
+        <!-- ④ COLD STORAGE -->
+        <div class="faq-category-block reveal" data-cat="storage">
+          <div class="faq-category-header">
+            <div class="faq-cat-icon icon-storage">🏬</div>
+            <h2>Cold Storage</h2>
+            <span class="faq-cat-count">5 Questions</span>
+          </div>
+          <div class="accordion">
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Do you offer cold storage services to other businesses?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Yes. In addition to importing and distributing frozen foods, Abak Company Limited offers <strong>cold storage services</strong> to businesses that need to store frozen or perishable goods. This is ideal for importers, food manufacturers, caterers, and distributors who require reliable, temperature-controlled storage. Contact us to discuss your requirements.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">What temperatures does your cold storage facility maintain?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Our facility maintains multiple temperature zones:
+                <ul>
+                  <li>🧊 <strong>Deep Frozen (−18°C or below):</strong> For poultry, red meat, and most seafood</li>
+                  <li>❄️ <strong>Standard Frozen (−12°C):</strong> For shorter shelf-life frozen products</li>
+                  <li>🌡️ <strong>Chilled (0°C – 4°C):</strong> For thaw-ready or fresh-delivery products</li>
+                </ul>
+                Temperature is monitored 24/7 using digital loggers and alarm systems to ensure no breach goes undetected.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Is the cold storage facility monitored continuously?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-tip">✅ 24/7 Monitoring</span><br/>
+                Yes. Our cold storage facility operates with <strong>continuous temperature monitoring</strong> — 24 hours a day, 7 days a week. Automated alarm systems alert our team immediately if any temperature deviation occurs, ensuring rapid response before any product quality is compromised.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">How do I enquire about renting cold storage space?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                To enquire about available cold storage space and pricing, please contact our team directly:
+                <ul>
+                  <li>📞 Call: <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a></li>
+                  <li>💬 WhatsApp: <a href="https://wa.me/233504967111">+233 50 496 7111</a></li>
+                  <li>📍 Visit: HQ1 Anunsah Clottey Street, Kaneshie Market, Accra (Digital Address: GA-262-1811)</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">What is your cold storage capacity?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Our cold storage capacity is designed to accommodate large-volume stock for both our own product inventory and third-party clients. For specific capacity availability and storage pricing, please <a href="tel:+233247298551">contact our team</a> directly as this may vary depending on current inventory levels and occupancy.
+              </div></div>
+            </div>
+
+          </div>
+        </div><!-- /storage -->
+
+        <!-- ⑤ QUALITY -->
+        <div class="faq-category-block reveal" data-cat="quality">
+          <div class="faq-category-header">
+            <div class="faq-cat-icon icon-quality">✅</div>
+            <h2>Quality &amp; Safety</h2>
+            <span class="faq-cat-count">5 Questions</span>
+          </div>
+          <div class="accordion">
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">How does Abak ensure product quality?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                We enforce a multi-layered quality assurance process:
+                <ul>
+                  <li>✅ <strong>Supplier Verification:</strong> Only suppliers meeting international food safety standards (HACCP, ISO 22000) are approved</li>
+                  <li>✅ <strong>Incoming Inspection:</strong> Every shipment is visually and temperature-checked on arrival</li>
+                  <li>✅ <strong>Packaging Integrity Check:</strong> Damaged or compromised packaging is rejected</li>
+                  <li>✅ <strong>Batch Tracking:</strong> All products are tracked with arrival date, origin, and expiry</li>
+                  <li>✅ <strong>Document Verification:</strong> Health certificates and compliance documents are reviewed for every consignment</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Are your products FDA-approved?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-tip">🇬🇭 Compliant</span><br/>
+                Yes. Abak Company Limited operates in compliance with the <strong>Ghana Food &amp; Drugs Authority (FDA)</strong> requirements for imported frozen foods. We are a licensed importer operating within Ghana's regulatory framework. All products we bring in meet the applicable FDA standards for importation and sale in Ghana.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">What happens if I receive a defective or damaged product?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-important">📦 Returns</span><br/>
+                In the rare event that you receive a damaged or defective product, please <strong>contact us immediately</strong> and do not consume or discard the product before speaking to us. Reach us on <a href="tel:+233247298551">+233 24 729 8551</a> or <a href="tel:+233504967111">+233 50 496 7111</a>. We will investigate and arrange a resolution, which may include replacement or refund depending on the circumstances.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Are your products tested for bacteria or contamination?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Our suppliers are required to conduct <strong>microbiological and chemical testing</strong> of their products and provide documentation as part of our supplier compliance requirements. Additionally, all products entering Ghana undergo regulatory inspection processes. We take contamination prevention extremely seriously across our entire supply chain.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Is Abak a member of any trade or food safety associations?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Yes. Abak Company Limited is a proud member of the <strong>American Chamber of Commerce Ghana (AmCham Ghana)</strong>, which reflects our commitment to international business standards, transparency, and best practices in trade and food safety.
+              </div></div>
+            </div>
+
+          </div>
+        </div><!-- /quality -->
+
+        <!-- ⑥ PAYMENT -->
+        <div class="faq-category-block reveal" data-cat="payment">
+          <div class="faq-category-header">
+            <div class="faq-cat-icon icon-payment">💳</div>
+            <h2>Payment</h2>
+            <span class="faq-cat-count">4 Questions</span>
+          </div>
+          <div class="accordion">
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">What payment methods do you accept?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                We accept various payment methods including <strong>Mobile Money (MTN MoMo, AirtelTigo Money, Vodafone Cash)</strong>, <strong>bank transfer</strong>, and <strong>cash</strong> for in-person transactions. For large or recurring business accounts, we may offer invoicing with agreed payment terms. Please confirm payment options with our team when placing your order at <a href="tel:+233247298551">+233 24 729 8551</a>.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Do you offer credit terms for business clients?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Credit terms may be available for <strong>established business clients</strong> with a proven purchasing history with us. This is assessed on a case-by-case basis. To discuss credit terms, please speak directly with our management team by calling <a href="tel:+233247298551">+233 24 729 8551</a>.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Do you issue receipts or invoices?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Yes. We issue <strong>receipts for all transactions</strong> and can provide formal <strong>invoices for business clients</strong> upon request. If you require a VAT invoice or formal procurement documentation for your business, please inform our team at the time of purchase and we will accommodate your request.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Can I get a price quotation before purchasing?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Absolutely. We are happy to provide pricing quotations for both individual and business enquiries. Simply contact us with the products and quantities you need and we will prepare a quote for you. Reach us on <a href="tel:+233247298551">+233 24 729 8551</a>, <a href="tel:+233504967111">+233 50 496 7111</a>, or via WhatsApp.
+              </div></div>
+            </div>
+
+          </div>
+        </div><!-- /payment -->
+
+        <!-- ⑦ BUSINESS -->
+        <div class="faq-category-block reveal" data-cat="business">
+          <div class="faq-category-header">
+            <div class="faq-cat-icon icon-business">🤝</div>
+            <h2>Business &amp; Partnerships</h2>
+            <span class="faq-cat-count">5 Questions</span>
+          </div>
+          <div class="accordion">
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">I run a restaurant. Can Abak supply me on a weekly basis?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                <span class="acc-tag tag-tip">🍽️ Restaurant Supply</span><br/>
+                Absolutely. Regular weekly or bi-weekly supply to restaurants, hotels, and caterers is a core part of our business. We can set up a <strong>scheduled supply arrangement</strong> tailored to your kitchen's needs — ensuring you always have stock without having to chase individual orders. Call us to discuss a regular supply plan: <a href="tel:+233247298551">+233 24 729 8551</a>.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Can I become a distributor or reseller of Abak's products?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                We are open to discussing <strong>distribution and reseller arrangements</strong> with qualified businesses across Ghana. If you have an established distribution network or retail presence and wish to partner with us, please reach out to our management team directly. Call <a href="tel:+233247298551">+233 24 729 8551</a> or visit us at our Kaneshie Market office.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">I'm an international supplier — how do I partner with Abak?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                We are always looking to expand our global supplier network with high-quality, certified frozen food producers. If you are an international supplier interested in supplying to the Ghanaian market through Abak, please contact us with:
+                <ul>
+                  <li>Your company profile and product range</li>
+                  <li>Relevant certifications (HACCP, ISO 22000, USDA, etc.)</li>
+                  <li>Minimum export quantities and pricing</li>
+                </ul>
+                Reach us at <a href="tel:+233247298551">+233 24 729 8551</a> or visit our office at GA-262-1811, Kaneshie Market, Accra.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Does Abak attend trade fairs or industry events?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Yes. Abak Company Limited actively participates in <strong>international food trade fairs and exhibitions</strong> — including events in Europe, Asia, and the Americas — to source new products, meet suppliers, and stay current with industry developments. We also attend and network at business events organised by the American Chamber of Commerce Ghana (AmCham) and other industry bodies.
+              </div></div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-trigger" aria-expanded="false">
+                <span class="acc-q">Where is Abak Company Limited located?</span>
+                <span class="acc-chevron">▼</span>
+              </button>
+              <div class="acc-body"><div class="acc-content">
+                Our head office and warehouse are located at:
+                <ul>
+                  <li>📍 <strong>Address:</strong> HQ1 Anunsah Clottey Street, Kaneshie Market, Accra, Ghana</li>
+                  <li>🗺️ <strong>Digital Address:</strong> GA-262-1811</li>
+                  <li>📞 <strong>Phone 1:</strong> <a href="tel:+233247298551">+233 24 729 8551</a></li>
+                  <li>📞 <strong>Phone 2:</strong> <a href="tel:+233504967111">+233 50 496 7111</a></li>
+                  <li>🕐 <strong>Hours:</strong> Monday – Saturday, 8:00am – 6:00pm</li>
+                </ul>
+              </div></div>
+            </div>
+
+          </div>
+        </div><!-- /business -->
+
+      </div><!-- /faq-sections -->
+
+      <!-- ─── SIDEBAR ─── -->
+      <aside class="faq-sidebar">
+
+        <!-- ★ LOGO CARD ★ -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-head">
+            <span class="sh-icon">🏢</span>
+            <h3>Company Logo</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <!-- ★ LOGO PLACEHOLDER — Replace src="" with the logo file path, e.g. src="images/abak-logo.png" ★ -->
+            <div class="logo-card-placeholder" id="sidebarLogoPlaceholder" title="Logo placeholder — replace src with your image">
+              <img src="" alt="Abak Company Limited Logo" id="sidebarLogoImg" />
+              <span class="logo-card-ph-icon">🖼️</span>
+              <span class="logo-card-ph-text">Company Logo</span>
+              <span class="logo-card-ph-hint">Replace src="" with logo file path</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT CARD -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-head">
+            <span class="sh-icon">📞</span>
+            <h3>Contact Us Directly</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="contact-rows">
+              <div class="contact-row">
+                <div class="cr-icon">📞</div>
+                <div>
+                  <div class="cr-label">Phone 1</div>
+                  <div class="cr-value"><a href="tel:+233247298551">+233 24 729 8551</a></div>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="cr-icon">📱</div>
+                <div>
+                  <div class="cr-label">Phone 2</div>
+                  <div class="cr-value"><a href="tel:+233504967111">+233 50 496 7111</a></div>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="cr-icon">💬</div>
+                <div>
+                  <div class="cr-label">WhatsApp</div>
+                  <div class="cr-value"><a href="https://wa.me/233504967111">+233 50 496 7111</a></div>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="cr-icon">📍</div>
+                <div>
+                  <div class="cr-label">Address</div>
+                  <div class="cr-value">HQ1 Anunsah Clottey Street<br/>Kaneshie Market, Accra, Ghana</div>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="cr-icon">🗺️</div>
+                <div>
+                  <div class="cr-label">Digital Address</div>
+                  <div class="cr-value">GA-262-1811</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK NAVIGATION -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-head">
+            <span class="sh-icon">🗂️</span>
+            <h3>Jump to Topic</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="quick-links">
+              <button class="ql-item" onclick="scrollToCategory('products')">❄️ Products <span class="ql-arrow">›</span></button>
+              <button class="ql-item" onclick="scrollToCategory('orders')">🛒 Ordering <span class="ql-arrow">›</span></button>
+              <button class="ql-item" onclick="scrollToCategory('delivery')">🚛 Delivery <span class="ql-arrow">›</span></button>
+              <button class="ql-item" onclick="scrollToCategory('storage')">🏬 Cold Storage <span class="ql-arrow">›</span></button>
+              <button class="ql-item" onclick="scrollToCategory('quality')">✅ Quality &amp; Safety <span class="ql-arrow">›</span></button>
+              <button class="ql-item" onclick="scrollToCategory('payment')">💳 Payment <span class="ql-arrow">›</span></button>
+              <button class="ql-item" onclick="scrollToCategory('business')">🤝 Business &amp; Partnerships <span class="ql-arrow">›</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OPENING HOURS -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-head">
+            <span class="sh-icon">🕐</span>
+            <h3>Opening Hours</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="hours-rows">
+              <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">8:00am – 6:00pm</span></div>
+              <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">8:00am – 6:00pm</span></div>
+              <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">8:00am – 6:00pm</span></div>
+              <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">8:00am – 6:00pm</span></div>
+              <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">8:00am – 6:00pm</span></div>
+              <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">8:00am – 6:00pm</span></div>
+              <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-closed">Closed</span></div>
+            </div>
+            <div class="open-now">Open Mon – Sat</div>
+          </div>
+        </div>
+
+        <!-- WHATSAPP CTA -->
+        <div class="wa-cta-card">
+          <div class="wa-icon">💬</div>
+          <h3>Still Have Questions?</h3>
+          <p>Chat with our team on WhatsApp — we typically respond within minutes.</p>
+          <a class="wa-btn" href="https://wa.me/233504967111" target="_blank">Start WhatsApp Chat</a>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- ══ STILL HAVE QUESTIONS BANNER ══ -->
+  <section class="still-questions">
+    <div class="sq-blob b1"></div>
+    <div class="sq-blob b2"></div>
+    <div class="sq-inner reveal">
+      <div>
+        <h2>Didn't Find Your Answer?</h2>
+        <p>Our team is available Monday to Saturday, 8am – 6pm. Reach us by phone, WhatsApp, or visit us at Kaneshie Market. We're always happy to help.</p>
+      </div>
+      <div class="sq-buttons">
+        <a href="tel:+233247298551" class="btn-sq-primary">📞 +233 24 729 8551</a>
+        <a href="tel:+233504967111" class="btn-sq-primary" style="background:var(--ice);color:var(--navy);">📞 +233 50 496 7111</a>
+        <a href="https://wa.me/233504967111" class="btn-sq-wa" target="_blank">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT DETAIL STRIP ══ -->
+  <div class="detail-strip">
+    <div class="detail-strip-inner">
+      <div class="ds-item">
+        <div class="ds-icon">📞</div>
+        <div>
+          <div class="ds-label">Phone</div>
+          <div class="ds-value"><a href="tel:+233247298551">+233 24 729 8551</a></div>
+          <div class="ds-sub"><a href="tel:+233504967111" style="color:rgba(255,255,255,0.35);text-decoration:none;">+233 50 496 7111</a></div>
+        </div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-icon">💬</div>
+        <div>
+          <div class="ds-label">WhatsApp</div>
+          <div class="ds-value"><a href="https://wa.me/233504967111">+233 50 496 7111</a></div>
+          <div class="ds-sub">Mon – Sat, 8am – 6pm</div>
+        </div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-icon">📍</div>
+        <div>
+          <div class="ds-label">Address</div>
+          <div class="ds-value">HQ1 Anunsah Clottey Street</div>
+          <div class="ds-sub">Kaneshie Market, Accra, Ghana</div>
+        </div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-icon">🗺️</div>
+        <div>
+          <div class="ds-label">Digital Address</div>
+          <div class="ds-value">GA-262-1811</div>
+          <div class="ds-sub">Ghana Post GPS</div>
+        </div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-icon">🕐</div>
+        <div>
+          <div class="ds-label">Hours</div>
+          <div class="ds-value">Mon – Sat: 8:00am – 6:00pm</div>
+          <div class="ds-sub">Sunday: Closed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <!-- ★ FOOTER LOGO PLACEHOLDER — Replace src="" with logo file path ★ -->
+          <div class="footer-logo-img-placeholder">
+            <img src="" alt="Abak Logo" id="footerLogoImg" />
+            <span class="ph-icon">🏢</span>
+          </div>
+          <div class="footer-brand-name">Abak<span>.</span></div>
+        </div>
+        <p>Premium imported frozen foods &amp; cold storage solutions. Globally sourced, locally trusted. Serving businesses and households across Ghana.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Poultry</a></li>
+          <li><a href="#">Fish &amp; Seafood</a></li>
+          <li><a href="#">Red Meat</a></li>
+          <li><a href="#">Bulk Orders</a></li>
+          <li><a href="#">Cold Storage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><span>📍</span>HQ1 Anunsah Clottey Street,<br/>Kaneshie Market, Accra, Ghana</li>
+          <li><span>🗺️</span>Digital Address: GA-262-1811</li>
+          <li><span>📞</span><a href="tel:+233247298551">+233 24 729 8551</a></li>
+          <li><span>📞</span><a href="tel:+233504967111">+233 50 496 7111</a></li>
+          <li><span>💬</span><a href="https://wa.me/233504967111">WhatsApp Us</a></li>
+          <li><span>🕐</span>Mon – Sat: 8:00am – 6:00pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Abak Company Limited. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="float-wa" href="https://wa.me/233504967111" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script>
+    /* ─── MOBILE NAV ─── */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    /* ─── ACCORDION ─── */
+    document.querySelectorAll('.acc-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.acc-item');
+        const isOpen = item.classList.contains('open');
+        // Close all in same accordion
+        btn.closest('.accordion').querySelectorAll('.acc-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ─── CATEGORY TABS ─── */
+    const catTabs    = document.querySelectorAll('.cat-tab');
+    const catBlocks  = document.querySelectorAll('.faq-category-block');
+    catTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        catTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const cat = tab.dataset.cat;
+        catBlocks.forEach(block => {
+          block.style.display = (cat === 'all' || block.dataset.cat === cat) ? '' : 'none';
+        });
+        document.getElementById('faqSearchInput').value = '';
+        document.getElementById('noResults').classList.remove('visible');
+      });
+    });
+
+    /* ─── SEARCH ─── */
+    const searchInput = document.getElementById('faqSearchInput');
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      if (!q) {
+        catBlocks.forEach(b => b.style.display = '');
+        document.querySelectorAll('.acc-item').forEach(item => {
+          item.style.display = '';
+          item.querySelector('.acc-q').innerHTML = item.querySelector('.acc-q').textContent;
+          item.querySelector('.acc-content').querySelectorAll('mark').forEach(m => {
+            m.replaceWith(m.textContent);
+          });
+        });
+        document.getElementById('noResults').classList.remove('visible');
+        catTabs.forEach(t => { t.classList.remove('active'); if(t.dataset.cat==='all') t.classList.add('active'); });
+        return;
+      }
+      catTabs.forEach(t => t.classList.remove('active'));
+      let anyVisible = false;
+      catBlocks.forEach(block => {
+        let blockHasMatch = false;
+        block.querySelectorAll('.acc-item').forEach(item => {
+          const qText = item.querySelector('.acc-q').textContent.toLowerCase();
+          const aText = item.querySelector('.acc-content').textContent.toLowerCase();
+          if (qText.includes(q) || aText.includes(q)) {
+            item.style.display = '';
+            blockHasMatch = true;
+            anyVisible = true;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        block.style.display = blockHasMatch ? '' : 'none';
+      });
+      document.getElementById('noResults').classList.toggle('visible', !anyVisible);
+    });
+
+    /* ─── SCROLL TO CATEGORY ─── */
+    function scrollToCategory(cat) {
+      const block = document.querySelector(`.faq-category-block[data-cat="${cat}"]`);
+      if (block) {
+        block.style.display = '';
+        catBlocks.forEach(b => b.style.display = '');
+        catTabs.forEach(t => { t.classList.remove('active'); if(t.dataset.cat==='all') t.classList.add('active'); });
+        setTimeout(() => {
+          block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    const reveals = document.querySelectorAll('.reveal');
+    const revObs  = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 70);
+          revObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => revObs.observe(el));
+
+    /* ─── LOGO PLACEHOLDER HINT ─── */
+    /* To insert logo: set the src attribute of #navLogoImg, #sidebarLogoImg, #footerLogoImg
+       to your logo file path, then set display:block on the <img> element.
+       Example: document.getElementById('navLogoImg').src = 'images/abak-logo.png';
+                document.getElementById('navLogoImg').style.display = 'block'; */
+  </script>
+
+</body>
+</html>

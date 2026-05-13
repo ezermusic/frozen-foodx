@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials & Clients | Abak Company Limited – Trusted Frozen Foods Ghana</title>
+  <meta name="description" content="See what clients across Ghana say about Abak Company Limited – trusted reviews from restaurants, hotels, caterers and households." />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════
+       VARIABLES
+    ═══════════════════════════════════════ */
+    :root {
+      --navy:      #0B3C5D;
+      --blue:      #328CC1;
+      --white:     #FFFFFF;
+      --cream:     #F8F6F1;
+      --grey:      #F0F3F7;
+      --red:       #D7263D;
+      --green:     #2E8B57;
+      --gold:      #C9A84C;
+      --dark:      #060f18;
+      --text:      #14263a;
+      --muted:     #587590;
+      --border:    rgba(11,60,93,0.1);
+      --r:         16px;
+      --shadow:    0 10px 48px rgba(11,60,93,0.11);
+      --shadow-lg: 0 24px 64px rgba(11,60,93,0.17);
+    }
+
+    /* ═══════════════════════════════════════
+       RESET
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ═══════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════ */
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 3.5px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .eyebrow.blue  { color: var(--blue); }
+    .eyebrow.white { color: rgba(255,255,255,0.55); }
+
+    h2.display {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900; color: var(--navy); line-height: 1.12;
+      margin-bottom: 16px;
+    }
+    h2.display em   { font-style: italic; color: var(--blue); }
+    h2.display.white { color: #fff; }
+    h2.display.white em { color: #f6d887; }
+
+    .lead {
+      font-size: 1rem; color: var(--muted);
+      line-height: 1.82; max-width: 560px;
+    }
+    .lead.white { color: rgba(255,255,255,0.68); }
+    .lead.center { margin: 0 auto; text-align: center; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.91rem; font-weight: 600;
+      cursor: pointer; transition: all 0.24s ease; border: none;
+    }
+    .btn-primary    { background: var(--blue);  color: #fff; }
+    .btn-primary:hover   { background: var(--navy); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(50,140,193,0.38); }
+    .btn-gold       { background: var(--gold);  color: #fff; }
+    .btn-gold:hover      { background: #b8932a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.38); }
+    .btn-whatsapp   { background: #25D366; color: #fff; }
+    .btn-whatsapp:hover  { background: #1dba57; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+    .btn-outline-w  { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
+    .btn-outline-w:hover { background: rgba(255,255,255,0.1); }
+    .btn-sm { padding: 9px 19px; font-size: 0.84rem; }
+
+    /* ═══════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(6,15,24,0.96);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-inner {
+      max-width: 1180px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .logo {
+      font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 900;
+      color: #fff; display: flex; align-items: center; gap: 10px;
+    }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .nav-links { display: flex; gap: 2px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7); font-size: 0.88rem; font-weight: 500;
+      padding: 8px 13px; border-radius: 8px; transition: all 0.2s;
+    }
+    .nav-links a:hover  { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-links a.active { color: #f6d887; background: rgba(201,168,76,0.12); }
+    .nav-action .btn { padding: 9px 20px; font-size: 0.86rem; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 4px;
+      position: fixed; top: 68px; left: 0; right: 0;
+      background: var(--dark); padding: 16px 24px 24px;
+      z-index: 999; border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: rgba(255,255,255,0.8); font-size: 1rem; font-weight: 500;
+      padding: 12px 14px; border-radius: 10px; transition: background 0.2s;
+    }
+    .mobile-nav a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .mobile-nav .btn { width: 100%; justify-content: center; margin-top: 8px; }
+
+    /* ═══════════════════════════════════════
+       PAGE HERO  — editorial split design
+    ═══════════════════════════════════════ */
+    .page-hero {
+      min-height: 82vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 68px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Left panel — dark */
+    .hero-left {
+      background: var(--dark);
+      padding: 80px 64px 80px 24px;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 2;
+    }
+    /* Slanted right edge */
+    .hero-left::after {
+      content: '';
+      position: absolute; top: 0; right: -60px; bottom: 0;
+      width: 120px;
+      background: var(--dark);
+      clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
+      z-index: 3;
+    }
+    /* Radial glow */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(50,140,193,0.18) 0%, transparent 60%);
+    }
+    .hero-left-content { position: relative; z-index: 4; max-width: 520px; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; color: rgba(255,255,255,0.38); margin-bottom: 28px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.38); transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+    .breadcrumb .cur { color: #f6d887; }
+
+    .hero-left h1 {
+      font-family: 'Fraunces', serif; font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: #fff; line-height: 1.1; margin-bottom: 22px;
+      animation: fadeUp 0.85s ease both;
+    }
+    .hero-left h1 em { font-style: italic; color: #f6d887; }
+    .hero-left p {
+      font-size: 1.02rem; color: rgba(255,255,255,0.68);
+      line-height: 1.82; margin-bottom: 36px;
+      animation: fadeUp 0.85s 0.18s ease both;
+    }
+    .hero-left-actions {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      animation: fadeUp 0.85s 0.32s ease both;
+    }
+    /* Star rating display */
+    .hero-rating {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 48px; padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      animation: fadeUp 0.85s 0.46s ease both;
+    }
+    .hero-stars { font-size: 1.4rem; letter-spacing: 2px; color: var(--gold); }
+    .hero-rating-text strong { display: block; font-size: 1rem; color: #fff; font-weight: 600; }
+    .hero-rating-text span   { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+
+    /* Right panel — cream with floating review card */
+    .hero-right {
+      background: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      padding: 80px 48px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    /* Large decorative quote mark */
+    .hero-right::before {
+      content: '\201C';
+      position: absolute; top: 20px; right: 30px;
+      font-family: 'Fraunces', serif;
+      font-size: 18rem; font-weight: 900;
+      color: rgba(11,60,93,0.05);
+      line-height: 1; pointer-events: none;
+    }
+    /* Scattered dot pattern */
+    .hero-right::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(11,60,93,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    /* Featured review card */
+    .hero-review-card {
+      position: relative; z-index: 2;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 40px 36px;
+      box-shadow: var(--shadow-lg);
+      max-width: 420px;
+      border: 1px solid var(--border);
+      animation: cardFloat 6s ease-in-out infinite;
+    }
+    @keyframes cardFloat {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+    .hero-review-stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 20px; letter-spacing: 2px; }
+    .hero-review-text {
+      font-family: 'Fraunces', serif; font-style: italic;
+      font-size: 1.25rem; color: var(--navy); line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .hero-review-author {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .author-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .av-navy  { background: linear-gradient(135deg, #e3f0f9, #b8d4ec); }
+    .av-green { background: linear-gradient(135deg, #e0f3e9, #a2d4b8); }
+    .av-gold  { background: linear-gradient(135deg, #fef6e0, #f5d98e); }
+    .av-red   { background: linear-gradient(135deg, #fde8eb, #f5aaaf); }
+    .av-teal  { background: linear-gradient(135deg, #e0f2f0, #9ed4cc); }
+    .av-purple{ background: linear-gradient(135deg, #ede8f8, #c4b5ea); }
+    .author-name  { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
+    .author-role  { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+    /* Floating verification badge */
+    .verified-badge {
+      position: absolute; top: -14px; right: 24px;
+      background: var(--green); color: #fff;
+      border-radius: 50px; padding: 6px 16px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; box-shadow: 0 4px 14px rgba(46,139,87,0.4);
+    }
+    /* Floating stat bubbles */
+    .stat-bubble {
+      position: absolute; z-index: 3;
+      background: var(--white); border-radius: 16px;
+      padding: 14px 18px; box-shadow: var(--shadow);
+      border: 1px solid var(--border); text-align: center;
+    }
+    .stat-bubble .sb-num {
+      font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 900;
+      color: var(--navy); line-height: 1;
+    }
+    .stat-bubble .sb-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+    .sb-top-left  { top: 90px;  left: 20px; }
+    .sb-bot-right { bottom: 90px; right: 14px; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══════════════════════════════════════
+       STATS RIBBON
+    ═══════════════════════════════════════ */
+    .stats-ribbon {
+      background: var(--navy);
+      padding: 0;
+    }
+    .stats-ribbon-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-cell {
+      padding: 32px 24px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position: relative; overflow: hidden;
+      transition: background 0.3s;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell:hover { background: rgba(255,255,255,0.04); }
+    .stat-num {
+      font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 900;
+      color: #fff; line-height: 1;
+    }
+    .stat-num span { color: #f6d887; }
+    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIAL SHOWCASE  — masonry-style
+    ═══════════════════════════════════════ */
+    .testimonials-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .section-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-wrap: wrap; gap: 24px; margin-bottom: 60px;
+    }
+    /* Filter pills */
+    .filter-pills {
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .filter-pill {
+      padding: 8px 18px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; transition: all 0.22s;
+      background: var(--grey); color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .filter-pill:hover, .filter-pill.active {
+      background: var(--blue); color: #fff; border-color: var(--blue);
+      box-shadow: 0 4px 14px rgba(50,140,193,0.3);
+    }
+
+    /* Masonry grid */
+    .masonry {
+      columns: 3;
+      column-gap: 24px;
+    }
+    .tcard {
+      break-inside: avoid;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px 28px;
+      margin-bottom: 24px;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .tcard::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .tcard.cat-restaurant::before { background: var(--blue); }
+    .tcard.cat-hotel::before      { background: var(--gold); }
+    .tcard.cat-caterer::before    { background: var(--green); }
+    .tcard.cat-retail::before     { background: var(--red); }
+    .tcard.cat-household::before  { background: #7b72e9; }
+    .tcard:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    /* Large quote decoration */
+    .tcard-quote-deco {
+      position: absolute; top: 8px; right: 16px;
+      font-family: 'Fraunces', serif; font-size: 5rem; font-weight: 900;
+      color: rgba(11,60,93,0.05); line-height: 1; pointer-events: none;
+    }
+    .tcard-stars { color: var(--gold); font-size: 1rem; letter-spacing: 1.5px; margin-bottom: 14px; }
+    .tcard-text {
+      font-size: 0.95rem; color: var(--text);
+      line-height: 1.78; margin-bottom: 22px; flex: 1;
+      font-style: italic;
+    }
+    .tcard-footer {
+      display: flex; align-items: center; gap: 13px;
+    }
+    .tcard-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .tcard-name  { font-weight: 600; color: var(--navy); font-size: 0.91rem; }
+    .tcard-role  { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+    .tcard-tag {
+      margin-left: auto;
+      padding: 4px 12px; border-radius: 50px;
+      font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .tag-restaurant { background: #e3f2fd; color: var(--blue); }
+    .tag-hotel      { background: #fef6e0; color: #9a7426; }
+    .tag-caterer    { background: #e8f5e9; color: var(--green); }
+    .tag-retail     { background: #fce4ec; color: var(--red); }
+    .tag-household  { background: #ede7f6; color: #5a4fcf; }
+    /* Featured card variant */
+    .tcard.featured {
+      background: linear-gradient(145deg, #0B3C5D, #1060a0);
+      border-color: transparent;
+    }
+    .tcard.featured .tcard-text { color: rgba(255,255,255,0.88); }
+    .tcard.featured .tcard-name { color: #fff; }
+    .tcard.featured .tcard-role { color: rgba(255,255,255,0.55); }
+    .tcard.featured .tcard-quote-deco { color: rgba(255,255,255,0.06); }
+    .tcard.featured::before { background: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       CLIENT TYPES  — who we serve
+    ═══════════════════════════════════════ */
+    .clients-section {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+    .clients-header { text-align: center; margin-bottom: 60px; }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .client-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .client-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 4px;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .client-card.cc-1::after { background: var(--blue); }
+    .client-card.cc-2::after { background: var(--gold); }
+    .client-card.cc-3::after { background: var(--green); }
+    .client-card.cc-4::after { background: var(--red); }
+    .client-card.cc-5::after { background: #7b72e9; }
+    .client-card.cc-6::after { background: var(--navy); }
+    .client-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); }
+    .client-card:hover::after { transform: scaleX(1); }
+    .cc-icon {
+      font-size: 2.4rem;
+      width: 70px; height: 70px; border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .cc-icon-1 { background: #e3f2fd; }
+    .cc-icon-2 { background: #fef6e0; }
+    .cc-icon-3 { background: #e8f5e9; }
+    .cc-icon-4 { background: #fce4ec; }
+    .cc-icon-5 { background: #ede7f6; }
+    .cc-icon-6 { background: #e3f0fb; }
+    .client-card h3 {
+      font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 10px;
+    }
+    .client-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ═══════════════════════════════════════
+       VIDEO / MEDIA PLACEHOLDER
+    ═══════════════════════════════════════ */
+    .media-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .media-section-header { text-align: center; margin-bottom: 56px; }
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 20px;
+    }
+    .media-card {
+      border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--grey);
+    }
+    .media-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .media-card.tall { grid-row: span 2; }
+    .media-thumb {
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+      padding: 32px;
+      min-height: 220px;
+      position: relative;
+    }
+    .media-card.tall .media-thumb { min-height: 340px; }
+    .mt-1 { background: linear-gradient(135deg, #ddeeff, #a8ccee); }
+    .mt-2 { background: linear-gradient(135deg, #d4f0e0, #96d4b0); }
+    .mt-3 { background: linear-gradient(135deg, #fef6e0, #f5d98e); }
+    .mt-4 { background: linear-gradient(135deg, #fde8eb, #f5aaaf); }
+    .media-icon { font-size: 3rem; }
+    .play-btn {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.05);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .media-card:hover .play-btn { opacity: 1; }
+    .play-circle {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .media-body { padding: 18px 20px 22px; }
+    .media-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .media-body h4 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .media-body p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+
+    /* ═══════════════════════════════════════
+       LEAVE A REVIEW
+    ═══════════════════════════════════════ */
+    .review-form-section {
+      padding: 100px 0;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+    }
+    .review-form-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 85% 15%, rgba(50,140,193,0.22) 0%, transparent 50%),
+        radial-gradient(circle at 10% 85%, rgba(201,168,76,0.12) 0%, transparent 45%);
+    }
+    .review-form-inner {
+      display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .review-text h2 {
+      font-family: 'Fraunces', serif; font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff;
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .review-text h2 em { font-style: italic; color: #f6d887; }
+    .review-text p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.8; margin-bottom: 32px; }
+    .review-promises { display: flex; flex-direction: column; gap: 14px; }
+    .review-promise {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.92rem; color: rgba(255,255,255,0.82);
+    }
+    .promise-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(201,168,76,0.2); border: 1px solid rgba(201,168,76,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    /* Form */
+    .review-form {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px; padding: 40px 36px;
+      backdrop-filter: blur(10px);
+    }
+    .review-form h3 {
+      font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 700;
+      color: #fff; margin-bottom: 28px;
+    }
+    /* Star selector */
+    .star-select { display: flex; gap: 6px; margin-bottom: 22px; }
+    .star-btn {
+      font-size: 1.8rem; cursor: pointer; background: none; border: none;
+      color: rgba(255,255,255,0.25); transition: all 0.2s; padding: 2px;
+    }
+    .star-btn:hover, .star-btn.lit { color: var(--gold); transform: scale(1.2); }
+    .form-grp { margin-bottom: 18px; }
+    .form-grp label {
+      display: block; font-size: 0.75rem; font-weight: 700;
+      color: rgba(255,255,255,0.45); text-transform: uppercase;
+      letter-spacing: 1.2px; margin-bottom: 7px;
+    }
+    .form-grp input,
+    .form-grp select,
+    .form-grp textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 10px; padding: 13px 16px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: #fff;
+      outline: none; transition: border-color 0.2s;
+    }
+    .form-grp input::placeholder,
+    .form-grp textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-grp input:focus,
+    .form-grp select:focus,
+    .form-grp textarea:focus { border-color: var(--gold); }
+    .form-grp select option { background: var(--navy); color: #fff; }
+    .form-grp textarea { resize: vertical; min-height: 90px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-submit { width: 100%; padding: 15px; border-radius: 12px; font-size: 0.95rem; margin-top: 6px; }
+
+    /* ═══════════════════════════════════════
+       CONTACT STRIP
+    ═══════════════════════════════════════ */
+    .contact-strip {
+      padding: 72px 0;
+      background: var(--cream);
+    }
+    .contact-strip-inner {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center;
+    }
+    .contact-strip h2 {
+      font-family: 'Fraunces', serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 14px;
+    }
+    .contact-strip h2 em { font-style: italic; color: var(--blue); }
+    .contact-strip p { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 28px; }
+    .contact-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 18px 20px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .contact-item:hover { box-shadow: var(--shadow); transform: translateX(5px); }
+    .contact-item-icon {
+      width: 42px; height: 42px; border-radius: 11px;
+      background: linear-gradient(135deg, #e3f2fd, #b8d4ec);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem; flex-shrink: 0;
+    }
+    .contact-item-body h5 { font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+    .contact-item-body p  { font-size: 0.93rem; color: var(--navy); font-weight: 500; }
+    .contact-item-body a  { color: var(--navy); font-weight: 500; transition: color 0.2s; }
+    .contact-item-body a:hover { color: var(--blue); }
+    /* Digital address special styling */
+    .contact-item.digital { border-left: 3px solid var(--gold); }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.58);
+      padding: 64px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-col h4 {
+      font-size: 0.69rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 18px;
+    }
+    .footer-col p { font-size: 0.86rem; color: rgba(255,255,255,0.48); line-height: 1.72; }
+    .f-links { display: flex; flex-direction: column; gap: 9px; }
+    .f-links a { font-size: 0.86rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .f-links a:hover { color: var(--blue); }
+    .f-citem { display: flex; gap: 11px; align-items: flex-start; font-size: 0.84rem; color: rgba(255,255,255,0.5); margin-bottom: 11px; }
+    .social-row { display: flex; gap: 9px; margin-top: 18px; }
+    .soc-btn {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: rgba(255,255,255,0.07); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; color: rgba(255,255,255,0.55); transition: all 0.2s;
+    }
+    .soc-btn:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+      font-size: 0.79rem; color: rgba(255,255,255,0.28);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.28); transition: color 0.2s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+    .footer-bottom-links { display: flex; gap: 18px; }
+
+    /* ═══════════════════════════════════════
+       FLOATING WHATSAPP
+    ═══════════════════════════════════════ */
+    .float-wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .float-wa:hover { transform: scale(1.12); box-shadow: 0 10px 32px rgba(37,211,102,0.65); }
+    .float-wa-pulse {
+      position: absolute; inset: -6px; border-radius: 50%;
+      background: rgba(37,211,102,0.28);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: 0.75; }
+      100% { transform: scale(1.65); opacity: 0; }
+    }
+
+    /* ═══════════════════════════════════════
+       SCROLL REVEAL
+    ═══════════════════════════════════════ */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-l { opacity: 0; transform: translateX(-28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal-l.visible { opacity: 1; transform: translateX(0); }
+    .reveal-r { opacity: 0; transform: translateX(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal-r.visible { opacity: 1; transform: translateX(0); }
+    .stagger > * { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.00s; }
+    .stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.08s; }
+    .stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.16s; }
+    .stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.24s; }
+    .stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.32s; }
+    .stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.40s; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .masonry { columns: 2; }
+      .clients-grid { grid-template-columns: repeat(2, 1fr); }
+      .media-grid { grid-template-columns: 1fr 1fr; }
+      .media-card.tall { grid-row: span 1; }
+    }
+    @media (max-width: 900px) {
+      .nav-links, .nav-action { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 80px 24px 60px; }
+      .hero-left::after { display: none; }
+      .hero-right { padding: 60px 24px 80px; display: none; }
+      .stats-ribbon-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell:nth-child(2) { border-right: none; }
+      .review-form-inner { grid-template-columns: 1fr; }
+      .contact-strip-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .masonry { columns: 1; }
+      .clients-grid { grid-template-columns: 1fr; }
+      .media-grid { grid-template-columns: 1fr; }
+      .stats-ribbon-inner { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .form-row-2 { grid-template-columns: 1fr; }
+      .float-wa { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">❄</span> Abak
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="sourcing.html">Sourcing</a>
+        <a href="testimonials.html" class="active">Testimonials</a>
+		<a href="FAQs.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+		<a href="shop.html">Shop</a>
+		<a href="articles.html">Blog</a>
+      </div>
+      <div class="nav-action">
+        <a href="https://wa.me/233247298551" class="btn btn-whatsapp" target="_blank" rel="noopener">📱 Order Now</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav" role="navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="sourcing.html">Sourcing</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://wa.me/233247298551" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 Order via WhatsApp</a>
+  </div>
+
+  <!-- ══════════ PAGE HERO ══════════ -->
+  <section class="page-hero" aria-labelledby="testimonials-hero-heading">
+    <!-- Left dark panel -->
+    <div class="hero-left">
+      <div class="hero-left-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>›</span>
+          <span class="cur">Testimonials &amp; Clients</span>
+        </nav>
+        <h1 id="testimonials-hero-heading">
+          What Our<br><em>Clients Say</em>
+        </h1>
+        <p>Hundreds of businesses and households across Ghana trust Abak Company Limited for premium frozen foods, dependable supply, and outstanding customer service. Here's what they have to say.</p>
+        <div class="hero-left-actions">
+          <a href="#testimonials" class="btn btn-gold">⭐ Read Reviews</a>
+          <a href="#leave-review" class="btn btn-outline-w">✍️ Leave a Review</a>
+        </div>
+        <div class="hero-rating">
+          <div class="hero-stars" aria-label="5 stars">★★★★★</div>
+          <div class="hero-rating-text">
+            <strong>5.0 Average Rating</strong>
+            <span>From 200+ verified client reviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right cream panel — featured review -->
+    <div class="hero-right" aria-hidden="true">
+      <!-- Floating stat bubbles -->
+      <div class="stat-bubble sb-top-left">
+        <div class="sb-num">500<span>+</span></div>
+        <div class="sb-label">Happy Clients</div>
+      </div>
+      <div class="stat-bubble sb-bot-right">
+        <div class="sb-num">10<span>+</span></div>
+        <div class="sb-label">Years Trusted</div>
+      </div>
+      <!-- Featured review card -->
+      <div class="hero-review-card">
+        <div class="verified-badge">✓ Verified Client</div>
+        <div class="hero-review-stars">★★★★★</div>
+        <p class="hero-review-text">"Abak has completely transformed how our hotel sources frozen foods. The quality is impeccable, delivery is always on time, and the pricing gives us room to run a profitable kitchen."</p>
+        <div class="hero-review-author">
+          <div class="author-avatar av-navy">🏨</div>
+          <div>
+            <div class="author-name">Ama Asante-Boateng</div>
+            <div class="author-role">F&amp;B Director, Golden Gate Hotel, Accra</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ STATS RIBBON ══════════ -->
+  <div class="stats-ribbon" role="region" aria-label="Company statistics">
+    <div class="stats-ribbon-inner">
+      <div class="stat-cell">
+        <div class="stat-num">500<span>+</span></div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">5.0<span>★</span></div>
+        <div class="stat-label">Average Rating</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">200<span>+</span></div>
+        <div class="stat-label">Verified Reviews</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">98<span>%</span></div>
+        <div class="stat-label">Would Recommend</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ TESTIMONIALS SHOWCASE ══════════ -->
+  <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="eyebrow blue">Client Reviews</span>
+          <h2 class="display">Trusted by <em>Ghana's Best</em></h2>
+          <p class="lead">Real words from real clients — restaurants, hotels, caterers, retailers, and households who choose Abak.</p>
+        </div>
+        <div class="filter-pills" role="group" aria-label="Filter testimonials by client type">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="restaurant">Restaurants</button>
+          <button class="filter-pill" data-filter="hotel">Hotels</button>
+          <button class="filter-pill" data-filter="caterer">Caterers</button>
+          <button class="filter-pill" data-filter="retail">Retailers</button>
+          <button class="filter-pill" data-filter="household">Households</button>
+        </div>
+      </div>
+
+      <!-- Masonry testimonials grid -->
+      <div class="masonry" id="testimonialGrid">
+
+        <!-- 1 — Restaurant (Featured) -->
+        <article class="tcard featured cat-restaurant" data-category="restaurant">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"We have been sourcing our chicken and fish from Abak for over four years and the consistency is unmatched. Every delivery arrives cold, every product is exactly what was ordered. In the restaurant business, reliability is everything — Abak delivers that every single time."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-navy">👨‍🍳</div>
+            <div>
+              <div class="tcard-name" style="color:#fff;">Kwame Asante</div>
+              <div class="tcard-role" style="color:rgba(255,255,255,0.55);">Head Chef &amp; Owner, Asante Kitchen, Accra</div>
+            </div>
+            <span class="tcard-tag tag-restaurant" style="background:rgba(255,255,255,0.12);color:#7ecff5;">Restaurant</span>
+          </div>
+        </article>
+
+        <!-- 2 — Hotel -->
+        <article class="tcard cat-hotel" data-category="hotel">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"Our hotel restaurant demands the highest quality proteins for our guests. Since switching to Abak, the feedback from our kitchen team and guests has been overwhelmingly positive. The salmon and beef cuts are exceptional."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-gold">🏨</div>
+            <div>
+              <div class="tcard-name">Ama Asante-Boateng</div>
+              <div class="tcard-role">F&amp;B Director, Golden Gate Hotel, Accra</div>
+            </div>
+            <span class="tcard-tag tag-hotel">Hotel</span>
+          </div>
+        </article>
+
+        <!-- 3 — Household -->
+        <article class="tcard cat-household" data-category="household">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"I started ordering from Abak for my home after my friend recommended them. The tilapia and chicken are always fresh, well-packaged, and affordable. My family hasn't stopped talking about how much better the food tastes!"</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-purple">👩‍👧‍👦</div>
+            <div>
+              <div class="tcard-name">Akosua Mensah</div>
+              <div class="tcard-role">Household Customer, East Legon, Accra</div>
+            </div>
+            <span class="tcard-tag tag-household">Household</span>
+          </div>
+        </article>
+
+        <!-- 4 — Caterer -->
+        <article class="tcard cat-caterer" data-category="caterer">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"As a catering company, we cannot afford supply failures. Abak understands this. They've handled our bulk orders for weddings and corporate events with zero issues. Their goat meat is a client favourite at every event we cater."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-green">🍽️</div>
+            <div>
+              <div class="tcard-name">Emmanuel Boateng</div>
+              <div class="tcard-role">CEO, Royal Feast Catering, Kumasi</div>
+            </div>
+            <span class="tcard-tag tag-caterer">Caterer</span>
+          </div>
+        </article>
+
+        <!-- 5 — Retailer -->
+        <article class="tcard cat-retail" data-category="retail">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"I stock my shop entirely from Abak. The trade pricing is competitive, the products move fast because customers love the quality, and restocking is simple. They've helped grow my business significantly."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-red">🏪</div>
+            <div>
+              <div class="tcard-name">Yaw Darko</div>
+              <div class="tcard-role">Owner, Darko Foods Wholesale, Tema</div>
+            </div>
+            <span class="tcard-tag tag-retail">Retailer</span>
+          </div>
+        </article>
+
+        <!-- 6 — Restaurant -->
+        <article class="tcard cat-restaurant" data-category="restaurant">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"The mackerel we get from Abak is genuinely the best quality we've found in Ghana. Our customers always compliment the freshness of our fish dishes. We're not going anywhere else."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-teal">🐟</div>
+            <div>
+              <div class="tcard-name">Abena Kusi</div>
+              <div class="tcard-role">Manager, Harbour View Restaurant, Tema</div>
+            </div>
+            <span class="tcard-tag tag-restaurant">Restaurant</span>
+          </div>
+        </article>
+
+        <!-- 7 — Caterer -->
+        <article class="tcard cat-caterer" data-category="caterer">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"Ordering via WhatsApp is so convenient. I send my list, get a quick response, and the delivery is always prompt. The turkey wings are a bestseller at every event I handle. Highly recommend Abak to any caterer."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-green">👨‍🍳</div>
+            <div>
+              <div class="tcard-name">Kofi Agyemang</div>
+              <div class="tcard-role">Event Caterer, Agyemang &amp; Co., Accra</div>
+            </div>
+            <span class="tcard-tag tag-caterer">Caterer</span>
+          </div>
+        </article>
+
+        <!-- 8 — Hotel -->
+        <article class="tcard cat-hotel" data-category="hotel">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"We serve an international clientele and demand international-standard proteins. Abak has never disappointed. Their cold-chain process is clearly robust — every product arrives in perfect condition."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-gold">🌍</div>
+            <div>
+              <div class="tcard-name">Linda Ofori-Atta</div>
+              <div class="tcard-role">Executive Chef, Palm Court Suites, Accra</div>
+            </div>
+            <span class="tcard-tag tag-hotel">Hotel</span>
+          </div>
+        </article>
+
+        <!-- 9 — Household -->
+        <article class="tcard cat-household" data-category="household">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="4 stars">★★★★★</div>
+          <p class="tcard-text">"I placed my first order after seeing Abak on social media. The whole chicken I ordered was fresh, well-packed, and great value. I've since introduced Abak to five of my neighbours. Everyone is happy!"</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-purple">🏠</div>
+            <div>
+              <div class="tcard-name">Nana Adwoa Frimpong</div>
+              <div class="tcard-role">Household Customer, Spintex Road, Accra</div>
+            </div>
+            <span class="tcard-tag tag-household">Household</span>
+          </div>
+        </article>
+
+        <!-- 10 — Retailer -->
+        <article class="tcard cat-retail" data-category="retail">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"Three years of business with Abak and I have nothing but praise. My supermarket shelves are always stocked, my customers trust the Abak brand, and the wholesale pricing keeps my margins healthy. A genuine business partner."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-red">🛒</div>
+            <div>
+              <div class="tcard-name">Afua Owusu</div>
+              <div class="tcard-role">Owner, Owusu Superstore, Kumasi</div>
+            </div>
+            <span class="tcard-tag tag-retail">Retailer</span>
+          </div>
+        </article>
+
+        <!-- 11 — Restaurant -->
+        <article class="tcard cat-restaurant" data-category="restaurant">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"The pork we source from Abak is far superior to anything else we've tried locally. Our BBQ nights are always sold out and customers specifically ask where we source our meat. The answer is always Abak."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-navy">🔥</div>
+            <div>
+              <div class="tcard-name">Kwesi Mensah-Bonsu</div>
+              <div class="tcard-role">Chef-Owner, Smoke & Fire Grill, Airport Hills</div>
+            </div>
+            <span class="tcard-tag tag-restaurant">Restaurant</span>
+          </div>
+        </article>
+
+        <!-- 12 — Caterer -->
+        <article class="tcard cat-caterer" data-category="caterer">
+          <div class="tcard-quote-deco" aria-hidden="true">"</div>
+          <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+          <p class="tcard-text">"I've worked with many frozen food suppliers in Ghana over the years. None match Abak for reliability and quality. They've become a core part of how I run my catering business."</p>
+          <div class="tcard-footer">
+            <div class="tcard-avatar av-teal">🍲</div>
+            <div>
+              <div class="tcard-name">Abena Sarpong</div>
+              <div class="tcard-role">Head Caterer, Sarpong Events &amp; Catering, Takoradi</div>
+            </div>
+            <span class="tcard-tag tag-caterer">Caterer</span>
+          </div>
+        </article>
+
+      </div><!-- /masonry -->
+    </div>
+  </section>
+
+  <!-- ══════════ WHO WE SERVE ══════════ -->
+  <section class="clients-section" aria-labelledby="clients-heading">
+    <div class="container">
+      <div class="clients-header reveal">
+        <span class="eyebrow blue">Our Client Base</span>
+        <h2 class="display" id="clients-heading">Serving <em>Every Table</em> in Ghana</h2>
+        <p class="lead center">From fine dining kitchens to family homes — Abak proudly serves a diverse range of clients across the country.</p>
+      </div>
+      <div class="clients-grid stagger">
+        <div class="client-card cc-1">
+          <div class="cc-icon cc-icon-1" aria-hidden="true">🍽️</div>
+          <h3>Restaurants</h3>
+          <p>From local eateries to fine-dining establishments — restaurants across Ghana rely on Abak for consistently high-quality proteins, reliable supply, and competitive trade pricing.</p>
+        </div>
+        <div class="client-card cc-2">
+          <div class="cc-icon cc-icon-2" aria-hidden="true">🏨</div>
+          <h3>Hotels</h3>
+          <p>Luxury and business hotels trust Abak to supply international-standard frozen proteins for their kitchens — where quality, consistency, and food safety are non-negotiable.</p>
+        </div>
+        <div class="client-card cc-3">
+          <div class="cc-icon cc-icon-3" aria-hidden="true">👨‍🍳</div>
+          <h3>Caterers &amp; Events</h3>
+          <p>Event caterers, corporate dining services, and institutional caterers depend on Abak's reliable bulk supply and flexible ordering to deliver successful, high-volume events.</p>
+        </div>
+        <div class="client-card cc-4">
+          <div class="cc-icon cc-icon-4" aria-hidden="true">🏪</div>
+          <h3>Retailers &amp; Wholesalers</h3>
+          <p>Supermarkets, food shops, and wholesale distributors benefit from Abak's broad product range, attractive trade pricing, and consistent restocking capability.</p>
+        </div>
+        <div class="client-card cc-5">
+          <div class="cc-icon cc-icon-5" aria-hidden="true">🏠</div>
+          <h3>Households</h3>
+          <p>Families across Accra and beyond choose Abak for premium frozen foods at fair prices — delivered fresh and ready for the family table.</p>
+        </div>
+        <div class="client-card cc-6">
+          <div class="cc-icon cc-icon-6" aria-hidden="true">🏢</div>
+          <h3>Corporate &amp; Institutions</h3>
+          <p>Schools, hospitals, corporate canteens, and government institutions with high-volume food service needs are served with dedicated supply agreements and priority delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MEDIA / FEATURED ══════════ -->
+  <section class="media-section" aria-labelledby="media-heading">
+    <div class="container">
+      <div class="media-section-header reveal">
+        <span class="eyebrow blue">In the Community</span>
+        <h2 class="display" id="media-heading">Abak <em>Moments</em></h2>
+        <p class="lead center">From delivery runs to happy kitchens — a glimpse into the Abak experience our clients love.</p>
+      </div>
+      <div class="media-grid stagger">
+        <div class="media-card tall">
+          <div class="media-thumb mt-1">
+            <div class="media-icon" role="img" aria-label="Cold storage facility">🏭</div>
+            <div class="play-btn"><div class="play-circle">▶</div></div>
+          </div>
+          <div class="media-body">
+            <div class="media-cat">Behind the Scenes</div>
+            <h4>Our Cold Storage Facility</h4>
+            <p>A look inside Abak's state-of-the-art cold storage infrastructure — where freshness is maintained around the clock.</p>
+          </div>
+        </div>
+        <div class="media-card">
+          <div class="media-thumb mt-2" style="min-height:160px;">
+            <div class="media-icon" role="img" aria-label="Client restaurant kitchen">🍳</div>
+          </div>
+          <div class="media-body">
+            <div class="media-cat">Client Feature</div>
+            <h4>Asante Kitchen's Signature Dishes</h4>
+            <p>How one of Accra's favourite restaurants uses Abak products to craft their best-loved meals.</p>
+          </div>
+        </div>
+        <div class="media-card">
+          <div class="media-thumb mt-3" style="min-height:160px;">
+            <div class="media-icon" role="img" aria-label="Delivery fleet">🚛</div>
+          </div>
+          <div class="media-body">
+            <div class="media-cat">Our Delivery</div>
+            <h4>Cold Chain, Door to Door</h4>
+            <p>Abak's refrigerated fleet keeps your order at the perfect temperature from warehouse to your kitchen.</p>
+          </div>
+        </div>
+        <div class="media-card">
+          <div class="media-thumb mt-4" style="min-height:160px;">
+            <div class="media-icon" role="img" aria-label="Product quality inspection">🔍</div>
+          </div>
+          <div class="media-body">
+            <div class="media-cat">Quality Process</div>
+            <h4>International Standard Sourcing</h4>
+            <p>Every product is inspected and verified before it enters our cold storage — quality is guaranteed at every step.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ LEAVE A REVIEW ══════════ -->
+  <section class="review-form-section" id="leave-review" aria-labelledby="review-form-heading">
+    <div class="container">
+      <div class="review-form-inner">
+        <div class="review-text reveal-l">
+          <span class="eyebrow white">Your Voice Matters</span>
+          <h2>Share Your <em>Experience</em></h2>
+          <p>Have you ordered from Abak? We'd love to hear what you think. Your review helps other businesses and households discover the quality and reliability of Abak's products and service.</p>
+          <div class="review-promises">
+            <div class="review-promise"><span class="promise-icon">⭐</span>All reviews are verified and published</div>
+            <div class="review-promise"><span class="promise-icon">🔒</span>Your contact details stay private</div>
+            <div class="review-promise"><span class="promise-icon">💬</span>We respond to every review personally</div>
+            <div class="review-promise"><span class="promise-icon">🎁</span>Loyal reviewers get exclusive offers</div>
+          </div>
+        </div>
+
+        <div class="review-form reveal-r">
+          <h3>✍️ Write Your Review</h3>
+          <form action="#" method="POST" novalidate>
+            <!-- Star rating -->
+            <div class="form-grp">
+              <label>Your Rating</label>
+              <div class="star-select" role="radiogroup" aria-label="Star rating">
+                <button type="button" class="star-btn" data-val="1" aria-label="1 star">★</button>
+                <button type="button" class="star-btn" data-val="2" aria-label="2 stars">★</button>
+                <button type="button" class="star-btn" data-val="3" aria-label="3 stars">★</button>
+                <button type="button" class="star-btn" data-val="4" aria-label="4 stars">★</button>
+                <button type="button" class="star-btn" data-val="5" aria-label="5 stars">★</button>
+              </div>
+              <input type="hidden" name="rating" id="ratingVal" value="0" />
+            </div>
+            <div class="form-row-2">
+              <div class="form-grp">
+                <label for="rv-name">Full Name</label>
+                <input type="text" id="rv-name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-grp">
+                <label for="rv-type">Client Type</label>
+                <select id="rv-type" name="type">
+                  <option value="" disabled selected>Select type</option>
+                  <option>Restaurant</option>
+                  <option>Hotel</option>
+                  <option>Caterer</option>
+                  <option>Retailer / Wholesaler</option>
+                  <option>Household</option>
+                  <option>Corporate / Institution</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-grp">
+              <label for="rv-business">Business / Organisation Name <small style="text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.3)">(optional)</small></label>
+              <input type="text" id="rv-business" name="business" placeholder="e.g. Harbour View Restaurant" />
+            </div>
+            <div class="form-grp">
+              <label for="rv-product">Product(s) You've Used</label>
+              <select id="rv-product" name="product">
+                <option value="" disabled selected>Select a product</option>
+                <option>Chicken</option>
+                <option>Turkey Wings</option>
+                <option>Turkey Tips</option>
+                <option>Mackerel</option>
+                <option>Tilapia</option>
+                <option>Salmon</option>
+                <option>Beef</option>
+                <option>Pork</option>
+                <option>Goat Meat</option>
+                <option>Multiple Products</option>
+              </select>
+            </div>
+            <div class="form-grp">
+              <label for="rv-review">Your Review</label>
+              <textarea id="rv-review" name="review" placeholder="Tell us about your experience with Abak's products and service…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-submit">Submit Review ⭐</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT STRIP ══════════ -->
+  <section class="contact-strip" aria-labelledby="contact-strip-heading">
+    <div class="container">
+      <div class="contact-strip-inner">
+        <div class="reveal-l">
+          <span class="eyebrow blue">Order or Enquire</span>
+          <h2 id="contact-strip-heading">Ready to <em>Join Our Clients?</em></h2>
+          <p>Experience the quality and reliability our clients rave about. Contact us today to place an order, request a quote, or simply find out more about what Abak can offer your business or home.</p>
+          <div class="contact-ctas">
+            <a href="https://wa.me/233247298551" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp Order</a>
+            <a href="tel:+233247298551" class="btn btn-primary">📞 Call Us</a>
+            <a href="products.html" class="btn btn-outline-w" style="border-color:var(--border);color:var(--navy);">🛒 View Products</a>
+          </div>
+        </div>
+        <div class="contact-details reveal-r">
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">📍</div>
+            <div class="contact-item-body">
+              <h5>Head Office Address</h5>
+              <p>HQ1 Anunsah Clottey Street, Kaneshie Market-Accra, Ghana</p>
+            </div>
+          </div>
+          <div class="contact-item digital" aria-label="Digital address">
+            <div class="contact-item-icon" style="background:linear-gradient(135deg,#fef6e0,#f5d98e);" aria-hidden="true">📮</div>
+            <div class="contact-item-body">
+              <h5>Digital Address (Ghana Post GPS)</h5>
+              <p><strong>GA-262-1811</strong></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">📞</div>
+            <div class="contact-item-body">
+              <h5>Phone Numbers</h5>
+              <p>
+                <a href="tel:+233247298551">+233 24 729 8551</a><br>
+                <a href="tel:+233504967111">+233 50 496 7111</a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">💬</div>
+            <div class="contact-item-body">
+              <h5>WhatsApp</h5>
+              <p>
+                <a href="https://wa.me/233247298551" target="_blank" rel="noopener">+233 24 729 8551</a><br>
+                <a href="https://wa.me/233504967111" target="_blank" rel="noopener">+233 50 496 7111</a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">🕐</div>
+            <div class="contact-item-body">
+              <h5>Working Hours</h5>
+              <p>Monday – Saturday: 8:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="display:inline-flex;margin-bottom:14px;">
+            <span class="logo-mark">❄</span> Abak
+          </a>
+          <p>Ghana's trusted source for premium frozen foods and cold storage solutions. Quality and reliability, always.</p>
+          <div class="social-row">
+            <button class="soc-btn" aria-label="Facebook">📘</button>
+            <button class="soc-btn" aria-label="Instagram">📸</button>
+            <button class="soc-btn" aria-label="Twitter">🐦</button>
+            <button class="soc-btn" aria-label="LinkedIn">💼</button>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav class="f-links" aria-label="Footer quick links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <nav class="f-links" aria-label="Footer product links">
+            <a href="products.html#poultry">Poultry</a>
+            <a href="products.html#fish">Fish &amp; Seafood</a>
+            <a href="products.html#meat">Red Meat</a>
+            <a href="products.html#bulk">Bulk Supply</a>
+            <a href="services.html">Cold Storage</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="f-citem"><span>📍</span><span>HQ1 Anunsah Clottey St, Kaneshie Market-Accra</span></div>
+          <div class="f-citem"><span>📮</span><span>GA-262-1811</span></div>
+          <div class="f-citem"><span>📞</span><span>+233 24 729 8551</span></div>
+          <div class="f-citem"><span>📞</span><span>+233 50 496 7111</span></div>
+          <div class="f-citem"><span>🕐</span><span>Mon – Sat: 8am – 6pm</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Abak Company Limited. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════ FLOATING WHATSAPP ══════════ -->
+  <a href="https://wa.me/233247298551" class="float-wa" target="_blank" rel="noopener" aria-label="Order via WhatsApp">
+    <div class="float-wa-pulse" aria-hidden="true"></div>
+    💬
+  </a>
+
+  <!-- ══════════ JAVASCRIPT ══════════ -->
+  <script>
+    /* — Hamburger — */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+
+    /* — Filter pills — */
+    const pills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.tcard');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    /* — Star selector — */
+    const starBtns = document.querySelectorAll('.star-btn');
+    const ratingInput = document.getElementById('ratingVal');
+    starBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = parseInt(btn.dataset.val);
+        ratingInput.value = val;
+        starBtns.forEach(b => {
+          b.classList.toggle('lit', parseInt(b.dataset.val) <= val);
+        });
+      });
+    });
+
+    /* — Scroll reveal — */
+    const revEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .stagger');
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revEls.forEach(el => revObs.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Abak Company Limited – Premium Frozen Foods Ghana</title>
+  <meta name="description" content="Explore Abak Company Limited's range of premium frozen foods including poultry, fish & seafood, red meat, and bulk supply options for hotels, restaurants and caterers in Ghana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0B3C5D;
+      --blue:       #328CC1;
+      --white:      #FFFFFF;
+      --grey-bg:    #F5F7FA;
+      --red:        #D7263D;
+      --green:      #2E8B57;
+      --dark:       #0a1f2e;
+      --text:       #1a2e3b;
+      --muted:      #5a7080;
+      --border:     #dce8f0;
+      --card-shadow: 0 4px 24px rgba(11,60,93,0.10);
+      --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--grey-bg);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      height: 68px;
+      box-shadow: 0 2px 16px rgba(11,60,93,0.25);
+    }
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800; font-size: 1.35rem;
+      color: var(--white); letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .logo span { color: #64c8f5; }
+
+    nav { display: flex; gap: 2rem; align-items: center; }
+    nav a {
+      color: rgba(255,255,255,0.75); font-size: 0.9rem; font-weight: 500;
+      text-decoration: none; transition: color var(--transition);
+    }
+    nav a:hover, nav a.active { color: var(--white); }
+    nav a.active { border-bottom: 2px solid #64c8f5; padding-bottom: 2px; }
+
+    .nav-cta {
+      background: var(--blue); color: var(--white) !important;
+      padding: 0.45rem 1.1rem; border-radius: 6px; font-weight: 600 !important;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover { background: #1e7aaa !important; transform: translateY(-1px); }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
+
+    /* ── HERO BANNER ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 55%, #1a5c8a 100%);
+      padding: 5rem 5vw 4rem;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23328CC1' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 1;
+    }
+    .page-hero .inner {
+      position: relative; max-width: 680px;
+    }
+    .breadcrumb {
+      font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem;
+      display: flex; gap: 0.5rem; align-items: center;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.85); }
+    .breadcrumb span { color: rgba(255,255,255,0.25); }
+    .page-hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 800;
+      color: var(--white); line-height: 1.15; margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+    .page-hero h1 em { color: #64c8f5; font-style: normal; }
+    .page-hero p {
+      color: rgba(255,255,255,0.7); font-size: 1.05rem; max-width: 480px; line-height: 1.65;
+    }
+    .ice-badge {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: rgba(100,200,245,0.12); border: 1px solid rgba(100,200,245,0.3);
+      color: #64c8f5; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+      padding: 0.3rem 0.75rem; border-radius: 50px; margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    /* ── FILTER TABS ── */
+    .filter-section {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 68px; z-index: 90;
+    }
+    .filter-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 5vw;
+      display: flex; gap: 0.25rem; overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .filter-btn {
+      white-space: nowrap;
+      padding: 1rem 1.25rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500;
+      color: var(--muted); background: none; border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer; transition: color var(--transition), border-color var(--transition);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .filter-btn:hover { color: var(--navy); }
+    .filter-btn.active { color: var(--navy); border-bottom-color: var(--blue); font-weight: 600; }
+    .filter-btn .count {
+      background: var(--grey-bg); color: var(--muted);
+      font-size: 0.7rem; padding: 0.15rem 0.45rem; border-radius: 50px;
+    }
+    .filter-btn.active .count { background: #e8f4fb; color: var(--blue); }
+
+    /* ── MAIN CONTENT ── */
+    .products-main {
+      max-width: 1200px; margin: 0 auto; padding: 3rem 5vw 5rem;
+    }
+
+    /* ── CATEGORY SECTION ── */
+    .category-section { margin-bottom: 4rem; }
+    .category-section:last-child { margin-bottom: 0; }
+
+    .cat-header {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem;
+    }
+    .cat-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+    .cat-icon.poultry { background: linear-gradient(135deg, #fff3cd, #ffe082); }
+    .cat-icon.fish    { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+    .cat-icon.meat    { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
+    .cat-icon.bulk    { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+
+    .cat-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--navy); }
+    .cat-desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+
+    .cat-divider {
+      flex: 1; height: 1px; background: var(--border);
+    }
+    .cat-count {
+      font-size: 0.8rem; color: var(--muted); white-space: nowrap;
+      font-weight: 500;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ── PRODUCT CARD ── */
+    .product-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex; flex-direction: column;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(11,60,93,0.16);
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .product-card:nth-child(1) { animation-delay: 0.05s; }
+    .product-card:nth-child(2) { animation-delay: 0.10s; }
+    .product-card:nth-child(3) { animation-delay: 0.15s; }
+    .product-card:nth-child(4) { animation-delay: 0.20s; }
+    .product-card:nth-child(5) { animation-delay: 0.25s; }
+    .product-card:nth-child(6) { animation-delay: 0.30s; }
+
+    .card-img {
+      position: relative; overflow: hidden;
+      height: 200px; background: var(--grey-bg);
+    }
+    .card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .card-img img { transform: scale(1.07); }
+
+    .card-img .img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.5rem; color: var(--muted);
+      font-size: 2.5rem;
+    }
+    .card-img .img-placeholder small {
+      font-size: 0.7rem; font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    .card-tag {
+      position: absolute; top: 12px; left: 12px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 0.25rem 0.6rem;
+      border-radius: 50px; color: var(--white);
+    }
+    .tag-poultry { background: #e6a817; }
+    .tag-fish    { background: var(--blue); }
+    .tag-meat    { background: var(--red); }
+    .tag-bulk    { background: var(--green); }
+
+    .card-body {
+      padding: 1.25rem 1.25rem 0;
+      flex: 1; display: flex; flex-direction: column;
+    }
+    .card-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+    .card-desc {
+      font-size: 0.85rem; color: var(--muted); line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-packaging {
+      display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.9rem 0;
+    }
+    .pkg-badge {
+      font-size: 0.72rem; color: var(--navy); font-weight: 500;
+      background: var(--grey-bg); border: 1px solid var(--border);
+      padding: 0.2rem 0.55rem; border-radius: 4px;
+    }
+
+    .card-actions {
+      display: flex; gap: 0.6rem; padding: 0 1.25rem 1.25rem;
+      margin-top: auto;
+    }
+    .btn-quote {
+      flex: 1; padding: 0.65rem 0.5rem;
+      background: var(--navy); color: var(--white);
+      border: none; border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; transition: background var(--transition), transform var(--transition);
+      letter-spacing: 0.02em;
+    }
+    .btn-quote:hover { background: #0a3050; transform: translateY(-1px); }
+
+    .btn-whatsapp {
+      padding: 0.65rem 0.85rem;
+      background: #25d366; color: var(--white);
+      border: none; border-radius: 8px;
+      font-size: 1rem; cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-whatsapp:hover { background: #1da851; transform: translateY(-1px); }
+    .btn-whatsapp svg { width: 18px; height: 18px; fill: var(--white); }
+
+    /* ── BULK SUPPLY BANNER ── */
+    .bulk-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a5c8a 100%);
+      border-radius: 20px; padding: 2.5rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap; margin-bottom: 4rem;
+    }
+    .bulk-banner h2 {
+      font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800;
+      color: var(--white); margin-bottom: 0.5rem; letter-spacing: -0.5px;
+    }
+    .bulk-banner p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.55; max-width: 480px; }
+    .bulk-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
+    .bulk-tag {
+      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85);
+      font-size: 0.75rem; font-weight: 500; padding: 0.25rem 0.75rem;
+      border-radius: 50px; border: 1px solid rgba(255,255,255,0.15);
+    }
+    .bulk-cta {
+      display: flex; flex-direction: column; gap: 0.6rem; flex-shrink: 0;
+    }
+    .btn-primary-white {
+      padding: 0.75rem 1.75rem; background: var(--white); color: var(--navy);
+      border: none; border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700;
+      cursor: pointer; transition: transform var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .btn-outline-white {
+      padding: 0.7rem 1.75rem; background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.4); border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: border-color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.07); }
+
+    /* ── WHY CHOOSE US STRIP ── */
+    .trust-strip {
+      background: var(--white); border-radius: 16px;
+      padding: 2rem; margin-bottom: 4rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem; box-shadow: var(--card-shadow);
+    }
+    .trust-item { text-align: center; }
+    .trust-icon {
+      font-size: 1.75rem; margin-bottom: 0.6rem;
+      display: block;
+    }
+    .trust-item h4 {
+      font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 0.25rem;
+    }
+    .trust-item p { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+
+    /* ── FLOATING WHATSAPP ── */
+    .whatsapp-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+      width: 58px; height: 58px;
+      background: #25d366; color: var(--white);
+      border-radius: 50%; border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: pulse 2.5s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+      animation: none;
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: var(--white); }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+      50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.6);
+      padding: 3rem 5vw 1.5rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand .logo { display: block; margin-bottom: 0.75rem; }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.6; max-width: 260px; }
+    .footer-col h5 {
+      font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul a {
+      font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-contact p { font-size: 0.82rem; margin-bottom: 0.5rem; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-bottom p { font-size: 0.78rem; }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 3rem 5vw 2.5rem; }
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .cat-count { display: none; }
+      .bulk-banner { padding: 1.75rem 1.25rem; }
+      .bulk-cta { width: 100%; flex-direction: row; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .trust-strip { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .bulk-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <a href="index.html" class="logo">Abak<span>.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="services.html">Services</a>
+	<a href="shop.html">Shop</a>
+    <a href="sourcing.html">Sourcing</a>
+	<li><a href="partnerships.html">Global Partnership</a></li>
+	<a href="FAQs.html">FAQs</a>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Products</span>
+    </nav>
+    <div class="ice-badge">❄ Premium Frozen Foods</div>
+    <h1>Our <em>Products</em></h1>
+    <p>Sourced globally, delivered fresh. Explore our full range of premium frozen poultry, fish &amp; seafood, red meat, and bulk supply options for businesses across Ghana.</p>
+  </div>
+</section>
+
+<!-- ═══ FILTER TABS ═══ -->
+<div class="filter-section" role="navigation" aria-label="Product categories">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterCategory('all', this)">
+      All Products <span class="count">10</span>
+    </button>
+    <button class="filter-btn" onclick="filterCategory('poultry', this)">
+      🍗 Poultry <span class="count">3</span>
+    </button>
+    <button class="filter-btn" onclick="filterCategory('fish', this)">
+      🐟 Fish &amp; Seafood <span class="count">3</span>
+    </button>
+    <button class="filter-btn" onclick="filterCategory('meat', this)">
+      🥩 Red Meat <span class="count">3</span>
+    </button>
+    <button class="filter-btn" onclick="filterCategory('bulk', this)">
+      📦 Bulk Supply <span class="count">3</span>
+    </button>
+  </div>
+</div>
+
+<!-- ═══ PRODUCTS MAIN ═══ -->
+<main class="products-main">
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip" aria-label="Why choose Abak">
+    <div class="trust-item">
+      <span class="trust-icon">🌍</span>
+      <h4>Globally Sourced</h4>
+      <p>Premium products from trusted international suppliers</p>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">❄</span>
+      <h4>Cold-Chain Certified</h4>
+      <p>Maintained at optimal temperatures end-to-end</p>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">✅</span>
+      <h4>Quality Assured</h4>
+      <p>Strict hygiene and food safety standards</p>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚚</span>
+      <h4>Reliable Delivery</h4>
+      <p>Consistent supply for businesses of all sizes</p>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">💬</span>
+      <h4>WhatsApp Orders</h4>
+      <p>Fast, convenient ordering via WhatsApp</p>
+    </div>
+  </div>
+
+  <!-- ═══ POULTRY ═══ -->
+  <section class="category-section" data-category="poultry" id="poultry">
+    <div class="cat-header">
+      <div class="cat-icon poultry">🍗</div>
+      <div>
+        <div class="cat-title">Poultry</div>
+        <div class="cat-desc">Fresh-frozen, premium quality chicken and turkey products</div>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="cat-count">3 products</div>
+    </div>
+    <div class="products-grid">
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/onepluschicken.jpg" alt="Abak - Oneplus Chicken">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Abak Brand - Oneplus Chicken</h3>
+          <p class="card-desc">Premium Oneplus whole frozen chicken, packed in cartons under the Abak brand. Individually quick-frozen to lock in freshness — ideal for restaurants, caterers, and bulk buyers.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Turkey Tips')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Turkey Tips')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fff8e1,#fff3cd);">
+            
+            <img src="images/wholehen.jpg" alt="Whole Hen">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Whole Chicken</h3>
+          <p class="card-desc">Premium whole frozen chicken, individually quick-frozen to lock in freshness and natural flavour. Ideal for households, restaurants and caterers.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">1.5 kg</span>
+            <span class="pkg-badge">2 kg</span>
+            <span class="pkg-badge">Bulk Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Whole Chicken')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Whole Chicken')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fff8e1,#ffe0b2);">
+            <img src="images/turkeywings.jpeg" alt="Turkey Wings">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Turkey Wings</h3>
+          <p class="card-desc">Meaty, well-portioned frozen turkey wings perfect for grilling, baking, or soups. Popular choice for festive seasons and restaurant menus.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">20 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Turkey Wings')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Turkey Wings')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/turkeytips.jpeg" alt="Turkey Tips">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Turkey Tips</h3>
+          <p class="card-desc">Flavourful, tender turkey tips ideal for stews, peppered dishes and braising. A budget-friendly favourite for bulk catering and home cooking.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Turkey Tips')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Turkey Tips')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/chickenback.jpeg" alt="Chicken Back">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chicken Back</h3>
+          <p class="card-desc">Meaty frozen chicken backs, ideal for making rich broths, soups, and stews. A flavourful and budget-friendly choice for households and large-scale caterers.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Chicken Back')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Chicken Back')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/chickenupperback.jpeg" alt="Chicken Upper Back">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chicken Upper Back</h3>
+          <p class="card-desc">Tender frozen chicken upper backs with good meat coverage — great for slow-cooked soups and flavourful stock. A popular everyday choice for home and commercial kitchens.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Chicken Upper Back')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Chicken Upper Back')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/heavyhenlegquarter.jpeg" alt="Heavy Hen Leg Quarter">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Heavy Hen Leg Quarter</h3>
+          <p class="card-desc">Generous, meaty hen leg quarters — quick-frozen to preserve their natural richness and juiciness. Excellent for grilling, frying, stewing, or serving at events.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Heavy Hen Leg Quarter')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Heavy Hen Leg Quarter')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/chickensausage.jpg" alt="Chicken Sausage">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chicken Sausage</h3>
+          <p class="card-desc">Seasoned frozen chicken sausages made from quality poultry — versatile, convenient, and full of flavour. Perfect for breakfast, grilling, or adding to pasta and rice dishes.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Chicken Sausage')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Chicken Sausage')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/blockgizzard.jpg" alt="Block Gizzard">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Block Gizzard</h3>
+          <p class="card-desc">Premium frozen chicken gizzards, packed in bulk cartons for commercial and large-scale use. Firm in texture and rich in flavour — a staple for stews, kebabs, and street food.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Block Gizzard')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Block Gizzard')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/sachetgizzard.jpg" alt="Sachet Gizzard">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Sachet Gizzard</h3>
+          <p class="card-desc">Conveniently portioned frozen chicken gizzards in ready-to-use sachet packs. Perfect for households and small kitchens — quick to thaw and easy to cook in any dish.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Sachet Gizzard')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Sachet Gizzard')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fffde7,#fff8e1);">
+            <img src="images/turkeytips.jpeg" alt="Turkey Tips">
+          </div>
+          <span class="card-tag tag-poultry">Poultry</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Turkey Tips</h3>
+          <p class="card-desc">Flavourful, tender turkey tips ideal for stews, peppered dishes and braising. A budget-friendly favourite for bulk catering and home cooking.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">2 kg Pack</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">25 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Turkey Tips')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Turkey Tips')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+    </div>
+  </section>
+
+  <!-- ═══ FISH & SEAFOOD ═══ -->
+  <section class="category-section" data-category="fish" id="fish">
+    <div class="cat-header">
+      <div class="cat-icon fish">🐟</div>
+      <div>
+        <div class="cat-title">Fish &amp; Seafood</div>
+        <div class="cat-desc">Ocean-fresh, expertly frozen fish sourced from certified global suppliers</div>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="cat-count">3 products</div>
+    </div>
+    <div class="products-grid">
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#e3f2fd,#bbdefb);">
+            <img src="images/mackerel.jpg" alt="Mackerel">
+          </div>
+          <span class="card-tag tag-fish">Fish</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Mackerel</h3>
+          <p class="card-desc">Rich in omega-3, our frozen mackerel (chichinga) is a Ghanaian household staple — perfect for frying, smoking or peppered dishes.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">15 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Mackerel')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Mackerel')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#e8f5e9,#c8e6c9);">
+            <img src="images/tilapia.jpg" alt="Tilapia">
+          </div>
+          <span class="card-tag tag-fish">Fish</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Tilapia</h3>
+          <p class="card-desc">Mild, lean, and versatile — our frozen tilapia is a top seller for homes, restaurants and street food vendors. Available whole and butterflied.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">500g</span>
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">10 kg Box</span>
+            <span class="pkg-badge">Bulk Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Tilapia')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Tilapia')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fce4ec,#f8bbd0);">
+            <img src="images/salmon.jpg" alt="Salmon">
+          </div>
+          <span class="card-tag tag-fish">Fish</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Salmon</h3>
+          <p class="card-desc">Premium Atlantic salmon fillets, flash-frozen at peak freshness. A high-value product for upscale restaurants, hotels and health-conscious consumers.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">200g Fillet</span>
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Salmon')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Salmon')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══ RED MEAT ═══ -->
+  <section class="category-section" data-category="meat" id="meat">
+    <div class="cat-header">
+      <div class="cat-icon meat">🥩</div>
+      <div>
+        <div class="cat-title">Red Meat</div>
+        <div class="cat-desc">Quality frozen beef, pork and lamb meat for every cooking need</div>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="cat-count">3 products</div>
+    </div>
+    <div class="products-grid">
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#ffebee,#ffcdd2);">
+            <img src="images/oneplusbeef.jpg" alt="Abak Brand - Oneplus Beef">
+          </div>
+          <span class="card-tag tag-meat">Red Meat</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Abak Brand - Oneplus Beef</h3>
+          <p class="card-desc">Quality Oneplus frozen beef, carton-packed under the trusted Abak brand. Consistently cut and quick-frozen for maximum flavour — perfect for bulk orders and commercial kitchens.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">20 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Beef')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Beef')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#ffebee,#ffcdd2);">
+            <img src="images/beefsinews.jpeg" alt="Beef Sinews">
+          </div>
+          <span class="card-tag tag-meat">Red Meat</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Beef Sinews</h3>
+          <p class="card-desc">Premium frozen beef cuts including stewing, grilling and minced varieties. Consistently sourced and inspected to meet food safety standards.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">20 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Beef')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Beef')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#ffebee,#ffcdd2);">
+            <img src="images/beefheart.jpeg" alt="Beef Heart">
+          </div>
+          <span class="card-tag tag-meat">Red Meat</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Beef Heart</h3>
+          <p class="card-desc">Tender, nutrient-rich frozen beef heart — a firm-textured cut with a deep, beefy flavour. Ideal for grilling, stewing, or slow-cooking in traditional recipes.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">20 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Beef')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Beef')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#ffebee,#ffcdd2);">
+            <img src="images/beeffeet.jpeg" alt="Beef Feet">
+          </div>
+          <span class="card-tag tag-meat">Red Meat</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Beef Feet</h3>
+          <p class="card-desc">Slow-cook frozen beef feet packed with natural collagen and bold flavour. A beloved ingredient for soups, light soup, and pepper soup across Ghanaian and West African cuisine.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">20 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Beef')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Beef')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+	  <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#ffebee,#ffcdd2);">
+            <img src="images/beeftripes.jpeg" alt="Beef Tripes">
+          </div>
+          <span class="card-tag tag-meat">Red Meat</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Beef Tripes</h3>
+          <p class="card-desc">Premium frozen beef tripe and offals, carefully cleaned and prepared for cooking. A versatile, flavour-rich ingredient widely used in traditional soups, stews, and local delicacies.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">20 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Beef')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Beef')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+	  
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#fce4ec,#ffcdd2);">
+            <img src="images/porkfeet.jpeg" alt="Pork Feet">
+          </div>
+          <span class="card-tag tag-meat">Red Meat</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Pork Feet</h3>
+          <p class="card-desc">Succulent frozen pork feet — rich in collagen and full of deep, savoury flavour. Perfect for slow-cooked stews, soups, and traditional pork dishes.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">3 kg Pack</span>
+            <span class="pkg-badge">15 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Pork')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Pork')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="card-img">
+          <div class="img-placeholder" style="background: linear-gradient(145deg,#f3e5f5,#e1bee7);">
+            <img src="images/lambbreast.jpeg" alt="Lamb Breast">
+          </div>
+          <span class="card-tag tag-meat">Red Meat</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lamb Breast</h3>
+          <p class="card-desc">Authentic frozen lamb breast cuts, expertly portioned. A favourite for traditional Ghanaian dishes, festive events, and busy catering operations.</p>
+          <div class="card-packaging">
+            <span class="pkg-badge">1 kg</span>
+            <span class="pkg-badge">5 kg Box</span>
+            <span class="pkg-badge">20 kg Carton</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-quote" onclick="requestQuote('Goat Meat')">Request Quote</button>
+          <button class="btn-whatsapp" onclick="orderWhatsApp('Goat Meat')" aria-label="Order via WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══ BULK SUPPLY BANNER ═══ -->
+  <div class="bulk-banner" id="bulk">
+    <div>
+      <h2>📦 Bulk Supply for Businesses</h2>
+      <p>Reliable, consistent supply for hotels, restaurants, caterers and food businesses across Ghana. Competitive pricing, flexible packaging, and dedicated account support.</p>
+      <div class="bulk-tags">
+        <span class="bulk-tag">🏨 Hotels</span>
+        <span class="bulk-tag">🍽 Restaurants</span>
+        <span class="bulk-tag">👩‍🍳 Caterers</span>
+        <span class="bulk-tag">🏪 Retailers</span>
+        <span class="bulk-tag">Wholesalers</span>
+      </div>
+    </div>
+    <div class="bulk-cta">
+      <button class="btn-primary-white" onclick="requestQuote('Bulk Supply')">Request Bulk Quote</button>
+      <button class="btn-outline-white" onclick="orderWhatsApp('Bulk Supply')">💬 Chat on WhatsApp</button>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Abak<span>.</span></a>
+      <p>Abak Company Limited is a premium frozen foods and cold storage business operating in Ghana, delivering quality and reliability to homes and businesses.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <ul>
+        <li><a href="#poultry">Poultry</a></li>
+        <li><a href="#fish">Fish &amp; Seafood</a></li>
+        <li><a href="#meat">Red Meat</a></li>
+        <li><a href="#bulk">Bulk Orders</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h5>Contact</h5>
+      <p>📍 HQ1 Anunsah Clottey street, Kaneshie Market-Accra, Ghana</p>
+      <p>📞 +233 24 729 8551 / +233 50 496 7111</p>
+      <p>💬 WhatsApp Orders Available</p>
+      <p>✉ info@abakcompany.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Abak Company Limited. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING WHATSAPP ═══ -->
+<button class="whatsapp-float" onclick="orderWhatsApp('General Enquiry')" aria-label="Order via WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</button>
+
+<script>
+  // ── Filter functionality ──
+  function filterCategory(cat, btn) {
+    // Update active tab
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide sections
+    document.querySelectorAll('.category-section').forEach(section => {
+      if (cat === 'all' || section.dataset.category === cat) {
+        section.style.display = '';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+
+    // Bulk banner visibility
+    const bulk = document.getElementById('bulk');
+    if (bulk) bulk.style.display = (cat === 'all' || cat === 'bulk') ? '' : 'none';
+  }
+
+  // ── WhatsApp order ──
+  function orderWhatsApp(product) {
+    const phone = '233247298551'; // Replace with actual WhatsApp number
+    const message = encodeURIComponent(`Hello Abak Company Limited, I'm interested in ordering: ${product}. Please send me details and pricing.`);
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
+
+  // ── Request Quote ──
+  function requestQuote(product) {
+    window.location.href = `contact.html?product=${encodeURIComponent(product)}`;
+  }
+
+  // ── Hamburger (stub) ──
+  function toggleMenu() {
+    // Hook up to your mobile nav implementation
+    alert('Mobile navigation: connect to your nav drawer here.');
+  }
+
+  // ── Scroll-triggered animation for cards ──
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.animationPlayState = 'running';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.animationPlayState = 'paused';
+      obs.observe(card);
+    });
+  }
+</script>
+</body>
+</html>

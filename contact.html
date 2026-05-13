@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Abak Company Limited – Accra, Ghana</title>
+  <meta name="description" content="Get in touch with Abak Company Limited. Phone: +233 24 729 8551 | +233 50 496 7111. Address: HQ1 Anunsah Clottey Street, Kaneshie Market, Accra, Ghana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #09181f;
+      --navy:       #0B3C5D;
+      --navy-mid:   #124e77;
+      --blue:       #328CC1;
+      --ice:        #72d4f7;
+      --white:      #FFFFFF;
+      --off-white:  #f8fafb;
+      --slate:      #e8f0f5;
+      --border:     #d0e3ef;
+      --muted:      #526878;
+      --text:       #162432;
+      --green:      #1f8a5e;
+      --gold:       #c5920a;
+      --red:        #c8273a;
+      --ease:       cubic-bezier(.22,.68,0,1.2);
+      --ease-std:   cubic-bezier(.4,0,.2,1);
+      --shadow-sm:  0 2px 14px rgba(11,60,93,0.08);
+      --shadow-lg:  0 16px 48px rgba(11,60,93,0.16);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--text);
+      background: var(--off-white);
+      min-height: 100vh;
+    }
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 400;
+      background: rgba(9,24,31,0.96);
+      backdrop-filter: blur(14px);
+      height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      border-bottom: 1px solid rgba(114,212,247,0.07);
+    }
+
+    /* ── LOGO AREA with image placeholder ── */
+    .header-logo-wrap {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none;
+    }
+    .logo-img-slot {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      border: 1.5px dashed rgba(114,212,247,0.35);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .logo-img-slot:hover { border-color: rgba(114,212,247,0.7); }
+    .logo-img-slot img { width: 100%; height: 100%; object-fit: contain; display: none; }
+    .logo-img-slot .logo-placeholder-text {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em;
+      color: rgba(114,212,247,0.5); text-align: center; line-height: 1.2;
+      pointer-events: none; user-select: none;
+    }
+    .logo-wordmark {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem; color: var(--white); letter-spacing: 0.02em;
+    }
+    .logo-wordmark em { color: var(--ice); font-style: normal; }
+
+    nav { display: flex; gap: 0.1rem; align-items: center; }
+    nav a {
+      font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.55);
+      text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+    nav a.active { color: var(--ice); }
+    .nav-cta {
+      background: var(--blue) !important;
+      color: var(--white) !important; padding: 0.45rem 1.2rem !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: #1b7db8 !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* ══════════════════════════════════════
+       HERO STRIP — split diagonal
+    ══════════════════════════════════════ */
+    .hero {
+      position: relative; overflow: hidden;
+      background: var(--ink);
+      padding: 5.5rem 5vw 4.5rem;
+    }
+    /* subtle cross-hatch pattern */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(50,140,193,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(50,140,193,0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    /* diagonal colour slice */
+    .hero::after {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 45%; height: 100%;
+      background: linear-gradient(160deg, rgba(18,78,119,0.6) 0%, rgba(50,140,193,0.2) 100%);
+      clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 600px;
+    }
+    .breadcrumb {
+      font-size: 0.75rem; color: rgba(255,255,255,0.35);
+      display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1.4rem;
+    }
+    .breadcrumb a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+    .breadcrumb span { color: rgba(255,255,255,0.18); }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--ice);
+      background: rgba(114,212,247,0.1); border: 1px solid rgba(114,212,247,0.22);
+      padding: 0.28rem 0.85rem; border-radius: 50px; margin-bottom: 1.3rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+      color: var(--white); line-height: 1.1; margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em { color: var(--ice); font-style: italic; }
+    .hero p {
+      font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.72; max-width: 480px;
+    }
+
+    /* ══════════════════════════════════════
+       CONTACT INFO BAR
+    ══════════════════════════════════════ */
+    .info-bar {
+      background: var(--navy);
+      padding: 0 5vw;
+    }
+    .info-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    .info-item {
+      padding: 1.6rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; gap: 0.9rem;
+      transition: background 0.2s;
+    }
+    .info-item:hover { background: rgba(255,255,255,0.04); }
+    .info-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(114,212,247,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .info-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.2rem; }
+    .info-value { font-size: 0.85rem; font-weight: 600; color: var(--white); line-height: 1.4; }
+    .info-value a { color: var(--ice); text-decoration: none; transition: opacity 0.2s; }
+    .info-value a:hover { opacity: 0.8; }
+
+    /* ══════════════════════════════════════
+       MAIN CONTENT AREA
+    ══════════════════════════════════════ */
+    .main-wrap {
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 5vw;
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 3.5rem; align-items: start;
+    }
+
+    /* ══════════════════════════════════════
+       CONTACT FORM
+    ══════════════════════════════════════ */
+    .form-panel {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 2.75rem 2.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .panel-label {
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.8rem;
+    }
+    .panel-label::before { content: ''; width: 28px; height: 2px; background: var(--blue); display: block; }
+    .panel-label span { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); }
+    .panel-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.15;
+    }
+    .panel-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 2rem; }
+
+    /* Enquiry type tabs */
+    .enquiry-tabs {
+      display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.75rem;
+    }
+    .eq-tab {
+      font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 700;
+      padding: 0.45rem 1rem; border-radius: 50px;
+      background: var(--slate); color: var(--muted);
+      border: 1.5px solid var(--border); cursor: pointer;
+      transition: all 0.2s;
+    }
+    .eq-tab:hover { background: #ddeef7; color: var(--navy); border-color: #b0cfe4; }
+    .eq-tab.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    /* Form fields */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+      color: var(--navy); margin-bottom: 0.45rem; text-transform: uppercase;
+    }
+    .form-group label .req { color: var(--red); margin-left: 2px; }
+    .form-control {
+      width: 100%; padding: 0.75rem 1rem;
+      background: var(--off-white); border: 1.5px solid var(--border);
+      border-radius: 10px; font-family: 'Jost', sans-serif;
+      font-size: 0.92rem; color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--blue); background: var(--white);
+      box-shadow: 0 0 0 3px rgba(50,140,193,0.12);
+    }
+    .form-control::placeholder { color: #9fb5c4; }
+    textarea.form-control { resize: vertical; min-height: 130px; }
+    select.form-control { cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23526878' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    /* Checkbox */
+    .check-row {
+      display: flex; align-items: flex-start; gap: 0.65rem; margin-bottom: 1.5rem;
+    }
+    .check-row input[type="checkbox"] {
+      width: 17px; height: 17px; accent-color: var(--blue); cursor: pointer; flex-shrink: 0; margin-top: 2px;
+    }
+    .check-row label { font-size: 0.82rem; color: var(--muted); line-height: 1.55; cursor: pointer; }
+    .check-row label a { color: var(--blue); text-decoration: none; }
+    .check-row label a:hover { text-decoration: underline; }
+
+    /* Submit button */
+    .btn-submit {
+      width: 100%; padding: 0.95rem 1rem;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      color: var(--white); border: none; border-radius: 10px;
+      font-family: 'Jost', sans-serif; font-size: 0.95rem; font-weight: 800;
+      letter-spacing: 0.04em; cursor: pointer;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .btn-submit::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(50,140,193,0.35); }
+    .btn-submit:hover::before { opacity: 1; }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* Success state */
+    .form-success {
+      display: none; text-align: center; padding: 3rem 1rem;
+    }
+    .success-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+    .form-success h3 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .form-success p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; max-width: 340px; margin: 0 auto; }
+
+    /* ══════════════════════════════════════
+       SIDEBAR — Details + Map + WhatsApp
+    ══════════════════════════════════════ */
+    .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* Company card with logo */
+    .company-card {
+      background: var(--navy);
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    /* Logo placeholder banner */
+    .logo-banner {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 1.75rem;
+      display: flex; align-items: center; gap: 1.1rem;
+    }
+    /* Large logo image placeholder */
+    .logo-slot-large {
+      width: 72px; height: 72px; border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 2px dashed rgba(114,212,247,0.4);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.2rem; flex-shrink: 0; overflow: hidden;
+      transition: border-color 0.2s;
+      cursor: pointer; position: relative;
+    }
+    .logo-slot-large:hover { border-color: rgba(114,212,247,0.75); }
+    .logo-slot-large img {
+      width: 100%; height: 100%; object-fit: contain;
+      display: none; /* unhide once src is set */
+    }
+    .logo-slot-large .slot-label {
+      font-size: 0.58rem; font-weight: 800; letter-spacing: 0.06em;
+      color: rgba(114,212,247,0.45); text-align: center; text-transform: uppercase;
+      padding: 0 4px; pointer-events: none;
+    }
+    .logo-slot-large .slot-icon { font-size: 1.4rem; opacity: 0.3; }
+    .logo-banner-text {}
+    .logo-banner-text strong {
+      display: block; font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; color: var(--white); margin-bottom: 0.2rem;
+    }
+    .logo-banner-text span {
+      font-size: 0.76rem; color: rgba(255,255,255,0.45); font-weight: 500;
+    }
+
+    .company-details { padding: 1.5rem 1.75rem; }
+    .detail-row {
+      display: flex; gap: 0.85rem; padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      align-items: flex-start;
+    }
+    .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .detail-icon {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(114,212,247,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .detail-key { font-size: 0.67rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.2rem; }
+    .detail-val { font-size: 0.88rem; font-weight: 600; color: var(--white); line-height: 1.45; }
+    .detail-val a { color: var(--ice); text-decoration: none; display: block; transition: opacity 0.2s; }
+    .detail-val a:hover { opacity: 0.75; }
+    .digital-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: rgba(114,212,247,0.12); border: 1px solid rgba(114,212,247,0.2);
+      color: var(--ice); font-size: 0.78rem; font-weight: 700;
+      padding: 0.2rem 0.65rem; border-radius: 6px; letter-spacing: 0.04em;
+    }
+
+    /* Map card */
+    .map-card {
+      background: var(--white); border-radius: 20px;
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .map-frame {
+      width: 100%; height: 220px;
+      background: linear-gradient(145deg, #ddedf5, #c5dde9);
+      position: relative; overflow: hidden;
+    }
+    .map-frame iframe {
+      width: 100%; height: 100%; border: none; display: block;
+    }
+    /* Fallback map pin overlay */
+    .map-fallback {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.5rem;
+      background: linear-gradient(145deg, #ddedf5, #b8d3e0);
+    }
+    .map-fallback .pin { font-size: 2.5rem; animation: bounce 1.8s ease-in-out infinite; }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    .map-fallback p {
+      font-size: 0.78rem; color: var(--navy); font-weight: 600; text-align: center; max-width: 200px; line-height: 1.4;
+    }
+    .map-footer {
+      padding: 1rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    }
+    .map-footer-text strong { display: block; font-size: 0.82rem; color: var(--navy); font-weight: 700; }
+    .map-footer-text span { font-size: 0.74rem; color: var(--muted); }
+    .btn-directions {
+      font-size: 0.76rem; font-weight: 700; padding: 0.45rem 1rem;
+      background: var(--navy); color: var(--white); border: none; border-radius: 7px;
+      cursor: pointer; white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-directions:hover { background: var(--blue); transform: translateY(-1px); }
+
+    /* WhatsApp card */
+    .wa-card {
+      background: linear-gradient(135deg, #075e54 0%, #128c7e 60%, #25d366 100%);
+      border-radius: 20px; padding: 1.75rem;
+      display: flex; align-items: center; gap: 1.1rem;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.25);
+      cursor: pointer; text-decoration: none;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .wa-card::before {
+      content: '';
+      position: absolute; top: -30px; right: -30px;
+      width: 110px; height: 110px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .wa-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(37,211,102,0.38); }
+    .wa-icon { font-size: 2.5rem; flex-shrink: 0; position: relative; z-index: 1; }
+    .wa-text { position: relative; z-index: 1; }
+    .wa-text strong { display: block; font-size: 1rem; color: var(--white); font-weight: 800; margin-bottom: 0.2rem; }
+    .wa-text span { font-size: 0.8rem; color: rgba(255,255,255,0.72); line-height: 1.4; display: block; }
+    .wa-text .wa-nums {
+      margin-top: 0.45rem; display: flex; flex-direction: column; gap: 0.1rem;
+    }
+    .wa-text .wa-nums a {
+      font-size: 0.82rem; color: rgba(255,255,255,0.9); font-weight: 700;
+      text-decoration: none;
+    }
+    .wa-text .wa-nums a:hover { color: var(--white); }
+
+    /* Hours card */
+    .hours-card {
+      background: var(--white); border-radius: 20px;
+      padding: 1.6rem 1.75rem; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .hours-head {
+      display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1.1rem;
+    }
+    .hours-head .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+      box-shadow: 0 0 0 3px rgba(31,138,94,0.15);
+      animation: greenPulse 2s ease-in-out infinite;
+    }
+    @keyframes greenPulse {
+      0%,100% { box-shadow: 0 0 0 3px rgba(31,138,94,0.15); }
+      50%      { box-shadow: 0 0 0 6px rgba(31,138,94,0.08); }
+    }
+    .hours-head span { font-size: 0.78rem; font-weight: 800; color: var(--green); letter-spacing: 0.05em; text-transform: uppercase; }
+    .hours-title { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 1rem; }
+    .hours-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .hours-list li {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.84rem; padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--slate);
+    }
+    .hours-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .hours-list .day { color: var(--muted); font-weight: 500; }
+    .hours-list .time { color: var(--navy); font-weight: 700; }
+    .hours-list .closed { color: #c0404f; font-weight: 700; }
+
+    /* ══════════════════════════════════════
+       ADDITIONAL CHANNELS
+    ══════════════════════════════════════ */
+    .channels-section {
+      background: var(--slate);
+      padding: 4rem 5vw;
+    }
+    .channels-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .channels-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .channel-card {
+      background: var(--white); border-radius: 16px;
+      padding: 1.6rem 1.5rem; text-align: center;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+      transition: transform 0.25s var(--ease), box-shadow 0.25s;
+      opacity: 0; transform: translateY(18px);
+      animation: fadeUp 0.5s var(--ease-std) forwards;
+    }
+    .channel-card:nth-child(1) { animation-delay: 0.06s; }
+    .channel-card:nth-child(2) { animation-delay: 0.14s; }
+    .channel-card:nth-child(3) { animation-delay: 0.22s; }
+    .channel-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .ch-icon { font-size: 2rem; margin-bottom: 0.85rem; display: block; }
+    .channel-card h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .channel-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem; }
+    .ch-link {
+      display: inline-block; font-size: 0.82rem; font-weight: 700;
+      color: var(--navy); text-decoration: none;
+      border-bottom: 1.5px solid var(--border); padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .ch-link:hover { color: var(--blue); border-color: var(--blue); }
+
+    /* section label shared */
+    .sec-label {
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.7rem;
+    }
+    .sec-label::before { content: ''; width: 28px; height: 2px; background: var(--blue); display: block; }
+    .sec-label span { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); }
+    .sec-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem); color: var(--navy); margin-bottom: 0.5rem;
+    }
+    .sec-sub { font-size: 0.92rem; color: var(--muted); line-height: 1.6; max-width: 520px; }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--ink); color: rgba(255,255,255,0.5);
+      padding: 3.5rem 5vw 1.5rem;
+    }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-logo-wrap {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; margin-bottom: 0.9rem;
+    }
+    .footer-logo-slot {
+      width: 36px; height: 36px; border-radius: 7px;
+      background: rgba(255,255,255,0.05);
+      border: 1.5px dashed rgba(114,212,247,0.25);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .footer-logo-slot img { width: 100%; height: 100%; object-fit: contain; display: none; }
+    .footer-logo-slot .footer-logo-ph { font-size: 0.55rem; color: rgba(114,212,247,0.3); font-weight: 700; letter-spacing: 0.05em; text-align: center; }
+    .footer-wordmark { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); }
+    .footer-wordmark em { color: var(--ice); font-style: normal; }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 { font-size: 0.68rem; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-col p { font-size: 0.82rem; margin-bottom: 0.4rem; }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.25rem;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-bottom p { font-size: 0.77rem; }
+    .f-links { display: flex; gap: 1.25rem; }
+    .f-links a { font-size: 0.77rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .f-links a:hover { color: rgba(255,255,255,0.75); }
+
+    /* ══════════════════════════════════════
+       FLOATING WHATSAPP FAB
+    ══════════════════════════════════════ */
+    .wa-fab {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; box-shadow: 0 4px 22px rgba(37,211,102,0.45);
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+    .wa-fab:hover { transform: scale(1.1); animation: none; box-shadow: 0 6px 30px rgba(37,211,102,0.6); }
+    .wa-fab svg { width: 27px; height: 27px; fill: var(--white); }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 4px 22px rgba(37,211,102,0.45); }
+      50%      { box-shadow: 0 4px 34px rgba(37,211,102,0.7); }
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 1040px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+      .company-card, .map-card { grid-column: span 2; }
+    }
+    @media (max-width: 860px) {
+      .info-bar-inner { grid-template-columns: 1fr 1fr; }
+      .channels-grid { grid-template-columns: 1fr 1fr; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 600px) {
+      .info-bar-inner { grid-template-columns: 1fr; border-left: none; }
+      .info-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .form-row { grid-template-columns: 1fr; }
+      .channels-grid { grid-template-columns: 1fr; }
+      .sidebar { display: flex; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-panel { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header>
+  <a href="index.html" class="header-logo-wrap" title="Abak Company Limited">
+    <div class="logo-img-slot" id="headerLogoSlot" title="Click to upload logo">
+      <!-- Replace the placeholder below with: <img src="your-logo.png" alt="Abak Company Limited Logo" /> -->
+      <img src="" alt="Abak Logo" id="headerLogoImg" />
+      <span class="logo-placeholder-text">YOUR<br>LOGO</span>
+    </div>
+    <span class="logo-wordmark">Abak<em>.</em></span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="sourcing.html">Sourcing</a>
+	<a href="FAQs.html">FAQs</a>
+    <a href="contact.html" class="active nav-cta">Contact Us</a>
+	<a href="shop.html">Shop</a>
+	<a href="articles.html">Blog</a>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Contact Us</span>
+    </nav>
+    <div class="hero-pill">📬 Get in Touch</div>
+    <h1>Let's Talk<br><em>Business</em></h1>
+    <p>Whether you're placing an order, requesting a quote, or exploring a long-term supply partnership — we're ready to help. Reach us any way that works best for you.</p>
+  </div>
+</section>
+
+
+<!-- ══════════ INFO BAR ══════════ -->
+<div class="info-bar">
+  <div class="info-bar-inner">
+    <div class="info-item">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-label">Address</div>
+        <div class="info-value">HQ1 Anunsah Clottey Street<br>Kaneshie Market, Accra</div>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">📞</div>
+      <div>
+        <div class="info-label">Phone</div>
+        <div class="info-value">
+          <a href="tel:+233247298551">+233 24 729 8551</a>
+          <a href="tel:+233504967111">+233 50 496 7111</a>
+        </div>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">🗺️</div>
+      <div>
+        <div class="info-label">Digital Address</div>
+        <div class="info-value">GA-262-1811</div>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">✉️</div>
+      <div>
+        <div class="info-label">Email</div>
+        <div class="info-value">
+          <a href="mailto:info@abakcompany.com">info@abakcompany.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ MAIN CONTENT ══════════ -->
+<div class="main-wrap">
+
+  <!-- ── CONTACT FORM ── -->
+  <div class="form-panel">
+    <div class="panel-label"><span>Send a Message</span></div>
+    <h2 class="panel-title">How Can We Help?</h2>
+    <p class="panel-sub">Fill in the form below and a member of our team will respond within one business day. For urgent orders, please use WhatsApp.</p>
+
+    <!-- Enquiry type selector -->
+    <div class="enquiry-tabs" role="group" aria-label="Enquiry type">
+      <button class="eq-tab active" onclick="setTab(this, 'General Enquiry')">General Enquiry</button>
+      <button class="eq-tab" onclick="setTab(this, 'Request a Quote')">Request a Quote</button>
+      <button class="eq-tab" onclick="setTab(this, 'Bulk / Wholesale')">Bulk / Wholesale</button>
+      <button class="eq-tab" onclick="setTab(this, 'Cold Storage')">Cold Storage</button>
+      <button class="eq-tab" onclick="setTab(this, 'Partnership')">Partnership</button>
+    </div>
+
+    <form id="contactForm" novalidate>
+      <input type="hidden" name="enquiry_type" id="enquiryType" value="General Enquiry" />
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name <span class="req">*</span></label>
+          <input type="text" id="firstName" name="first_name" class="form-control" placeholder="e.g. Kwame" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name <span class="req">*</span></label>
+          <input type="text" id="lastName" name="last_name" class="form-control" placeholder="e.g. Mensah" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="yourname@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="+233 XX XXX XXXX" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company">Company / Business Name</label>
+          <input type="text" id="company" name="company" class="form-control" placeholder="Your company (optional)" />
+        </div>
+        <div class="form-group">
+          <label for="product">Product of Interest</label>
+          <select id="product" name="product" class="form-control">
+            <option value="">— Select a product —</option>
+            <option>Whole Chicken</option>
+            <option>Turkey Wings</option>
+            <option>Turkey Tips</option>
+            <option>Mackerel</option>
+            <option>Tilapia</option>
+            <option>Salmon</option>
+            <option>Beef</option>
+            <option>Pork</option>
+            <option>Goat Meat</option>
+            <option>Multiple Products</option>
+            <option>Cold Storage</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message <span class="req">*</span></label>
+        <textarea id="message" name="message" class="form-control" placeholder="Tell us about your requirements — volume, frequency, delivery location, or any other details..." required></textarea>
+      </div>
+
+      <div class="check-row">
+        <input type="checkbox" id="consent" name="consent" required />
+        <label for="consent">I agree that Abak Company Limited may use my details to respond to this enquiry. View our <a href="#">Privacy Policy</a>.</label>
+      </div>
+
+      <button type="submit" class="btn-submit">Send Message &rarr;</button>
+    </form>
+
+    <!-- Success message (hidden by default) -->
+    <div class="form-success" id="formSuccess">
+      <span class="success-icon">✅</span>
+      <h3>Message Sent!</h3>
+      <p>Thank you for getting in touch. A member of our team will respond to you within one business day. For urgent orders, please WhatsApp us directly.</p>
+    </div>
+  </div>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <!-- Company details card with LOGO PLACEHOLDER -->
+    <div class="company-card">
+      <!-- ★ LOGO PLACEHOLDER — replace src="" with your logo file path ★ -->
+      <div class="logo-banner">
+        <div class="logo-slot-large" id="mainLogoSlot" title="Replace with company logo">
+          <!--
+            TO ADD YOUR LOGO:
+            1. Upload your logo file (PNG/SVG recommended)
+            2. Replace src="" below with the file path, e.g. src="images/abak-logo.png"
+            3. Remove the slot-icon and slot-label elements below
+          -->
+          <img src="" alt="Abak Company Limited Logo" id="mainLogoImg" />
+          <span class="slot-icon">🖼</span>
+          <span class="slot-label">Insert<br>Logo Here</span>
+        </div>
+        <div class="logo-banner-text">
+          <strong>Abak Company Limited</strong>
+          <span>Premium Frozen Foods · Accra, Ghana</span>
+        </div>
+      </div>
+
+      <div class="company-details">
+        <div class="detail-row">
+          <div class="detail-icon">📍</div>
+          <div>
+            <div class="detail-key">Head Office</div>
+            <div class="detail-val">HQ1 Anunsah Clottey Street<br>Kaneshie Market, Accra, Ghana</div>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-icon">📞</div>
+          <div>
+            <div class="detail-key">Phone Numbers</div>
+            <div class="detail-val">
+              <a href="tel:+233247298551">+233 24 729 8551</a>
+              <a href="tel:+233504967111">+233 50 496 7111</a>
+            </div>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-icon">🗺️</div>
+          <div>
+            <div class="detail-key">Digital Address (Ghana Post GPS)</div>
+            <div class="detail-val">
+              <span class="digital-badge">📌 GA-262-1811</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-icon">✉️</div>
+          <div>
+            <div class="detail-key">Email</div>
+            <div class="detail-val">
+              <a href="mailto:info@abakcompany.com">info@abakcompany.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map card -->
+    <div class="map-card">
+      <div class="map-frame">
+        <!-- Google Maps embed — replace with your actual embed URL from Google Maps > Share > Embed -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7607!2d-0.2300!3d5.5558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzMnMjAuOSJOIDDCsDEzJzQ4LjAiVw!5e0!3m2!1sen!2sgh!4v1700000000000"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Abak Company Limited location map">
+        </iframe>
+        <!-- Fallback overlay — shown if embed fails; remove once real embed URL is set -->
+        <div class="map-fallback" id="mapFallback" style="display:none;">
+          <span class="pin">📍</span>
+          <p>Kaneshie Market, Accra<br>GA-262-1811</p>
+        </div>
+      </div>
+      <div class="map-footer">
+        <div class="map-footer-text">
+          <strong>Kaneshie Market, Accra</strong>
+          <span>HQ1 Anunsah Clottey Street</span>
+        </div>
+        <a class="btn-directions"
+           href="https://www.google.com/maps/search/Kaneshie+Market+Accra+Ghana"
+           target="_blank" rel="noopener">
+          Get Directions ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- WhatsApp card -->
+    <a class="wa-card"
+       href="https://wa.me/233247298551?text=Hello%20Abak%20Company%20Limited%2C%20I%27d%20like%20to%20place%20an%20order%20or%20make%20an%20enquiry."
+       target="_blank" rel="noopener" aria-label="Chat with Abak on WhatsApp">
+      <div class="wa-icon">💬</div>
+      <div class="wa-text">
+        <strong>Order via WhatsApp</strong>
+        <span>Fast, direct ordering &amp; enquiries</span>
+        <div class="wa-nums">
+          <a href="https://wa.me/233247298551" onclick="event.stopPropagation()">+233 24 729 8551</a>
+          <a href="https://wa.me/233504967111" onclick="event.stopPropagation()">+233 50 496 7111</a>
+        </div>
+      </div>
+    </a>
+
+    <!-- Business hours card -->
+    <div class="hours-card">
+      <div class="hours-head">
+        <div class="dot"></div>
+        <span>Open Now</span>
+      </div>
+      <h4 class="hours-title">Business Hours</h4>
+      <ul class="hours-list">
+        <li><span class="day">Monday – Friday</span><span class="time">8:00 AM – 5:30 PM</span></li>
+        <li><span class="day">Saturday</span><span class="time">8:00 AM – 2:00 PM</span></li>
+        <li><span class="day">Sunday</span><span class="closed">Closed</span></li>
+        <li><span class="day">Public Holidays</span><span class="closed">Closed</span></li>
+      </ul>
+    </div>
+
+  </aside>
+</div>
+
+
+<!-- ══════════ ADDITIONAL CHANNELS ══════════ -->
+<section class="channels-section">
+  <div class="channels-inner">
+    <div class="sec-label"><span>Other Ways to Reach Us</span></div>
+    <h2 class="sec-title">More Ways to Connect</h2>
+    <p class="sec-sub">Choose the channel that's most convenient for you — we're here however you prefer to communicate.</p>
+    <div class="channels-grid">
+
+      <div class="channel-card">
+        <span class="ch-icon">📞</span>
+        <h4>Call Us Directly</h4>
+        <p>Speak directly to a member of our sales team about orders, pricing, or delivery schedules during business hours.</p>
+        <a href="tel:+233247298551" class="ch-link">+233 24 729 8551</a><br>
+        <a href="tel:+233504967111" class="ch-link" style="margin-top:0.3rem; display:inline-block;">+233 50 496 7111</a>
+      </div>
+
+      <div class="channel-card">
+        <span class="ch-icon">✉️</span>
+        <h4>Email Us</h4>
+        <p>For formal enquiries, partnership proposals, or documentation requests — email is the best channel for detailed communication.</p>
+        <a href="mailto:info@abakcompany.com" class="ch-link">info@abakcompany.com</a>
+      </div>
+
+      <div class="channel-card">
+        <span class="ch-icon">🏢</span>
+        <h4>Visit Our Office</h4>
+        <p>You're welcome to visit our head office in Kaneshie. We recommend calling ahead to ensure the right team member is available.</p>
+        <a href="https://www.google.com/maps/search/Kaneshie+Market+Accra+Ghana"
+           target="_blank" rel="noopener" class="ch-link">Get Directions ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-wrap">
+        <div class="footer-logo-slot">
+          <!-- Replace with: <img src="images/abak-logo.png" alt="Abak Logo" /> -->
+          <img src="" alt="Abak Logo" id="footerLogoImg" />
+          <span class="footer-logo-ph">LOGO</span>
+        </div>
+        <span class="footer-wordmark">Abak<em>.</em></span>
+      </a>
+      <p>Abak Company Limited — Premium frozen foods and cold storage solutions for businesses and households across Ghana.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <ul>
+        <li><a href="products.html#poultry">Poultry</a></li>
+        <li><a href="products.html#fish">Fish &amp; Seafood</a></li>
+        <li><a href="products.html#meat">Red Meat</a></li>
+        <li><a href="products.html#bulk">Bulk Orders</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <p>📍 Kaneshie Market-Accra</p>
+      <p>🗺 GA-262-1811</p>
+      <p>📞 <a href="tel:+233247298551" style="color:inherit; text-decoration:none;">+233 24 729 8551</a></p>
+      <p>📞 <a href="tel:+233504967111" style="color:inherit; text-decoration:none;">+233 50 496 7111</a></p>
+      <p>✉ <a href="mailto:info@abakcompany.com" style="color:inherit; text-decoration:none;">info@abakcompany.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Abak Company Limited. All rights reserved.</p>
+    <div class="f-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════ FLOATING WHATSAPP FAB ══════════ -->
+<button class="wa-fab" onclick="openWhatsApp()" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</button>
+
+
+<script>
+  /* ── Enquiry tab switcher ── */
+  function setTab(btn, type) {
+    document.querySelectorAll('.eq-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('enquiryType').value = type;
+  }
+
+  /* ── Form submission (front-end demo) ── */
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      field.style.borderColor = '';
+      if (!field.value.trim() || (field.type === 'checkbox' && !field.checked)) {
+        field.style.borderColor = 'var(--red)';
+        valid = false;
+      }
+    });
+    if (!valid) return;
+    // Show success
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+
+  /* ── WhatsApp helpers ── */
+  function openWhatsApp() {
+    const msg = encodeURIComponent("Hello Abak Company Limited, I'd like to make an enquiry about your products and services.");
+    window.open('https://wa.me/233247298551?text=' + msg, '_blank');
+  }
+
+  /* ── Logo placeholder: hide slot label when real image loads ── */
+  function initLogoSlot(imgId, slotId) {
+    const img = document.getElementById(imgId);
+    const slot = document.getElementById(slotId);
+    if (img && img.src && img.src !== window.location.href) {
+      img.style.display = 'block';
+      if (slot) {
+        slot.querySelectorAll('.slot-label, .slot-icon, .logo-placeholder-text')
+            .forEach(el => el.style.display = 'none');
+      }
+    }
+  }
+  initLogoSlot('headerLogoImg', 'headerLogoSlot');
+  initLogoSlot('mainLogoImg', 'mainLogoSlot');
+  initLogoSlot('footerLogoImg', null);
+
+  /* ── Mobile nav stub ── */
+  function toggleMenu() {
+    alert('Mobile navigation: connect your nav drawer here.');
+  }
+
+  /* ── Scroll-triggered animations ── */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.animationPlayState = 'running';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.channel-card').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      io.observe(el);
+    });
+  }
+</script>
+</body>
+</html>
