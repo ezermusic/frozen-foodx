@@ -133,7 +133,7 @@
     section { padding: 5rem 5%; }
     .section-label {
       display: inline-block;
-      font-size: 0.72rem;
+      font-size: 3rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -883,14 +883,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Suppliers — Abak Company Limited (Section Preview)</title>
+  <title>Our Suppliers — Abak Company Limited</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ═══════════════════════════════════════════════════════
-       PAGE-LEVEL RESET (remove when embedding in sourcing.html)
+       PAGE-LEVEL RESET
     ═══════════════════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -900,7 +900,7 @@
     }
 
     /* ═══════════════════════════════════════════════════════
-       CSS VARIABLES  — match your sourcing.html palette
+       CSS VARIABLES
     ═══════════════════════════════════════════════════════ */
     :root {
       --ink:          #07151e;
@@ -924,10 +924,6 @@
       --lift:         0 14px 44px rgba(11,60,93,0.18);
     }
 
-    /* ═══════════════════════════════════════════════════════
-       SECTION WRAPPER
-       ── Copy everything from here into sourcing.html ──
-    ═══════════════════════════════════════════════════════ */
     .suppliers-section {
       background: var(--cream);
       padding: 6rem 5vw;
@@ -1011,7 +1007,6 @@
       box-shadow: var(--lift);
       border-color: #aac8de;
     }
-    .supplier-card.hidden { display: none; }
 
     /* ── Logo area ── */
     .card-logo-wrap {
@@ -1024,51 +1019,12 @@
     }
     .supplier-card:hover .card-logo-wrap { background: #eef4f8; }
 
-    /* Uploaded logo image */
     .logo-img {
-      max-width: 75%; max-height: 90px;
+      max-width: 75%; 
+      max-height: 90px;
       object-fit: contain;
-      display: none; /* shown via JS once src is valid */
-      transition: transform 0.3s var(--ease);
+      display: block;
     }
-    .supplier-card:hover .logo-img { transform: scale(1.04); }
-
-    /* Placeholder shown when no logo uploaded */
-    .logo-placeholder {
-      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-      pointer-events: none;
-    }
-    .logo-placeholder .lp-icon { font-size: 2.2rem; opacity: 0.22; }
-    .logo-placeholder .lp-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 600; color: var(--muted);
-      letter-spacing: 0.01em; text-align: center; padding: 0 1rem;
-    }
-    .logo-placeholder .lp-hint {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--border);
-    }
-
-    /* Upload button overlay */
-    .logo-upload-btn {
-      position: absolute; inset: 0;
-      display: flex; align-items: flex-end; justify-content: center;
-      padding-bottom: 0.75rem;
-      opacity: 0; transition: opacity 0.2s;
-      background: linear-gradient(to top, rgba(11,60,93,0.18), transparent);
-    }
-    .supplier-card:hover .logo-upload-btn { opacity: 1; }
-    .logo-upload-btn label {
-      font-family: 'Mulish', sans-serif;
-      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.35rem 0.9rem; border-radius: 50px;
-      background: var(--white); color: var(--navy);
-      cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      transition: background 0.15s, transform 0.15s;
-      display: flex; align-items: center; gap: 0.35rem;
-    }
-    .logo-upload-btn label:hover { background: var(--navy); color: var(--white); transform: translateY(-2px); }
-    .logo-upload-btn input[type="file"] { display: none; }
 
     /* Category ribbon */
     .card-ribbon {
@@ -1095,31 +1051,7 @@
     }
     .card-desc {
       font-size: 0.83rem; color: var(--muted); line-height: 1.6;
-      /* Editable inline */
     }
-
-    /* Editable content styles */
-    [contenteditable="true"] {
-      outline: none;
-      border-radius: 4px;
-      padding: 2px 4px;
-      margin: -2px -4px;
-      transition: background 0.15s, box-shadow 0.15s;
-    }
-    [contenteditable="true"]:hover {
-      background: rgba(50,140,193,0.06);
-    }
-    [contenteditable="true"]:focus {
-      background: rgba(50,140,193,0.1);
-      box-shadow: 0 0 0 2px rgba(50,140,193,0.25);
-    }
-    .edit-hint {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: rgba(50,140,193,0.45);
-      margin-top: 0.6rem; display: block;
-      opacity: 0; transition: opacity 0.2s;
-    }
-    .supplier-card:hover .edit-hint { opacity: 1; }
 
     /* ── Card chips ── */
     .card-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.85rem; }
@@ -1127,11 +1059,7 @@
       font-size: 0.68rem; font-weight: 700; letter-spacing: 0.02em;
       padding: 0.22rem 0.6rem; border-radius: 50px;
       border: 1px solid var(--border); background: var(--grey-light); color: var(--muted);
-      cursor: pointer; transition: all 0.15s;
     }
-    .chip:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .chip.cert-chip { border-color: #b2d8c4; background: #eef7f2; color: #1e6b40; }
-    .chip.cert-chip:hover { background: var(--green); color: var(--white); border-color: var(--green); }
 
     /* ── Card footer ── */
     .card-footer {
@@ -1150,32 +1078,6 @@
       display: flex; align-items: center; gap: 0.3rem;
     }
 
-    /* ── ADD NEW SUPPLIER card ── */
-    .add-supplier-card {
-      background: var(--white);
-      border-radius: 18px;
-      border: 2px dashed var(--border);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 0.75rem; min-height: 320px;
-      cursor: pointer; padding: 2rem;
-      transition: border-color 0.2s, background 0.2s;
-      text-align: center;
-    }
-    .add-supplier-card:hover { border-color: var(--blue); background: #f0f7fc; }
-    .add-supplier-card .add-icon {
-      width: 54px; height: 54px; border-radius: 50%;
-      background: var(--grey-light); border: 2px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; transition: background 0.2s, border-color 0.2s;
-    }
-    .add-supplier-card:hover .add-icon { background: #ddeef7; border-color: var(--blue); }
-    .add-supplier-card h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 700; color: var(--navy);
-    }
-    .add-supplier-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; max-width: 180px; }
-
     /* ── Certifications bar ── */
     .certs-bar {
       background: linear-gradient(120deg, var(--ink) 0%, var(--navy) 100%);
@@ -1183,12 +1085,13 @@
       display: flex; align-items: center; justify-content: space-between;
       gap: 2rem; flex-wrap: wrap; margin-bottom: 4rem;
     }
-    .certs-bar-text {}
     .certs-bar-text h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem;
     }
-    .certs-bar-text p { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.55; max-width: 420px; }
+    .certs-bar-text p { 
+      font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.55; max-width: 420px; 
+    }
     .cert-badges-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .cert-badge-item {
       background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
@@ -1201,193 +1104,23 @@
     .cert-badge-item strong { display: block; font-size: 0.82rem; color: var(--white); font-weight: 700; }
     .cert-badge-item span   { font-size: 0.7rem; color: rgba(255,255,255,0.45); }
 
-    /* ── Modal for adding new supplier ── */
-    .modal-overlay {
-      position: fixed; inset: 0;
-      background: rgba(7,21,30,0.65);
-      backdrop-filter: blur(6px);
-      z-index: 1000; opacity: 0; pointer-events: none;
-      transition: opacity 0.3s;
-      display: flex; align-items: center; justify-content: center; padding: 1rem;
-    }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal-box {
-      background: var(--white); border-radius: 20px;
-      width: 100%; max-width: 520px; max-height: 88vh; overflow-y: auto;
-      transform: scale(0.95) translateY(16px); opacity: 0;
-      transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), opacity 0.3s;
-      box-shadow: 0 20px 60px rgba(7,21,30,0.3);
-    }
-    .modal-overlay.open .modal-box { transform: scale(1) translateY(0); opacity: 1; }
-    .modal-head {
-      padding: 1.4rem 1.75rem; border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      background: var(--cream);
-    }
-    .modal-head h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 700; color: var(--navy);
-    }
-    .modal-close {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--border); border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; color: var(--muted); transition: background 0.2s, color 0.2s;
-    }
-    .modal-close:hover { background: var(--navy); color: var(--white); }
-    .modal-body { padding: 1.5rem 1.75rem; }
-    .modal-group { margin-bottom: 1.1rem; }
-    .modal-group label {
-      display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--navy); margin-bottom: 0.38rem;
-    }
-    .modal-group label .req { color: var(--red); }
-    .modal-input, .modal-select, .modal-textarea {
-      width: 100%; padding: 0.72rem 0.95rem;
-      background: var(--grey-light); border: 1.5px solid var(--border);
-      border-radius: 8px; font-family: 'Mulish', sans-serif;
-      font-size: 0.88rem; color: var(--text); outline: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .modal-input:focus, .modal-select:focus, .modal-textarea:focus {
-      border-color: var(--blue); background: var(--white);
-    }
-    .modal-input::placeholder, .modal-textarea::placeholder { color: #9ab4c2; }
-    .modal-textarea { resize: vertical; min-height: 80px; }
-    .modal-select { cursor: pointer; appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23506070' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2.2rem;
-    }
-    .modal-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    /* Logo upload area in modal */
-    .logo-drop-zone {
-      border: 2px dashed var(--border); border-radius: 12px;
-      padding: 1.5rem; text-align: center; cursor: pointer;
-      background: var(--grey-light); transition: border-color 0.2s, background 0.2s;
-      position: relative;
-    }
-    .logo-drop-zone:hover, .logo-drop-zone.dragover {
-      border-color: var(--blue); background: #eef4f8;
-    }
-    .logo-drop-zone .dz-icon { font-size: 1.8rem; margin-bottom: 0.4rem; display: block; opacity: 0.5; }
-    .logo-drop-zone p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-    .logo-drop-zone strong { color: var(--blue); }
-    .logo-drop-zone input[type="file"] { display: none; }
-    .logo-preview {
-      max-width: 160px; max-height: 70px; object-fit: contain;
-      display: none; margin: 0 auto 0.5rem;
-    }
-    .logo-preview.visible { display: block; }
-    .logo-change-hint { font-size: 0.7rem; color: var(--muted); }
-
-    /* Certs checklist */
-    .certs-checklist {
-      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem;
-    }
-    .cert-check {
-      display: flex; align-items: center; gap: 0.4rem; cursor: pointer;
-      padding: 0.3rem 0.75rem; border-radius: 50px;
-      border: 1.5px solid var(--border); background: var(--grey-light);
-      font-size: 0.74rem; font-weight: 700; color: var(--muted);
-      transition: all 0.15s; user-select: none;
-    }
-    .cert-check input { display: none; }
-    .cert-check.checked { background: #e6f5ec; border-color: #b2d8c4; color: #1e6b40; }
-
-    /* Modal actions */
-    .modal-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
-    .btn-add-supplier {
-      flex: 1; padding: 0.85rem;
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-      color: var(--white); border: none; border-radius: 8px;
-      font-family: 'Mulish', sans-serif; font-size: 0.88rem; font-weight: 800;
-      cursor: pointer; letter-spacing: 0.03em;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-    .btn-add-supplier:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-cancel {
-      padding: 0.85rem 1.4rem; background: var(--grey-light); color: var(--muted);
-      border: 1.5px solid var(--border); border-radius: 8px;
-      font-family: 'Mulish', sans-serif; font-size: 0.88rem; font-weight: 700;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .btn-cancel:hover { background: var(--border); }
-
-    /* ── Edit mode toggle ── */
-    .section-controls {
-      display: flex; align-items: center; justify-content: flex-end;
-      gap: 0.75rem; margin-bottom: 1.5rem;
-    }
-    .edit-toggle {
-      display: flex; align-items: center; gap: 0.5rem;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.45rem 1rem; border-radius: 7px;
-      background: var(--grey-light); color: var(--muted); border: 1.5px solid var(--border);
-      cursor: pointer; transition: all 0.2s;
-    }
-    .edit-toggle.active { background: #fff7e0; color: #7a5000; border-color: #e8c870; }
-    .edit-toggle .et-dot {
-      width: 7px; height: 7px; border-radius: 50%; background: var(--border);
-      transition: background 0.2s;
-    }
-    .edit-toggle.active .et-dot { background: #c89420; }
-
-    .export-btn {
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.45rem 1rem; border-radius: 7px;
-      background: var(--navy); color: var(--white); border: none;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .export-btn:hover { background: var(--navy-mid); }
-
     /* ── Responsive ── */
     @media (max-width: 700px) {
       .supplier-grid { grid-template-columns: 1fr; }
       .certs-bar { flex-direction: column; }
       .cert-badges-row { justify-content: flex-start; }
-      .modal-row-2 { grid-template-columns: 1fr; }
     }
-    @media (max-width: 480px) {
-      .supplier-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── Demo page frame ── */
-    .demo-notice {
-      background: var(--navy); color: rgba(255,255,255,0.75);
-      padding: 0.75rem 5vw; font-size: 0.78rem; font-weight: 600;
-      text-align: center; letter-spacing: 0.03em;
-    }
-    .demo-notice strong { color: var(--ice); }
   </style>
 </head>
 <body>
 
-<!-- Demo notice — remove when embedding -->
-<!--<div class="demo-notice">
-  ⚙ <strong>Section Preview</strong> — Paste the <code style="background:rgba(255,255,255,0.12);padding:0.1rem 0.4rem;border-radius:3px;">&lt;!-- SUPPLIERS SECTION START --&gt;</code> block into your <strong>sourcing.html</strong> file.
-</div> -->
-
-<!-- ╔══════════════════════════════════════════════════════════╗
-     ║        SUPPLIERS SECTION — PASTE INTO sourcing.html     ║
-     ╚══════════════════════════════════════════════════════════╝ -->
-
-<!-- SUPPLIERS SECTION START -->
 <section class="suppliers-section" id="our-suppliers">
   <div class="suppliers-inner">
 
     <!-- Section header -->
     <div class="sec-label"><span>Trusted Global Partners</span></div>
     <h2 class="sec-title">Our Supplier Network</h2>
-    <p class="sec-sub">Abak Company Limited works with a curated network of internationally certified producers and exporters across multiple continents. Every supplier on this page has been vetted for quality, food safety compliance and cold-chain capability.</p>
-
-    <!-- Controls row -->
-    <div class="section-controls">
-      <button class="edit-toggle" id="editToggle" onclick="toggleEditMode()" title="Enable editing to update supplier details inline">
-        <span class="et-dot"></span> Edit Mode
-      </button>
-      <button class="export-btn" onclick="exportSuppliers()" title="Export supplier data as JSON">⬇ Export Data</button>
-    </div>
+    <p class="sec-sub">Abak Company Limited works with a curated network of internationally certified producers and exporters across multiple continents. Every supplier on this page has been vetted for quality, food safety compliance, and cold-chain capability.</p>
 
     <!-- Filter tabs -->
     <div class="supplier-filters">
@@ -1401,28 +1134,16 @@
     <!-- ── SUPPLIER GRID ── -->
     <div class="supplier-grid" id="supplierGrid">
 
-      <!-- ─── 1. MINERVA FOODS ─── -->
-      <div class="supplier-card" data-category="meat" id="card-1">
+      <!-- 1. MINERVA FOODS -->
+      <div class="supplier-card" data-category="meat">
         <div class="card-logo-wrap">
-          <div class="logo-placeholder" id="ph-1">
-            <span class="lp-icon">🏭</span>
-            <span class="lp-name">Minerva Foods</span>
-            <span class="lp-hint">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-1" src="" alt="Minerva Foods Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Minerva Foods logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '1')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/minervafoods.png" alt="Minerva Foods Logo" />
           <span class="card-ribbon rib-meat">Red Meat</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-1">Minerva Foods</div>
-          <div class="card-country" id="country-1">🇧🇷 Brazil</div>
-          <div class="card-desc" contenteditable="false" id="desc-1">One of South America's largest beef exporters, Minerva Foods supplies premium quality frozen beef cuts certified to international food safety standards. A cornerstone of our red meat supply chain.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Minerva Foods</div>
+          <div class="card-country">🇧🇷 Brazil</div>
+          <div class="card-desc">One of South America's largest beef exporters, Minerva Foods supplies premium quality frozen beef cuts certified to international food safety standards. A cornerstone of our red meat supply chain.</div>
           <div class="card-chips">
             <span class="chip">Beef</span>
             <span class="chip">Red Meat</span>
@@ -1436,28 +1157,16 @@
         </div>
       </div>
 
-      <!-- ─── 2. MOUNTAIRE ─── -->
-      <div class="supplier-card" data-category="poultry" id="card-2">
+      <!-- 2. MOUNTAIRE -->
+      <div class="supplier-card" data-category="poultry">
         <div class="card-logo-wrap">
-          <div class="logo-placeholder" id="ph-2">
-            <span class="lp-icon">🐔</span>
-            <span class="lp-name">Mountaire</span>
-            <span class="lp-hint">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-2" src="" alt="Mountaire Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Mountaire logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '2')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/mountaire.svg" alt="Mountaire Logo" />
           <span class="card-ribbon rib-poultry">Poultry</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-2">Mountaire</div>
-          <div class="card-country" id="country-2">🇺🇸 United States</div>
-          <div class="card-desc" contenteditable="false" id="desc-2">A leading US-based poultry producer known for premium fresh young chicken. Mountaire's products are produced under strict USDA oversight with consistent quality standards that meet global export requirements.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Mountaire</div>
+          <div class="card-country">🇺🇸 United States</div>
+          <div class="card-desc">A leading US-based poultry producer known for premium fresh young chicken. Mountaire's products are produced under strict USDA oversight with consistent quality standards that meet global export requirements.</div>
           <div class="card-chips">
             <span class="chip">Chicken</span>
             <span class="chip">Poultry</span>
@@ -1471,28 +1180,16 @@
         </div>
       </div>
 
-      <!-- ─── 3. NEOKING FOODS ─── -->
-      <div class="supplier-card" data-category="fish" id="card-3">
+      <!-- 3. NEOKING FOODS -->
+      <div class="supplier-card" data-category="fish">
         <div class="card-logo-wrap">
-          <div class="logo-placeholder" id="ph-3">
-            <span class="lp-icon">🐟</span>
-            <span class="lp-name">NeoKing Foods</span>
-            <span class="lp-hint">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-3" src="" alt="NeoKing Foods Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload NeoKing Foods logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '3')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/neokingfoods.png" alt="NeoKing Foods Logo" />
           <span class="card-ribbon rib-fish">Fish</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-3">NeoKing Foods</div>
-          <div class="card-country" id="country-3">🌍 International</div>
-          <div class="card-desc" contenteditable="false" id="desc-3">A specialist frozen seafood supplier providing a wide range of fish and seafood products to markets across Africa and beyond. NeoKing's quality-assured supply chain ensures consistent product standards on every shipment.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">NeoKing Foods</div>
+          <div class="card-country">🌍 International</div>
+          <div class="card-desc">A specialist frozen seafood supplier providing a wide range of fish and seafood products to markets across Africa and beyond. NeoKing's quality-assured supply chain ensures consistent product standards on every shipment.</div>
           <div class="card-chips">
             <span class="chip">Fish</span>
             <span class="chip">Seafood</span>
@@ -1506,28 +1203,16 @@
         </div>
       </div>
 
-      <!-- ─── 4. NOWACO ─── -->
-      <div class="supplier-card" data-category="multi" id="card-4">
+      <!-- 4. NOWACO -->
+      <div class="supplier-card" data-category="multi">
         <div class="card-logo-wrap">
-          <div class="logo-placeholder" id="ph-4">
-            <span class="lp-icon">🌐</span>
-            <span class="lp-name">Nowaco</span>
-            <span class="lp-hint">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-4" src="" alt="Nowaco Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Nowaco logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '4')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/nowaco.png" alt="Nowaco Logo" />
           <span class="card-ribbon rib-multi">Multi-Category</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-4">Nowaco</div>
-          <div class="card-country" id="country-4">🇨🇿 Czech Republic / Europe</div>
-          <div class="card-desc" contenteditable="false" id="desc-4">One of Central Europe's leading frozen food distributors, Nowaco supplies a broad range of frozen proteins and food products to markets across the globe. Their extensive product range and robust cold-chain infrastructure make them a versatile supply partner.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Nowaco</div>
+          <div class="card-country">🇨🇿 Czech Republic / Europe</div>
+          <div class="card-desc">One of Central Europe's leading frozen food distributors, Nowaco supplies a broad range of frozen proteins and food products to markets across the globe. Their extensive product range and robust cold-chain infrastructure make them a versatile supply partner.</div>
           <div class="card-chips">
             <span class="chip">Poultry</span>
             <span class="chip">Meat</span>
@@ -1541,28 +1226,16 @@
         </div>
       </div>
 
-      <!-- ─── 5. NORWEST FOODS INTERNATIONAL ─── -->
-      <div class="supplier-card" data-category="multi" id="card-5">
+      <!-- 5. NORWEST FOODS INTERNATIONAL -->
+      <div class="supplier-card" data-category="multi">
         <div class="card-logo-wrap">
-          <div class="logo-placeholder" id="ph-5">
-            <span class="lp-icon">🏭</span>
-            <span class="lp-name">NWF Norwest Foods International</span>
-            <span class="lp-hint">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-5" src="" alt="Norwest Foods International Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Norwest Foods International logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '5')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/norwest.png" alt="Norwest Foods International Logo" />
           <span class="card-ribbon rib-multi">Multi-Category</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-5">Norwest Foods International</div>
-          <div class="card-country" id="country-5">🇬🇧 United Kingdom</div>
-          <div class="card-desc" contenteditable="false" id="desc-5">A UK-based international food trading company specialising in the supply of frozen proteins to African and global markets. Norwest's long-standing industry experience and established logistics network make them a reliable link in Abak's supply chain.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Norwest Foods International</div>
+          <div class="card-country">🇬🇧 United Kingdom</div>
+          <div class="card-desc">A UK-based international food trading company specialising in the supply of frozen proteins to African and global markets. Norwest's long-standing industry experience and established logistics network make them a reliable link in Abak's supply chain.</div>
           <div class="card-chips">
             <span class="chip">Frozen Foods</span>
             <span class="chip">Trading</span>
@@ -1575,28 +1248,16 @@
         </div>
       </div>
 
-      <!-- ─── 6. BROONSON INTERNATIONAL ─── -->
-      <div class="supplier-card" data-category="multi" id="card-6">
+      <!-- 6. BROONSON INTERNATIONAL -->
+      <div class="supplier-card" data-category="multi">
         <div class="card-logo-wrap" style="background:#0a1a2e;">
-          <div class="logo-placeholder" id="ph-6">
-            <span class="lp-icon" style="filter:invert(1);">🏢</span>
-            <span class="lp-name" style="color:rgba(255,255,255,0.5);">Broonson International</span>
-            <span class="lp-hint" style="color:rgba(255,255,255,0.25);">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-6" src="" alt="Broonson International Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Broonson International logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '6')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/broonson.avif" alt="Broonson International Logo" />
           <span class="card-ribbon rib-multi">Multi-Category</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-6">Broonson International</div>
-          <div class="card-country" id="country-6">🌍 International</div>
-          <div class="card-desc" contenteditable="false" id="desc-6">An international food trading company with expertise in sourcing and supplying frozen proteins across global markets. Broonson's established supply relationships and quality controls ensure a consistent and reliable product offering for Abak's Ghanaian operations.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Broonson International</div>
+          <div class="card-country">🌍 International</div>
+          <div class="card-desc">An international food trading company with expertise in sourcing and supplying frozen proteins across global markets. Broonson's established supply relationships and quality controls ensure a consistent and reliable product offering for Abak's Ghanaian operations.</div>
           <div class="card-chips">
             <span class="chip">Trading</span>
             <span class="chip">Distribution</span>
@@ -1609,28 +1270,16 @@
         </div>
       </div>
 
-      <!-- ─── 7. VESTEY FOODS ─── -->
-      <div class="supplier-card" data-category="meat" id="card-7">
+      <!-- 7. VESTEY FOODS -->
+      <div class="supplier-card" data-category="meat">
         <div class="card-logo-wrap">
-          <div class="logo-placeholder" id="ph-7">
-            <span class="lp-icon">🥩</span>
-            <span class="lp-name">Vestey Foods</span>
-            <span class="lp-hint">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-7" src="" alt="Vestey Foods Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Vestey Foods logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '7')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/vestey.svg" alt="Vestey Foods Logo" />
           <span class="card-ribbon rib-meat">Red Meat</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-7">Vestey Foods</div>
-          <div class="card-country" id="country-7">🇬🇧 United Kingdom (Since 1897)</div>
-          <div class="card-desc" contenteditable="false" id="desc-7">With a heritage dating back to 1897, Vestey Foods is one of the world's most respected names in meat supply and processing. Their century-long expertise in sourcing, processing, and distributing premium beef and red meat products sets them apart as a truly world-class supplier.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Vestey Foods</div>
+          <div class="card-country">🇬🇧 United Kingdom (Since 1897)</div>
+          <div class="card-desc">With a heritage dating back to 1897, Vestey Foods is one of the world's most respected names in meat supply and processing. Their century-long expertise in sourcing, processing, and distributing premium beef and red meat products sets them apart as a truly world-class supplier.</div>
           <div class="card-chips">
             <span class="chip">Beef</span>
             <span class="chip">Red Meat</span>
@@ -1645,28 +1294,16 @@
         </div>
       </div>
 
-      <!-- ─── 8. MARCO POLO FOODEX ─── -->
-      <div class="supplier-card" data-category="multi" id="card-8">
+      <!-- 8. MARCO POLO FOODEX -->
+      <div class="supplier-card" data-category="multi">
         <div class="card-logo-wrap" style="background:#111111;">
-          <div class="logo-placeholder" id="ph-8">
-            <span class="lp-icon" style="filter:invert(1);">🌐</span>
-            <span class="lp-name" style="color:rgba(255,255,255,0.5);">Marco Polo FoodEx</span>
-            <span class="lp-hint" style="color:rgba(255,255,255,0.25);">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-8" src="" alt="Marco Polo FoodEx Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Marco Polo FoodEx logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '8')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/marcopolofoodex.png" alt="Marco Polo FoodEx Logo" />
           <span class="card-ribbon rib-multi">Multi-Category</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-8">Marco Polo FoodEx</div>
-          <div class="card-country" id="country-8">🌍 International</div>
-          <div class="card-desc" contenteditable="false" id="desc-8">A global frozen food trading company bridging producers and buyers across international markets. Marco Polo FoodEx's expertise in cross-border food logistics and their diverse product catalogue make them a valuable partner in Abak's global sourcing network.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Marco Polo FoodEx</div>
+          <div class="card-country">🌍 International</div>
+          <div class="card-desc">A global frozen food trading company bridging producers and buyers across international markets. Marco Polo FoodEx's expertise in cross-border food logistics and their diverse product catalogue make them a valuable partner in Abak's global sourcing network.</div>
           <div class="card-chips">
             <span class="chip">Poultry</span>
             <span class="chip">Fish</span>
@@ -1680,28 +1317,16 @@
         </div>
       </div>
 
-      <!-- ─── 9. DAWN MEATS ─── -->
-      <div class="supplier-card" data-category="meat" id="card-9">
+      <!-- 9. DAWN MEATS -->
+      <div class="supplier-card" data-category="meat">
         <div class="card-logo-wrap">
-          <div class="logo-placeholder" id="ph-9">
-            <span class="lp-icon">🥩</span>
-            <span class="lp-name">Dawn Meats</span>
-            <span class="lp-hint">Upload logo</span>
-          </div>
-          <img class="logo-img" id="logo-9" src="" alt="Dawn Meats Logo" />
-          <div class="logo-upload-btn">
-            <label title="Upload Dawn Meats logo">
-              📷 Upload Logo
-              <input type="file" accept="image/*" onchange="uploadLogo(this, '9')" />
-            </label>
-          </div>
+          <img class="logo-img" src="images/dawnmeats.webp" alt="Dawn Meats Logo" />
           <span class="card-ribbon rib-meat">Red Meat</span>
         </div>
         <div class="card-body">
-          <div class="card-supplier-name" contenteditable="false" id="name-9">Dawn Meats</div>
-          <div class="card-country" id="country-9">🇮🇪 Ireland / UK</div>
-          <div class="card-desc" contenteditable="false" id="desc-9">One of Europe's leading beef and lamb processors, Dawn Meats supplies premium frozen red meat products to markets globally. Their state-of-the-art processing facilities and rigorous quality management systems ensure consistently high-grade product with full traceability.</div>
-          <span class="edit-hint">✏ Click to edit text</span>
+          <div class="card-supplier-name">Dawn Meats</div>
+          <div class="card-country">🇮🇪 Ireland / UK</div>
+          <div class="card-desc">One of Europe's leading beef and lamb processors, Dawn Meats supplies premium frozen red meat products to markets globally. Their state-of-the-art processing facilities and rigorous quality management systems ensure consistently high-grade product with full traceability.</div>
           <div class="card-chips">
             <span class="chip">Beef</span>
             <span class="chip">Lamb</span>
@@ -1714,13 +1339,6 @@
           <span class="card-since">🌍 Ireland / UK</span>
           <span class="card-cert-badge">✓ Certified Supplier</span>
         </div>
-      </div>
-
-      <!-- ─── ADD NEW SUPPLIER ─── -->
-      <div class="add-supplier-card" id="addNewCard" onclick="openAddModal()" title="Add a new supplier">
-        <div class="add-icon">+</div>
-        <h4>Add New Supplier</h4>
-        <p>Click to add another supplier with logo, details, and certifications</p>
       </div>
 
     </div><!-- /supplier-grid -->
@@ -1755,183 +1373,10 @@
       </div>
     </div>
 
-  </div><!-- /suppliers-inner -->
-</section>
-<!-- SUPPLIERS SECTION END -->
-
-
-<!-- ════════════════════════════════════════
-     ADD SUPPLIER MODAL
-════════════════════════════════════════ -->
-<div class="modal-overlay" id="addModal">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h3>Add New Supplier</h3>
-      <button class="modal-close" onclick="closeAddModal()">✕</button>
-    </div>
-    <div class="modal-body">
-
-      <!-- Logo upload -->
-      <div class="modal-group">
-        <label>Supplier Logo</label>
-        <div class="logo-drop-zone" id="dropZone" onclick="document.getElementById('modalLogoInput').click()">
-          <img class="logo-preview" id="modalLogoPreview" src="" alt="Logo preview" />
-          <span class="dz-icon">🖼</span>
-          <p><strong>Click to upload</strong> or drag &amp; drop your logo here<br>PNG, JPG, SVG — max 2MB</p>
-          <span class="logo-change-hint" id="logoChangeHint" style="display:none;">Click to change logo</span>
-          <input type="file" id="modalLogoInput" accept="image/*" onchange="previewModalLogo(this)" />
-        </div>
-      </div>
-
-      <div class="modal-row-2">
-        <div class="modal-group">
-          <label>Supplier Name <span class="req">*</span></label>
-          <input type="text" class="modal-input" id="m-name" placeholder="e.g. Minerva Foods" />
-        </div>
-        <div class="modal-group">
-          <label>Country of Origin <span class="req">*</span></label>
-          <input type="text" class="modal-input" id="m-country" placeholder="e.g. 🇧🇷 Brazil" />
-        </div>
-      </div>
-
-      <div class="modal-row-2">
-        <div class="modal-group">
-          <label>Product Category <span class="req">*</span></label>
-          <select class="modal-select" id="m-category">
-            <option value="poultry">🍗 Poultry</option>
-            <option value="fish">🐟 Fish &amp; Seafood</option>
-            <option value="meat">🥩 Red Meat</option>
-            <option value="multi" selected>🌍 Multi-Category</option>
-          </select>
-        </div>
-        <div class="modal-group">
-          <label>Year Established</label>
-          <input type="text" class="modal-input" id="m-since" placeholder="e.g. 1985" />
-        </div>
-      </div>
-
-      <div class="modal-group">
-        <label>Supplier Description <span class="req">*</span></label>
-        <textarea class="modal-textarea" id="m-desc" placeholder="Brief description of this supplier — what they supply, where they operate, and why they are a trusted partner for Abak..."></textarea>
-      </div>
-
-      <div class="modal-group">
-        <label>Product Tags <small style="font-weight:500;letter-spacing:0;text-transform:none;">(comma-separated)</small></label>
-        <input type="text" class="modal-input" id="m-tags" placeholder="e.g. Beef, Red Meat, Pork" />
-      </div>
-
-      <div class="modal-group">
-        <label>Certifications</label>
-        <div class="certs-checklist" id="certsChecklist">
-          <label class="cert-check" onclick="toggleCert(this)"><input type="checkbox" value="HACCP" /> ✓ HACCP</label>
-          <label class="cert-check" onclick="toggleCert(this)"><input type="checkbox" value="ISO 22000" /> ✓ ISO 22000</label>
-          <label class="cert-check" onclick="toggleCert(this)"><input type="checkbox" value="USDA" /> ✓ USDA</label>
-          <label class="cert-check" onclick="toggleCert(this)"><input type="checkbox" value="EU Approved" /> ✓ EU Approved</label>
-          <label class="cert-check" onclick="toggleCert(this)"><input type="checkbox" value="BRC" /> ✓ BRC</label>
-          <label class="cert-check" onclick="toggleCert(this)"><input type="checkbox" value="Halal" /> ✓ Halal</label>
-        </div>
-      </div>
-
-      <div class="modal-group">
-        <label>Logo Background Colour</label>
-        <div style="display:flex;gap:0.5rem;align-items:center;">
-          <input type="color" id="m-bg-color" value="#edf2f6" style="width:40px;height:36px;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;padding:2px;" />
-          <span style="font-size:0.8rem;color:var(--muted);">Use dark backgrounds for white-text logos (e.g. Broonson, Marco Polo)</span>
-        </div>
-      </div>
-
-      <div class="modal-actions">
-        <button class="btn-add-supplier" onclick="addNewSupplier()">Add Supplier to Page</button>
-        <button class="btn-cancel" onclick="closeAddModal()">Cancel</button>
-      </div>
-    </div>
   </div>
-</div>
+</section>
 
-
-<!-- ════════════════════════════════════════
-     SCRIPTS
-════════════════════════════════════════ -->
 <script>
-  /* ── Supplier data store (mirrors DOM) ── */
-  let supplierData = [
-    { id: '1', name: 'Minerva Foods',             country: '🇧🇷 Brazil',              category: 'meat',    since: '',      logoSrc: '', desc: '', tags: ['Beef','Red Meat'], certs: ['HACCP','EU Approved'] },
-    { id: '2', name: 'Mountaire',                 country: '🇺🇸 United States',        category: 'poultry', since: '',      logoSrc: '', desc: '', tags: ['Chicken','Poultry'], certs: ['USDA Certified','HACCP'] },
-    { id: '3', name: 'NeoKing Foods',             country: '🌍 International',         category: 'fish',    since: '',      logoSrc: '', desc: '', tags: ['Fish','Seafood'], certs: ['ISO 22000','HACCP'] },
-    { id: '4', name: 'Nowaco',                    country: '🇨🇿 Czech Republic/Europe', category: 'multi',   since: '',      logoSrc: '', desc: '', tags: ['Poultry','Meat','Fish'], certs: ['EU Certified'] },
-    { id: '5', name: 'Norwest Foods International',country: '🇬🇧 United Kingdom',      category: 'multi',   since: '',      logoSrc: '', desc: '', tags: ['Frozen Foods','Trading'], certs: ['UK/EU Standards'] },
-    { id: '6', name: 'Broonson International',    country: '🌍 International',         category: 'multi',   since: '',      logoSrc: '', desc: '', tags: ['Trading','Distribution'], certs: ['International Standards'] },
-    { id: '7', name: 'Vestey Foods',              country: '🇬🇧 United Kingdom',       category: 'meat',    since: '1897',  logoSrc: '', desc: '', tags: ['Beef','Red Meat'], certs: ['HACCP','BRC Certified'] },
-    { id: '8', name: 'Marco Polo FoodEx',         country: '🌍 International',         category: 'multi',   since: '',      logoSrc: '', desc: '', tags: ['Poultry','Fish','Meat'], certs: ['International Certified'] },
-    { id: '9', name: 'Dawn Meats',                country: '🇮🇪 Ireland / UK',         category: 'meat',    since: '',      logoSrc: '', desc: '', tags: ['Beef','Lamb','Red Meat'], certs: ['BRC Grade AA','HACCP'] },
-  ];
-
-  let nextId = 10;
-  let editMode = false;
-  let newLogoDataUrl = '';
-
-  /* ── LOGO UPLOAD (on existing cards) ── */
-  function uploadLogo(input, id) {
-    if (!input.files || !input.files[0]) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const src = e.target.result;
-      const img = document.getElementById('logo-' + id);
-      const ph  = document.getElementById('ph-' + id);
-      if (img) {
-        img.src = src;
-        img.style.display = 'block';
-      }
-      if (ph) ph.style.display = 'none';
-      const s = supplierData.find(x => x.id === id);
-      if (s) s.logoSrc = src;
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-
-  /* ── EDIT MODE TOGGLE ── */
-  function toggleEditMode() {
-    editMode = !editMode;
-    const btn = document.getElementById('editToggle');
-    btn.classList.toggle('active', editMode);
-    btn.innerHTML = editMode
-      ? '<span class="et-dot"></span> Editing ON'
-      : '<span class="et-dot"></span> Edit Mode';
-
-    document.querySelectorAll('[contenteditable]').forEach(el => {
-      el.contentEditable = editMode ? 'true' : 'false';
-    });
-
-    if (!editMode) {
-      // Save edits back to data store
-      supplierData.forEach(s => {
-        const nEl = document.getElementById('name-' + s.id);
-        const dEl = document.getElementById('desc-' + s.id);
-        const cEl = document.getElementById('country-' + s.id);
-        if (nEl) s.name    = nEl.textContent.trim();
-        if (dEl) s.desc    = dEl.textContent.trim();
-        if (cEl) s.country = cEl.textContent.trim();
-      });
-      showSaveToast();
-    }
-  }
-
-  function showSaveToast() {
-    const toast = document.createElement('div');
-    toast.textContent = '✓ Changes saved';
-    Object.assign(toast.style, {
-      position: 'fixed', bottom: '1.5rem', left: '50%',
-      transform: 'translateX(-50%)',
-      background: '#1a8c60', color: '#fff', padding: '0.65rem 1.5rem',
-      borderRadius: '50px', fontFamily: 'Mulish, sans-serif',
-      fontSize: '0.82rem', fontWeight: '700', zIndex: '9999',
-      boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
-      animation: 'none', transition: 'opacity 0.3s'
-    });
-    document.body.appendChild(toast);
-    setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 400); }, 2400);
-  }
-
   /* ── FILTER ── */
   function filterSuppliers(cat, btn) {
     document.querySelectorAll('.sf-btn').forEach(b => b.classList.remove('active'));
@@ -1939,167 +1384,11 @@
 
     document.querySelectorAll('.supplier-card').forEach(card => {
       const match = cat === 'all' || card.dataset.category === cat;
-      card.classList.toggle('hidden', !match);
-    });
-    document.getElementById('addNewCard').style.display = '';
-  }
-
-  /* ── ADD SUPPLIER MODAL ── */
-  function openAddModal() {
-    document.getElementById('addModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    newLogoDataUrl = '';
-  }
-
-  function closeAddModal() {
-    document.getElementById('addModal').classList.remove('open');
-    document.body.style.overflow = '';
-    resetModal();
-  }
-
-  function resetModal() {
-    document.getElementById('m-name').value    = '';
-    document.getElementById('m-country').value = '';
-    document.getElementById('m-desc').value    = '';
-    document.getElementById('m-tags').value    = '';
-    document.getElementById('m-since').value   = '';
-    document.getElementById('m-bg-color').value = '#edf2f6';
-    document.getElementById('modalLogoPreview').classList.remove('visible');
-    document.getElementById('dropZone').querySelector('.dz-icon').style.display = '';
-    document.getElementById('dropZone').querySelector('p').style.display = '';
-    document.getElementById('logoChangeHint').style.display = 'none';
-    document.querySelectorAll('.cert-check').forEach(c => c.classList.remove('checked'));
-    newLogoDataUrl = '';
-  }
-
-  function previewModalLogo(input) {
-    if (!input.files || !input.files[0]) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      newLogoDataUrl = e.target.result;
-      const prev = document.getElementById('modalLogoPreview');
-      prev.src = newLogoDataUrl;
-      prev.classList.add('visible');
-      document.getElementById('dropZone').querySelector('.dz-icon').style.display = 'none';
-      document.getElementById('dropZone').querySelector('p').style.display = 'none';
-      document.getElementById('logoChangeHint').style.display = 'block';
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-
-  function toggleCert(label) {
-    label.classList.toggle('checked');
-  }
-
-  /* ── Drag and drop for modal logo ── */
-  const dz = document.getElementById('dropZone');
-  if (dz) {
-    dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
-    dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
-    dz.addEventListener('drop', e => {
-      e.preventDefault(); dz.classList.remove('dragover');
-      const file = e.dataTransfer.files[0];
-      if (file && file.type.startsWith('image/')) {
-        const inp = document.getElementById('modalLogoInput');
-        const dt  = new DataTransfer();
-        dt.items.add(file); inp.files = dt.files;
-        previewModalLogo(inp);
-      }
+      card.style.display = match ? '' : 'none';
     });
   }
 
-  /* ── BUILD & INJECT NEW CARD ── */
-  function addNewSupplier() {
-    const name    = document.getElementById('m-name').value.trim();
-    const country = document.getElementById('m-country').value.trim();
-    const desc    = document.getElementById('m-desc').value.trim();
-    const cat     = document.getElementById('m-category').value;
-    const since   = document.getElementById('m-since').value.trim();
-    const bgColor = document.getElementById('m-bg-color').value;
-    const tagsRaw = document.getElementById('m-tags').value.trim();
-    const tags    = tagsRaw ? tagsRaw.split(',').map(t => t.trim()).filter(Boolean) : [];
-    const certs   = Array.from(document.querySelectorAll('.cert-check.checked input')).map(i => i.value);
-
-    if (!name || !country || !desc) {
-      alert('Please fill in Supplier Name, Country, and Description before adding.'); return;
-    }
-
-    const id = String(nextId++);
-    const catRibLabel = { poultry: 'Poultry', fish: 'Fish', meat: 'Red Meat', multi: 'Multi-Category' }[cat];
-    const catRibClass = { poultry: 'rib-poultry', fish: 'rib-fish', meat: 'rib-meat', multi: 'rib-multi' }[cat];
-    const isDark = isDarkColor(bgColor);
-
-    const tagChips  = tags.map(t => `<span class="chip">${t}</span>`).join('');
-    const certChips = certs.map(c => `<span class="chip cert-chip">✓ ${c}</span>`).join('');
-    const footerLeft = since ? `🏛 Est. ${since}` : `🌍 ${country}`;
-
-    const card = document.createElement('div');
-    card.className = 'supplier-card';
-    card.dataset.category = cat;
-    card.id = 'card-' + id;
-    card.style.animationDelay = '0s';
-    card.innerHTML = `
-      <div class="card-logo-wrap" style="background:${bgColor};">
-        <div class="logo-placeholder" id="ph-${id}" ${newLogoDataUrl ? 'style="display:none;"' : ''}>
-          <span class="lp-icon" ${isDark ? 'style="filter:invert(1);"' : ''}>🏭</span>
-          <span class="lp-name" ${isDark ? 'style="color:rgba(255,255,255,0.5);"' : ''}>${name}</span>
-          <span class="lp-hint" ${isDark ? 'style="color:rgba(255,255,255,0.25);"' : ''}>Upload logo</span>
-        </div>
-        <img class="logo-img" id="logo-${id}" src="${newLogoDataUrl}" alt="${name} Logo" ${newLogoDataUrl ? 'style="display:block;"' : ''} />
-        <div class="logo-upload-btn">
-          <label title="Upload ${name} logo">
-            📷 Upload Logo
-            <input type="file" accept="image/*" onchange="uploadLogo(this, '${id}')" />
-          </label>
-        </div>
-        <span class="card-ribbon ${catRibClass}">${catRibLabel}</span>
-      </div>
-      <div class="card-body">
-        <div class="card-supplier-name" contenteditable="false" id="name-${id}">${name}</div>
-        <div class="card-country" id="country-${id}">${country}</div>
-        <div class="card-desc" contenteditable="false" id="desc-${id}">${desc}</div>
-        <span class="edit-hint">✏ Click to edit text</span>
-        <div class="card-chips">${tagChips}${certChips}</div>
-      </div>
-      <div class="card-footer">
-        <span class="card-since">${footerLeft}</span>
-        <span class="card-cert-badge">✓ Certified Supplier</span>
-      </div>`;
-
-    // Insert before the add-new card
-    const grid    = document.getElementById('supplierGrid');
-    const addCard = document.getElementById('addNewCard');
-    grid.insertBefore(card, addCard);
-
-    supplierData.push({ id, name, country, category: cat, since, logoSrc: newLogoDataUrl, desc, tags, certs });
-    closeAddModal();
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    showSaveToast();
-  }
-
-  function isDarkColor(hex) {
-    const r = parseInt(hex.slice(1,3),16);
-    const g = parseInt(hex.slice(3,5),16);
-    const b = parseInt(hex.slice(5,7),16);
-    return (0.299*r + 0.587*g + 0.114*b) < 128;
-  }
-
-  /* ── EXPORT DATA ── */
-  function exportSuppliers() {
-    const json = JSON.stringify(supplierData, null, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement('a');
-    a.href = url; a.download = 'abak-suppliers.json';
-    a.click(); URL.revokeObjectURL(url);
-  }
-
-  /* ── Close modal on overlay click ── */
-  document.getElementById('addModal').addEventListener('click', function(e) {
-    if (e.target === this) closeAddModal();
-  });
-
-  /* ── IntersectionObserver animation trigger ── */
+  /* ── IntersectionObserver for animation ── */
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -2109,12 +1398,16 @@
         }
       });
     }, { threshold: 0.06 });
+
     document.querySelectorAll('.supplier-card').forEach(el => {
       el.style.animationPlayState = 'paused';
       io.observe(el);
     });
   }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
