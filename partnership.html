@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Sourcing & Partnerships | Abak Company Limited</title>
+  <meta name="description" content="Abak Company Limited's international trade fair presence, global supplier engagements, partnership development and industry networking across the frozen foods sector." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0B3C5D;
+      --blue:    #328CC1;
+      --ice:     #D4EAF7;
+      --white:   #FFFFFF;
+      --grey:    #F5F7FA;
+      --dark:    #0d1f2d;
+      --charcoal:#111c26;
+      --gold:    #C9A84C;
+      --gold-lt: #e8c97a;
+      --red:     #D7263D;
+      --green:   #2E8B57;
+      --text:    #1a2e3b;
+      --muted:   #5a7a8a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text);
+      background: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── CURSOR DOT ─── */
+    .cursor-dot {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.12s ease;
+      mix-blend-mode: difference;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(11,60,93,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 0.5rem 1.4rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding-top: 70px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 30%, rgba(50,140,193,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 70%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        linear-gradient(160deg, #080f17 0%, #0d1e2e 50%, #080f17 100%);
+    }
+    /* Animated globe grid lines */
+    .globe-lines {
+      position: absolute;
+      right: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55vw;
+      height: 55vw;
+      max-width: 700px;
+      max-height: 700px;
+      opacity: 0.07;
+    }
+    .globe-lines circle, .globe-lines ellipse, .globe-lines line {
+      stroke: var(--blue);
+      fill: none;
+      stroke-width: 0.8;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 5% 5rem;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 2rem;
+    }
+    .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+    .eyebrow-text {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      color: var(--white);
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.05rem;
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-item { display: flex; flex-direction: column; gap: 0.3rem; }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); letter-spacing: 1px; text-transform: uppercase; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 4rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb .sep { opacity: 0.4; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .tag-line { width: 30px; height: 1px; background: var(--gold); }
+    .tag-text {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .light-heading { color: var(--white); }
+    .dark-heading { color: var(--navy); }
+    .section-body {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      max-width: 580px;
+    }
+    .light-body { color: rgba(255,255,255,0.55); }
+    .dark-body { color: var(--muted); }
+
+    /* ─── A: INTERNATIONAL EXPOSURE ─── */
+    .exposure-section { background: var(--charcoal); }
+    .exposure-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 4rem;
+    }
+    .expo-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 220px 160px;
+      gap: 1rem;
+    }
+    .expo-card {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background: rgba(50,140,193,0.08);
+      border: 1px solid rgba(50,140,193,0.15);
+    }
+    .expo-card.tall { grid-row: span 2; }
+    .expo-card-inner {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.2rem;
+      background: linear-gradient(to top, rgba(8,15,23,0.85) 0%, transparent 60%);
+    }
+    .expo-icon { font-size: 2.5rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-70%); opacity: 0.35; }
+    .expo-label { font-size: 0.72rem; font-weight: 600; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
+    .expo-title { font-size: 0.85rem; color: var(--white); font-weight: 500; margin-top: 0.2rem; }
+    .expo-meta { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
+
+    .expo-list { display: flex; flex-direction: column; gap: 1.5rem; padding-top: 1rem; }
+    .expo-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .expo-item:hover {
+      background: rgba(201,168,76,0.06);
+      border-color: rgba(201,168,76,0.2);
+    }
+    .expo-item-icon {
+      width: 44px; height: 44px;
+      border-radius: 6px;
+      background: rgba(201,168,76,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .expo-item-text h4 { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+    .expo-item-text p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+    /* ─── B: SUPPLIER ENGAGEMENTS ─── */
+    .engage-section { background: var(--dark); }
+    .engage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 4rem;
+    }
+    .engage-cell {
+      background: var(--dark);
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: background 0.25s;
+    }
+    .engage-cell:hover { background: rgba(50,140,193,0.06); }
+    .engage-cell::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 2rem; right: 2rem;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .engage-cell:hover::after { transform: scaleX(1); }
+    .engage-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      color: rgba(201,168,76,0.15);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .engage-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+    .engage-cell h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
+    .engage-cell p { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+    .engage-feature {
+      margin-top: 3rem;
+      background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(50,140,193,0.08) 100%);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px;
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .engage-feature h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .engage-feature p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 500px; }
+    .feature-badge {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .feature-badge span { display: block; font-size: 1.4rem; margin-bottom: 0.3rem; }
+
+    /* ─── C: PARTNERSHIP DEVELOPMENT ─── */
+    .partner-section { background: var(--charcoal); }
+    .partner-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+    .partner-visual {
+      position: relative;
+      min-height: 420px;
+    }
+    .partner-circle {
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.2);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .partner-circle.c2 {
+      width: 240px; height: 240px;
+      border-color: rgba(50,140,193,0.25);
+      animation: spin-slow 30s linear infinite;
+    }
+    .partner-circle.c3 {
+      width: 140px; height: 140px;
+      background: rgba(201,168,76,0.06);
+      border-color: rgba(201,168,76,0.4);
+    }
+    @keyframes spin-slow {
+      from { transform: translate(-50%,-50%) rotate(0deg); }
+      to   { transform: translate(-50%,-50%) rotate(360deg); }
+    }
+    .orbit-dot {
+      width: 10px; height: 10px;
+      background: var(--blue);
+      border-radius: 50%;
+      position: absolute;
+      top: -5px; left: 50%;
+      transform: translateX(-50%);
+    }
+    .center-icon {
+      font-size: 2.8rem;
+      z-index: 2;
+      position: relative;
+    }
+    .partner-nodes {
+      position: absolute; inset: 0;
+    }
+    .pnode {
+      position: absolute;
+      background: rgba(8,15,23,0.9);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 8px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .pnode.n1 { top: 5%; left: 50%; transform: translateX(-50%); }
+    .pnode.n2 { bottom: 5%; left: 50%; transform: translateX(-50%); }
+    .pnode.n3 { left: 0%; top: 50%; transform: translateY(-50%); }
+    .pnode.n4 { right: 0%; top: 50%; transform: translateY(-50%); }
+
+    .partner-content { display: flex; flex-direction: column; gap: 1.5rem; }
+    .partner-item {
+      padding: 1.5rem;
+      border-left: 3px solid transparent;
+      background: rgba(255,255,255,0.03);
+      border-radius: 0 8px 8px 0;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .partner-item:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+    .partner-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.4rem; }
+    .partner-item p { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+    /* ─── D: INDUSTRY NETWORKING ─── */
+    .network-section { background: var(--dark); }
+    .network-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+    .network-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .net-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .net-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,168,76,0.3);
+    }
+    .net-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--blue));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .net-card:hover::before { transform: scaleX(1); }
+    .net-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+    .net-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
+    .net-card p { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+    /* ─── VISUAL GALLERY ─── */
+    .gallery-section { background: var(--charcoal); }
+    .gallery-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 3rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 200px 200px;
+      gap: 1rem;
+    }
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background: rgba(50,140,193,0.06);
+      border: 1px solid rgba(50,140,193,0.12);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover { transform: scale(1.02); z-index: 2; }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(50,140,193,0.1), rgba(201,168,76,0.05));
+      position: relative;
+    }
+    .gallery-placeholder .big-icon { font-size: 2.5rem; opacity: 0.4; }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,15,23,0.9) 0%, transparent 50%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .gallery-caption { font-size: 0.8rem; color: var(--white); font-weight: 500; }
+    .gallery-meta { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 0.15rem; }
+
+    /* ─── ACHIEVEMENTS TICKER ─── */
+    .ticker-section {
+      background: var(--gold);
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 3rem;
+      animation: ticker 20s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: flex; align-items: center; gap: 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--dark);
+      flex-shrink: 0;
+    }
+    .ticker-dot { width: 6px; height: 6px; background: var(--dark); border-radius: 50%; opacity: 0.4; }
+
+    /* ─── CTA ─── */
+    .cta-section { background: var(--dark); padding: 6rem 5%; }
+    .cta-box {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(50,140,193,0.06) 100%);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 3.5rem 4rem;
+    }
+    .cta-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+    .cta-box p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 480px; }
+    .cta-actions { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-end; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 0.9rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      padding: 0.9rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── CONTACT BAR ─── */
+    .contact-bar {
+      background: var(--charcoal);
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .contact-item {
+      display: flex; align-items: center; gap: 0.7rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+    }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: rgba(201,168,76,0.1);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+    }
+    .contact-item a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .contact-item a:hover { color: var(--gold-lt); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #050b11;
+      color: rgba(255,255,255,0.35);
+      padding: 3rem 5% 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-brand p { font-size: 0.8rem; line-height: 1.7; max-width: 220px; }
+    footer h4 {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    footer ul a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    footer ul a:hover { color: var(--gold); }
+    .footer-contact-list li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.82rem; margin-bottom: 0.5rem; }
+    .footer-contact-list a { color: var(--gold); text-decoration: none; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ─── FLOAT WHATSAPP ─── */
+    .float-wa {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      width: 54px; height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      z-index: 200;
+      animation: pulse-wa 2.5s infinite;
+    }
+    @keyframes pulse-wa {
+      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.35); }
+      50%      { box-shadow: 0 4px 32px rgba(37,211,102,0.65); }
+    }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      .exposure-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .expo-gallery { grid-template-rows: 180px 140px; }
+      .partner-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .partner-visual { min-height: 320px; }
+      .partner-circle { width: 260px; height: 260px; }
+      .partner-circle.c2 { width: 180px; height: 180px; }
+      .partner-circle.c3 { width: 110px; height: 110px; }
+      .network-header { grid-template-columns: 1fr; gap: 2rem; }
+      .gallery-intro { grid-template-columns: 1fr; gap: 2rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, 160px); }
+      .gallery-item.wide { grid-column: span 1; }
+      .gallery-item.tall { grid-row: span 1; }
+      .engage-grid { grid-template-columns: 1fr; }
+      .cta-box { grid-template-columns: 1fr; }
+      .cta-actions { align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .engage-feature { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 70px; left: 0; right: 0;
+        background: rgba(8,15,23,0.97);
+        padding: 1.5rem 5%; gap: 1.2rem;
+        border-top: 1px solid rgba(201,168,76,0.1);
+      }
+      .hero-stats { gap: 2rem; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(6, 150px); }
+      .footer-grid { grid-template-columns: 1fr; }
+      section { padding: 4rem 5%; }
+      .cta-box { padding: 2.5rem 2rem; }
+    }
+	
+	
+.net-logo img {
+  width: 45%;
+}
+
+	
+  </style>
+</head>
+<body>
+
+  <!-- CURSOR DOT -->
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Abak<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+	  <!--<a href="shop.html">Shop</a> -->
+      <li><a href="sourcing.html">Suppliers</a></li>
+      <li><a href="#" class="active">Global Partnership</a></li>
+	  <a href="faq.html">FAQs</a>
+      <li><a href="contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+233247298552">Contact Us</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <!-- Globe SVG decoration -->
+    <svg class="globe-lines" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="190"/>
+      <ellipse cx="200" cy="200" rx="190" ry="70"/>
+      <ellipse cx="200" cy="200" rx="190" ry="130"/>
+      <ellipse cx="200" cy="200" rx="70" ry="190"/>
+      <ellipse cx="200" cy="200" rx="130" ry="190"/>
+      <line x1="10" y1="200" x2="390" y2="200"/>
+      <line x1="200" y1="10" x2="200" y2="390"/>
+      <circle cx="200" cy="200" r="130"/>
+      <circle cx="200" cy="200" r="70"/>
+    </svg>
+
+    <div class="hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span>Global Sourcing &amp; Partnerships</span>
+      </div>
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">International Presence</span>
+      </div>
+      <h1>Where Ghana Meets<br/>the <em>World's</em> Best.</h1>
+      <p class="hero-sub">Abak Company Limited connects Ghanaian consumers and businesses to premium frozen foods through internationally forged relationships, trade fair engagements, and rigorous global sourcing partnerships.</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">7+</span>
+          <span class="stat-label">Countries Sourced From</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Product Categories</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1</span>
+          <span class="stat-label">Chamber Membership</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Growing Network</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker-section">
+    <div class="ticker-track">
+      <!-- Duplicated for seamless loop -->
+      <span class="ticker-item"><span>🌍</span> Trade Fair Participation <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>🤝</span> Supplier Engagements <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>🏛️</span> AmCham Ghana Member <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>❄️</span> Cold-Chain Certified <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>🌐</span> Global Sourcing Network <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>📦</span> Bulk &amp; Wholesale Supply <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>🌍</span> Trade Fair Participation <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>🤝</span> Supplier Engagements <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>🏛️</span> AmCham Ghana Member <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>❄️</span> Cold-Chain Certified <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>🌐</span> Global Sourcing Network <span class="ticker-dot"></span></span>
+      <span class="ticker-item"><span>📦</span> Bulk &amp; Wholesale Supply <span class="ticker-dot"></span></span>
+    </div>
+  </div>
+
+  <!-- A: INTERNATIONAL EXPOSURE -->
+  <section class="exposure-section">
+    <div class="section-inner">
+      <div class="section-tag reveal">
+        <div class="tag-line"></div>
+        <span class="tag-text">Section A</span>
+      </div>
+      <h2 class="section-heading light-heading reveal">International Exposure</h2>
+
+      <div class="exposure-layout">
+        <!-- Gallery -->
+        <div class="expo-gallery reveal-left">
+          <div class="expo-card tall">
+            <div class="expo-card-inner">
+              <div class="expo-icon">🌐</div>
+              <div class="expo-label">Trade Fair</div>
+              <div class="expo-title">International Food Exhibition</div>
+              <div class="expo-meta">Europe · Annual Attendance</div>
+            </div>
+          </div>
+          <div class="expo-card">
+            <div class="expo-card-inner">
+              <div class="expo-icon">🏭</div>
+              <div class="expo-label">Exhibition</div>
+              <div class="expo-title">Frozen Foods Expo</div>
+              <div class="expo-meta">Asia · Regional Event</div>
+            </div>
+          </div>
+          <div class="expo-card">
+            <div class="expo-card-inner">
+              <div class="expo-icon">🤝</div>
+              <div class="expo-label">Supplier Meeting</div>
+              <div class="expo-title">Bilateral Trade Talks</div>
+              <div class="expo-meta">Americas · Ongoing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- List -->
+        <div class="expo-list reveal-right">
+          <p class="section-body light-body" style="margin-bottom:1rem;">
+            Abak Company Limited actively participates in international food trade fairs and exhibitions to connect with world-class suppliers, stay ahead of industry trends, and position the company as a serious global player.
+          </p>
+          <div class="expo-item">
+            <div class="expo-item-icon">🎪</div>
+            <div class="expo-item-text">
+              <h4>Food Trade Fairs</h4>
+              <p>Annual participation in major international food and frozen-goods trade fairs across Europe, Asia, and the Americas.</p>
+            </div>
+          </div>
+          <div class="expo-item">
+            <div class="expo-item-icon">🍽️</div>
+            <div class="expo-item-text">
+              <h4>Food Exhibitions</h4>
+              <p>Attendance at food exhibitions showcasing the latest innovations in protein, seafood, and cold-chain technology.</p>
+            </div>
+          </div>
+          <div class="expo-item">
+            <div class="expo-item-icon">🗓️</div>
+            <div class="expo-item-text">
+              <h4>Supplier Meetings</h4>
+              <p>Structured face-to-face meetings with existing and prospective suppliers during international events.</p>
+            </div>
+          </div>
+          <div class="expo-item">
+            <div class="expo-item-icon">📸</div>
+            <div class="expo-item-text">
+              <h4>Documented Events</h4>
+              <p>All trade engagements are documented with images, captions, dates, and locations for full transparency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B: SUPPLIER ENGAGEMENTS -->
+  <section class="engage-section">
+    <div class="section-inner">
+      <div class="section-tag reveal">
+        <div class="tag-line"></div>
+        <span class="tag-text">Section B</span>
+      </div>
+      <h2 class="section-heading light-heading reveal">Supplier Engagements</h2>
+      <p class="section-body light-body reveal" style="margin-bottom:0;">
+        Our relationships with suppliers go far beyond transactions. We invest time in building deep, trust-based partnerships through structured engagements.
+      </p>
+
+      <div class="engage-grid reveal">
+        <div class="engage-cell">
+          <div class="engage-num">01</div>
+          <div class="engage-icon">🤝</div>
+          <h3>Direct Supplier Meetings</h3>
+          <p>In-person meetings with key suppliers to discuss capacity, quality standards, pricing, and long-term supply agreements.</p>
+        </div>
+        <div class="engage-cell">
+          <div class="engage-num">02</div>
+          <div class="engage-icon">🔬</div>
+          <h3>Quality Discussions</h3>
+          <p>Dedicated sessions on product specifications, packaging standards, microbiological limits, and cold-chain requirements.</p>
+        </div>
+        <div class="engage-cell">
+          <div class="engage-num">03</div>
+          <div class="engage-icon">🏭</div>
+          <h3>Business Visits</h3>
+          <p>On-site visits to supplier facilities and processing plants to personally verify operational standards and hygiene practices.</p>
+        </div>
+        <div class="engage-cell">
+          <div class="engage-num">04</div>
+          <div class="engage-icon">📋</div>
+          <h3>Compliance Reviews</h3>
+          <p>Regular review of certificates, export documentation, and supplier audit reports to ensure continued compliance.</p>
+        </div>
+        <div class="engage-cell">
+          <div class="engage-num">05</div>
+          <div class="engage-icon">📈</div>
+          <h3>Performance Tracking</h3>
+          <p>Ongoing monitoring of supplier performance metrics including delivery reliability, quality consistency, and responsiveness.</p>
+        </div>
+        <div class="engage-cell">
+          <div class="engage-num">06</div>
+          <div class="engage-icon">🌐</div>
+          <h3>New Supplier Scouting</h3>
+          <p>Proactive search for new, emerging suppliers with competitive pricing and superior product quality.</p>
+        </div>
+      </div>
+
+      <div class="engage-feature reveal">
+        <div>
+          <h3>Our Supplier Engagement Philosophy</h3>
+          <p>We believe the best products come from the best relationships. By investing in genuine supplier partnerships — not just placing orders — Abak Company Limited secures preferential pricing, priority allocation, and faster response times for our customers in Ghana.</p>
+        </div>
+        <div class="feature-badge">
+          <span>🤝</span>
+          Trust-Based<br/>Partnerships
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C: PARTNERSHIP DEVELOPMENT -->
+  <section class="partner-section">
+    <div class="section-inner">
+      <div class="section-tag reveal">
+        <div class="tag-line"></div>
+        <span class="tag-text">Section C</span>
+      </div>
+      <h2 class="section-heading light-heading reveal">Partnership Development</h2>
+
+      <div class="partner-layout">
+        <!-- Orbital visual -->
+        <div class="partner-visual reveal-left">
+          <div class="partner-circle">
+          </div>
+          <div class="partner-circle c2">
+            <div class="orbit-dot"></div>
+          </div>
+          <div class="partner-circle c3">
+            <div class="center-icon">🌍</div>
+          </div>
+          <div class="partner-nodes">
+            <div class="pnode n1">🇺🇸 USA Poultry</div>
+            <div class="pnode n2">🇳🇴 Norway Seafood</div>
+            <div class="pnode n3">🇧🇷 Brazil Meat</div>
+            <div class="pnode n4">🇳🇱 EU Standards</div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="partner-content reveal-right">
+          <p class="section-body light-body" style="margin-bottom:1rem;">
+            Partnership development is at the heart of Abak's long-term growth strategy. We actively pursue strategic alliances that benefit our suppliers, our business, and ultimately our Ghanaian customers.
+          </p>
+          <div class="partner-item">
+            <h4>Distribution Discussions</h4>
+            <p>Ongoing discussions with international suppliers on becoming their preferred distributor and exclusive partner in Ghana and West Africa.</p>
+          </div>
+          <div class="partner-item">
+            <h4>Collaboration Meetings</h4>
+            <p>Regular bilateral meetings exploring joint promotions, co-branding opportunities, and shared marketing initiatives in the Ghanaian market.</p>
+          </div>
+          <div class="partner-item">
+            <h4>Exclusive Agreements</h4>
+            <p>Negotiation of exclusive or preferred-supplier agreements to secure consistent supply and pricing advantages for our customers.</p>
+          </div>
+          <div class="partner-item">
+            <h4>Market Entry Support</h4>
+            <p>Helping international suppliers understand the Ghanaian regulatory landscape, consumer preferences, and market dynamics.</p>
+          </div>
+          <div class="partner-item">
+            <h4>Long-Term Supply Contracts</h4>
+            <p>Structured multi-year contracts that ensure supply security and volume guarantees for both parties.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D: INDUSTRY NETWORKING -->
+  <section class="network-section">
+    <div class="section-inner">
+      <div class="network-header">
+        <div class="reveal-left">
+          <div class="section-tag">
+            <div class="tag-line"></div>
+            <span class="tag-text">Section D</span>
+          </div>
+          <h2 class="section-heading light-heading">Industry Networking</h2>
+          <p class="section-body light-body">
+            Abak Company Limited maintains an active presence in industry associations and networking events, positioning the company at the forefront of Ghana's frozen foods sector.
+          </p>
+        </div>
+        <div class="reveal-right" style="display:flex;flex-direction:column;gap:0.8rem;align-items:flex-end;">
+          <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:1.2rem 1.5rem;text-align:center;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);line-height:1;">🏛️</div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--white);margin-top:0.4rem;">AmCham Ghana</div>
+            <div style="font-size:0.7rem;color:rgba(255,255,255,0.4);margin-top:0.2rem;">Active Member</div>
+          </div>
+          <div style="background:rgba(50,140,193,0.08);border:1px solid rgba(50,140,193,0.2);border-radius:8px;padding:1rem 1.5rem;text-align:center;">
+            <div style="font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;">American Chamber of<br/>Commerce Ghana</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="network-cards">
+        <div class="net-card reveal">
+          <div class="net-logo"><img src="images/amchamgh.png" alt="AmChamGh"></div>
+          <h3>Association Memberships</h3>
+          <p>Active member of the American Chamber of Commerce Ghana (AmCham), connecting Abak to a network of leading international and local businesses.</p>
+        </div>
+        <div class="net-card reveal">
+          <div class="net-icon">🍽️</div>
+          <h3>Food Industry Bodies</h3>
+          <p>Participation in food industry associations and trade groups relevant to the frozen foods, cold-chain, and import/export sectors in Ghana.</p>
+        </div>
+        <div class="net-card reveal">
+          <div class="net-icon">📅</div>
+          <h3>Business Networking Events</h3>
+          <p>Regular attendance at industry dinners, forums, and B2B matchmaking events to expand Abak's reach and build new business relationships.</p>
+        </div>
+        <div class="net-card reveal">
+          <div class="net-icon">🎤</div>
+          <h3>Industry Forums</h3>
+          <p>Engagement in panel discussions, trade forums, and conferences where frozen food supply chain and food safety issues are addressed.</p>
+        </div>
+        <div class="net-card reveal">
+          <div class="net-icon">🌍</div>
+          <h3>West Africa Trade Network</h3>
+          <p>Growing connections within West Africa to explore regional distribution opportunities and cross-border supply arrangements.</p>
+        </div>
+        <div class="net-card reveal">
+          <div class="net-icon">🤜</div>
+          <h3>Peer Collaboration</h3>
+          <p>Collaborative relationships with complementary businesses — logistics partners, cold storage operators, and food processors across Ghana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISUAL GALLERY -->
+  <section class="gallery-section">
+    <div class="section-inner">
+      <div class="gallery-intro">
+        <div class="reveal-left">
+          <div class="section-tag">
+            <div class="tag-line"></div>
+            <span class="tag-text">Visual Gallery</span>
+          </div>
+          <h2 class="section-heading light-heading">Events &amp; Moments</h2>
+          <p class="section-body light-body">
+            Each image tells a story of Abak's commitment to building world-class partnerships. From trade fair floors to supplier boardrooms, we show up where it matters.
+          </p>
+        </div>
+        <div class="reveal-right" style="display:flex;flex-direction:column;gap:0.6rem;">
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.6;">
+            Upload images, videos, event captions, dates, and locations to bring this gallery to life. Each card is ready to be populated with real event media.
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+            <span style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);border-radius:20px;padding:0.3rem 0.8rem;font-size:0.7rem;color:var(--gold);font-weight:600;">Trade Fairs</span>
+            <span style="background:rgba(50,140,193,0.1);border:1px solid rgba(50,140,193,0.2);border-radius:20px;padding:0.3rem 0.8rem;font-size:0.7rem;color:var(--blue);font-weight:600;">Supplier Visits</span>
+            <span style="background:rgba(46,139,87,0.1);border:1px solid rgba(46,139,87,0.2);border-radius:20px;padding:0.3rem 0.8rem;font-size:0.7rem;color:#5dba8a;font-weight:600;">Networking</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <!-- Row 1 -->
+        <div class="gallery-item wide">
+          <div class="gallery-placeholder">
+            <div class="big-icon">🌍</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-tag">Trade Fair</div>
+            <div class="gallery-caption">International Food Expo — Europe</div>
+            <div class="gallery-meta">📅 Add Date &nbsp;·&nbsp; 📍 Add Location</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <div class="big-icon">🤝</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-tag">Supplier Meeting</div>
+            <div class="gallery-caption">Bilateral Supplier Discussion</div>
+            <div class="gallery-meta">📅 Add Date &nbsp;·&nbsp; 📍 Add Location</div>
+          </div>
+        </div>
+        <div class="gallery-item tall">
+          <div class="gallery-placeholder">
+            <div class="big-icon">🏭</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-tag">Business Visit</div>
+            <div class="gallery-caption">Facility Tour — Processing Plant</div>
+            <div class="gallery-meta">📅 Add Date &nbsp;·&nbsp; 📍 Add Location</div>
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <div class="big-icon">🍽️</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-tag">Exhibition</div>
+            <div class="gallery-caption">Frozen Foods Exhibition</div>
+            <div class="gallery-meta">📅 Add Date &nbsp;·&nbsp; 📍 Add Location</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <div class="big-icon">🏛️</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-tag">Networking</div>
+            <div class="gallery-caption">AmCham Ghana Event</div>
+            <div class="gallery-meta">📅 Add Date &nbsp;·&nbsp; 📍 Accra, Ghana</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <div class="big-icon">✍️</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-tag">Partnership</div>
+            <div class="gallery-caption">Agreement Signing</div>
+            <div class="gallery-meta">📅 Add Date &nbsp;·&nbsp; 📍 Add Location</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <div>
+        <h2>Interested in a Partnership with Abak?</h2>
+        <p>Whether you're a supplier looking to enter the Ghanaian market, a distributor seeking a reliable partner, or a business buyer seeking premium frozen products — we'd love to connect.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="tel:+233247298551" class="btn-gold">📞 Call Us Now</a>
+        <a href="https://wa.me/233247298551" class="btn-outline" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:info@abakcompany.com" class="btn-outline">✉️ Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT BAR -->
+  <div class="contact-bar">
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <span>Phone: <a href="tel:+233247298551">+233 (0) 24 729 8551</a></span>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💬</div>
+      <span>WhatsApp: <a href="https://wa.me/233247298551" target="_blank">+233 (0) 247298551</a></span>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <span>Email: <a href="mailto:info@abakcompany.com">info@abakcompany.com</a></span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Abak<span>.</span></div>
+        <p>Premium frozen foods &amp; cold storage solutions. Globally sourced. Locally trusted. Serving Ghana with excellence.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="product.html#poultry">Poultry</a></li>
+          <li><a href="product.html#Fish">Fish &amp; Seafood</a></li>
+          <li><a href="product.html#redmeat">Red Meat</a></li>
+          <li><a href="#">Bulk Orders</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><span>📍</span> Accra, Ghana</li>
+          <li><span>📞</span> <a href="tel:+233247298551">+233 (0) 24 729 8551</a></li>
+          <li><span>💬</span> <a href="https://wa.me/233247298551">WhatsApp Us</a></li>
+          <li><span>✉️</span> <a href="mailto:info@abakcompany.com">info@abakcompany.com</a></li>
+          <li><span>🕐</span> Mon–Sat: 8am – 5pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Abak Company Limited. All rights reserved.</span>
+      <span>
+        <a href="privacy.html#privacy">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="privacy.html#terms">Terms &amp; Conditions</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="float-wa" href="https://wa.me/233247298551" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script>
+    // Cursor dot
+    const dot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      dot.style.left = e.clientX - 4 + 'px';
+      dot.style.top  = e.clientY - 4 + 'px';
+    });
+
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Scroll reveal
+    const allReveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 70);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    allReveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
