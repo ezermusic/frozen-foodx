@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events & Engagements — Abak Company Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #081B29;
+      --navy-dark: #05121d;
+      --ice: #4CC9F0;
+      --ice-light: #64d4ff;
+      --text: #e0f2ff;
+      --muted: #a0b8cc;
+      --cream: #f7f9fb;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Mulish', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(8,27,41,0.98);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(76,201,240,0.2);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--ice);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ice); }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--ice);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--navy-dark);
+      display: none;
+      flex-direction: column;
+      padding-top: 80px;
+      z-index: 999;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu ul {
+      list-style: none;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .mobile-menu a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.25rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(76,201,240,0.15);
+    }
+    .mobile-menu a:hover { color: var(--ice); padding-left: 10px; }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      min-height: 680px;
+      background: linear-gradient(rgba(8,27,41,0.82), rgba(8,27,41,0.88)), url('images/events/hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-content { max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
+    .hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; max-width: 720px; margin: 0 auto; color: var(--muted); }
+
+    section { padding: 6rem 5vw; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header span {
+      color: var(--ice);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .section-header h2 { font-size: clamp(2.4rem, 5vw, 3.4rem); margin: 1rem 0; }
+
+    /* Filters */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      padding: 0.85rem 2rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(76,201,240,0.25);
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--ice);
+      color: #081B29;
+    }
+
+    /* Gallery */
+    .event-group { margin-bottom: 5.5rem; }
+    .event-group h3 { font-size: 1.8rem; margin-bottom: 0.8rem; color: var(--ice-light); }
+    .event-date { color: var(--ice); font-weight: 600; margin-bottom: 2rem; display: block; }
+
+    .gallery-scroll {
+      display: flex;
+      gap: 1.8rem;
+      overflow-x: auto;
+      padding-bottom: 1.8rem;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+    .gallery-scroll::-webkit-scrollbar { height: 8px; }
+    .gallery-scroll::-webkit-scrollbar-thumb { background: var(--ice); border-radius: 10px; }
+
+    .gallery-item {
+      flex: 0 0 420px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(76,201,240,0.15);
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover { transform: scale(1.03); }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: #0a1f2e;
+    }
+    .item-caption {
+      padding: 1.2rem 1.2rem 1.4rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid rgba(76,201,240,0.1);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5,18,29,0.97);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 2rem;
+    }
+    .lightbox-content {
+      max-width: 1100px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 12px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 2.8rem;
+      color: white;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      text-align: center;
+      padding: 5rem 5vw;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #05121d;
+      padding: 4rem 5vw 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .gallery-item { flex: 0 0 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Abak Company</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="sourcing.html">Suppliers</a></li>
+        <li><a href="events.html" style="color:var(--ice); font-weight:700;">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="sourcing.html">Suppliers</a></li>
+      <li><a href="events.html">Events & Engagements</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span style="background:rgba(76,201,240,0.15); color:var(--ice); padding:0.6rem 1.8rem; border-radius:50px; font-size:0.9rem; font-weight:700;">CORPORATE ENGAGEMENTS</span>
+      <h1>Events &amp; Global Partnerships</h1>
+      <p>Showcasing Abak Company Limited’s active participation in the international frozen food industry</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <span>OUR JOURNEY</span>
+      <h2>Events &amp; Supplier Engagements</h2>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterCategory('all')">All Events</button>
+      <button class="filter-btn" onclick="filterCategory('upcoming')">Upcoming Events</button>
+      <button class="filter-btn" onclick="filterCategory('supplier')">Supplier Visits</button>
+      <button class="filter-btn" onclick="filterCategory('expo')">International Expos</button>
+      <button class="filter-btn" onclick="filterCategory('cert')">Certifications</button>
+      <button class="filter-btn" onclick="filterCategory('internal')">Operations</button>
+    </div>
+
+    <div id="eventsContainer">
+
+      <!-- Africa Food Show -->
+      <div class="event-group" data-category="upcoming">
+        <h3>Africa Food Show 2026</h3>
+        <span class="event-date">10th — 12th June, 2026 • Accra, Ghana</span>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/africa-food-show-1.jpg', 'Africa Food Show 2026 - Exhibition Stand')">
+            <img src="images/events/africa-foodshow-2025.jpeg" loading="lazy" alt=""><div class="item-caption">Upcoming Africa Food Show Scheduled for 10th to 12th June, 2026</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('images/events/africa-food-show-2.jpg', 'Africa Food Show 2026 - Team at Booth')">
+            <img src="images/events/africa-food-show-2.jpg" loading="lazy" alt=""><div class="item-caption">Abak Team at the Booth</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supplier Visits -->
+      <div class="event-group" data-category="supplier">
+        <h3>Norwest Foods International (UK) Delegation</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/norwest-delegation-1.jpg', 'Norwest UK Delegation - Meeting')"><img src="images/events/norwest-uk.jpeg" loading="lazy" alt=""><div class="item-caption">Norwest UK visited Abak Company Limited to explore potential business opportunities and strengthen mutual collaboration.</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/norwest-delegation-2.jpg', 'Norwest UK Delegation - Group Photo')"><img src="images/events/norwest-delegation-2.jpg" loading="lazy" alt=""><div class="item-caption">Group Photo</div></div>
+        </div>
+      </div>
+
+      <div class="event-group" data-category="supplier">
+        <h3>ICC Ireland Delegation Visit</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/icc-ireland-1.jpeg', 'ICC Ireland - Office Tour')"><img src="images/events/icc-ireland.jpeg" loading="lazy" alt=""><div class="item-caption">A delegation led by the CEO of ICC Ireland visited Abak Company Limited to engage in strategic discussions on business collaboration and to explore potential partnership opportunities.</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/icc-ireland-2.jpg', 'ICC Ireland - Partnership Discussion')"><img src="images/events/icc-ireland-2.jpg" loading="lazy" alt=""><div class="item-caption">Partnership Discussion</div></div>
+        </div>
+      </div>
+
+      <div class="event-group" data-category="supplier">
+        <h3>Sara Foods Lebanon Delegation</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/sara-foods-1.jpg', 'Sara Foods Lebanon - Arrival')"><img src="images/events/sarafoods-lebanon.jpeg" loading="lazy" alt=""><div class="item-caption">A delegation from Sara Food Lebanon visited Abak Company Limited to explore potential areas of collaboration and strengthen business relations. The meeting centered on supply opportunities, product distribution strategies, and potential strategic partnerships aimed at expanding market reach and enhancing value chains within the food and beverage sector.</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/sara-foods-2.jpg', 'Sara Foods Lebanon - Strategic Meeting')"><img src="images/events/sara-foods-2.jpg" loading="lazy" alt=""><div class="item-caption">Strategic Meeting</div></div>
+        </div>
+      </div>
+
+      <!-- Gulfood January 2026 - 9 Images -->
+      <div class="event-group" data-category="expo">
+        <h3>Dubai Gulfood - January 2026</h3>
+        <span class="event-date">January 2026 • Dubai World Trade Centre</span>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-1.jpg', 'Gulfood 2026 - Abak Booth Overview')"><img src="images/events/gulfood-jan2026-1.jpeg" loading="lazy" alt=""><div class="item-caption">Abak Company Limited participated in the Singapore FHA Food & Beverage Event to engage with global suppliers and explore strategic partnerships. The team visited various country pavilions, including China, Japan, and the European Union zones, and actively took part in seminars and networking sessions to strengthen industry connections and gain valuable market insights.</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-2.jpg', 'Gulfood 2026 - Product Display')"><img src="images/events/gulfood-jan2026-2.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+          <!-- <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-3.jpg', 'Gulfood 2026 - Business Meeting')"><img src="images/events/gulfood-jan2026-3.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div> -->
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-4.jpg', 'Gulfood 2026 - Team at Stand')"><img src="images/events/gulfood-jan2026-4.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-5.jpg', 'Gulfood 2026 - Product Sampling')"><img src="images/events/gulfood-jan2026-5.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-6.jpg', 'Gulfood 2026 - Networking')"><img src="images/events/gulfood-jan2026-6.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-7.jpg', 'Gulfood 2026 - Booth Branding')"><img src="images/events/gulfood-jan2026-7.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-8.jpg', 'Gulfood 2026 - Visitor Engagement')"><img src="images/events/gulfood-jan2026-8.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-9.jpg', 'Gulfood 2026 - Team Group Photo')"><img src="images/events/gulfood-jan2026-9.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+		  <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-10.jpg', 'Gulfood 2026 - Visitor Engagement')"><img src="images/events/gulfood-jan2026-10.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/gulfood-jan2026-11.jpg', 'Gulfood 2026 - Team Group Photo')"><img src="images/events/gulfood-jan2026-11.jpeg" loading="lazy" alt=""><div class="item-caption">Dubai Gulfood - January 2026</div></div>
+        </div>
+      </div>
+	  
+	   <!-- FHA Foods and Beverages Expo -->
+      <div class="event-group" data-category="expo">
+        <h3>FHA Foods and Beverages Expo 2025</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/fha-foods-beverages-2025.jpg', 'Singapore Expo 2024 - Booth View')"><img src="images/events/fha-foods-beverages-2025.jpeg" loading="lazy" alt=""><div class="item-caption">Asia's Leading Foods and Beverages event Held in 2025.</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/fha-foods-beverages-2025-2.jpg', 'Singapore Expo 2024 - Product Showcase')"><img src="images/events/fha-foods-beverages-2025-2.jpeg" loading="lazy" alt=""><div class="item-caption">Product Showcase</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/fha-foods-beverages-2025-3.jpg', 'Singapore Expo 2024 - Team Interaction')"><img src="images/events/fha-foods-beverages-2025-3.jpeg" loading="lazy" alt=""><div class="item-caption">Team Interaction</div></div>
+        </div>
+      </div>
+
+      <!-- Singapore Expo -->
+      <div class="event-group" data-category="expo">
+        <h3>Singapore Expo • 23rd - 26th April 2024</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/singapore-expo-1.jpg', 'Singapore Expo 2024 - Booth View')"><img src="images/events/singapore-expo-1.jpeg" loading="lazy" alt=""><div class="item-caption">Abak Company Limited participated in the Singapore FHA Food & Beverage Event to engage with global suppliers and explore strategic partnerships. The team visited various country pavilions, including China, Japan, and the European Union zones, and actively took part in seminars and networking sessions to strengthen industry connections and gain valuable market insights.</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/singapore-expo-2.jpg', 'Singapore Expo 2024 - Product Showcase')"><img src="images/events/singapore-expo-2.jpeg" loading="lazy" alt=""><div class="item-caption">Singapore Expo 2024</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/singapore-expo-3.jpg', 'Singapore Expo 2024 - Team Interaction')"><img src="images/events/singapore-expo-3.jpeg" loading="lazy" alt=""><div class="item-caption">Singapore Expo 2024</div></div>
+		  <div class="gallery-item" onclick="openLightbox('images/events/singapore-expo-4
+.jpg', 'Singapore Expo 2024 - Team Interaction')"><img src="images/events/singapore-expo-4.jpeg" loading="lazy" alt=""><div class="item-caption">Singapore Expo 2024</div></div>
+        </div>
+      </div>
+
+      <!-- Certification -->
+      <div class="event-group" data-category="cert">
+        <h3>American Chamber of Commerce (AmCham) Ghana Certification</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/amcham-cert-1.jpg', 'AmCham Ghana Certification Ceremony')"><img src="images/events/amcham.jpeg" loading="lazy" alt=""><div class="item-caption">Mr. Kimathi, President of the American Chamber of Commerce, Ghana, presented a membership certificate to Abak Company Limited in recognition of its official induction into the Chamber.</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/amcham-cert-2.jpg', 'AmCham Ghana - Group Photo')"><img src="images/events/amcham-cert-2.jpg" loading="lazy" alt=""><div class="item-caption">Official Group Photo</div></div>
+        </div>
+      </div>
+
+      <!-- Operations -->
+      <div class="event-group" data-category="internal">
+        <h3>Office &amp; Coldroom Operations</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/coldroom-operations-1.jpg', 'Cold Room Temperature Check')"><img src="images/events/warehouse-daily-operations-1.jpeg" loading="lazy" alt=""><div class="item-caption">Warehouse Operations</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/coldroom-operations-2.jpg', 'Warehouse Daily Operations')"><img src="images/events/warehouse-daily-operations-2.jpeg" loading="lazy" alt=""><div class="item-caption">Warehouse Operations</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/coldroom-operations-3.jpg', 'Quality Control Inspection')"><img src="images/events/warehouse-daily-operations-3.jpeg" loading="lazy" alt=""><div class="item-caption">Warehouse Operations</div></div>
+		  <div class="gallery-item" onclick="openLightbox('images/events/coldroom-operations-4.jpg', 'Warehouse Daily Operations')"><img src="images/events/warehouse-daily-operations-4.jpeg" loading="lazy" alt=""><div class="item-caption">Warehouse Operations</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/coldroom-operations-5.jpg', 'Quality Control Inspection')"><img src="images/events/warehouse-daily-operations-5.jpeg" loading="lazy" alt=""><div class="item-caption">Quality Control</div></div>
+        </div>
+      </div>
+
+      <div class="event-group" data-category="internal">
+        <h3>Customer Engagements &amp; Market Activations</h3>
+        <div class="gallery-scroll">
+          <div class="gallery-item" onclick="openLightbox('images/events/market-activation-1.jpg', 'Market Activation Campaign')"><img src="images/events/market-activation-1.jpg" loading="lazy" alt=""><div class="item-caption">Customer Engagement</div></div>
+          <div class="gallery-item" onclick="openLightbox('images/events/market-activation-2.jpg', 'Retail Outlet Promotion')"><img src="images/events/market-activation-2.jpg" loading="lazy" alt=""><div class="item-caption">Retail Promotion</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2 style="font-size:2.8rem; margin-bottom:1rem;">Interested in Partnering With Us?</h2>
+    <p style="font-size:1.2rem; max-width:700px; margin:0 auto 2.5rem; color:var(--muted);">Join our growing network of trusted suppliers, distributors, and clients across the globe.</p>
+    <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+      <a href="sourcing.html" style="background:var(--ice); color:#081B29; padding:1.1rem 2.8rem; border-radius:50px; font-weight:700; text-decoration:none;">Become a Supplier</a>
+      <a href="contact.html" style="border:2px solid var(--ice); color:var(--ice); padding:1.1rem 2.8rem; border-radius:50px; font-weight:700; text-decoration:none;">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Abak Company Limited. All Rights Reserved.</p>
+    <p style="margin-top:0.8rem;">Trusted Frozen Food Importers &amp; Distributors • Ghana</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">×</span>
+    <div class="lightbox-content" id="lightbox-content"></div>
+  </div>
+
+  <script>
+    // Mobile Menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      hamburger.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        hamburger.textContent = '☰';
+      });
+    });
+
+    // Filter
+    function filterCategory(cat) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.event-group').forEach(group => {
+        group.style.display = (cat === 'all' || group.dataset.category === cat) ? 'block' : 'none';
+      });
+    }
+
+    // Lightbox
+    function openLightbox(src, caption = '') {
+      const lightbox = document.getElementById('lightbox');
+      const content = document.getElementById('lightbox-content');
+      content.innerHTML = `
+        <img src="${src}" style="width:100%; height:auto; display:block; border-radius:12px;" alt="Event Image" loading="lazy">
+        ${caption ? `<p style="text-align:center; margin-top:1.5rem; color:var(--muted); font-size:1.05rem;">${caption}</p>` : ''}
+      `;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+  </script>
+</body>
+</html>
